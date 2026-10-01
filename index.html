@@ -4,7 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Study</title>
-  <!-- Applies any stored theme override before first paint, so there's no flash of the wrong theme. -->
+  <!--
+    Applies any stored theme override before first paint, and shows a hint
+    if the page was opened directly via file:// instead of a local server.
+    Both run as a classic script, not a module — browsers block js/*.js
+    (type="module") entirely under file://, so only a plain <script> like
+    this one is guaranteed to run there.
+  -->
   <script>
     (function () {
       try {
@@ -13,6 +19,14 @@
           document.documentElement.setAttribute("data-theme", state.theme);
         }
       } catch (e) {}
+      if (location.protocol === "file:") {
+        document.addEventListener("DOMContentLoaded", function () {
+          var hint = document.createElement("p");
+          hint.className = "fatal-error";
+          hint.textContent = "You're opening this file directly — run it through a local server (see the README) so it can load its data.";
+          document.body.insertBefore(hint, document.body.firstChild);
+        });
+      }
     })();
   </script>
   <link rel="stylesheet" href="css/common.css" />
@@ -21,16 +35,13 @@
   <header class="site-header">
     <div class="site-header__inner">
       <span class="site-header__name">Study</span>
+      <a class="header-search-link" href="search.html">Search</a>
       <button class="theme-toggle" type="button" data-theme-toggle>Toggle theme</button>
     </div>
   </header>
 
   <div class="page">
     <main>
-      <p id="file-hint" class="fatal-error" hidden>
-        You're opening this file directly — run it through a local server (see the README) so it can load its data.
-      </p>
-
       <div class="hero">
         <h1 class="hero__title">DTU Autumn Exam Prep</h1>
         <p class="hero__stat" id="hero-stat"></p>

@@ -23,96 +23,116 @@ function renderNoCards(moduleSlug, missingWeeks = []) {
   document.getElementById("quiz-content").innerHTML = `
     <p class="fatal-error">
       No cards found for this selection${extra}.
-      <a href="module.html?m=${moduleSlug || ""}">Back to module</a>.
+      <a href="module.html?m=${encodeURIComponent(moduleSlug || "")}">Back to module</a>.
     </p>
   `;
 }
 
-function runQuiz(cardsByCard, { moduleSlug, scope, onFinish }) {
-  const questions = cardsByCard.map((card) => ({ card, question: buildQuizQuestion(card) }));
-  let current = 0;
-  let score = 0;
-  const missedCards = [];
-  let answered = false;
-
-  const questionEl = document.getElementById("quiz-question");
-  const optionsEl = document.getElementById("quiz-options");
-  const feedbackEl = document.getElementById("quiz-feedback");
-  const scoreEl = document.getElementById("quiz-score");
+// A quiz run (and each "retry wrong only" re-run) shares one set of DOM
+// elements and keyboard/click listeners. Binding fresh listeners per run
+// would leak — every past run's stale `next`/`selectOption` would keep
+// firing alongside the current run's, since nothing ever unbinds them (a
+// plain DOM node or `document` listener lives until the page unloads).
+// Instead, listeners are bound exactly once in createQuizController and
+// always dispatch to whichever run is currently active via `handlers`.
+function createQuizController() {
   const nextBtn = document.getElementById("quiz-next");
-  const questionSection = document.getElementById("quiz-question-section");
-  const endSection = document.getElementById("quiz-end");
+  const handlers = { selectOption: () => {}, next: () => {} };
 
-  function renderQuestion() {
-    answered = false;
-    feedbackEl.textContent = "";
-    nextBtn.hidden = true;
-    const { question } = questions[current];
-    questionEl.textContent = question.question;
-    scoreEl.textContent = `Score: ${score} / ${current}`;
-    optionsEl.innerHTML = "";
-    question.options.forEach((option, i) => {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "btn quiz-option";
-      btn.dataset.index = String(i);
-      btn.textContent = option;
-      btn.addEventListener("click", () => selectOption(i));
-      optionsEl.appendChild(btn);
-    });
-  }
+  nextBtn.addEventListener("click", () => handlers.next());
+  onKey("1", () => handlers.selectOption(0));
+  onKey("2", () => handlers.selectOption(1));
+  onKey("3", () => handlers.selectOption(2));
+  onKey("4", () => handlers.selectOption(3));
+  onKey("Enter", () => handlers.next());
+  onKey("ArrowRight", () => handlers.next());
 
-  function selectOption(i) {
-    if (answered) return;
-    answered = true;
-    const { card, question } = questions[current];
-    const correct = i === question.correctIndex;
-    if (correct) score++;
-    else missedCards.push(card);
+  function runQuiz(cardsByCard, { moduleSlug, scope, onFinish }) {
+    const questions = cardsByCard.map((card) => ({ card, question: buildQuizQuestion(card) }));
+    let current = 0;
+    let score = 0;
+    const missedCards = [];
+    let answered = false;
 
-    [...optionsEl.children].forEach((btn, idx) => {
-      if (idx === question.correctIndex) btn.classList.add("quiz-option--correct");
-      if (idx === i && !correct) btn.classList.add("quiz-option--incorrect");
-    });
-    feedbackEl.textContent = correct ? "Correct!" : "Incorrect.";
-    scoreEl.textContent = `Score: ${score} / ${current + 1}`;
-    nextBtn.hidden = false;
-  }
+    const questionEl = document.getElementById("quiz-question");
+    const optionsEl = document.getElementById("quiz-options");
+    const feedbackEl = document.getElementById("quiz-feedback");
+    const scoreEl = document.getElementById("quiz-score");
+    const questionSection = document.getElementById("quiz-question-section");
+    const endSection = document.getElementById("quiz-end");
 
-  function next() {
-    if (!answered) return;
-    current++;
-    if (current < questions.length) {
-      renderQuestion();
-    } else {
-      finish();
+    function renderQuestion() {
+      answered = false;
+      feedbackEl.textContent = "";
+      nextBtn.hidden = true;
+      const { question } = questions[current];
+      questionEl.textContent = question.question;
+      scoreEl.textContent = `Score: ${score} / ${current}`;
+      optionsEl.innerHTML = "";
+      question.options.forEach((option, i) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "btn quiz-option";
+        btn.dataset.index = String(i);
+        btn.textContent = option;
+        btn.addEventListener("click", () => handlers.selectOption(i));
+        optionsEl.appendChild(btn);
+      });
     }
+
+    function selectOption(i) {
+      if (answered) return;
+      answered = true;
+      const { card, question } = questions[current];
+      const correct = i === question.correctIndex;
+      if (correct) score++;
+      else missedCards.push(card);
+
+      [...optionsEl.children].forEach((btn, idx) => {
+        if (idx === question.correctIndex) btn.classList.add("quiz-option--correct");
+        if (idx === i && !correct) btn.classList.add("quiz-option--incorrect");
+      });
+      feedbackEl.textContent = correct ? "Correct!" : "Incorrect.";
+      scoreEl.textContent = `Score: ${score} / ${current + 1}`;
+      nextBtn.hidden = false;
+    }
+
+    function next() {
+      if (!answered) return;
+      current++;
+      if (current < questions.length) {
+        renderQuestion();
+      } else {
+        finish();
+      }
+    }
+
+    function finish() {
+      questionSection.hidden = true;
+      endSection.hidden = false;
+      document.getElementById("quiz-final-score").textContent = `${score} / ${questions.length}`;
+      const retryBtn = document.getElementById("quiz-retry-wrong");
+      retryBtn.hidden = missedCards.length === 0;
+      retryBtn.onclick = () => {
+        questionSection.hidden = false;
+        endSection.hidden = true;
+        runQuiz(missedCards, { moduleSlug, scope, onFinish: null });
+      };
+      onFinish?.(score, questions.length);
+    }
+
+    handlers.selectOption = selectOption;
+    handlers.next = next;
+
+    questionSection.hidden = false;
+    endSection.hidden = true;
+    renderQuestion();
   }
 
-  function finish() {
-    questionSection.hidden = true;
-    endSection.hidden = false;
-    document.getElementById("quiz-final-score").textContent = `${score} / ${questions.length}`;
-    const retryBtn = document.getElementById("quiz-retry-wrong");
-    retryBtn.hidden = missedCards.length === 0;
-    retryBtn.onclick = () => {
-      questionSection.hidden = false;
-      endSection.hidden = true;
-      runQuiz(missedCards, { moduleSlug, scope, onFinish: null });
-    };
-    onFinish?.(score, questions.length);
-  }
-
-  nextBtn.addEventListener("click", next);
-  onKey("1", () => selectOption(0));
-  onKey("2", () => selectOption(1));
-  onKey("3", () => selectOption(2));
-  onKey("4", () => selectOption(3));
-
-  questionSection.hidden = false;
-  endSection.hidden = true;
-  renderQuestion();
+  return { runQuiz };
 }
+
+const quizController = createQuizController();
 
 async function init() {
   let manifest;
@@ -144,7 +164,7 @@ async function init() {
     return;
   }
 
-  runQuiz(cards, {
+  quizController.runQuiz(cards, {
     moduleSlug: slug,
     scope,
     onFinish(finalScore, total) {

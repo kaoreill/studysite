@@ -82,6 +82,16 @@ export function isFileProtocol(protocol = window.location.protocol) {
   return protocol === "file:";
 }
 
+// Escapes text that gets interpolated into an innerHTML template string —
+// anything not under our own control (a URL query param, PDF text, card
+// content) must go through this before it touches innerHTML, or it can
+// break out of its tag/attribute and inject markup.
+export function escapeHtml(text) {
+  const div = document.createElement("div");
+  div.textContent = text;
+  return div.innerHTML;
+}
+
 export function renderFatalError(container, message) {
   container.innerHTML = "";
   const div = document.createElement("div");

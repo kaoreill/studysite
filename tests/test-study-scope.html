@@ -10,7 +10,7 @@
   <p id="summary"></p>
 
   <script type="module">
-    import { parseScope, weeksForScope, loadCardsForWeeks, shuffleArray } from "../js/study-scope.js";
+    import { parseScope, weeksForScope, loadCardsForWeeks, shuffleArray, fetchCardFile } from "../js/study-scope.js";
 
     const results = document.getElementById("results");
     let total = 0;
@@ -36,6 +36,11 @@
       "parseScope reads a from/to range"
     );
     assert(deepEqual(parseScope("?m=ml"), { type: "invalid" }), "parseScope with no scope params is invalid");
+    assert(deepEqual(parseScope("?w=0"), { type: "invalid" }), "parseScope rejects w=0 (out of 1-13 range)");
+    assert(deepEqual(parseScope("?w=14"), { type: "invalid" }), "parseScope rejects w=14 (out of 1-13 range)");
+    assert(deepEqual(parseScope("?w=abc"), { type: "invalid" }), "parseScope rejects a non-numeric w");
+    assert(deepEqual(parseScope("?from=5&to=2"), { type: "invalid" }), "parseScope rejects from > to");
+    assert(deepEqual(parseScope("?from=1"), { type: "invalid" }), "parseScope rejects from without to");
 
     assert(deepEqual(weeksForScope({ type: "week", week: 3 }), [3]), "weeksForScope for a single week");
     assert(
@@ -80,6 +85,18 @@
     const result = await loadCardsForWeeks("fixture", fixtureModule, [1, 2], fakeFetchCardFile);
     assert(result.cards.length === 3, `loadCardsForWeeks returns week 1's 3 cards (got ${result.cards.length})`);
     assert(deepEqual(result.missingWeeks, [2]), `loadCardsForWeeks reports week 2 missing (got ${JSON.stringify(result.missingWeeks)})`);
+
+    // fetchCardFile must treat a wrong-shaped (but validly parsed) deck the
+    // same as a 404 — a typo'd key or wrong top-level type shouldn't crash
+    // the caller that iterates `.cards`.
+    const realFetch = window.fetch;
+    window.fetch = async () => ({ ok: true, json: async () => ({ not: "the right shape" }) });
+    const badShape = await fetchCardFile("ml", "week-99.json");
+    assert(badShape === null, "fetchCardFile returns null for JSON with no cards array");
+    window.fetch = async () => ({ ok: true, json: async () => ({ cards: "not-an-array" }) });
+    const badCardsType = await fetchCardFile("ml", "week-99.json");
+    assert(badCardsType === null, "fetchCardFile returns null when cards is not an array");
+    window.fetch = realFetch;
 
     document.getElementById("summary").textContent =
       passed === total ? `All ${total} assertions passed.` : `${passed}/${total} assertions passed.`;

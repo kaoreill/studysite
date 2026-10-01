@@ -14,7 +14,7 @@ function renderComingSoon() {
   document.getElementById("notes-content").innerHTML = `<p>Notes coming soon.</p>`;
 }
 
-async function mountPdfEntry(moduleObj, weekObj, pdf) {
+async function mountPdfEntry(moduleObj, weekObj, pdf, startPage = 1) {
   const container = document.getElementById("notes-content");
   const entry = document.createElement("div");
   entry.className = "pdf-entry";
@@ -31,32 +31,39 @@ async function mountPdfEntry(moduleObj, weekObj, pdf) {
   `;
   container.appendChild(entry);
 
-  const canvas = entry.querySelector("canvas");
-  const counter = entry.querySelector("[data-counter]");
-  const prevBtn = entry.querySelector("[data-prev]");
-  const nextBtn = entry.querySelector("[data-next]");
-
-  let pdfDoc;
+  // Everything below (not just loadPdf) can fail — a corrupt page, a font
+  // load error, a worker crash. Any of it must only take down this one
+  // entry, so the loop in init() keeps mounting the week's other PDFs.
   try {
-    pdfDoc = await loadPdf(fileUrl);
+    const canvas = entry.querySelector("canvas");
+    const counter = entry.querySelector("[data-counter]");
+    const prevBtn = entry.querySelector("[data-prev]");
+    const nextBtn = entry.querySelector("[data-next]");
+
+    const pdfDoc = await loadPdf(fileUrl);
+    let currentPage = 1;
+    let rendering = false;
+
+    async function show(page) {
+      if (rendering) return; // ignore clicks/swipes while a render is in flight
+      rendering = true;
+      try {
+        currentPage = Math.min(Math.max(page, 1), pdfDoc.numPages);
+        await renderPage(pdfDoc, currentPage, canvas);
+        counter.textContent = `${currentPage} / ${pdfDoc.numPages}`;
+      } finally {
+        rendering = false;
+      }
+    }
+
+    prevBtn.addEventListener("click", () => show(currentPage - 1));
+    nextBtn.addEventListener("click", () => show(currentPage + 1));
+    onSwipe(canvas, { onLeft: () => show(currentPage + 1), onRight: () => show(currentPage - 1) });
+
+    await show(startPage);
   } catch {
     entry.innerHTML = `<span class="pdf-entry__name">${pdf.name}</span><p class="fatal-error">This PDF couldn't be loaded.</p>`;
-    return;
   }
-
-  let currentPage = 1;
-
-  async function show(page) {
-    currentPage = Math.min(Math.max(page, 1), pdfDoc.numPages);
-    await renderPage(pdfDoc, currentPage, canvas);
-    counter.textContent = `${currentPage} / ${pdfDoc.numPages}`;
-  }
-
-  prevBtn.addEventListener("click", () => show(currentPage - 1));
-  nextBtn.addEventListener("click", () => show(currentPage + 1));
-  onSwipe(canvas, { onLeft: () => show(currentPage + 1), onRight: () => show(currentPage - 1) });
-
-  await show(1);
 }
 
 async function init() {
@@ -88,8 +95,11 @@ async function init() {
     return;
   }
 
+  const requestedFile = getQueryParam("file");
+  const requestedPage = Number(getQueryParam("page")) || 1;
   for (const pdf of weekObj.pdfs) {
-    await mountPdfEntry(moduleObj, weekObj, pdf);
+    const startPage = !requestedFile || pdf.file === requestedFile ? requestedPage : 1;
+    await mountPdfEntry(moduleObj, weekObj, pdf, startPage);
   }
 
   onKey("ArrowLeft", () => document.querySelector(".pdf-entry [data-prev]")?.click());

@@ -140,6 +140,18 @@ header.site-header {
   opacity: 0.7;
 }
 
+.header-search-link {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--paper);
+  text-decoration: none;
+}
+
+.header-search-link:hover {
+  text-decoration: underline;
+}
+
 .theme-toggle {
   font-family: var(--sans);
   font-weight: 600;
@@ -460,6 +472,39 @@ main {
 }
 
 /* ---------- week list (module page) ---------- */
+
+.range-picker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+}
+
+.range-picker input[type="number"] {
+  width: 3.5em;
+  font: inherit;
+  padding: 4px 6px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.week-row__link--disabled {
+  color: var(--ink-muted);
+  opacity: 0.6;
+}
+
+.week-row__score {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  margin-top: 2px;
+}
 
 .week-list {
   list-style: none;

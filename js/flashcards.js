@@ -9,7 +9,7 @@ function renderNoCards(moduleSlug, missingWeeks = []) {
   document.getElementById("flashcards-content").innerHTML = `
     <p class="fatal-error">
       No cards found for this selection${extra}.
-      <a href="module.html?m=${moduleSlug || ""}">Back to module</a>.
+      <a href="module.html?m=${encodeURIComponent(moduleSlug || "")}">Back to module</a>.
     </p>
   `;
 }
@@ -54,7 +54,9 @@ async function init() {
 
   const state = loadState();
   let deck = state.shuffle ? shuffleArray(cards) : cards;
-  let index = 0;
+  const requestedCardId = getQueryParam("card");
+  const requestedIndex = requestedCardId ? deck.findIndex((c) => c.id === requestedCardId) : -1;
+  let index = requestedIndex >= 0 ? requestedIndex : 0;
   let flipped = false;
 
   const flashcard = document.getElementById("flashcard");

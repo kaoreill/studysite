@@ -1,9 +1,8 @@
 // home.js — renders the home page's hero stat and module list from data/modules.json.
-import { fetchModules, countWeeksWithContent, isFileProtocol, renderFatalError } from "./common.js";
-
-if (isFileProtocol()) {
-  document.getElementById("file-hint").hidden = false;
-}
+// (The file:// hint lives in index.html's inline classic script, not here —
+// browsers block module scripts like this one entirely under file://, so
+// this module never runs in that case and can't be the one to show it.)
+import { fetchModules, countWeeksWithContent, renderFatalError } from "./common.js";
 
 function dotsMarkup(filled, total) {
   const items = [];

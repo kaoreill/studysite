@@ -36,6 +36,25 @@ export function searchPdfText(pdfIndex, query) {
   return matches;
 }
 
+// Builds one <li> with real DOM nodes rather than an innerHTML template —
+// a match's snippet comes from lecture PDF text or card content the site
+// owner didn't necessarily write character-by-character (pasted slides,
+// OCR, etc.), so it must never be interpreted as markup.
+function renderResultItem(m) {
+  const li = document.createElement("li");
+  const link = document.createElement("a");
+  if (m.type === "card") {
+    link.href = `flashcards.html?m=${encodeURIComponent(m.module)}&w=${m.week}&card=${encodeURIComponent(m.card.id)}`;
+    link.textContent = `${m.module} / Week ${m.week}`;
+  } else {
+    link.href = `notes.html?m=${encodeURIComponent(m.module)}&w=${m.week}&page=${m.page}&file=${encodeURIComponent(m.file)}`;
+    link.textContent = `${m.module} / Week ${m.week} (PDF)`;
+  }
+  li.appendChild(link);
+  li.appendChild(document.createTextNode(` — ${m.snippet}`));
+  return li;
+}
+
 function renderResults(query, cardIndex, pdfIndex, indexingDone) {
   const statusEl = document.getElementById("search-status");
   const resultsEl = document.getElementById("search-results");
@@ -44,14 +63,10 @@ function renderResults(query, cardIndex, pdfIndex, indexingDone) {
   const pdfMatches = searchPdfText(pdfIndex, query);
   const allMatches = [...cardMatches, ...pdfMatches];
 
-  resultsEl.innerHTML = allMatches
-    .map((m) => {
-      if (m.type === "card") {
-        return `<li><a href="flashcards.html?m=${m.module}&w=${m.week}&card=${m.card.id}">${m.module} / Week ${m.week}</a> — ${m.snippet}</li>`;
-      }
-      return `<li><a href="notes.html?m=${m.module}&w=${m.week}&page=${m.page}">${m.module} / Week ${m.week} (PDF)</a> — ${m.snippet}</li>`;
-    })
-    .join("");
+  resultsEl.innerHTML = "";
+  for (const m of allMatches) {
+    resultsEl.appendChild(renderResultItem(m));
+  }
 
   if (allMatches.length === 0) {
     statusEl.textContent = indexingDone ? `No results for '${query}'` : "indexing PDFs…";

@@ -40,7 +40,12 @@ export async function fetchCardFile(moduleSlug, filename) {
   try {
     const res = await fetch(`cards/${moduleSlug}/${filename}`);
     if (!res.ok) return null;
-    return await res.json();
+    const data = await res.json();
+    // A file that parses as JSON but isn't shaped like a card deck (a typo'd
+    // key, a top-level array, etc.) is as unusable as a 404 — treat it the
+    // same way so callers never see a crash from the wrong shape.
+    if (!Array.isArray(data?.cards)) return null;
+    return data;
   } catch {
     return null;
   }

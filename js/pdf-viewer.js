@@ -1,16 +1,29 @@
 // pdf-viewer.js — thin wrapper around pdf.js: load a document, render a page
-// to a canvas, and extract page text. Loads pdf.js itself from cdnjs (the
+// to a canvas, and extract page text. Loads pdf.js itself from jsDelivr (the
 // only external dependency this site uses) as an ES module.
-import * as pdfjsLib from "https://cdn.jsdelivr.net/npm/pdfjs-dist@6.3.289/build/pdf.min.mjs";
-
+const PDFJS_URL = "https://cdn.jsdelivr.net/npm/pdfjs-dist@6.3.289/build/pdf.min.mjs";
 const WORKER_SRC = "https://cdn.jsdelivr.net/npm/pdfjs-dist@6.3.289/build/pdf.worker.min.mjs";
 // Metrics for the standard 14 fonts (e.g. Helvetica) when a PDF references
 // one without embedding it — without this, text using those fonts can
 // extract/render incorrectly. cdnjs doesn't mirror this directory; jsDelivr does.
 const STANDARD_FONT_DATA_URL = "https://cdn.jsdelivr.net/npm/pdfjs-dist@6.3.289/standard_fonts/";
+
+// Loaded lazily (on the first loadPdf call) rather than as a static
+// top-level import. A static import's failure (CDN blocked/offline/down)
+// would fail this whole module and, transitively, every page that imports
+// it — including search.js's card search, which needs none of this. A
+// dynamic import's failure is just a rejected promise from loadPdf, which
+// callers already handle the same way they handle a 404.
+let pdfjsLibPromise = null;
 let workerConfigured = false;
 
+function getPdfjsLib() {
+  pdfjsLibPromise ??= import(PDFJS_URL);
+  return pdfjsLibPromise;
+}
+
 export async function loadPdf(url) {
+  const pdfjsLib = await getPdfjsLib();
   if (!workerConfigured) {
     pdfjsLib.GlobalWorkerOptions.workerSrc = WORKER_SRC;
     workerConfigured = true;
