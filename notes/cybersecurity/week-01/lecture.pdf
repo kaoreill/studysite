@@ -12,9 +12,14 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
 endobj
 5 0 obj
-<< /Length 174 >>
+<< /Length 225 >>
 stream
-BT /F1 18 Tf 72 700 Td (Week 1 placeholder notes - Cybersecurity Fundamentals. Replace this file with your real lecture PDF at notes/cybersecurity/week-01/lecture.pdf.) Tj ET
+BT /F1 18 Tf 72 700 Td
+(Week 1 placeholder notes - Cybersecurity) Tj 0 -22 Td
+(Fundamentals. Replace this file with your) Tj 0 -22 Td
+(real lecture PDF at) Tj 0 -22 Td
+(notes/cybersecurity/week-01/lecture.pdf.) Tj 0 -22 Td
+ET
 endstream
 endobj
 xref
@@ -28,5 +33,5 @@ xref
 trailer
 << /Size 6 /Root 1 0 R >>
 startxref
-536
+587
 %%EOF

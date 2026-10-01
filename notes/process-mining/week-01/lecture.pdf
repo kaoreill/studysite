@@ -12,9 +12,13 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
 endobj
 5 0 obj
-<< /Length 163 >>
+<< /Length 200 >>
 stream
-BT /F1 18 Tf 72 700 Td (Week 1 placeholder notes - Process Mining. Replace this file with your real lecture PDF at notes/process-mining/week-01/lecture.pdf.) Tj ET
+BT /F1 18 Tf 72 700 Td
+(Week 1 placeholder notes - Process Mining.) Tj 0 -22 Td
+(Replace this file with your real lecture PDF) Tj 0 -22 Td
+(at notes/process-mining/week-01/lecture.pdf.) Tj 0 -22 Td
+ET
 endstream
 endobj
 xref
@@ -28,5 +32,5 @@ xref
 trailer
 << /Size 6 /Root 1 0 R >>
 startxref
-525
+562
 %%EOF
