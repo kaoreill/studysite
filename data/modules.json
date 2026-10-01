@@ -1,0 +1,360 @@
+{
+  "modules": [
+    {
+      "slug": "ml",
+      "title": "Machine Learning",
+      "weeks": [
+        {
+          "week": 1,
+          "title": "Introduction & Linear Regression",
+          "pdfs": [
+            {
+              "name": "Lecture 1 slides",
+              "file": "lecture.pdf"
+            }
+          ],
+          "cards": "week-01.json"
+        },
+        {
+          "week": 2,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 3,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 4,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 5,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 6,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 7,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 8,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 9,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 10,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 11,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 12,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 13,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        }
+      ]
+    },
+    {
+      "slug": "sustainability",
+      "title": "Quantitative Methods to Assess Sustainability",
+      "weeks": [
+        {
+          "week": 1,
+          "title": "Introduction to Sustainability Metrics",
+          "pdfs": [
+            {
+              "name": "Lecture 1 slides",
+              "file": "lecture.pdf"
+            }
+          ],
+          "cards": "week-01.json"
+        },
+        {
+          "week": 2,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 3,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 4,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 5,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 6,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 7,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 8,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 9,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 10,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 11,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 12,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 13,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        }
+      ]
+    },
+    {
+      "slug": "process-mining",
+      "title": "Process Mining",
+      "weeks": [
+        {
+          "week": 1,
+          "title": "Introduction to Process Mining",
+          "pdfs": [
+            {
+              "name": "Lecture 1 slides",
+              "file": "lecture.pdf"
+            }
+          ],
+          "cards": "week-01.json"
+        },
+        {
+          "week": 2,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 3,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 4,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 5,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 6,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 7,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 8,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 9,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 10,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 11,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 12,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 13,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        }
+      ]
+    },
+    {
+      "slug": "cybersecurity",
+      "title": "Cybersecurity Fundamentals",
+      "weeks": [
+        {
+          "week": 1,
+          "title": "Introduction to Cybersecurity Fundamentals",
+          "pdfs": [
+            {
+              "name": "Lecture 1 slides",
+              "file": "lecture.pdf"
+            }
+          ],
+          "cards": "week-01.json"
+        },
+        {
+          "week": 2,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 3,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 4,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 5,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 6,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 7,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 8,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 9,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 10,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 11,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 12,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        },
+        {
+          "week": 13,
+          "title": "",
+          "pdfs": [],
+          "cards": null
+        }
+      ]
+    }
+  ]
+}

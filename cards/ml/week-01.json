@@ -1,0 +1,37 @@
+{
+  "module": "ml",
+  "week": 1,
+  "title": "Introduction & Linear Regression",
+  "cards": [
+    {
+      "id": "ml-w01-001",
+      "question": "What is the bias-variance tradeoff?",
+      "answer": "The tradeoff between a model's error from erroneous assumptions (bias) and its error from sensitivity to small fluctuations in the training set (variance).",
+      "distractors": [
+        "A regularization technique that removes bias from gradient descent.",
+        "The tradeoff between training time and inference time.",
+        "A method for selecting the optimal learning rate."
+      ]
+    },
+    {
+      "id": "ml-w01-002",
+      "question": "What does overfitting mean?",
+      "answer": "A model learns the training data too closely, including its noise, and performs poorly on new data.",
+      "distractors": [
+        "A model is too simple to capture the underlying pattern.",
+        "A model trains faster than expected.",
+        "A model's weights converge to zero."
+      ]
+    },
+    {
+      "id": "ml-w01-003",
+      "question": "What is gradient descent used for?",
+      "answer": "Iteratively adjusting model parameters to minimize a loss function.",
+      "distractors": [
+        "Splitting data into training and test sets.",
+        "Converting categorical variables into numerical ones.",
+        "Measuring the correlation between two variables."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "module": "process-mining",
+  "week": 1,
+  "title": "Introduction to Process Mining",
+  "cards": [
+    {
+      "id": "process-mining-w01-001",
+      "question": "What is an event log in process mining?",
+      "answer": "A structured record of events, each linked to a case, an activity, and a timestamp, used to reconstruct process behavior.",
+      "distractors": [
+        "A log of software errors generated during process execution.",
+        "A manual diagram drawn by a business analyst.",
+        "A list of employees assigned to a process."
+      ]
+    },
+    {
+      "id": "process-mining-w01-002",
+      "question": "What does process discovery produce?",
+      "answer": "A process model derived automatically from an event log, without prior knowledge of the process.",
+      "distractors": [
+        "A manually designed flowchart approved by management.",
+        "A performance report ranking employees.",
+        "A database schema for storing process data."
+      ]
+    },
+    {
+      "id": "process-mining-w01-003",
+      "question": "What is conformance checking?",
+      "answer": "Comparing an event log against a process model to find where real behavior deviates from the expected model.",
+      "distractors": [
+        "Verifying that software code compiles without errors.",
+        "Checking that a database is normalized.",
+        "Measuring employee satisfaction with a process."
+      ]
+    }
+  ]
+}

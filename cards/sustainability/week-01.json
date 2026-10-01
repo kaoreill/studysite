@@ -1,0 +1,37 @@
+{
+  "module": "sustainability",
+  "week": 1,
+  "title": "Introduction to Sustainability Metrics",
+  "cards": [
+    {
+      "id": "sustainability-w01-001",
+      "question": "What does a Life Cycle Assessment (LCA) measure?",
+      "answer": "The environmental impacts of a product across its entire life cycle, from raw material extraction to disposal.",
+      "distractors": [
+        "Only the carbon emissions during manufacturing.",
+        "The financial cost of producing a product.",
+        "The market demand for a sustainable product."
+      ]
+    },
+    {
+      "id": "sustainability-w01-002",
+      "question": "What is a material flow analysis (MFA)?",
+      "answer": "A method for quantifying the flows and stocks of materials within a defined system boundary.",
+      "distractors": [
+        "A technique for forecasting stock market trends.",
+        "A survey method for measuring consumer sustainability preferences.",
+        "An audit of a company's financial statements."
+      ]
+    },
+    {
+      "id": "sustainability-w01-003",
+      "question": "What does 'planetary boundaries' refer to?",
+      "answer": "A framework defining the safe operating limits for humanity across nine interconnected environmental processes.",
+      "distractors": [
+        "The legal borders between countries with different environmental laws.",
+        "The maximum population a country can sustainably support.",
+        "A set of international trade tariffs on carbon-intensive goods."
+      ]
+    }
+  ]
+}

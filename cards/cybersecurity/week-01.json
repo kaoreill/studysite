@@ -1,0 +1,37 @@
+{
+  "module": "cybersecurity",
+  "week": 1,
+  "title": "Introduction to Cybersecurity Fundamentals",
+  "cards": [
+    {
+      "id": "cybersecurity-w01-001",
+      "question": "What is the CIA triad in cybersecurity?",
+      "answer": "Confidentiality, Integrity, and Availability — the three core principles guiding information security.",
+      "distractors": [
+        "Central Intelligence Agency's cybersecurity division.",
+        "Certificate, Identity, and Authentication — the core components of TLS.",
+        "Control, Isolate, Analyze — the incident response steps."
+      ]
+    },
+    {
+      "id": "cybersecurity-w01-002",
+      "question": "What is a man-in-the-middle attack?",
+      "answer": "An attack where the attacker secretly intercepts and possibly alters communication between two parties who believe they are communicating directly.",
+      "distractors": [
+        "A malware that encrypts files and demands ransom.",
+        "An attack that floods a server with traffic to make it unavailable.",
+        "A technique for guessing passwords by trying many combinations."
+      ]
+    },
+    {
+      "id": "cybersecurity-w01-003",
+      "question": "What does the principle of least privilege mean?",
+      "answer": "Users and systems should be granted only the minimum access rights needed to perform their tasks.",
+      "distractors": [
+        "All users should have administrator access by default.",
+        "Security policies should be reviewed as infrequently as possible.",
+        "Encryption keys should be shared among all team members."
+      ]
+    }
+  ]
+}
