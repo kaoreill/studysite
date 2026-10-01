@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>test-common</title>
+</head>
+<body>
+  <h1>js/common.js assertions</h1>
+  <ul id="results"></ul>
+  <p id="summary"></p>
+
+  <script type="module">
+    import {
+      getQueryParam,
+      isWeekEmpty,
+      countWeeksWithContent,
+      findModule,
+      findWeek,
+      isFileProtocol,
+    } from "../js/common.js";
+
+    const results = document.getElementById("results");
+    let total = 0;
+    let passed = 0;
+
+    function assert(condition, label) {
+      total++;
+      if (condition) passed++;
+      const li = document.createElement("li");
+      li.textContent = `${condition ? "PASS" : "FAIL"}: ${label}`;
+      li.style.color = condition ? "green" : "crimson";
+      results.appendChild(li);
+    }
+
+    assert(getQueryParam("m", "?m=ml&w=3") === "ml", "getQueryParam reads m from a query string");
+    assert(getQueryParam("x", "?m=ml") === null, "getQueryParam returns null for a missing param");
+
+    assert(
+      isWeekEmpty({ title: "", pdfs: [], cards: null }) === true,
+      "isWeekEmpty is true for the coming-soon shape"
+    );
+    assert(
+      isWeekEmpty({ title: "X", pdfs: [], cards: null }) === false,
+      "isWeekEmpty is false when title is set"
+    );
+
+    const fixtureModule = {
+      slug: "fixture",
+      title: "Fixture",
+      weeks: [
+        { week: 1, title: "A", pdfs: [{ name: "x", file: "x.pdf" }], cards: "week-01.json" },
+        { week: 2, title: "B", pdfs: [], cards: "week-02.json" },
+        { week: 3, title: "", pdfs: [], cards: null },
+        { week: 4, title: "C", pdfs: [{ name: "x", file: "x.pdf" }], cards: null },
+        { week: 5, title: "", pdfs: [], cards: null },
+        { week: 6, title: "", pdfs: [], cards: null },
+        { week: 7, title: "", pdfs: [], cards: null },
+        { week: 8, title: "", pdfs: [], cards: null },
+        { week: 9, title: "", pdfs: [], cards: null },
+        { week: 10, title: "", pdfs: [], cards: null },
+        { week: 11, title: "", pdfs: [], cards: null },
+        { week: 12, title: "", pdfs: [], cards: null },
+        { week: 13, title: "", pdfs: [], cards: null },
+      ],
+    };
+    assert(
+      countWeeksWithContent(fixtureModule) === 3,
+      "countWeeksWithContent counts the 3 non-empty weeks out of 13"
+    );
+
+    const fixtureManifest = { modules: [fixtureModule] };
+    assert(findModule(fixtureManifest, "fixture") === fixtureModule, "findModule finds the matching module");
+    assert(findModule(fixtureManifest, "nope") === undefined, "findModule returns undefined for a missing slug");
+    assert(findWeek(fixtureModule, 2) === fixtureModule.weeks[1], "findWeek finds the matching week");
+    assert(findWeek(fixtureModule, 99) === undefined, "findWeek returns undefined for a missing week number");
+
+    assert(isFileProtocol("file:") === true, "isFileProtocol is true for file:");
+    assert(isFileProtocol("http:") === false, "isFileProtocol is false for http:");
+
+    document.getElementById("summary").textContent =
+      passed === total ? `All ${total} assertions passed.` : `${passed}/${total} assertions passed.`;
+  </script>
+</body>
+</html>
