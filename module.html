@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Machine Learning — Study</title>
+  <title>Study</title>
   <script>
     (function () {
       try {
@@ -19,96 +19,19 @@
 <body>
   <header class="site-header">
     <div class="site-header__inner">
-      <span class="site-header__name"><a href="index.html">Study</a><span class="site-header__crumb">Machine Learning</span></span>
+      <span class="site-header__name"><a href="index.html">Study</a><span class="site-header__crumb" id="crumb"></span></span>
       <button class="theme-toggle" type="button" data-theme-toggle>Toggle theme</button>
     </div>
   </header>
 
   <div class="page">
     <main>
-      <!--
-        Static design preview for the "ml" module, week 1 populated to show
-        the filled-row treatment, weeks 2-13 shown "coming soon". The
-        implementation plan swaps this for a page driven by modules.json,
-        reading ?m= from the query string.
-      -->
-      <div class="module-intro ml">
-        <div class="module-intro__head">
-          <h1>Machine Learning</h1>
-          <span class="module-row__badge">4 / 13</span>
-        </div>
-        <ul class="dots" aria-hidden="true">
-          <li class="filled"></li><li class="filled"></li><li class="filled"></li><li class="filled"></li>
-          <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
-        </ul>
-        <div class="module-actions">
-          <a class="btn btn--primary" href="flashcards.html?m=ml&amp;w=all">Study all weeks</a>
-          <a class="btn btn--primary" href="quiz.html?m=ml&amp;w=all">Quiz all weeks</a>
-        </div>
-      </div>
-
-      <ul class="week-list">
-        <li class="week-row">
-          <span class="week-row__number">01</span>
-          <span class="week-row__title">Introduction &amp; Linear Regression</span>
-          <span class="week-row__links">
-            <a href="notes.html?m=ml&amp;w=1">Notes</a>
-            <a href="flashcards.html?m=ml&amp;w=1">Flashcards</a>
-            <a href="quiz.html?m=ml&amp;w=1">Quiz</a>
-          </span>
-        </li>
-        <li class="week-row week-row--empty">
-          <span class="week-row__number">02</span>
-          <span class="week-row__title">Coming soon</span>
-        </li>
-        <li class="week-row week-row--empty">
-          <span class="week-row__number">03</span>
-          <span class="week-row__title">Coming soon</span>
-        </li>
-        <li class="week-row week-row--empty">
-          <span class="week-row__number">04</span>
-          <span class="week-row__title">Coming soon</span>
-        </li>
-        <li class="week-row week-row--empty">
-          <span class="week-row__number">05</span>
-          <span class="week-row__title">Coming soon</span>
-        </li>
-        <li class="week-row week-row--empty">
-          <span class="week-row__number">06</span>
-          <span class="week-row__title">Coming soon</span>
-        </li>
-        <li class="week-row week-row--empty">
-          <span class="week-row__number">07</span>
-          <span class="week-row__title">Coming soon</span>
-        </li>
-        <li class="week-row week-row--empty">
-          <span class="week-row__number">08</span>
-          <span class="week-row__title">Coming soon</span>
-        </li>
-        <li class="week-row week-row--empty">
-          <span class="week-row__number">09</span>
-          <span class="week-row__title">Coming soon</span>
-        </li>
-        <li class="week-row week-row--empty">
-          <span class="week-row__number">10</span>
-          <span class="week-row__title">Coming soon</span>
-        </li>
-        <li class="week-row week-row--empty">
-          <span class="week-row__number">11</span>
-          <span class="week-row__title">Coming soon</span>
-        </li>
-        <li class="week-row week-row--empty">
-          <span class="week-row__number">12</span>
-          <span class="week-row__title">Coming soon</span>
-        </li>
-        <li class="week-row week-row--empty">
-          <span class="week-row__number">13</span>
-          <span class="week-row__title">Coming soon</span>
-        </li>
-      </ul>
+      <div id="module-intro"></div>
+      <ul class="week-list" id="week-list"></ul>
     </main>
   </div>
 
   <script type="module" src="js/common.js"></script>
+  <script type="module" src="js/module.js"></script>
 </body>
 </html>
