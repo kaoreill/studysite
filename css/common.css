@@ -1,0 +1,384 @@
+/* common.css — design tokens and shared components for every page.
+   Loaded by every HTML page alongside common.js. */
+
+:root {
+  --paper: #f7f7f5;
+  --ink: #1c1b1a;
+  --ink-muted: #6b6965;
+  --border: rgba(28, 27, 26, 0.14);
+  --radius: 4px;
+  --content-width: 70ch;
+
+  --serif: "Iowan Old Style", "Palatino Linotype", Georgia, "Times New Roman", serif;
+  --sans: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Module identity colors: the plain tone marks borders/dots, the
+     "strong" tone is darkened for solid fills (badges, buttons) so
+     white text keeps AA contrast against it either way. */
+  --accent-ml: #3b6e8f;
+  --accent-ml-strong: #2c5872;
+  --accent-sustainability: #4b7a4e;
+  --accent-sustainability-strong: #395e3c;
+  --accent-process-mining: #8a5a3b;
+  --accent-process-mining-strong: #6e4730;
+  --accent-cybersecurity: #7a4b8a;
+  --accent-cybersecurity-strong: #603868;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1a1a19;
+    --ink: #e8e6e1;
+    --ink-muted: #a8a6a1;
+    --border: rgba(232, 230, 225, 0.16);
+  }
+}
+
+/* Manual override set by common.js, takes precedence over the media query above. */
+:root[data-theme="light"] {
+  --paper: #f7f7f5;
+  --ink: #1c1b1a;
+  --ink-muted: #6b6965;
+  --border: rgba(28, 27, 26, 0.14);
+}
+
+:root[data-theme="dark"] {
+  --paper: #1a1a19;
+  --ink: #e8e6e1;
+  --ink-muted: #a8a6a1;
+  --border: rgba(232, 230, 225, 0.16);
+}
+
+/* Module accent — shared by .module-row (home) and .module-intro (module page). */
+.ml { --row-accent: var(--accent-ml); --row-accent-strong: var(--accent-ml-strong); }
+.sustainability { --row-accent: var(--accent-sustainability); --row-accent-strong: var(--accent-sustainability-strong); }
+.process-mining { --row-accent: var(--accent-process-mining); --row-accent-strong: var(--accent-process-mining-strong); }
+.cybersecurity { --row-accent: var(--accent-cybersecurity); --row-accent-strong: var(--accent-cybersecurity-strong); }
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+a:not(.btn) {
+  text-decoration-color: var(--border);
+  text-underline-offset: 3px;
+}
+
+a:not(.btn):hover {
+  text-decoration-color: currentColor;
+}
+
+:focus-visible {
+  outline: 2px solid var(--row-accent, var(--ink));
+  outline-offset: 2px;
+}
+
+/* ---------- layout shell ---------- */
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px 64px;
+}
+
+.page--reading {
+  max-width: var(--content-width);
+}
+
+/* Header is an inverted band — var(--ink) as background, var(--paper) as
+   text — so it always reads as a bold "cover strip" against the page in
+   both light and dark mode, without a separate set of theme variables. */
+header.site-header {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 22px 20px;
+}
+
+.site-header__name {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.site-header__name a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.site-header__crumb {
+  margin-left: 12px;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  opacity: 0.7;
+}
+
+.theme-toggle {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.85rem;
+  background: none;
+  border: 1px solid var(--paper);
+  border-radius: var(--radius);
+  color: var(--paper);
+  padding: 7px 14px;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+main {
+  padding-top: 40px;
+}
+
+/* ---------- hero (home) ---------- */
+
+.hero {
+  padding-bottom: 36px;
+  margin-bottom: 36px;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero__title {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  line-height: 1.05;
+  margin: 0 0 10px;
+}
+
+.hero__stat {
+  font-family: var(--sans);
+  font-size: 1.1rem;
+  color: var(--ink-muted);
+}
+
+.hero__stat strong {
+  color: var(--ink);
+  font-size: 1.3rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- progress dots (shared: home list + module page) ---------- */
+
+.dots {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.dots li {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1.5px solid var(--row-accent, var(--ink-muted));
+  background: transparent;
+}
+
+.dots li.filled {
+  background: var(--row-accent, var(--ink-muted));
+}
+
+/* ---------- module list (home) ---------- */
+
+.module-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+  border-top: 1px solid var(--border);
+}
+
+.module-row {
+  display: block;
+  padding: 22px 18px;
+  border-bottom: 1px solid var(--border);
+  border-left: 8px solid var(--row-accent, var(--ink-muted));
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.module-row:hover {
+  background: var(--border);
+}
+
+.module-row__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.module-row__title {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--ink);
+}
+
+.module-row__badge {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #fff;
+  background: var(--row-accent-strong, var(--ink-muted));
+  border-radius: 999px;
+  padding: 4px 12px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- module page intro ---------- */
+
+.module-intro {
+  padding: 26px 22px;
+  margin-bottom: 32px;
+  border-left: 8px solid var(--row-accent, var(--ink-muted));
+  background: var(--border);
+}
+
+.module-intro__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.module-intro h1 {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.9rem;
+  margin: 0;
+}
+
+.module-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.btn {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-radius: var(--radius);
+  padding: 9px 16px;
+  display: inline-block;
+}
+
+.btn--primary {
+  color: #fff;
+  background: var(--row-accent-strong, var(--ink));
+  border: 1px solid transparent;
+}
+
+.btn--primary:hover {
+  filter: brightness(1.1);
+}
+
+/* ---------- week list (module page) ---------- */
+
+.week-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--border);
+}
+
+.week-row {
+  display: grid;
+  grid-template-columns: 2.8rem 1fr;
+  gap: 4px 16px;
+  padding: 16px 4px;
+  border-bottom: 1px solid var(--border);
+}
+
+@media (min-width: 560px) {
+  .week-row {
+    grid-template-columns: 2.8rem 1fr auto;
+    align-items: baseline;
+  }
+}
+
+.week-row__number {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-size: 1.05rem;
+  color: var(--row-accent, var(--ink-muted));
+}
+
+.week-row--empty .week-row__number {
+  color: var(--ink-muted);
+  opacity: 0.5;
+  font-weight: 600;
+}
+
+.week-row__title {
+  font-size: 1.05rem;
+}
+
+.week-row--empty .week-row__title {
+  color: var(--ink-muted);
+  font-style: italic;
+}
+
+.week-row__links {
+  grid-column: 1 / -1;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  gap: 18px;
+}
+
+@media (min-width: 560px) {
+  .week-row__links {
+    grid-column: auto;
+  }
+}
+
+.week-row__links a {
+  text-decoration: none;
+  color: var(--row-accent-strong, var(--ink));
+}
+
+.week-row__links a:hover {
+  text-decoration: underline;
+}

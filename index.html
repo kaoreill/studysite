@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Study</title>
+  <!-- Applies any stored theme override before first paint, so there's no flash of the wrong theme. -->
+  <script>
+    (function () {
+      try {
+        var state = JSON.parse(localStorage.getItem("studysite:v1"));
+        if (state && (state.theme === "light" || state.theme === "dark")) {
+          document.documentElement.setAttribute("data-theme", state.theme);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <span class="site-header__name">Study</span>
+      <button class="theme-toggle" type="button" data-theme-toggle>Toggle theme</button>
+    </div>
+  </header>
+
+  <div class="page">
+    <main>
+      <!--
+        Static design preview — hardcoded content for now. The implementation
+        plan replaces the hero stat and module list with values computed from
+        data/modules.json (title, weeks-with-content count, per-week dots).
+      -->
+      <div class="hero">
+        <h1 class="hero__title">DTU Autumn Exam Prep</h1>
+        <p class="hero__stat"><strong>5 of 52</strong> weeks ready across all modules</p>
+      </div>
+
+      <ul class="module-list">
+        <li>
+          <a class="module-row ml" href="module.html?m=ml">
+            <div class="module-row__head">
+              <span class="module-row__title">Machine Learning</span>
+              <span class="module-row__badge">4 / 13</span>
+            </div>
+            <ul class="dots" aria-hidden="true">
+              <li class="filled"></li><li class="filled"></li><li class="filled"></li><li class="filled"></li>
+              <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+            </ul>
+          </a>
+        </li>
+        <li>
+          <a class="module-row sustainability" href="module.html?m=sustainability">
+            <div class="module-row__head">
+              <span class="module-row__title">Quantitative Methods to Assess Sustainability</span>
+              <span class="module-row__badge">1 / 13</span>
+            </div>
+            <ul class="dots" aria-hidden="true">
+              <li class="filled"></li>
+              <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+            </ul>
+          </a>
+        </li>
+        <li>
+          <a class="module-row process-mining" href="module.html?m=process-mining">
+            <div class="module-row__head">
+              <span class="module-row__title">Process Mining</span>
+              <span class="module-row__badge">0 / 13</span>
+            </div>
+            <ul class="dots" aria-hidden="true">
+              <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+            </ul>
+          </a>
+        </li>
+        <li>
+          <a class="module-row cybersecurity" href="module.html?m=cybersecurity">
+            <div class="module-row__head">
+              <span class="module-row__title">Cybersecurity Fundamentals</span>
+              <span class="module-row__badge">0 / 13</span>
+            </div>
+            <ul class="dots" aria-hidden="true">
+              <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+            </ul>
+          </a>
+        </li>
+      </ul>
+    </main>
+  </div>
+
+  <script type="module" src="js/common.js"></script>
+</body>
+</html>
