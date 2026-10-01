@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>test-study-scope</title>
+</head>
+<body>
+  <h1>js/study-scope.js assertions</h1>
+  <ul id="results"></ul>
+  <p id="summary"></p>
+
+  <script type="module">
+    import { parseScope, weeksForScope, loadCardsForWeeks, shuffleArray } from "../js/study-scope.js";
+
+    const results = document.getElementById("results");
+    let total = 0;
+    let passed = 0;
+
+    function assert(condition, label) {
+      total++;
+      if (condition) passed++;
+      const li = document.createElement("li");
+      li.textContent = `${condition ? "PASS" : "FAIL"}: ${label}`;
+      li.style.color = condition ? "green" : "crimson";
+      results.appendChild(li);
+    }
+
+    function deepEqual(a, b) {
+      return JSON.stringify(a) === JSON.stringify(b);
+    }
+
+    assert(deepEqual(parseScope("?m=ml&w=3"), { type: "week", week: 3 }), "parseScope reads a single week");
+    assert(deepEqual(parseScope("?m=ml&w=all"), { type: "all" }), "parseScope reads w=all");
+    assert(
+      deepEqual(parseScope("?m=ml&from=2&to=5"), { type: "range", from: 2, to: 5 }),
+      "parseScope reads a from/to range"
+    );
+    assert(deepEqual(parseScope("?m=ml"), { type: "invalid" }), "parseScope with no scope params is invalid");
+
+    assert(deepEqual(weeksForScope({ type: "week", week: 3 }), [3]), "weeksForScope for a single week");
+    assert(
+      deepEqual(weeksForScope({ type: "range", from: 2, to: 5 }), [2, 3, 4, 5]),
+      "weeksForScope for a range"
+    );
+    assert(
+      deepEqual(weeksForScope({ type: "all" }), Array.from({ length: 13 }, (_, i) => i + 1)),
+      "weeksForScope for all returns 1..13"
+    );
+    assert(deepEqual(weeksForScope({ type: "invalid" }), []), "weeksForScope for invalid returns []");
+
+    const original = [1, 2, 3];
+    const shuffled = shuffleArray(original);
+    assert(
+      shuffled.length === 3 && [1, 2, 3].every((n) => shuffled.includes(n)),
+      "shuffleArray returns an array with the same elements"
+    );
+    assert(deepEqual(original, [1, 2, 3]), "shuffleArray does not mutate its input");
+
+    const week1Cards = {
+      module: "fixture",
+      week: 1,
+      title: "Week 1",
+      cards: [
+        { id: "fixture-w01-001", question: "Q1", answer: "A1", distractors: ["x", "y", "z"] },
+        { id: "fixture-w01-002", question: "Q2", answer: "A2", distractors: ["x", "y", "z"] },
+        { id: "fixture-w01-003", question: "Q3", answer: "A3", distractors: ["x", "y", "z"] },
+      ],
+    };
+    const fixtureModule = {
+      slug: "fixture",
+      title: "Fixture",
+      weeks: [
+        { week: 1, title: "Week 1", pdfs: [], cards: "week-01.json" },
+        { week: 2, title: "Week 2", pdfs: [], cards: "week-02.json" },
+      ],
+    };
+    const fakeFetchCardFile = async (slug, filename) =>
+      filename === "week-01.json" ? week1Cards : null;
+
+    const result = await loadCardsForWeeks("fixture", fixtureModule, [1, 2], fakeFetchCardFile);
+    assert(result.cards.length === 3, `loadCardsForWeeks returns week 1's 3 cards (got ${result.cards.length})`);
+    assert(deepEqual(result.missingWeeks, [2]), `loadCardsForWeeks reports week 2 missing (got ${JSON.stringify(result.missingWeeks)})`);
+
+    document.getElementById("summary").textContent =
+      passed === total ? `All ${total} assertions passed.` : `${passed}/${total} assertions passed.`;
+  </script>
+</body>
+</html>
