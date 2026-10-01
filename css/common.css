@@ -224,6 +224,42 @@ main {
   margin-bottom: 24px;
 }
 
+/* ---------- pdf entries (notes page) ---------- */
+
+.pdf-entry {
+  margin-bottom: 32px;
+}
+
+.pdf-entry__name {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 1.05rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.pdf-entry canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.pdf-entry__controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+}
+
+.pdf-entry__page-counter {
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-muted);
+}
+
 /* ---------- module list (home) ---------- */
 
 .module-list {
