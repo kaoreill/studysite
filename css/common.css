@@ -224,6 +224,42 @@ main {
   margin-bottom: 24px;
 }
 
+/* ---------- search ---------- */
+
+.search-box {
+  width: 100%;
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+#search-status {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+}
+
+.search-results {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.search-results li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.search-results a {
+  font-family: var(--sans);
+  font-weight: 600;
+  text-decoration: none;
+}
+
 /* ---------- quiz ---------- */
 
 #quiz-options {

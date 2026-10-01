@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>test-search</title>
+</head>
+<body>
+  <h1>js/search.js assertions</h1>
+  <ul id="results"></ul>
+  <p id="summary"></p>
+
+  <script type="module">
+    import { buildSnippet, searchCards, searchPdfText } from "../js/search.js";
+
+    const resultsEl = document.getElementById("results");
+    let total = 0;
+    let passed = 0;
+
+    function assert(condition, label) {
+      total++;
+      if (condition) passed++;
+      const li = document.createElement("li");
+      li.textContent = `${condition ? "PASS" : "FAIL"}: ${label}`;
+      li.style.color = condition ? "green" : "crimson";
+      resultsEl.appendChild(li);
+    }
+
+    const longText = "The quick brown fox jumps over the lazy dog. ".repeat(10) + "regression analysis" + " and then more words follow after this point to pad things out further here.";
+    const midSnippet = buildSnippet(longText, "regression", 20);
+    assert(midSnippet !== null, "buildSnippet finds a mid-string match");
+    assert(midSnippet.toLowerCase().includes("regression"), "mid snippet contains the match");
+    assert(midSnippet.length <= 20 * 2 + "regression".length + 5, "mid snippet is roughly radius-bounded");
+
+    const startSnippet = buildSnippet("regression at the very start of the string here", "regression", 10);
+    assert(startSnippet !== null && startSnippet.startsWith("regression"), "match near start clamps without erroring");
+
+    const endText = "some text leading up to the end word target";
+    const endSnippet = buildSnippet(endText, "target", 10);
+    assert(endSnippet !== null && endSnippet.endsWith("target"), "match near end clamps without erroring");
+
+    assert(buildSnippet("nothing relevant here", "zzz", 20) === null, "buildSnippet returns null for no match");
+
+    const cardIndex = [
+      { module: "ml", week: 1, card: { id: "ml-w01-001", question: "What is regression?", answer: "A statistical method." } },
+      { module: "ml", week: 1, card: { id: "ml-w01-002", question: "What is a CPU?", answer: "A processor." } },
+    ];
+    const cardMatches = searchCards(cardIndex, "regression");
+    assert(cardMatches.length === 1, `searchCards finds exactly 1 match (got ${cardMatches.length})`);
+    assert(cardMatches[0]?.card.id === "ml-w01-001", "searchCards returns the matching card");
+    assert(cardMatches[0]?.snippet !== null, "searchCards result has a non-null snippet");
+
+    const caseMatches = searchCards(cardIndex, "REGRESSION");
+    assert(caseMatches.length === 1, "searchCards is case-insensitive");
+
+    const pdfIndex = [
+      { module: "ml", week: 1, file: "lecture.pdf", pages: [{ page: 1, text: "Introduction to regression models." }] },
+      { module: "sustainability", week: 1, file: "lecture.pdf", pages: [{ page: 1, text: "Life cycle assessment basics." }] },
+    ];
+    const pdfMatches = searchPdfText(pdfIndex, "regression");
+    assert(pdfMatches.length === 1, `searchPdfText finds exactly 1 match (got ${pdfMatches.length})`);
+    assert(pdfMatches[0]?.module === "ml", "searchPdfText returns the matching module");
+    assert(pdfMatches[0]?.page === 1, "searchPdfText returns the matching page number");
+
+    document.getElementById("summary").textContent =
+      passed === total ? `All ${total} assertions passed.` : `${passed}/${total} assertions passed.`;
+  </script>
+</body>
+</html>
