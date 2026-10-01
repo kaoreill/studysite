@@ -224,6 +224,29 @@ main {
   margin-bottom: 24px;
 }
 
+/* ---------- quiz ---------- */
+
+#quiz-options {
+  display: grid;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.quiz-option {
+  text-align: left;
+  width: 100%;
+}
+
+.quiz-option--correct {
+  border-color: var(--accent-sustainability);
+  color: var(--accent-sustainability-strong);
+}
+
+.quiz-option--incorrect {
+  border-color: var(--accent-process-mining);
+  color: var(--accent-process-mining-strong);
+}
+
 /* ---------- flashcards ---------- */
 
 .flashcard {

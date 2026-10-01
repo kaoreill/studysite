@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>test-quiz</title>
+</head>
+<body>
+  <h1>js/quiz.js assertions</h1>
+  <ul id="results"></ul>
+  <p id="summary"></p>
+
+  <script type="module">
+    import { buildQuizQuestion, scoreForWeekKey } from "../js/quiz.js";
+
+    const results = document.getElementById("results");
+    let total = 0;
+    let passed = 0;
+
+    function assert(condition, label) {
+      total++;
+      if (condition) passed++;
+      const li = document.createElement("li");
+      li.textContent = `${condition ? "PASS" : "FAIL"}: ${label}`;
+      li.style.color = condition ? "green" : "crimson";
+      results.appendChild(li);
+    }
+
+    const card = {
+      id: "ml-w01-001",
+      question: "What is the bias-variance tradeoff?",
+      answer: "The tradeoff between bias and variance.",
+      distractors: ["Wrong 1", "Wrong 2", "Wrong 3"],
+    };
+    const q = buildQuizQuestion(card);
+
+    assert(q.id === card.id, "question id matches the card id");
+    assert(q.question === card.question, "question text matches the card question");
+    assert(q.options.length === 4, "options has length 4");
+    assert(q.options.includes(card.answer), "options includes the correct answer");
+    for (const d of card.distractors) {
+      assert(q.options.includes(d), `options includes distractor "${d}"`);
+    }
+    assert(q.options[q.correctIndex] === card.answer, "options[correctIndex] is the correct answer");
+
+    assert(scoreForWeekKey("ml", 3) === "ml-w03", 'scoreForWeekKey("ml", 3) === "ml-w03"');
+    assert(scoreForWeekKey("cybersecurity", 13) === "cybersecurity-w13", 'scoreForWeekKey("cybersecurity", 13) === "cybersecurity-w13"');
+
+    document.getElementById("summary").textContent =
+      passed === total ? `All ${total} assertions passed.` : `${passed}/${total} assertions passed.`;
+  </script>
+</body>
+</html>
