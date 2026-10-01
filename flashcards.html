@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Study</title>
+  <script>
+    (function () {
+      try {
+        var state = JSON.parse(localStorage.getItem("studysite:v1"));
+        if (state && (state.theme === "light" || state.theme === "dark")) {
+          document.documentElement.setAttribute("data-theme", state.theme);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <span class="site-header__name"><a href="index.html">Study</a><span class="site-header__crumb" id="crumb"></span></span>
+      <button class="theme-toggle" type="button" data-theme-toggle>Toggle theme</button>
+    </div>
+  </header>
+
+  <div class="page page--reading">
+    <main>
+      <div id="flashcards-content">
+        <p id="flashcard-scope-label"></p>
+
+        <div class="flashcard" id="flashcard">
+          <div class="flashcard-inner">
+            <div class="flashcard-face front" id="flashcard-front"></div>
+            <div class="flashcard-face back" id="flashcard-back"></div>
+          </div>
+        </div>
+
+        <div class="pdf-entry__controls">
+          <button type="button" class="btn" id="flashcard-prev">Previous</button>
+          <span class="pdf-entry__page-counter" id="flashcard-progress"></span>
+          <button type="button" class="btn" id="flashcard-next">Next</button>
+          <label><input type="checkbox" id="shuffle-toggle" /> Shuffle</label>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="js/common.js"></script>
+  <script type="module" src="js/flashcards.js"></script>
+</body>
+</html>

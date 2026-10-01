@@ -224,6 +224,45 @@ main {
   margin-bottom: 24px;
 }
 
+/* ---------- flashcards ---------- */
+
+.flashcard {
+  perspective: 1000px;
+  min-height: 220px;
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.flashcard-inner {
+  position: relative;
+  min-height: 220px;
+  transition: transform 0.4s;
+  transform-style: preserve-3d;
+}
+
+.flashcard.flipped .flashcard-inner {
+  transform: rotateY(180deg);
+}
+
+.flashcard-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 1.15rem;
+}
+
+.flashcard-face.back {
+  transform: rotateY(180deg);
+  background: var(--border);
+}
+
 /* ---------- pdf entries (notes page) ---------- */
 
 .pdf-entry {
