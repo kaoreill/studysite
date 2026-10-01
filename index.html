@@ -27,67 +27,20 @@
 
   <div class="page">
     <main>
-      <!--
-        Static design preview — hardcoded content for now. The implementation
-        plan replaces the hero stat and module list with values computed from
-        data/modules.json (title, weeks-with-content count, per-week dots).
-      -->
+      <p id="file-hint" class="fatal-error" hidden>
+        You're opening this file directly — run it through a local server (see the README) so it can load its data.
+      </p>
+
       <div class="hero">
         <h1 class="hero__title">DTU Autumn Exam Prep</h1>
-        <p class="hero__stat"><strong>5 of 52</strong> weeks ready across all modules</p>
+        <p class="hero__stat" id="hero-stat"></p>
       </div>
 
-      <ul class="module-list">
-        <li>
-          <a class="module-row ml" href="module.html?m=ml">
-            <div class="module-row__head">
-              <span class="module-row__title">Machine Learning</span>
-              <span class="module-row__badge">4 / 13</span>
-            </div>
-            <ul class="dots" aria-hidden="true">
-              <li class="filled"></li><li class="filled"></li><li class="filled"></li><li class="filled"></li>
-              <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
-            </ul>
-          </a>
-        </li>
-        <li>
-          <a class="module-row sustainability" href="module.html?m=sustainability">
-            <div class="module-row__head">
-              <span class="module-row__title">Quantitative Methods to Assess Sustainability</span>
-              <span class="module-row__badge">1 / 13</span>
-            </div>
-            <ul class="dots" aria-hidden="true">
-              <li class="filled"></li>
-              <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
-            </ul>
-          </a>
-        </li>
-        <li>
-          <a class="module-row process-mining" href="module.html?m=process-mining">
-            <div class="module-row__head">
-              <span class="module-row__title">Process Mining</span>
-              <span class="module-row__badge">0 / 13</span>
-            </div>
-            <ul class="dots" aria-hidden="true">
-              <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
-            </ul>
-          </a>
-        </li>
-        <li>
-          <a class="module-row cybersecurity" href="module.html?m=cybersecurity">
-            <div class="module-row__head">
-              <span class="module-row__title">Cybersecurity Fundamentals</span>
-              <span class="module-row__badge">0 / 13</span>
-            </div>
-            <ul class="dots" aria-hidden="true">
-              <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
-            </ul>
-          </a>
-        </li>
-      </ul>
+      <ul class="module-list" id="module-list"></ul>
     </main>
   </div>
 
   <script type="module" src="js/common.js"></script>
+  <script type="module" src="js/home.js"></script>
 </body>
 </html>

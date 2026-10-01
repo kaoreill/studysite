@@ -211,6 +211,19 @@ main {
   background: var(--row-accent, var(--ink-muted));
 }
 
+/* ---------- error / empty states (shared) ---------- */
+
+.fatal-error {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: var(--border);
+  border-left: 4px solid var(--row-accent, var(--ink-muted));
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  margin-bottom: 24px;
+}
+
 /* ---------- module list (home) ---------- */
 
 .module-list {
