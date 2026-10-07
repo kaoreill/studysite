@@ -1,12 +1,3 @@
-# Study
-
-A lightweight study site for DTU exam prep across 4 modules — Machine
-Learning, Quantitative Methods to Assess Sustainability, Process Mining, and
-Cybersecurity Fundamentals. Browse lecture PDFs week by week, drill
-flashcards, self-test with multiple-choice quizzes, and search across all
-flashcards and PDF text — all as a static site with no build step, no
-framework, and no dependency beyond PDF.js loaded from a CDN.
-
 ## Enabling GitHub Pages
 
 1. Push this repository to GitHub.
