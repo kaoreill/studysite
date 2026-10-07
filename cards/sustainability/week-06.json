@@ -1,0 +1,897 @@
+{
+ "module": "sustainability",
+ "week": 6,
+ "title": "Economic dimension: LCC and AHP",
+ "cards": [
+  {
+   "id": "sustainability-w06-001",
+   "question": "What is life cycle costing (LCC)?",
+   "answer": "An approach that assesses the total cost of an asset over its life cycle, including initial capital, maintenance and operating costs and the residual value at end of life.",
+   "distractors": [
+    "An approach that assesses only the purchase price of an asset",
+    "An approach that measures only the environmental impacts of an asset",
+    "An approach that estimates the social impacts of an asset"
+   ]
+  },
+  {
+   "id": "sustainability-w06-002",
+   "question": "Which sustainability pillar does LCC address, and which tools address the other two?",
+   "answer": "Economic; environmental LCA (e-LCA) covers the environment and social LCA (s-LCA) covers the social pillar.",
+   "distractors": [
+    "Social; e-LCA covers economy and s-LCA covers environment",
+    "Environmental; s-LCA covers economy and e-LCA covers society",
+    "Economic; e-LCA covers society and s-LCA covers environment"
+   ]
+  },
+  {
+   "id": "sustainability-w06-003",
+   "question": "What can LCC be used for within sustainability analysis?",
+   "answer": "To understand the economic cost of different goods or services, aiding both producer and consumer decision-making.",
+   "distractors": [
+    "To measure greenhouse gas emissions of goods",
+    "To determine the toxicity of chemicals",
+    "To compute the life expectancy of consumers"
+   ]
+  },
+  {
+   "id": "sustainability-w06-004",
+   "question": "What is the simple LCC formula?",
+   "answer": "LCC = capital cost + lifetime operating cost + lifetime maintenance cost + disposal costs − residual value.",
+   "distractors": [
+    "LCC = capital cost − operating cost − maintenance cost + disposal costs + residual value",
+    "LCC = operating cost × lifetime",
+    "LCC = capital cost + residual value"
+   ]
+  },
+  {
+   "id": "sustainability-w06-005",
+   "question": "What is capital cost?",
+   "answer": "The one-time expenses incurred on the purchase of an asset.",
+   "distractors": [
+    "The total expenses of running an asset over its life",
+    "The cost of properly getting rid of an asset",
+    "The estimated worth of the asset at end of life"
+   ]
+  },
+  {
+   "id": "sustainability-w06-006",
+   "question": "What is lifetime operating cost?",
+   "answer": "The total expenses incurred to operate and maintain an asset over its entire useful life.",
+   "distractors": [
+    "The one-time purchase expense",
+    "The cost of disposal",
+    "The estimated resale value"
+   ]
+  },
+  {
+   "id": "sustainability-w06-007",
+   "question": "What is lifetime maintenance cost?",
+   "answer": "The total expenses associated with maintaining an asset over its entire useful life.",
+   "distractors": [
+    "The one-time purchase expense",
+    "The cost of disposal at the end of life",
+    "The residual worth of an asset"
+   ]
+  },
+  {
+   "id": "sustainability-w06-008",
+   "question": "What are disposal costs?",
+   "answer": "The total expenses associated with properly getting rid of an asset at the end of its useful life.",
+   "distractors": [
+    "The costs of purchasing the asset",
+    "The costs of operating the asset",
+    "The value at the end of life"
+   ]
+  },
+  {
+   "id": "sustainability-w06-009",
+   "question": "What is residual value, and how does it affect LCC?",
+   "answer": "The estimated worth of an asset at the end of its useful life; it is subtracted, lowering the LCC.",
+   "distractors": [
+    "The cost of recycling; it is added",
+    "The purchase price; it is subtracted",
+    "The lifetime operating cost; it is added"
+   ]
+  },
+  {
+   "id": "sustainability-w06-010",
+   "question": "How is annual depreciation calculated?",
+   "answer": "(Capital cost − residual value) / useful lifetime.",
+   "distractors": [
+    "Capital cost × useful lifetime",
+    "Residual value / capital cost",
+    "Capital cost + residual value"
+   ]
+  },
+  {
+   "id": "sustainability-w06-011",
+   "question": "What does depreciation reflect?",
+   "answer": "How much value is lost over time.",
+   "distractors": [
+    "How much profit is made",
+    "How much energy is used",
+    "How much the asset is worth after resale"
+   ]
+  },
+  {
+   "id": "sustainability-w06-012",
+   "question": "What are the implications of LCC listed in the lecture?",
+   "answer": "Pricing, performance management and decision-making.",
+   "distractors": [
+    "Mass and energy balance estimation",
+    "Estimation of prospective potentials",
+    "Energy optimisation"
+   ]
+  },
+  {
+   "id": "sustainability-w06-013",
+   "question": "How does LCC support pricing?",
+   "answer": "Knowing the LCC ensures an appropriate price for the product.",
+   "distractors": [
+    "It sets legal price caps",
+    "It eliminates costs",
+    "It sets the discount rate"
+   ]
+  },
+  {
+   "id": "sustainability-w06-014",
+   "question": "How does LCC support performance management?",
+   "answer": "It highlights the consequences of releasing a product to the market and identifies where cost reduction would be most effective.",
+   "distractors": [
+    "It computes mass balances",
+    "It measures social impacts",
+    "It predicts the climate effects"
+   ]
+  },
+  {
+   "id": "sustainability-w06-015",
+   "question": "How does LCC support decision-making?",
+   "answer": "It provides premises for decisions about product introduction, continuation, etc.",
+   "distractors": [
+    "It sets emission limits",
+    "It assigns property rights",
+    "It measures employee satisfaction"
+   ]
+  },
+  {
+   "id": "sustainability-w06-016",
+   "question": "When does LCC historically originate and why was it adopted widely?",
+   "answer": "It began in the 1950s in the UK related to building construction; the 1973 energy crisis led to wider adoption.",
+   "distractors": [
+    "It began in the 1990s with ISO 14040; adopted after Kyoto",
+    "It began in the 1930s with Leontief; adopted after WWII",
+    "It began in 2003 with ecoinvent; adopted after Paris"
+   ]
+  },
+  {
+   "id": "sustainability-w06-017",
+   "question": "What do LCA and LCC share?",
+   "answer": "The same product system, functional unit, system boundaries and life cycle inventory.",
+   "distractors": [
+    "The same impact categories",
+    "The same units",
+    "The same data sources only"
+   ]
+  },
+  {
+   "id": "sustainability-w06-018",
+   "question": "What is the difference between LCA and LCC?",
+   "answer": "They assess different impacts: environmental for LCA and economic for LCC.",
+   "distractors": [
+    "LCA assesses economic impacts; LCC assesses environmental impacts",
+    "LCA uses a functional unit; LCC does not",
+    "LCA is for products; LCC is for processes"
+   ]
+  },
+  {
+   "id": "sustainability-w06-019",
+   "question": "What are the 'what, how, why' of LCC?",
+   "answer": "What: estimate total cost over the asset's life; how: record initial investment, lifetime, total operating cost and profits (including waste treatment); why: economic feasibility is a key criterion for investments.",
+   "distractors": [
+    "What: estimate emissions; how: measure CO2; why: for regulation",
+    "What: rank alternatives; how: pairwise comparison; why: for consistency",
+    "What: compute depreciation; how: subtract residual value; why: for taxes"
+   ]
+  },
+  {
+   "id": "sustainability-w06-020",
+   "question": "What are the objectives of LCC?",
+   "answer": "Help manage total cost through the life cycle, identify where cost reduction is most effective, and estimate cost impacts of alternative designs and support options.",
+   "distractors": [
+    "Reduce emissions, increase biodiversity and decrease waste",
+    "Rank criteria, build matrices and check consistency",
+    "Measure social impacts and working conditions"
+   ]
+  },
+  {
+   "id": "sustainability-w06-021",
+   "question": "For which kind of decisions is LCC particularly helpful?",
+   "answer": "Repair versus replacement decisions (low technology issues).",
+   "distractors": [
+    "Climate policy design",
+    "Product labelling",
+    "Corporate reporting"
+   ]
+  },
+  {
+   "id": "sustainability-w06-022",
+   "question": "What are the advantages of LCC?",
+   "answer": "Improved forecasting, improved awareness of cost drivers, and performance trade-off against cost (quality and service level).",
+   "distractors": [
+    "Fast, cheap and exact results",
+    "Independence from technology change",
+    "No need for data"
+   ]
+  },
+  {
+   "id": "sustainability-w06-023",
+   "question": "What are the disadvantages of LCC?",
+   "answer": "Time-consuming, costly for long project lifetimes, and uncertain because technology changes.",
+   "distractors": [
+    "Cannot account for operating costs",
+    "Ignores capital cost",
+    "Cannot be used for products"
+   ]
+  },
+  {
+   "id": "sustainability-w06-024",
+   "question": "Why does LCC become more costly for longer project lifetimes?",
+   "answer": "Operating costs accumulate over time, so a longer lifetime incurs higher operating costs.",
+   "distractors": [
+    "Because capital costs increase",
+    "Because residual values fall to zero",
+    "Because discount rates rise"
+   ]
+  },
+  {
+   "id": "sustainability-w06-025",
+   "question": "What does LCC help determine regarding revenue?",
+   "answer": "Whether the revenue generated by a product is sufficient to cover the costs incurred throughout its life cycle.",
+   "distractors": [
+    "Whether the product emits too much CO2",
+    "Whether the product is socially accepted",
+    "Whether the product is recyclable"
+   ]
+  },
+  {
+   "id": "sustainability-w06-026",
+   "question": "Which sustainability tools are listed in the lecture?",
+   "answer": "Material flow analysis, LCA, input-output models, cost-benefit analysis, LCC and multi-criteria decision assessment.",
+   "distractors": [
+    "LCA, SWOT, PESTLE, Gantt and Kanban",
+    "Only LCA and LCC",
+    "Material flow analysis and Six Sigma"
+   ]
+  },
+  {
+   "id": "sustainability-w06-027",
+   "question": "What is material flow analysis?",
+   "answer": "Quantification of flows and stocks of materials or substances in a defined system, based on mass balance.",
+   "distractors": [
+    "Quantification of costs in a system",
+    "Quantification of social impacts",
+    "Ranking of alternatives by weights"
+   ]
+  },
+  {
+   "id": "sustainability-w06-028",
+   "question": "On what principle is material flow analysis based?",
+   "answer": "The mass balance or conservation of matter (Lavoisier).",
+   "distractors": [
+    "Pairwise comparison",
+    "Marginal utility",
+    "Depreciation"
+   ]
+  },
+  {
+   "id": "sustainability-w06-029",
+   "question": "Who introduced input-output models?",
+   "answer": "Wassily Leontief in the 1930s, adapted for regional analysis by Walter Isard in the 1950s.",
+   "distractors": [
+    "Thomas Saaty in 1970",
+    "Lavoisier in the 1780s",
+    "ISO in 1997"
+   ]
+  },
+  {
+   "id": "sustainability-w06-030",
+   "question": "What do input-output models examine?",
+   "answer": "Interdependencies between industries, households and government in and between regions, typically in a monetary matrix.",
+   "distractors": [
+    "Material flows in a single factory",
+    "Environmental emissions of products",
+    "Individual preferences"
+   ]
+  },
+  {
+   "id": "sustainability-w06-031",
+   "question": "When did LCA begin and when was the first LCA ISO published?",
+   "answer": "LCA began in the 1960s; the first LCA ISO was published in 1997; ecoinvent was released in 2003.",
+   "distractors": [
+    "LCA began in 1990; ISO in 2003; ecoinvent in 1997",
+    "LCA began in 1950; ISO in 1973; ecoinvent in 1990",
+    "LCA began in 1997; ISO in 2003; ecoinvent in 1960"
+   ]
+  },
+  {
+   "id": "sustainability-w06-032",
+   "question": "What is cost-benefit analysis (CBA)?",
+   "answer": "An attempt to quantify the costs and benefits of an asset or action in monetary terms, e.g. for policy actions.",
+   "distractors": [
+    "A ranking method using pairwise comparisons",
+    "A mass balance of substances",
+    "An environmental impact method"
+   ]
+  },
+  {
+   "id": "sustainability-w06-033",
+   "question": "What type of tool is CBA?",
+   "answer": "A normative policy formulation tool providing information to policymakers.",
+   "distractors": [
+    "A descriptive inventory tool",
+    "An environmental impact tool",
+    "A social indicator tool"
+   ]
+  },
+  {
+   "id": "sustainability-w06-034",
+   "question": "What does MCDA stand for?",
+   "answer": "Multi-criteria decision assessment.",
+   "distractors": [
+    "Multi-cost data analysis",
+    "Material cost decision assessment",
+    "Monetary cost-damage analysis"
+   ]
+  },
+  {
+   "id": "sustainability-w06-035",
+   "question": "What does AHP stand for and who developed it?",
+   "answer": "Analytic (Analytical) Hierarchy Process, developed by Thomas Saaty in 1970.",
+   "distractors": [
+    "Automated Hierarchy Procedure, by Leontief in 1930",
+    "Analytic Harm Protocol, by Isard in 1950",
+    "Applied Hierarchy Planning, by Lavoisier in 1790"
+   ]
+  },
+  {
+   "id": "sustainability-w06-036",
+   "question": "What is AHP?",
+   "answer": "A technique for organising and analysing complex decisions, with applications in group decision-making.",
+   "distractors": [
+    "A method for inventorying emissions",
+    "A method for computing depreciation",
+    "A method for mapping material flows"
+   ]
+  },
+  {
+   "id": "sustainability-w06-037",
+   "question": "What is the general idea of AHP?",
+   "answer": "Determine weights of the decision criteria and the ranking of alternatives, comparing qualitative and quantitative information through informed judgements.",
+   "distractors": [
+    "Determine costs and revenue of alternatives",
+    "Determine the functional unit and reference flow",
+    "Determine the life cycle inventory"
+   ]
+  },
+  {
+   "id": "sustainability-w06-038",
+   "question": "What are the AHP steps in the lecture?",
+   "answer": "Reverse negative criteria, normalise (0 to 1), determine weights (expert knowledge), check consistency, and rank.",
+   "distractors": [
+    "Collect data, publish, audit, report and repeat",
+    "Define FU, collect inventory, compute impacts and interpret",
+    "Plan, do, check and act"
+   ]
+  },
+  {
+   "id": "sustainability-w06-039",
+   "question": "In which situations is AHP appropriate according to the lecture?",
+   "answer": "When expert judgement is needed, transparency is needed and preferences are stable.",
+   "distractors": [
+    "When very large decision sets are involved",
+    "When purely quantitative optimisation is needed",
+    "When contexts are highly political or biased"
+   ]
+  },
+  {
+   "id": "sustainability-w06-040",
+   "question": "Why is AHP ideal when quantitative data are incomplete?",
+   "answer": "Expert knowledge can fill the gaps.",
+   "distractors": [
+    "Because it needs no judgement",
+    "Because it ignores qualitative information",
+    "Because it requires a large data set"
+   ]
+  },
+  {
+   "id": "sustainability-w06-041",
+   "question": "Why is AHP suitable for decisions explained to stakeholders?",
+   "answer": "It is transparent, so decisions can be explained to stakeholders, auditors or the public.",
+   "distractors": [
+    "It hides the criteria",
+    "It is purely automatic",
+    "It avoids using weights"
+   ]
+  },
+  {
+   "id": "sustainability-w06-042",
+   "question": "When is AHP not well suited?",
+   "answer": "With very large decision sets, purely quantitative optimisation, or politically biased contexts.",
+   "distractors": [
+    "When expert judgement is needed",
+    "When transparency is needed",
+    "When preferences are stable"
+   ]
+  },
+  {
+   "id": "sustainability-w06-043",
+   "question": "In the bicycle example, which three criteria are used?",
+   "answer": "Global warming potential (e-LCA), cost (LCC) and child labour hours (s-LCA).",
+   "distractors": [
+    "Weight, speed and colour",
+    "Noise, cost and energy",
+    "Water, land and waste"
+   ]
+  },
+  {
+   "id": "sustainability-w06-044",
+   "question": "In the bicycle example, what are the GWP values of bicycles 1, 2 and 3?",
+   "answer": "20, 10 and 15 kg CO2-eq.",
+   "distractors": [
+    "10, 15 and 20 kg CO2-eq",
+    "2000, 1500 and 500 kg CO2-eq",
+    "1, 1.5 and 0.3 kg CO2-eq"
+   ]
+  },
+  {
+   "id": "sustainability-w06-045",
+   "question": "In the bicycle example, what are the costs of bicycles 1, 2 and 3?",
+   "answer": "€2,000, €1,500 and €500.",
+   "distractors": [
+    "€500, €1,500 and €2,000",
+    "€20, €10 and €15",
+    "€1,000, €1,500 and €3,000"
+   ]
+  },
+  {
+   "id": "sustainability-w06-046",
+   "question": "In the bicycle example, what are the child labour hours of bicycles 1, 2 and 3?",
+   "answer": "1, 1.5 and 0.3 hours.",
+   "distractors": [
+    "20, 10 and 15 hours",
+    "2000, 1500 and 500 hours",
+    "0.3, 1.5 and 1 hours"
+   ]
+  },
+  {
+   "id": "sustainability-w06-047",
+   "question": "Why must negative criteria be reversed in AHP?",
+   "answer": "So that a higher number consistently means better for all criteria (lower impact becomes higher score).",
+   "distractors": [
+    "So that all numbers are negative",
+    "So that costs become positive",
+    "So that the weights sum to 1"
+   ]
+  },
+  {
+   "id": "sustainability-w06-048",
+   "question": "How are negative criteria reversed in the bicycle example?",
+   "answer": "Each value is subtracted from the maximum (e.g. 20 − 20 = 0, 20 − 10 = 10, 20 − 15 = 5 for GWP).",
+   "distractors": [
+    "Each value is multiplied by −1",
+    "Each value is divided by the maximum",
+    "Each value is squared"
+   ]
+  },
+  {
+   "id": "sustainability-w06-049",
+   "question": "What are the reversed values of the bicycle GWP?",
+   "answer": "0, 10 and 5.",
+   "distractors": [
+    "20, 10 and 15",
+    "0, 0.5 and 1",
+    "10, 0 and 5"
+   ]
+  },
+  {
+   "id": "sustainability-w06-050",
+   "question": "What are the reversed values of the bicycle cost?",
+   "answer": "0, 500 and 1500.",
+   "distractors": [
+    "2000, 1500 and 500",
+    "0, 0.33 and 1",
+    "500, 1500 and 0"
+   ]
+  },
+  {
+   "id": "sustainability-w06-051",
+   "question": "What are the reversed values of the bicycle child labour?",
+   "answer": "0.5, 0 and 1.2 (1.5 − value).",
+   "distractors": [
+    "1, 1.5 and 0.3",
+    "0, 0.5 and 1",
+    "1.5, 0 and 0.3"
+   ]
+  },
+  {
+   "id": "sustainability-w06-052",
+   "question": "How are the reversed values normalised?",
+   "answer": "Each value is divided by the maximum of its column, giving values from 0 to 1.",
+   "distractors": [
+    "Each value is divided by the sum of all columns",
+    "Each value is multiplied by the weight",
+    "Each value is subtracted from 1"
+   ]
+  },
+  {
+   "id": "sustainability-w06-053",
+   "question": "What are the normalised GWP, cost and child labour values for bicycle 3?",
+   "answer": "0.5, 1 and 1.",
+   "distractors": [
+    "0, 0, 0.42",
+    "1, 0.33, 0",
+    "0.5, 0.33, 0.42"
+   ]
+  },
+  {
+   "id": "sustainability-w06-054",
+   "question": "What are the normalised values for bicycle 1?",
+   "answer": "0 (GWP), 0 (cost) and 0.42 (child labour).",
+   "distractors": [
+    "1, 0.33 and 0",
+    "0.5, 1 and 1",
+    "1, 1 and 1"
+   ]
+  },
+  {
+   "id": "sustainability-w06-055",
+   "question": "How are criteria weights determined in AHP?",
+   "answer": "By pairwise comparison of the criteria on a 1–9 importance scale, arranged in a comparison matrix.",
+   "distractors": [
+    "By the sum of the criteria values",
+    "By random draws",
+    "By taking the maximum of each criterion"
+   ]
+  },
+  {
+   "id": "sustainability-w06-056",
+   "question": "What do the values 1, 3, 5, 7 and 9 in the pairwise comparison scale mean?",
+   "answer": "1 equal importance; 3 somewhat more; 5 much more; 7 very much more; 9 absolutely more important.",
+   "distractors": [
+    "1 absolutely more; 9 equal",
+    "1 somewhat more; 3 equal",
+    "They are cost levels"
+   ]
+  },
+  {
+   "id": "sustainability-w06-057",
+   "question": "In the example, E-LCA vs LCC, E-LCA vs sLCA and LCC vs sLCA comparisons are 1/2, 2 and 2. What does that mean?",
+   "answer": "E-LCA is half as important as LCC; E-LCA is twice as important as sLCA; LCC is twice as important as sLCA.",
+   "distractors": [
+    "E-LCA is twice as important as LCC and sLCA is twice as important as LCC",
+    "All criteria are equal",
+    "LCC is least important"
+   ]
+  },
+  {
+   "id": "sustainability-w06-058",
+   "question": "How are the weights computed from the comparison matrix?",
+   "answer": "Normalise each column by its sum, then average each row to get the weights.",
+   "distractors": [
+    "Add all matrix values",
+    "Take the largest value per row",
+    "Multiply the rows"
+   ]
+  },
+  {
+   "id": "sustainability-w06-059",
+   "question": "What are the column sums of the example comparison matrix?",
+   "answer": "3.5 (E-LCA), 2 (LCC) and 5 (sLCA).",
+   "distractors": [
+    "1, 2 and 3",
+    "3, 4 and 5",
+    "7, 8 and 9"
+   ]
+  },
+  {
+   "id": "sustainability-w06-060",
+   "question": "What are the average weights of the example (row averages of the normalised matrix)?",
+   "answer": "About 0.31 (E-LCA), 0.49 (LCC) and 0.20 (sLCA); the slide shows row sums 0.93, 1.47 and 0.59, which are 3× the averages.",
+   "distractors": [
+    "About 0.50 for all",
+    "About 0.20, 0.31 and 0.49",
+    "About 0.93 for each"
+   ]
+  },
+  {
+   "id": "sustainability-w06-061",
+   "question": "Which criterion gets the largest weight in the example?",
+   "answer": "LCC.",
+   "distractors": [
+    "E-LCA",
+    "sLCA",
+    "All equal"
+   ]
+  },
+  {
+   "id": "sustainability-w06-062",
+   "question": "Why does multiplying weights by a constant factor not change the ranking?",
+   "answer": "Because all alternatives' scores scale by the same factor, so their order is unchanged.",
+   "distractors": [
+    "Because weights are ignored",
+    "Because the ranking is random",
+    "Because scores are normalised to 1 again"
+   ]
+  },
+  {
+   "id": "sustainability-w06-063",
+   "question": "What is the ranking result in the bicycle example?",
+   "answer": "Bicycle 3 is best (2.65), then bicycle 2 (1.42), then bicycle 1 (0.3).",
+   "distractors": [
+    "Bicycle 1 is best",
+    "Bicycle 2 is best",
+    "All are equal"
+   ]
+  },
+  {
+   "id": "sustainability-w06-064",
+   "question": "How is the AHP score of an alternative computed?",
+   "answer": "Sum of its normalised criterion values multiplied by the corresponding weights.",
+   "distractors": [
+    "Product of its normalised values",
+    "Maximum of its normalised values",
+    "Average of the raw values"
+   ]
+  },
+  {
+   "id": "sustainability-w06-065",
+   "question": "Why must AHP results be interpreted with the assumptions in mind?",
+   "answer": "Variations in weight ratios can lead to different rankings of the evaluated options.",
+   "distractors": [
+    "Weights never affect ranking",
+    "Rankings are independent of the criteria",
+    "Assumptions are irrelevant"
+   ]
+  },
+  {
+   "id": "sustainability-w06-066",
+   "question": "What does the consistency check in AHP verify?",
+   "answer": "Whether the pairwise judgements (and so the weights) make sense, i.e. are logically consistent.",
+   "distractors": [
+    "Whether the costs are correct",
+    "Whether the alternatives are normalised",
+    "Whether the ranking is unique"
+   ]
+  },
+  {
+   "id": "sustainability-w06-067",
+   "question": "How is the consistency index (CI) computed?",
+   "answer": "CI = (λmax − n)/(n − 1).",
+   "distractors": [
+    "CI = λmax × n",
+    "CI = (n − 1)/λmax",
+    "CI = λmax + n"
+   ]
+  },
+  {
+   "id": "sustainability-w06-068",
+   "question": "How is the consistency ratio (CR) computed and what is the acceptance threshold?",
+   "answer": "CR = CI/RI, and it should be below 0.1.",
+   "distractors": [
+    "CR = CI × RI; below 10",
+    "CR = RI/CI; above 0.1",
+    "CR = CI − RI; below 1"
+   ]
+  },
+  {
+   "id": "sustainability-w06-069",
+   "question": "What is the random index RI for n = 3 in the lecture?",
+   "answer": "0.52.",
+   "distractors": [
+    "0.1",
+    "1.0",
+    "3"
+   ]
+  },
+  {
+   "id": "sustainability-w06-070",
+   "question": "What should λmax approximately equal for a perfectly consistent matrix?",
+   "answer": "n (here 3), so CI is about 0.",
+   "distractors": [
+    "0",
+    "1",
+    "10"
+   ]
+  },
+  {
+   "id": "sustainability-w06-071",
+   "question": "For the example matrix, what are the correct λmax and CR?",
+   "answer": "λmax ≈ 3.05, CI ≈ 0.03 and CR ≈ 0.05 (< 0.1, consistent); the slide's λmax = 1.21 and negative CR result from using row sums as weights.",
+   "distractors": [
+    "λmax = 1.21 and CR = −1.72, consistent",
+    "λmax = 3 and CR = 3",
+    "λmax = 0.5 and CR = 0.9"
+   ]
+  },
+  {
+   "id": "sustainability-w06-072",
+   "question": "What are the advantages of AHP?",
+   "answer": "It supports multi-criteria decisions, handles qualitative and quantitative evaluation, and suits collaborative group decisions.",
+   "distractors": [
+    "It needs no judgement",
+    "It works for any number of criteria",
+    "It is immune to inconsistency"
+   ]
+  },
+  {
+   "id": "sustainability-w06-073",
+   "question": "What are the disadvantages of AHP?",
+   "answer": "Implicit assumptions such as consistency, repeated evaluations can be time-consuming, difficult with many criteria, and difficult to add or remove criteria or alternatives.",
+   "distractors": [
+    "It cannot use qualitative data",
+    "It cannot be used for group decisions",
+    "It ignores weights"
+   ]
+  },
+  {
+   "id": "sustainability-w06-074",
+   "question": "In the coffee maker exercise, what is the functional unit?",
+   "answer": "Serving 1 cup (1 dl) of hot coffee once in Denmark.",
+   "distractors": [
+    "Producing 1 kg of coffee",
+    "Owning a coffee machine for a year",
+    "Using 1 kWh of electricity"
+   ]
+  },
+  {
+   "id": "sustainability-w06-075",
+   "question": "In the coffee maker exercise, which life cycle stage is the focus of the LCC?",
+   "answer": "The use stage (according to most participants).",
+   "distractors": [
+    "Raw material extraction",
+    "Production only",
+    "Disposal only"
+   ]
+  },
+  {
+   "id": "sustainability-w06-076",
+   "question": "What does the coffee maker exercise system include?",
+   "answer": "A domestic automatic espresso machine producing a standard cup, with capsule, electricity, water, machine production, landfill disposal; no milk or sugar and no cleaning/maintenance allocation.",
+   "distractors": [
+    "A cafe with staff and rent",
+    "A coffee plantation only",
+    "A filter coffee pot only"
+   ]
+  },
+  {
+   "id": "sustainability-w06-077",
+   "question": "In the coffee exercise, to which LCC category do electricity and water belong?",
+   "answer": "Operating cost (use phase).",
+   "distractors": [
+    "Capital cost",
+    "Disposal cost",
+    "Residual value"
+   ]
+  },
+  {
+   "id": "sustainability-w06-078",
+   "question": "What are the three coffee scenarios compared in the LCC graph?",
+   "answer": "Standard pod coffee machine, expensive pod coffee machine and whole bean coffee.",
+   "distractors": [
+    "Standard, tea and hot chocolate",
+    "Espresso, filter and instant",
+    "Gasoline, electric and leasing"
+   ]
+  },
+  {
+   "id": "sustainability-w06-079",
+   "question": "Which cost components appear in the coffee LCC graph?",
+   "answer": "Coffee machine, variable cost for transportation, variable cost for power and water (use phase), and variable costs for coffee and paper cups.",
+   "distractors": [
+    "Only electricity",
+    "Only coffee beans",
+    "Only the machine"
+   ]
+  },
+  {
+   "id": "sustainability-w06-080",
+   "question": "In the coffee scenario ranking, which factors are weighted?",
+   "answer": "Carbon footprint, LCC and human health.",
+   "distractors": [
+    "Water, land and energy",
+    "Cost, taste and speed",
+    "Noise, smell and size"
+   ]
+  },
+  {
+   "id": "sustainability-w06-081",
+   "question": "What is the gasoline vs electric vehicle exercise?",
+   "answer": "Use LCC to compute the lifetime cost of a gasoline car, an electric car and a leased electric car, then use AHP for different weight ratios.",
+   "distractors": [
+    "Use LCA to compute the carbon footprint of cars",
+    "Use S-LCA for working conditions",
+    "Use CBA for road building"
+   ]
+  },
+  {
+   "id": "sustainability-w06-082",
+   "question": "Which e-LCA to LCC weight ratios are tested in the vehicle exercise?",
+   "answer": "3:1, 1:3 and 1:1.",
+   "distractors": [
+    "5:1, 1:5 and 2:2",
+    "9:1, 1:9 and 3:3",
+    "1:2, 2:1 and 2:3"
+   ]
+  },
+  {
+   "id": "sustainability-w06-083",
+   "question": "In the vehicle exercise, which scenarios are assessed?",
+   "answer": "Gasoline car, electric car and leasing an electric car.",
+   "distractors": [
+    "Bike, bus and train",
+    "Gasoline, diesel and hybrid",
+    "Electric, hydrogen and walking"
+   ]
+  },
+  {
+   "id": "sustainability-w06-084",
+   "question": "What are the instructions for the scenario ranking sheet?",
+   "answer": "Fill the table, link the orange cell in the 'CI' sheet to the 'Scenario ranking' sheet to display the pairwise comparison, and find the ranking for various weight ratios.",
+   "distractors": [
+    "Fill the cost sheet and send it",
+    "Link the carbon sheet to the health sheet",
+    "Delete the CI sheet"
+   ]
+  },
+  {
+   "id": "sustainability-w06-085",
+   "question": "What is the scaling effect in economic feasibility?",
+   "answer": "As production scale increases, per-unit fixed costs are spread over more output and per-unit variable costs decrease due to efficiency.",
+   "distractors": [
+    "Costs increase with scale",
+    "Scale has no effect on cost",
+    "Variable costs always increase"
+   ]
+  },
+  {
+   "id": "sustainability-w06-086",
+   "question": "What is the two-thirds rule?",
+   "answer": "C2 = C1 × (S2/S1)^n with scaling factor n ≈ 0.67.",
+   "distractors": [
+    "C2 = C1 × (S2/S1) with n = 1",
+    "C2 = C1 + n",
+    "C2 = C1 / n"
+   ]
+  },
+  {
+   "id": "sustainability-w06-087",
+   "question": "What do C and S denote in the scaling equation?",
+   "answer": "C is cost at a given scale and S is capacity at that scale.",
+   "distractors": [
+    "C is carbon and S is sustainability",
+    "C is capital and S is savings",
+    "C is consumption and S is supply"
+   ]
+  },
+  {
+   "id": "sustainability-w06-088",
+   "question": "By what factor does cost grow if capacity doubles under the 0.67 rule?",
+   "answer": "2^0.67 ≈ 1.59.",
+   "distractors": [
+    "2",
+    "1.33",
+    "0.67"
+   ]
+  },
+  {
+   "id": "sustainability-w06-089",
+   "question": "How does the LCA/LCC combination apply to a case study?",
+   "answer": "Both share the functional unit, system boundaries, life cycle stages and process inventory; add prices (cost elements and revenues) next to CO2 emissions.",
+   "distractors": [
+    "Use different functional units for each",
+    "Use only prices",
+    "Use only emissions"
+   ]
+  }
+ ]
+}

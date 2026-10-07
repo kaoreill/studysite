@@ -95,7 +95,7 @@
       "weeks": [
         {
           "week": 1,
-          "title": "Introduction to Sustainability Metrics",
+          "title": "Problems, relevance and obligations",
           "pdfs": [
             {
               "name": "Lecture 1 slides",
@@ -106,9 +106,9 @@
         },
         {
           "week": 2,
-          "title": "",
+          "title": "The assessment framework and functional unit",
           "pdfs": [],
-          "cards": null
+          "cards": "week-02.json"
         },
         {
           "week": 3,
@@ -118,21 +118,21 @@
         },
         {
           "week": 4,
-          "title": "",
+          "title": "Environmental indicators and carbon footprint",
           "pdfs": [],
-          "cards": null
+          "cards": "week-04.json"
         },
         {
           "week": 5,
-          "title": "",
+          "title": "Social aspects and health impacts",
           "pdfs": [],
-          "cards": null
+          "cards": "week-05.json"
         },
         {
           "week": 6,
-          "title": "",
+          "title": "Economic dimension: LCC and AHP",
           "pdfs": [],
-          "cards": null
+          "cards": "week-06.json"
         },
         {
           "week": 7,

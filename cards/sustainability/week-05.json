@@ -1,0 +1,947 @@
+{
+ "module": "sustainability",
+ "week": 5,
+ "title": "Social aspects and health impacts",
+ "cards": [
+  {
+   "id": "sustainability-w05-001",
+   "question": "What does DALY stand for?",
+   "answer": "Disability-Adjusted Life Years.",
+   "distractors": [
+    "Daily Adjusted Life Yield",
+    "Disease And Life Years",
+    "Death-Adjusted Lifetime Years"
+   ]
+  },
+  {
+   "id": "sustainability-w05-002",
+   "question": "What does 1 DALY represent?",
+   "answer": "One equivalent year of healthy life lost.",
+   "distractors": [
+    "One death",
+    "One year of hospital treatment",
+    "One year of income lost"
+   ]
+  },
+  {
+   "id": "sustainability-w05-003",
+   "question": "How is DALY calculated?",
+   "answer": "DALY = YLL + YLD (years of life lost plus years lived with disability).",
+   "distractors": [
+    "DALY = YLL × YLD",
+    "DALY = YLL − YLD",
+    "DALY = deaths / population"
+   ]
+  },
+  {
+   "id": "sustainability-w05-004",
+   "question": "What do YLL and YLD stand for?",
+   "answer": "Years of Life Lost (premature mortality) and Years Lived with Disability (morbidity).",
+   "distractors": [
+    "Years of Life Lived and Years of Life Disabled for the entire population",
+    "Yearly Lost Life and Yearly Longevity Data",
+    "Years Left to Live and Years Left Disabled"
+   ]
+  },
+  {
+   "id": "sustainability-w05-005",
+   "question": "What is the difference between YLL and YLD?",
+   "answer": "YLL counts years lost through early death; YLD counts years lived in less than full health.",
+   "distractors": [
+    "YLL counts disability; YLD counts death",
+    "YLL is for children; YLD is for adults",
+    "YLL is measured in money; YLD in years"
+   ]
+  },
+  {
+   "id": "sustainability-w05-006",
+   "question": "What gap does the burden of disease measure?",
+   "answer": "The gap between current health status and an ideal situation where everyone lives into old age free of disease and disability.",
+   "distractors": [
+    "The gap between rich and poor countries",
+    "The gap between births and deaths",
+    "The gap between health spending and income"
+   ]
+  },
+  {
+   "id": "sustainability-w05-007",
+   "question": "How is YLL calculated?",
+   "answer": "YLL = N × L, with N the number of deaths and L the standard life expectancy at the age of death.",
+   "distractors": [
+    "YLL = I × DW × L",
+    "YLL = N / L",
+    "YLL = N + L"
+   ]
+  },
+  {
+   "id": "sustainability-w05-008",
+   "question": "How is YLD calculated?",
+   "answer": "YLD = I × DW × L, with I incident cases, DW disability weight and L average duration until remission or death.",
+   "distractors": [
+    "YLD = N × L",
+    "YLD = I + DW + L",
+    "YLD = DW / (I × L)"
+   ]
+  },
+  {
+   "id": "sustainability-w05-009",
+   "question": "What is a disability weight (DW)?",
+   "answer": "A factor between 0 and 1 expressing the severity of a health condition relative to full health.",
+   "distractors": [
+    "The body weight of a patient",
+    "The number of days in hospital",
+    "The cost of treatment"
+   ]
+  },
+  {
+   "id": "sustainability-w05-010",
+   "question": "In the example, a person gets cancer at 72 and dies at 75, with life expectancy at 75 of 90.3 years. What is the YLL?",
+   "answer": "About 15.3 years (90.3 − 75).",
+   "distractors": [
+    "About 3 years",
+    "About 18.3 years",
+    "About 90.3 years"
+   ]
+  },
+  {
+   "id": "sustainability-w05-011",
+   "question": "In the same example the total is 16.2 DALY. What does this imply for the YLD?",
+   "answer": "About 0.9 years (16.2 − 15.3).",
+   "distractors": [
+    "About 15.3 years",
+    "About 3 years",
+    "About 16.2 years"
+   ]
+  },
+  {
+   "id": "sustainability-w05-012",
+   "question": "How is the GBD standard life expectancy table constructed?",
+   "answer": "From the lowest estimated age-specific mortality rates from all locations with populations over 5 million in the 2013 GBD iteration.",
+   "distractors": [
+    "From the average life expectancy in the world",
+    "From the Danish life expectancy table",
+    "From the highest age-specific mortality rates"
+   ]
+  },
+  {
+   "id": "sustainability-w05-013",
+   "question": "What does the Global Burden of Disease project provide?",
+   "answer": "Worldwide comparison of health status, causes of death and risk factors for 153 countries.",
+   "distractors": [
+    "Global emission factors",
+    "Global prices of food",
+    "Global trade statistics"
+   ]
+  },
+  {
+   "id": "sustainability-w05-014",
+   "question": "What is the difference between deaths and DALYs as metrics?",
+   "answer": "DALYs account for both mortality and morbidity and weigh early deaths more; deaths count only fatalities.",
+   "distractors": [
+    "Deaths account for disability; DALYs count only fatalities",
+    "They are identical",
+    "DALYs count only chronic diseases"
+   ]
+  },
+  {
+   "id": "sustainability-w05-015",
+   "question": "Why is malnutrition ranked 8th for deaths but 1st for DALYs?",
+   "answer": "Because each child death carries many years of life lost (high YLL).",
+   "distractors": [
+    "Because malnutrition causes most disabilities in adults",
+    "Because malnutrition is not fatal",
+    "Because deaths are underreported"
+   ]
+  },
+  {
+   "id": "sustainability-w05-016",
+   "question": "What are 'causes' versus 'risk factors' in the GBD?",
+   "answer": "Causes are the illnesses or injuries to which DALYs are attributed; risk factors are potentially modifiable causes of disease and injury.",
+   "distractors": [
+    "Causes are modifiable; risk factors are illnesses",
+    "They are synonyms",
+    "Causes are for countries; risk factors are for individuals"
+   ]
+  },
+  {
+   "id": "sustainability-w05-017",
+   "question": "How many main risk factors does the GBD slide list?",
+   "answer": "19 (e.g. air pollution, dietary risks, tobacco smoking, low physical activity).",
+   "distractors": [
+    "5",
+    "50",
+    "100"
+   ]
+  },
+  {
+   "id": "sustainability-w05-018",
+   "question": "Which are examples of the main GBD risk factors?",
+   "answer": "Air pollution, alcohol use, dietary risks, high blood pressure, tobacco smoking, low physical activity, unsafe water and sanitation.",
+   "distractors": [
+    "Only tobacco and alcohol",
+    "Only air pollution and noise",
+    "Only genetic factors"
+   ]
+  },
+  {
+   "id": "sustainability-w05-019",
+   "question": "What are the learning objectives of the GBD video?",
+   "answer": "Define metrics for human health impacts including mortality and morbidity, and interpret data and graphs to compare main risk factors.",
+   "distractors": [
+    "Compute carbon footprints of coffee",
+    "Define the functional unit",
+    "Compare EU regulations"
+   ]
+  },
+  {
+   "id": "sustainability-w05-020",
+   "question": "What is the dietary burden of disease in Denmark?",
+   "answer": "About 5000 deaths per year or 100,000 DALYs per year.",
+   "distractors": [
+    "About 500 deaths per year",
+    "About 50,000 deaths per year",
+    "About 1 million DALYs per year"
+   ]
+  },
+  {
+   "id": "sustainability-w05-021",
+   "question": "What is a risk ratio (RR)?",
+   "answer": "The ratio of disease risk with the exposure relative to the reference (no exposure, RR = 1).",
+   "distractors": [
+    "The ratio of deaths to births",
+    "The ratio of costs to benefits",
+    "The ratio of DALYs to YLL"
+   ]
+  },
+  {
+   "id": "sustainability-w05-022",
+   "question": "What does RR = 0.89 for legumes and ischemic heart disease mean?",
+   "answer": "An 11% reduction in IHD risk for 60 g legumes per day (1 − 0.89).",
+   "distractors": [
+    "An 89% reduction in IHD risk",
+    "An 11% increase in IHD risk",
+    "No effect"
+   ]
+  },
+  {
+   "id": "sustainability-w05-023",
+   "question": "What is the average risk reduction slope for legumes?",
+   "answer": "11% per 60 g, i.e. about 0.18% per g legumes per person per day.",
+   "distractors": [
+    "11% per g",
+    "0.89% per g",
+    "1.8% per g"
+   ]
+  },
+  {
+   "id": "sustainability-w05-024",
+   "question": "What reduction in IHD risk per g legume is used for all ages?",
+   "answer": "About 0.26% per (g legumes/pers/day).",
+   "distractors": [
+    "0.18% per g",
+    "11% per g",
+    "2.6% per g"
+   ]
+  },
+  {
+   "id": "sustainability-w05-025",
+   "question": "What is the IHD background rate in Denmark in the legume example?",
+   "answer": "1620 DALY per 100,000 per year ≈ 0.016 DALY per person per year.",
+   "distractors": [
+    "16,200 DALY per 100,000",
+    "162 DALY per 100,000",
+    "0.16 DALY per person per year"
+   ]
+  },
+  {
+   "id": "sustainability-w05-026",
+   "question": "How many minutes of healthy life are gained per g of legumes?",
+   "answer": "About 0.06 min per g (0.26% × 0.016 d/pers/d × 1440 min/d).",
+   "distractors": [
+    "About 6 min per g",
+    "About 0.006 min per g",
+    "About 60 min per g"
+   ]
+  },
+  {
+   "id": "sustainability-w05-027",
+   "question": "What does the HENI stand for?",
+   "answer": "Health Nutritional Index.",
+   "distractors": [
+    "Human Energy Nutrient Intake",
+    "Health and Environment Nutrition Indicator",
+    "Healthy Eating Nutrition Inventory"
+   ]
+  },
+  {
+   "id": "sustainability-w05-028",
+   "question": "What does HENI quantify?",
+   "answer": "Minutes of healthy life gained or lost per serving (or g) of food, for over 5800 foods.",
+   "distractors": [
+    "Calories per serving",
+    "Carbon emissions per serving",
+    "Cost per serving"
+   ]
+  },
+  {
+   "id": "sustainability-w05-029",
+   "question": "Who published HENI and where?",
+   "answer": "Stylianou et al., 2021, in Nature Food.",
+   "distractors": [
+    "Poole et al., 2017, in BMJ",
+    "Wild, 2012",
+    "Apte et al., 2015"
+   ]
+  },
+  {
+   "id": "sustainability-w05-030",
+   "question": "How many minutes of healthy life are lost per g of processed meat?",
+   "answer": "About 0.45 min per g.",
+   "distractors": [
+    "About 4.5 min per g",
+    "About 0.045 min per g",
+    "About 27 min per g"
+   ]
+  },
+  {
+   "id": "sustainability-w05-031",
+   "question": "How is the health impact of a hot dog's processed meat calculated?",
+   "answer": "61 g processed meat × 0.45 min lost/g ≈ 27 min lost.",
+   "distractors": [
+    "61 × 4.5 ≈ 274 min",
+    "61 / 0.45 ≈ 136 min",
+    "61 + 0.45 ≈ 61.5 min"
+   ]
+  },
+  {
+   "id": "sustainability-w05-032",
+   "question": "Which diseases are linked to dietary risk factors in the HENI?",
+   "answer": "Colorectal cancer, ischemic heart disease and CVD, diabetes and other diseases.",
+   "distractors": [
+    "Only cancer",
+    "Only diabetes",
+    "Only infectious diseases"
+   ]
+  },
+  {
+   "id": "sustainability-w05-033",
+   "question": "Which food components feed the HENI score?",
+   "answer": "Fibres, calcium, sodium, polyunsaturated fatty acids, trans fatty acids and processed meat, among others.",
+   "distractors": [
+    "Only sugar",
+    "Only protein",
+    "Only vitamins"
+   ]
+  },
+  {
+   "id": "sustainability-w05-034",
+   "question": "What is the iEatBetter app used for in the course?",
+   "answer": "To report dominant food items, look at two alternative foods for health and environmental impacts, and comment on the app.",
+   "distractors": [
+    "To compute carbon footprints of cars",
+    "To log physical activity",
+    "To measure air pollution"
+   ]
+  },
+  {
+   "id": "sustainability-w05-035",
+   "question": "What are the main stages of the coffee life cycle for human health?",
+   "answer": "Bean production, roasting, packaging, distribution/transport, brewing (use, with machine and cup), end of life and infrastructure.",
+   "distractors": [
+    "Only brewing",
+    "Only bean production",
+    "Only transport"
+   ]
+  },
+  {
+   "id": "sustainability-w05-036",
+   "question": "Which meta-analysis provides the coffee epidemiological evidence?",
+   "answer": "Poole et al., BMJ 2017 (with corrected RR according to BMJ 2018).",
+   "distractors": [
+    "Stylianou et al., Nature Food 2021",
+    "Apte et al., 2015",
+    "Wild, 2012"
+   ]
+  },
+  {
+   "id": "sustainability-w05-037",
+   "question": "At what coffee intake is the largest relative risk reduction found?",
+   "answer": "Three to four cups a day (3.5 on average) versus none.",
+   "distractors": [
+    "One cup a day",
+    "Seven cups a day",
+    "Ten cups a day"
+   ]
+  },
+  {
+   "id": "sustainability-w05-038",
+   "question": "What is the relative risk of cardiovascular disease for 3.5 cups of coffee a day?",
+   "answer": "0.85 (95% CI 0.80 to 0.90).",
+   "distractors": [
+    "0.83",
+    "0.82",
+    "1.31"
+   ]
+  },
+  {
+   "id": "sustainability-w05-039",
+   "question": "What is the relative risk of all-cause mortality for 3.5 cups of coffee a day?",
+   "answer": "0.83 (95% CI 0.79 to 0.88).",
+   "distractors": [
+    "0.85",
+    "0.82",
+    "0.89"
+   ]
+  },
+  {
+   "id": "sustainability-w05-040",
+   "question": "What is the relative risk of cancer for 3.5 cups of coffee a day?",
+   "answer": "0.82 (95% CI 0.74 to 0.89), i.e. 18% lower risk.",
+   "distractors": [
+    "0.85",
+    "0.83",
+    "1.22"
+   ]
+  },
+  {
+   "id": "sustainability-w05-041",
+   "question": "What is the average CVD risk reduction per cup of coffee per day?",
+   "answer": "(1 − 0.85)/3.5 ≈ 4.3% per cup/pers/day.",
+   "distractors": [
+    "15% per cup",
+    "0.85% per cup",
+    "1.5% per cup"
+   ]
+  },
+  {
+   "id": "sustainability-w05-042",
+   "question": "What is the average cancer risk reduction per cup of coffee per day?",
+   "answer": "(1 − 0.82)/3.5 ≈ 5.1% per cup/pers/day.",
+   "distractors": [
+    "18% per cup",
+    "8.2% per cup",
+    "3.5% per cup"
+   ]
+  },
+  {
+   "id": "sustainability-w05-043",
+   "question": "What is the 95% CI of the cancer risk reduction per cup of coffee?",
+   "answer": "About 3.1% to 7.4% per cup (from RR 0.89 and 0.74 divided by 3.5).",
+   "distractors": [
+    "About 18% to 26%",
+    "About 2% to 9%",
+    "About 1% to 3%"
+   ]
+  },
+  {
+   "id": "sustainability-w05-044",
+   "question": "Which harmful associations of coffee remain after adjusting for smoking?",
+   "answer": "In pregnancy: low birth weight, preterm birth and pregnancy loss with high consumption.",
+   "distractors": [
+    "Heart disease in all adults",
+    "Cancer in smokers",
+    "Diabetes in the elderly"
+   ]
+  },
+  {
+   "id": "sustainability-w05-045",
+   "question": "What are the odds ratios for low birth weight and pregnancy loss with high coffee consumption?",
+   "answer": "Low birth weight 1.31 (95% CI 1.03–1.67) and pregnancy loss 1.46 (95% CI 1.06–1.99).",
+   "distractors": [
+    "0.83 and 0.85",
+    "1.22 and 1.12",
+    "0.82 and 0.89"
+   ]
+  },
+  {
+   "id": "sustainability-w05-046",
+   "question": "How is a burden rate in DALY per 100,000 converted to minutes per person per day?",
+   "answer": "Divide by 100,000 to get DALY/pers/yr (= days lost/pers/day), then multiply by 1440 min/day.",
+   "distractors": [
+    "Multiply by 100,000 and divide by 1440",
+    "Divide by 365 only",
+    "Multiply by 24 only"
+   ]
+  },
+  {
+   "id": "sustainability-w05-047",
+   "question": "What does a burden rate of 5000 DALY/100,000 correspond to in minutes lost per person per day?",
+   "answer": "0.05 × 1440 = 72 minutes lost per person per day.",
+   "distractors": [
+    "7.2 minutes",
+    "720 minutes",
+    "50 minutes"
+   ]
+  },
+  {
+   "id": "sustainability-w05-048",
+   "question": "What is the CVD background burden in Denmark in the coffee example?",
+   "answer": "3900 DALY/100,000/yr (95% CI 3570 to 4230), i.e. 56 min lost/pers/day.",
+   "distractors": [
+    "390 DALY/100,000",
+    "39,000 DALY/100,000",
+    "5600 DALY/100,000"
+   ]
+  },
+  {
+   "id": "sustainability-w05-049",
+   "question": "How is the 95% CI of the CVD burden expressed in minutes per day?",
+   "answer": "51 to 61 minutes lost per person per day.",
+   "distractors": [
+    "5 to 6 minutes",
+    "560 to 610 minutes",
+    "40 to 70 minutes"
+   ]
+  },
+  {
+   "id": "sustainability-w05-050",
+   "question": "How are the minutes gained per cup of coffee for CVD computed?",
+   "answer": "56 min/day × 4.3% ≈ 2.4 min gained per cup.",
+   "distractors": [
+    "56 × 15% = 8.4 min",
+    "56 / 4.3 = 13 min",
+    "56 + 4.3 = 60 min"
+   ]
+  },
+  {
+   "id": "sustainability-w05-051",
+   "question": "How is a confidence interval for minutes gained per cup obtained?",
+   "answer": "By combining the low-low values of risk reduction and burden, and the high-high values.",
+   "distractors": [
+    "By adding the 95% levels",
+    "By taking the median only",
+    "By using the mean of the highest value"
+   ]
+  },
+  {
+   "id": "sustainability-w05-052",
+   "question": "Why are 'minutes gained' described as avoided minutes lost?",
+   "answer": "A health benefit reduces the burden, so minutes gained equal avoided minutes lost.",
+   "distractors": [
+    "Because benefits are paid in minutes",
+    "Because DALY equals minutes",
+    "Because gained minutes are undefined"
+   ]
+  },
+  {
+   "id": "sustainability-w05-053",
+   "question": "How is the coffee health benefit entered in the spreadsheet?",
+   "answer": "As a negative number of minutes (a negative number of minutes lost is a benefit).",
+   "distractors": [
+    "As a positive number of minutes",
+    "As a percentage",
+    "As kgCO2e"
+   ]
+  },
+  {
+   "id": "sustainability-w05-054",
+   "question": "Which two quantities are compared in the coffee health exercise?",
+   "answer": "The health benefit of drinking a cup versus the minutes lost from the production over its life cycle.",
+   "distractors": [
+    "The price of coffee versus tea",
+    "The carbon footprint versus the cost",
+    "The roasting versus brewing energy"
+   ]
+  },
+  {
+   "id": "sustainability-w05-055",
+   "question": "What does the impact assessment of the coffee spreadsheet provide in addition to carbon?",
+   "answer": "Human health, ecosystem quality and energy resource results.",
+   "distractors": [
+    "Only costs",
+    "Only social indicators",
+    "Only waste"
+   ]
+  },
+  {
+   "id": "sustainability-w05-056",
+   "question": "How should robustness of the coffee conclusion be assessed?",
+   "answer": "By considering the different coffee scenarios and the confidence intervals.",
+   "distractors": [
+    "By using a single best estimate",
+    "By ignoring uncertainty",
+    "By picking the lowest value"
+   ]
+  },
+  {
+   "id": "sustainability-w05-057",
+   "question": "What is the aim of the physical exercise session?",
+   "answer": "To compare the health impacts of transportation with the health benefit of physical exercise when walking and biking.",
+   "distractors": [
+    "To compare costs of cars and bikes",
+    "To compare noise",
+    "To compare supply chains"
+   ]
+  },
+  {
+   "id": "sustainability-w05-058",
+   "question": "What is a marginal metabolic equivalent (mMET)?",
+   "answer": "The activity intensity above rest (1 MET), used to characterise physical activity.",
+   "distractors": [
+    "A unit of mass",
+    "A unit of cost",
+    "A unit of air pollution"
+   ]
+  },
+  {
+   "id": "sustainability-w05-059",
+   "question": "How is weekly physical activity measured?",
+   "answer": "mMET × activity duration, in mMET-hours per week.",
+   "distractors": [
+    "Number of steps per day",
+    "Kilometres per year",
+    "Calories per week only"
+   ]
+  },
+  {
+   "id": "sustainability-w05-060",
+   "question": "What does the relative risk curve of physical activity cover?",
+   "answer": "Reduction in relative risk of 22 diseases as a function of weekly physical activity.",
+   "distractors": [
+    "Only heart disease",
+    "Only diabetes",
+    "Only cancer"
+   ]
+  },
+  {
+   "id": "sustainability-w05-061",
+   "question": "What is the difference between marginal and average health benefit of physical activity?",
+   "answer": "Marginal is the gain for an additional mMET-h at a given activity level; average is the gain averaged over the whole activity.",
+   "distractors": [
+    "Marginal is for men; average for women",
+    "Marginal is per km; average per day",
+    "They are identical"
+   ]
+  },
+  {
+   "id": "sustainability-w05-062",
+   "question": "How does the benefit of additional activity depend on current activity level?",
+   "answer": "It is larger for inactive people and smaller for already highly active people.",
+   "distractors": [
+    "It is equal for all",
+    "It is larger for highly active people",
+    "It is zero for inactive people"
+   ]
+  },
+  {
+   "id": "sustainability-w05-063",
+   "question": "How many physical activities does the lecture's database quantify?",
+   "answer": "825 activities, in minutes gained per hour of activity.",
+   "distractors": [
+    "25",
+    "100",
+    "8,250"
+   ]
+  },
+  {
+   "id": "sustainability-w05-064",
+   "question": "How does the health gain per km compare between walking/running and cycling?",
+   "answer": "Min gained per km is very comparable across walking or running, but depends on overall weekly activity; biking is much more beneficial outside polluted areas.",
+   "distractors": [
+    "Cycling is always worse",
+    "Walking is always worse",
+    "There is no benefit per km"
+   ]
+  },
+  {
+   "id": "sustainability-w05-065",
+   "question": "Why is the bike health benefit lower in places like New Delhi or forest fire areas?",
+   "answer": "Because air pollution (PM2.5) exposure offsets the exercise benefits.",
+   "distractors": [
+    "Because cycling is prohibited",
+    "Because bikes are heavier",
+    "Because roads are longer"
+   ]
+  },
+  {
+   "id": "sustainability-w05-066",
+   "question": "Against which reference is car driving compared in the mobility exercise?",
+   "answer": "Being inactive (1 MET), so its relevance compared to normal home activities should be discussed.",
+   "distractors": [
+    "Running (8 MET)",
+    "Cycling (6 MET)",
+    "Sleeping (0 MET)"
+   ]
+  },
+  {
+   "id": "sustainability-w05-067",
+   "question": "What are the questions of the mobility and health exercise?",
+   "answer": "Which stages dominate health impacts of gasoline and renewable electric cars, how important are exercise benefits compared to (e-)bike impacts, how relevant is the car-vs-inactive reference, and what can you do to improve your health.",
+   "distractors": [
+    "Which car is cheapest, which is fastest, and which is safest",
+    "Which fuel is cheapest and which tyre lasts longest",
+    "Which country has most bikes and which has most cars"
+   ]
+  },
+  {
+   "id": "sustainability-w05-068",
+   "question": "What is the impact assessment method that combines ecoinvent with life cycle impact in the lecture?",
+   "answer": "Impact World+ (footprint version).",
+   "distractors": [
+    "ReCiPe 1999",
+    "TRACI 2",
+    "ILCD 2011"
+   ]
+  },
+  {
+   "id": "sustainability-w05-069",
+   "question": "What are the areas of protection in the impact categories slide?",
+   "answer": "Human health (DALY), ecosystem quality (PDF·yr), and socio-economic assets ($).",
+   "distractors": [
+    "Climate, water and land",
+    "Air, water and soil",
+    "Production, use and disposal"
+   ]
+  },
+  {
+   "id": "sustainability-w05-070",
+   "question": "Which impact categories are listed in the lecture's impact framework?",
+   "answer": "Fine particulate matter, nutritional health, ionizing radiation, climate change, photochemical oxidant formation, acidification, eutrophication, land use, ozone depletion, plastic litter, water deprivation, physical activity, human toxicity, worker health, ecotoxicity and more.",
+   "distractors": [
+    "Only climate change",
+    "Only toxicity",
+    "Only land use and water"
+   ]
+  },
+  {
+   "id": "sustainability-w05-071",
+   "question": "What is the exposome?",
+   "answer": "The totality of exposures an individual is subjected to from conception to death (Wild, 2012).",
+   "distractors": [
+    "The genome of an individual",
+    "The immune system",
+    "The diet only"
+   ]
+  },
+  {
+   "id": "sustainability-w05-072",
+   "question": "Which three categories of non-genetic exposure make up the exposome?",
+   "answer": "Internal, specific external and general external.",
+   "distractors": [
+    "Chemical, physical and biological",
+    "Past, present and future",
+    "Home, work and school"
+   ]
+  },
+  {
+   "id": "sustainability-w05-073",
+   "question": "What is the formula linking phenotype to genome and exposome?",
+   "answer": "Phenotype = f(Genome, Exposome).",
+   "distractors": [
+    "Phenotype = Genome + Age",
+    "Phenotype = Exposome only",
+    "Phenotype = Genome / Exposome"
+   ]
+  },
+  {
+   "id": "sustainability-w05-074",
+   "question": "What are examples of general external exposures?",
+   "answer": "Social capital, education, financial status, psychological stress, urban-rural environment, climate.",
+   "distractors": [
+    "Radiation and infectious agents",
+    "Metabolism and hormones",
+    "Diet and tobacco"
+   ]
+  },
+  {
+   "id": "sustainability-w05-075",
+   "question": "What are examples of specific external exposures?",
+   "answer": "Radiation, infectious agents, chemical contaminants, pollutants, diet, lifestyle (tobacco, alcohol), occupation, medical interventions.",
+   "distractors": [
+    "Social capital and education",
+    "Metabolism and aging",
+    "Climate and urban-rural setting"
+   ]
+  },
+  {
+   "id": "sustainability-w05-076",
+   "question": "What are examples of internal exposures?",
+   "answer": "Metabolism, endogenous hormones, body morphology, physical activity, gut microflora, inflammation, oxidative stress, aging.",
+   "distractors": [
+    "Social capital and education",
+    "Occupation and diet",
+    "Climate and pollution"
+   ]
+  },
+  {
+   "id": "sustainability-w05-077",
+   "question": "Which five exposures does the lecture include to operationalise the exposome?",
+   "answer": "Chemicals in consumer products, outdoor and indoor PM2.5, nutrition, worker exposure and physical exercise.",
+   "distractors": [
+    "Only air and water",
+    "Only diet and sleep",
+    "Only climate and noise"
+   ]
+  },
+  {
+   "id": "sustainability-w05-078",
+   "question": "How many deaths per year does air pollution cause, according to the lecture?",
+   "answer": "About 6.5 million per year (17,800 per day), 65% in Asia and largely cardiovascular disease.",
+   "distractors": [
+    "About 65,000 per year",
+    "About 650,000 per year",
+    "About 65 million per year"
+   ]
+  },
+  {
+   "id": "sustainability-w05-079",
+   "question": "What does the candle example show about indoor fine particulates?",
+   "answer": "Indoor sources like candles can cause 1–17 minutes (medium 3.5) of healthy life lost per hour indoors.",
+   "distractors": [
+    "Candles have no impact",
+    "Candles gain healthy life",
+    "Candles cost 600 minutes per hour"
+   ]
+  },
+  {
+   "id": "sustainability-w05-080",
+   "question": "Which is far larger, PM2.5 or formaldehyde from industrial sources in Australia?",
+   "answer": "PM2.5; formaldehyde is below 0.1 min per person per day.",
+   "distractors": [
+    "Formaldehyde",
+    "They are equal",
+    "Neither is measurable"
+   ]
+  },
+  {
+   "id": "sustainability-w05-081",
+   "question": "What does USEtox characterise for consumer products?",
+   "answer": "Human health impacts of chemicals in products (DALY per kg chemical in product).",
+   "distractors": [
+    "Carbon footprints",
+    "Costs",
+    "Noise exposure"
+   ]
+  },
+  {
+   "id": "sustainability-w05-082",
+   "question": "How large are health impacts for some household product-chemical combinations on users?",
+   "answer": "Substantial: 20–1500 minutes lost per user per day for some home maintenance, cosmetics and cleaning products.",
+   "distractors": [
+    "Less than 0.1 min per day",
+    "Exactly 0",
+    "Always about 1 min per day"
+   ]
+  },
+  {
+   "id": "sustainability-w05-083",
+   "question": "Which products show impacts on freshwater ecosystems according to the lecture?",
+   "answer": "Cleaning products.",
+   "distractors": [
+    "Food products",
+    "Toys",
+    "Paints only"
+   ]
+  },
+  {
+   "id": "sustainability-w05-084",
+   "question": "What does the quantitative screening of impacts per person per day show?",
+   "answer": "The order of magnitude of different exposures, e.g. climate/PM, chemicals, food and physical activity in min gained or lost per day.",
+   "distractors": [
+    "Only costs per day",
+    "Only emissions per day",
+    "Only waste per day"
+   ]
+  },
+  {
+   "id": "sustainability-w05-085",
+   "question": "Which two health effects of exposures are gains rather than losses in the screening?",
+   "answer": "Physical exercise and some foods (net min gained per day).",
+   "distractors": [
+    "Air pollution",
+    "Occupational exposure",
+    "Climate change"
+   ]
+  },
+  {
+   "id": "sustainability-w05-086",
+   "question": "What does global trade do with respect to the health effects of production?",
+   "answer": "It distances consumers from the negative health impacts of production and displaces them onto other populations.",
+   "distractors": [
+    "It removes the health impacts",
+    "It moves impacts only within countries",
+    "It increases health impacts equally in all countries"
+   ]
+  },
+  {
+   "id": "sustainability-w05-087",
+   "question": "Which three groups are distinguished in the economic trade and life cycle model?",
+   "answer": "Producers (emitters), consumers (benefactors) and the population affected by pollution.",
+   "distractors": [
+    "Importers, exporters and traders",
+    "Governments, firms and households",
+    "Workers, owners and customers"
+   ]
+  },
+  {
+   "id": "sustainability-w05-088",
+   "question": "Which models are combined to compute the health impacts of global trade?",
+   "answer": "An environmentally extended multiregional economic trade model and a pollutant transport and impact model.",
+   "distractors": [
+    "Only an economic model",
+    "Only an epidemiological model",
+    "Only a climate model"
+   ]
+  },
+  {
+   "id": "sustainability-w05-089",
+   "question": "What are the stages of the trade-to-health model?",
+   "answer": "Production system, emission intensities, emissions, concentrations, population exposure, intake, dose-response and health impact.",
+   "distractors": [
+    "Mining, processing, trading and selling",
+    "Design, production and disposal",
+    "Collection, storage and analysis"
+   ]
+  },
+  {
+   "id": "sustainability-w05-090",
+   "question": "How many country-sectors are in the global trade network?",
+   "answer": "About 15,000 country-sectors (Kaluza et al., 2010).",
+   "distractors": [
+    "About 150",
+    "About 1,500",
+    "About 1.5 million"
+   ]
+  },
+  {
+   "id": "sustainability-w05-091",
+   "question": "How many PM-related deaths are induced by consumption per capita group in the graph?",
+   "answer": "About 46,000 deaths induced by consumption (Asia vs North America comparison).",
+   "distractors": [
+    "About 460 deaths",
+    "About 4.6 million deaths",
+    "About 4,600 deaths"
+   ]
+  },
+  {
+   "id": "sustainability-w05-092",
+   "question": "What does the global trade comparison show about Asia and North America?",
+   "answer": "The regions that produce differ from those that consume; much of the PM-related burden in Asia is induced by consumption elsewhere.",
+   "distractors": [
+    "Both regions produce and consume equally",
+    "North America bears all PM deaths",
+    "Asia consumes more than it produces"
+   ]
+  },
+  {
+   "id": "sustainability-w05-093",
+   "question": "How effective is particulate matter control technology?",
+   "answer": "Best available technology removes 99–99.9% of PM, though cost is a question.",
+   "distractors": [
+    "It removes 10%",
+    "It removes 50%",
+    "It does not work"
+   ]
+  },
+  {
+   "id": "sustainability-w05-094",
+   "question": "What was the in-class activity on the Global Burden of Disease 2019?",
+   "answer": "Rank the 19 risk factors from highest to lowest global deaths and estimate the number of deaths for the highest and lowest, without using the Internet.",
+   "distractors": [
+    "Compute carbon footprints of coffee",
+    "Install the iEatBetter app",
+    "Build a process tree"
+   ]
+  }
+ ]
+}

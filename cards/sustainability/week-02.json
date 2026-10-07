@@ -1,0 +1,907 @@
+{
+ "module": "sustainability",
+ "week": 2,
+ "title": "The assessment framework and functional unit",
+ "cards": [
+  {
+   "id": "sustainability-w02-001",
+   "question": "What is meant by the value chain being the life cycle of a product?",
+   "answer": "The whole chain of stages from cradle (raw material extraction) to grave (disposal).",
+   "distractors": [
+    "Only the manufacturing and sales stages",
+    "Only the use stage as experienced by the customer",
+    "The financial flow from supplier to retailer"
+   ]
+  },
+  {
+   "id": "sustainability-w02-002",
+   "question": "What do 'cradle to grave' mean in a life cycle perspective?",
+   "answer": "From raw material extraction (cradle) through manufacturing and use to disposal (grave).",
+   "distractors": [
+    "From product design to product launch",
+    "From factory gate to customer",
+    "From purchase to first repair"
+   ]
+  },
+  {
+   "id": "sustainability-w02-003",
+   "question": "What are the four learning outcomes of the framework video?",
+   "answer": "Illustrate the generic life cycle of products and systems, explain the fundamentals of LCA, identify indicators for life cycle sustainability assessment, and formulate a simplified assessment approach.",
+   "distractors": [
+    "Compute a carbon footprint, perform LCC, perform S-LCA and apply IPAT",
+    "Define SDGs, explain planetary boundaries, list EU regulations and design a taxonomy",
+    "Define the functional unit, build a Gantt chart, prepare a budget and write a report"
+   ]
+  },
+  {
+   "id": "sustainability-w02-004",
+   "question": "In the LCA picture, what are the technosphere and the ecosphere?",
+   "answer": "The technosphere is the human production system (activities); the ecosphere is the natural environment that supplies resources and receives emissions.",
+   "distractors": [
+    "The technosphere is the natural environment; the ecosphere is the production system",
+    "Both denote the production system, at local and global scale",
+    "The technosphere is the use stage; the ecosphere is the disposal stage"
+   ]
+  },
+  {
+   "id": "sustainability-w02-005",
+   "question": "In LCA, what flows cross the boundary between the technosphere and the ecosphere?",
+   "answer": "Resources taken from the ecosphere and emissions released to it, which lead to impacts.",
+   "distractors": [
+    "Money and labour",
+    "Products and services only",
+    "Information and regulations"
+   ]
+  },
+  {
+   "id": "sustainability-w02-006",
+   "question": "What does the life cycle inventory table of substances (e.g. CO2, SO2, NOx, lead) represent?",
+   "answer": "Collected data on emissions (to air and water) from the product system, in grams per functional unit.",
+   "distractors": [
+    "The legally allowed emission limits for a factory",
+    "The impact scores per substance",
+    "A list of materials purchased by the customer"
+   ]
+  },
+  {
+   "id": "sustainability-w02-007",
+   "question": "What are the five elements of LCA listed in the lecture?",
+   "answer": "Define the goal of assessment, scope the system, collect data on emissions and resource use, translate emissions into environmental impacts, and interpret the results.",
+   "distractors": [
+    "Define the budget, hire experts, collect samples, publish results and audit",
+    "Define the price, estimate the market, build the product, test it and sell it",
+    "Collect data, interpret it, translate it into policy, enforce it and report"
+   ]
+  },
+  {
+   "id": "sustainability-w02-008",
+   "question": "What does the goal definition step of LCA ask?",
+   "answer": "'What is the question?'",
+   "distractors": [
+    "'What is the cheapest alternative?'",
+    "'How many emissions are permitted?'",
+    "'Who is responsible for the product?'"
+   ]
+  },
+  {
+   "id": "sustainability-w02-009",
+   "question": "What is the last step of an LCA and what does it deliver?",
+   "answer": "Interpretation of results, giving the answer to the question.",
+   "distractors": [
+    "Data collection, giving the inventory",
+    "Scoping, giving the system boundary",
+    "Translation of emissions, giving the characterisation factors"
+   ]
+  },
+  {
+   "id": "sustainability-w02-010",
+   "question": "What is the difference between an inventory of emissions and an impact assessment in LCA?",
+   "answer": "The inventory quantifies emissions and resource use; the impact assessment translates them into environmental impacts.",
+   "distractors": [
+    "The inventory defines the question; the impact assessment defines the system",
+    "The inventory is for social impacts; the impact assessment is for costs",
+    "There is no difference; they are two names for the same step"
+   ]
+  },
+  {
+   "id": "sustainability-w02-011",
+   "question": "What is the fundamental focus of LCA, as shown by comparing a disposable product with a reusable one?",
+   "answer": "The focus is on the service (function) delivered, so products are compared on delivering the same function.",
+   "distractors": [
+    "The focus is on the product weight",
+    "The focus is on the production price",
+    "The focus is on the brand of the product"
+   ]
+  },
+  {
+   "id": "sustainability-w02-012",
+   "question": "Why does the lecture compare a single-use item with the same item used 30 times plus washing and transport?",
+   "answer": "To show that products must be compared on the same function, including all processes needed to deliver it, e.g. washing and transport.",
+   "distractors": [
+    "To show that reusable products are always better",
+    "To show that washing has no environmental impact",
+    "To show that only production matters"
+   ]
+  },
+  {
+   "id": "sustainability-w02-013",
+   "question": "Is LCA mainly an absolute or a comparative method?",
+   "answer": "Comparative: it tells which alternative is better, not whether it is OK for the environment in an absolute sense.",
+   "distractors": [
+    "Absolute: it tells whether the product is within planetary boundaries",
+    "Both equally, by default",
+    "Neither: it is purely descriptive"
+   ]
+  },
+  {
+   "id": "sustainability-w02-014",
+   "question": "Why is 'is better than' not the same as 'is OK for the environment'?",
+   "answer": "A better alternative may still exceed what the environment can bear; that needs an absolute perspective.",
+   "distractors": [
+    "Because LCA cannot compare alternatives",
+    "Because better always means sustainable",
+    "Because absolute limits do not exist"
+   ]
+  },
+  {
+   "id": "sustainability-w02-015",
+   "question": "What is problem shifting, and how does LCA help avoid it?",
+   "answer": "Reducing one impact while increasing another or moving it to another stage; LCA avoids it through the full life cycle and all relevant impacts.",
+   "distractors": [
+    "Moving production to another country; LCA prevents it by prohibiting transport",
+    "Shifting costs between stakeholders; LCA prevents it by pricing impacts",
+    "Shifting blame to consumers; LCA prevents it by labelling"
+   ]
+  },
+  {
+   "id": "sustainability-w02-016",
+   "question": "Which three features of LCA help avoid problem shifting?",
+   "answer": "The life cycle from cradle to grave, all relevant environmental impacts, and working environment and resource consumption (biotic and abiotic).",
+   "distractors": [
+    "Only the use stage, only carbon and only costs",
+    "Only the supplier, only the customer and only the government",
+    "Local focus, single indicator and short time horizon"
+   ]
+  },
+  {
+   "id": "sustainability-w02-017",
+   "question": "What does LCSA stand for and what does it combine?",
+   "answer": "Life Cycle Sustainability Assessment, combining LCA, Life Cycle Costing (LCC) and Social LCA (S-LCA).",
+   "distractors": [
+    "Life Cycle Systems Analysis, combining LCA, SDG and CE",
+    "Local Climate Sustainability Assessment, combining GHG, SDG and PB",
+    "Life Cycle Safety Audit, combining LCA, LCC and ISO"
+   ]
+  },
+  {
+   "id": "sustainability-w02-018",
+   "question": "What does LCC measure within LCSA?",
+   "answer": "The economic dimension: costs across the life cycle.",
+   "distractors": [
+    "The environmental impacts of production",
+    "The social impacts on workers",
+    "The carbon footprint"
+   ]
+  },
+  {
+   "id": "sustainability-w02-019",
+   "question": "What does S-LCA assess?",
+   "answer": "The social impacts of a product across its life cycle, following the UNEP guidelines.",
+   "distractors": [
+    "The economic costs across the life cycle",
+    "The environmental impacts of a product",
+    "The market share of a product"
+   ]
+  },
+  {
+   "id": "sustainability-w02-020",
+   "question": "What is the difference between LCA and LCSA?",
+   "answer": "LCA covers environmental impacts only; LCSA additionally includes economic (LCC) and social (S-LCA) impacts.",
+   "distractors": [
+    "LCA covers economy; LCSA covers environment",
+    "LCA is comparative; LCSA is absolute",
+    "LCA is qualitative; LCSA is quantitative"
+   ]
+  },
+  {
+   "id": "sustainability-w02-021",
+   "question": "Which UN body published the Guidelines for Social Life Cycle Assessment of Products and Organizations (2020)?",
+   "answer": "UNEP, the United Nations Environment Programme.",
+   "distractors": [
+    "WHO, the World Health Organization",
+    "UNDP, the United Nations Development Programme",
+    "The European Commission"
+   ]
+  },
+  {
+   "id": "sustainability-w02-022",
+   "question": "Does this course apply full LCSA?",
+   "answer": "No; it aims to cover all aspects in a life cycle perspective through a simplified approach.",
+   "distractors": [
+    "Yes, students must perform full LCSA",
+    "Only LCC is applied",
+    "Only S-LCA is applied"
+   ]
+  },
+  {
+   "id": "sustainability-w02-023",
+   "question": "What does the MECO framework stand for?",
+   "answer": "Materials, Energy, Chemicals and Others: the causes of environmental impact.",
+   "distractors": [
+    "Management, Economy, Culture and Organisation",
+    "Metals, Emissions, Carbon and Oxygen",
+    "Manufacturing, Extraction, Consumption and Opposition"
+   ]
+  },
+  {
+   "id": "sustainability-w02-024",
+   "question": "In the MECO framework, what does the 'Materials' driver contribute to?",
+   "answer": "Depletion of natural resources.",
+   "distractors": [
+    "Human and ecological toxicity",
+    "Climate change and acidification",
+    "Ozone depletion"
+   ]
+  },
+  {
+   "id": "sustainability-w02-025",
+   "question": "In the MECO framework, what impacts does 'Energy' drive?",
+   "answer": "Climate change, acidification, photochemical ozone formation, etc.",
+   "distractors": [
+    "Depletion of natural resources",
+    "Human and ecological toxicity only",
+    "Land use only"
+   ]
+  },
+  {
+   "id": "sustainability-w02-026",
+   "question": "In the MECO framework, what impacts does 'Chemicals' drive?",
+   "answer": "Human and ecological toxicity and ozone depletion.",
+   "distractors": [
+    "Depletion of natural resources",
+    "Climate change",
+    "Acidification"
+   ]
+  },
+  {
+   "id": "sustainability-w02-027",
+   "question": "In the MECO framework, what are examples of 'Others'?",
+   "answer": "Land use, water use, social impacts, etc.",
+   "distractors": [
+    "Climate change and acidification",
+    "Human toxicity and ozone depletion",
+    "Materials and energy"
+   ]
+  },
+  {
+   "id": "sustainability-w02-028",
+   "question": "Which life cycle stages does the MECO framework cross with the causes of environmental impact?",
+   "answer": "Extraction of raw materials, manufacturing stage, use stage and disposal stage.",
+   "distractors": [
+    "Design, marketing, sales and service",
+    "Planning, execution, monitoring and closing",
+    "Input, process, output and feedback"
+   ]
+  },
+  {
+   "id": "sustainability-w02-029",
+   "question": "In the Quantitative Sustainability framework, which five impact areas are listed?",
+   "answer": "Resources, environment, economic, social/health and transition.",
+   "distractors": [
+    "Climate, water, soil, air and noise",
+    "Production, use, disposal, transport and storage",
+    "Society, economy, environment, technology and policy"
+   ]
+  },
+  {
+   "id": "sustainability-w02-030",
+   "question": "How is the resources impact area measured in the framework?",
+   "answer": "By use of biotic and abiotic resources, and circular economy indicators.",
+   "distractors": [
+    "By carbon footprint and absolute boundaries",
+    "By costs",
+    "By socioeconomic and health impacts"
+   ]
+  },
+  {
+   "id": "sustainability-w02-031",
+   "question": "How is the environment impact area measured in the framework?",
+   "answer": "By climate change (carbon footprint) and absolute boundaries.",
+   "distractors": [
+    "By use of biotic and abiotic resources",
+    "By costs",
+    "By qualitative assessment"
+   ]
+  },
+  {
+   "id": "sustainability-w02-032",
+   "question": "How is the economic impact area measured in the framework?",
+   "answer": "By costs.",
+   "distractors": [
+    "By carbon footprint",
+    "By health impacts",
+    "By circular economy indicators"
+   ]
+  },
+  {
+   "id": "sustainability-w02-033",
+   "question": "How is the social/health impact area measured in the framework?",
+   "answer": "By socioeconomic impacts and health impacts.",
+   "distractors": [
+    "By costs",
+    "By carbon footprint",
+    "By circular economy indicators"
+   ]
+  },
+  {
+   "id": "sustainability-w02-034",
+   "question": "How is the transition impact area assessed in the framework?",
+   "answer": "By qualitative or semiquantitative assessment.",
+   "distractors": [
+    "By carbon footprint",
+    "By costs only",
+    "By strictly quantitative LCA"
+   ]
+  },
+  {
+   "id": "sustainability-w02-035",
+   "question": "What is the difference between the MECO framework and the Quantitative Sustainability framework?",
+   "answer": "MECO links causes (materials, energy, chemicals, others) to environmental impacts; the Quantitative Sustainability framework crosses sustainability impact areas with life cycle stages and indicators.",
+   "distractors": [
+    "MECO covers economic and social impacts; the Quantitative framework covers only environment",
+    "MECO is absolute; the Quantitative framework is comparative",
+    "They are the same framework under different names"
+   ]
+  },
+  {
+   "id": "sustainability-w02-036",
+   "question": "What are the four summary points of the framework video?",
+   "answer": "LCA is comparative and covers a life cycle; the object of assessment must be precisely defined; LCSA adds economic and social impacts; the course uses a simplified approach.",
+   "distractors": [
+    "LCA is absolute; define the budget; LCSA replaces LCA; the course uses full LCSA",
+    "LCA is qualitative; skip the object definition; LCSA is optional; the course uses only carbon",
+    "LCA is only for products; ignore use; LCSA is legal; the course uses SDGs only"
+   ]
+  },
+  {
+   "id": "sustainability-w02-037",
+   "question": "Why must the object of assessment be defined precisely?",
+   "answer": "It is needed to make a quantitative assessment and crucial for comparative assessments.",
+   "distractors": [
+    "It is needed only for legal reasons",
+    "It is needed only for the report layout",
+    "It is not needed if the product is well known"
+   ]
+  },
+  {
+   "id": "sustainability-w02-038",
+   "question": "What is the object of assessment defined through?",
+   "answer": "The function it provides: the functional unit.",
+   "distractors": [
+    "Its price",
+    "Its weight",
+    "Its brand"
+   ]
+  },
+  {
+   "id": "sustainability-w02-039",
+   "question": "Which questions does the use context ask when defining a product or system?",
+   "answer": "What it should be used for, what it does, for whom, how long and how often, and where in the world.",
+   "distractors": [
+    "Who built it, when, how cheaply and with what profit",
+    "How heavy, how colourful, how big and how new",
+    "Which legal entity, which patent, which supplier and which price"
+   ]
+  },
+  {
+   "id": "sustainability-w02-040",
+   "question": "What value does the use context focus on?",
+   "answer": "The value contribution the product delivers to the user.",
+   "distractors": [
+    "The profit for the producer",
+    "The cost of the materials",
+    "The value of the brand"
+   ]
+  },
+  {
+   "id": "sustainability-w02-041",
+   "question": "What are obligatory properties of a product?",
+   "answer": "Properties decisive for customers perceiving it as that product, possible legal requirements, and properties that help define the product.",
+   "distractors": [
+    "Properties that make the product attractive compared to competitors",
+    "Properties linked to the brand",
+    "Properties that only apply in the use stage"
+   ]
+  },
+  {
+   "id": "sustainability-w02-042",
+   "question": "What are positioning properties of a product?",
+   "answer": "Properties that make the product attractive and position it relative to comparable products.",
+   "distractors": [
+    "Properties required by law",
+    "Properties that define the product category",
+    "Properties of the production site"
+   ]
+  },
+  {
+   "id": "sustainability-w02-043",
+   "question": "What is the difference between obligatory and positioning properties?",
+   "answer": "Obligatory properties define the product and are decisive for perceiving it as such; positioning properties differentiate it from comparable products.",
+   "distractors": [
+    "Obligatory properties are optional extras; positioning properties are legal",
+    "Obligatory properties apply to cost; positioning properties apply to impact",
+    "Obligatory properties are in the use stage; positioning properties in disposal"
+   ]
+  },
+  {
+   "id": "sustainability-w02-044",
+   "question": "Which properties does the functional unit take its point of origin in?",
+   "answer": "The key obligatory property.",
+   "distractors": [
+    "The positioning properties",
+    "The price",
+    "The brand"
+   ]
+  },
+  {
+   "id": "sustainability-w02-045",
+   "question": "What does the functional unit express?",
+   "answer": "The service the product/system delivers in quantitative and qualitative terms: quantity, duration and central qualities.",
+   "distractors": [
+    "The cost of the product",
+    "The weight of the product only",
+    "The list of materials in the product"
+   ]
+  },
+  {
+   "id": "sustainability-w02-046",
+   "question": "What is the role of the functional unit in comparative studies?",
+   "answer": "It ensures equivalence between the compared services/systems.",
+   "distractors": [
+    "It determines the cheapest option",
+    "It sets the legal limits",
+    "It selects the impact categories"
+   ]
+  },
+  {
+   "id": "sustainability-w02-047",
+   "question": "Which dimensions are included in a functional unit definition?",
+   "answer": "What, how much, how well, how long (how many times) and where.",
+   "distractors": [
+    "Who, when, which brand, which colour and how expensive",
+    "Input, output, cost, waste and revenue",
+    "Materials, energy, chemicals, others and time"
+   ]
+  },
+  {
+   "id": "sustainability-w02-048",
+   "question": "What is a functional unit of a water boiler given in the lecture?",
+   "answer": "Heat 1 litre of water to the boiling point three times a day for a year in Denmark.",
+   "distractors": [
+    "Produce 1 kg of boiling water",
+    "Own one water boiler for a year",
+    "Consume 1 kWh of electricity per day"
+   ]
+  },
+  {
+   "id": "sustainability-w02-049",
+   "question": "In the water boiler example, which part of the FU states 'how much'?",
+   "answer": "1 litre of water.",
+   "distractors": [
+    "Three times a day",
+    "In Denmark",
+    "To the boiling point"
+   ]
+  },
+  {
+   "id": "sustainability-w02-050",
+   "question": "In the water boiler example, which part of the FU states 'how well'?",
+   "answer": "To the boiling point.",
+   "distractors": [
+    "For a year",
+    "Three times a day",
+    "In Denmark"
+   ]
+  },
+  {
+   "id": "sustainability-w02-051",
+   "question": "In the water boiler example, which part of the FU states 'how long'?",
+   "answer": "Three times a day for a year.",
+   "distractors": [
+    "1 litre of water",
+    "To the boiling point",
+    "In Denmark"
+   ]
+  },
+  {
+   "id": "sustainability-w02-052",
+   "question": "What is a reference flow?",
+   "answer": "The measure of outputs from processes in a given product system required to fulfil the function expressed by the functional unit (ISO 14044).",
+   "distractors": [
+    "The flow of money through the supply chain",
+    "The flow of emissions to the ecosphere",
+    "The flow of waste in disposal"
+   ]
+  },
+  {
+   "id": "sustainability-w02-053",
+   "question": "What is the difference between the functional unit and the reference flow?",
+   "answer": "The functional unit expresses the function delivered; the reference flow is the amount of product needed to deliver it.",
+   "distractors": [
+    "The functional unit is the amount of product; the reference flow is the function",
+    "The functional unit is for costs; the reference flow is for emissions",
+    "They are the same"
+   ]
+  },
+  {
+   "id": "sustainability-w02-054",
+   "question": "In the paint example, what is the reference flow for paint A and paint B?",
+   "answer": "0.67 L of water-based paint A and 0.15 L of water-based paint B.",
+   "distractors": [
+    "0.15 L of paint A and 0.67 L of paint B",
+    "1 L of each paint",
+    "0.67 L of each paint"
+   ]
+  },
+  {
+   "id": "sustainability-w02-055",
+   "question": "Why does the paint example have different reference flows for paint A and B?",
+   "answer": "Because the paints differ in performance: A needs two applications and a re-paint every 2½ years; B needs one application and lasts 5 years.",
+   "distractors": [
+    "Because they are priced differently",
+    "Because they have different colours",
+    "Because they come from different suppliers"
+   ]
+  },
+  {
+   "id": "sustainability-w02-056",
+   "question": "What is a suitable functional unit of a car, according to the lecture?",
+   "answer": "Transporting 1 passenger safely/comfortably over 1 km commuting in Europe.",
+   "distractors": [
+    "Producing 1 car with an engine",
+    "Driving a car for 10 years",
+    "Using 1 litre of petrol"
+   ]
+  },
+  {
+   "id": "sustainability-w02-057",
+   "question": "What is the reference flow of the car functional unit?",
+   "answer": "1 person-km (pers-km), or kg-km when cargo mass is transported.",
+   "distractors": [
+    "1 car",
+    "1 litre of petrol",
+    "1 kWh of electricity"
+   ]
+  },
+  {
+   "id": "sustainability-w02-058",
+   "question": "Which are obligatory properties of a car?",
+   "answer": "Transporting passengers and cargo, being safe, and fulfilling legislative requirements.",
+   "distractors": [
+    "Number of seats, motor size and acceleration",
+    "Design and luxury features",
+    "Colour and brand"
+   ]
+  },
+  {
+   "id": "sustainability-w02-059",
+   "question": "Which are positioning properties of a car?",
+   "answer": "Number of seats and size, motor size and acceleration, design and luxury features.",
+   "distractors": [
+    "Safety and legal compliance",
+    "Transporting passengers",
+    "Fulfilling environmental regulations"
+   ]
+  },
+  {
+   "id": "sustainability-w02-060",
+   "question": "Does the functional unit of a car include the amount of kilometres driven?",
+   "answer": "Yes, it is part of 'how much'.",
+   "distractors": [
+    "No, it is a design property",
+    "No, it is only part of the use stage",
+    "No, it is only a legal requirement"
+   ]
+  },
+  {
+   "id": "sustainability-w02-061",
+   "question": "Does the functional unit of a car include the number of passengers?",
+   "answer": "Yes, it is part of what is delivered (passenger transport).",
+   "distractors": [
+    "No, because it is a positioning property of the car size",
+    "No, because it is only an emission factor",
+    "No, because it is part of disposal"
+   ]
+  },
+  {
+   "id": "sustainability-w02-062",
+   "question": "Does the functional unit of a car include the car's size or fuel efficiency?",
+   "answer": "No; size and efficiency are product properties (positioning or performance), not the function.",
+   "distractors": [
+    "Yes, both are always required",
+    "Yes, size only",
+    "Yes, efficiency only"
+   ]
+  },
+  {
+   "id": "sustainability-w02-063",
+   "question": "What is a suitable functional unit of a coffee, according to the lecture?",
+   "answer": "Serving 1 dl of hot coffee once in Denmark.",
+   "distractors": [
+    "Producing 1 kg of roasted beans",
+    "Brewing coffee with 1 kWh",
+    "Selling coffee for 30 DKK"
+   ]
+  },
+  {
+   "id": "sustainability-w02-064",
+   "question": "What is the reference flow of the coffee functional unit?",
+   "answer": "1 dl of coffee.",
+   "distractors": [
+    "1 kg of beans",
+    "1 cup",
+    "1 kWh of electricity"
+   ]
+  },
+  {
+   "id": "sustainability-w02-065",
+   "question": "What are the obligatory properties of a coffee?",
+   "answer": "Hot, aroma intensity and flavour that distinguish it as coffee, and served in a drinking device.",
+   "distractors": [
+    "Roasting profile and caffeine content",
+    "Brewing method",
+    "Aroma type"
+   ]
+  },
+  {
+   "id": "sustainability-w02-066",
+   "question": "What are positioning properties of a coffee?",
+   "answer": "Roasting profile, aroma/flavour type, caffeine content, brewing method.",
+   "distractors": [
+    "Must be hot",
+    "Served in a drinking device",
+    "Must distinguish itself as coffee"
+   ]
+  },
+  {
+   "id": "sustainability-w02-067",
+   "question": "Does the functional unit of a coffee include the amount of coffee served?",
+   "answer": "Yes, it is part of 'how much'.",
+   "distractors": [
+    "No, it is only a positioning property",
+    "No, it is only a cost",
+    "No, it is part of disposal"
+   ]
+  },
+  {
+   "id": "sustainability-w02-068",
+   "question": "Does the functional unit of a coffee include the number of times the coffee is served?",
+   "answer": "Yes, it is 'how long/how many times'.",
+   "distractors": [
+    "No, it concerns only the brewing",
+    "No, only the first serving counts",
+    "No, it is part of the reference flow"
+   ]
+  },
+  {
+   "id": "sustainability-w02-069",
+   "question": "Does the functional unit of a coffee include brewing method or electricity used for brewing?",
+   "answer": "No; these are positioning properties or part of the system's inputs, not the function.",
+   "distractors": [
+    "Yes, both are always required",
+    "Yes, brewing method only",
+    "Yes, electricity only"
+   ]
+  },
+  {
+   "id": "sustainability-w02-070",
+   "question": "What does a process tree show for an EV (electric vehicle) life cycle?",
+   "answer": "The stages from raw materials extraction, manufacturing, transportation and use to end of life, with processes in each.",
+   "distractors": [
+    "Only the manufacturing steps",
+    "Only the use stage electricity",
+    "Only the recycling flows"
+   ]
+  },
+  {
+   "id": "sustainability-w02-071",
+   "question": "What are the five stages shown in the EV process flowchart?",
+   "answer": "Raw materials extraction, manufacturing processes, transportation and distribution, use stage, and end of life.",
+   "distractors": [
+    "Design, prototype, test, launch and support",
+    "Mining, smelting, casting, painting and selling",
+    "Purchase, registration, use, repair and scrapping"
+   ]
+  },
+  {
+   "id": "sustainability-w02-072",
+   "question": "Which raw materials are listed for an EV?",
+   "answer": "Lithium, cobalt, nickel, manganese, steel, aluminium, plastics and glass.",
+   "distractors": [
+    "Only steel and plastic",
+    "Only lithium and cobalt",
+    "Wood, paper and cotton"
+   ]
+  },
+  {
+   "id": "sustainability-w02-073",
+   "question": "What happens to the battery in the EV end of life stage?",
+   "answer": "It may be reused in second life (grid storage) or material recycled (hydrometallurgy).",
+   "distractors": [
+    "It is always landfilled",
+    "It is always incinerated",
+    "It is returned to the mine"
+   ]
+  },
+  {
+   "id": "sustainability-w02-074",
+   "question": "Which processes belong to the use stage of an EV?",
+   "answer": "Grid electricity consumption, routine maintenance and software updates, and replacement of consumables (tires, wipers, fluids).",
+   "distractors": [
+    "Battery pack assembly",
+    "Refining and processing of materials",
+    "Dismantling and recycling"
+   ]
+  },
+  {
+   "id": "sustainability-w02-075",
+   "question": "What is the goal of the qualitative assessment exercise in the teaching session?",
+   "answer": "To identify which life cycle stages are most important for each type of impact (resources, environment, economy, social) and why.",
+   "distractors": [
+    "To compute the carbon footprint of a coffee",
+    "To define the functional unit of a car",
+    "To calculate the reference flow of paint"
+   ]
+  },
+  {
+   "id": "sustainability-w02-076",
+   "question": "What is the IPAT equation?",
+   "answer": "I = P × A × T: impact equals population times affluence times technology.",
+   "distractors": [
+    "I = P + A + T",
+    "I = P × A / T",
+    "I = P / A × T"
+   ]
+  },
+  {
+   "id": "sustainability-w02-077",
+   "question": "What does I stand for in IPAT?",
+   "answer": "The environmental impact.",
+   "distractors": [
+    "Income",
+    "Innovation",
+    "Industry"
+   ]
+  },
+  {
+   "id": "sustainability-w02-078",
+   "question": "What do P, A and T stand for in IPAT?",
+   "answer": "P is population, A is affluence (GDP per person) and T is technology (impact per unit of GDP).",
+   "distractors": [
+    "P is production, A is activity and T is time",
+    "P is pollution, A is area and T is temperature",
+    "P is price, A is availability and T is transport"
+   ]
+  },
+  {
+   "id": "sustainability-w02-079",
+   "question": "How is IPAT written using GDP?",
+   "answer": "I = Pop × (GDP/person) × (I/GDP).",
+   "distractors": [
+    "I = Pop + GDP + (I/GDP)",
+    "I = GDP / (Pop × I)",
+    "I = Pop × I × GDP"
+   ]
+  },
+  {
+   "id": "sustainability-w02-080",
+   "question": "What does the affluence factor (GDP per person) represent?",
+   "answer": "The material standard of living.",
+   "distractors": [
+    "The environmental impact per created value",
+    "The size of the global population",
+    "The efficiency of technology"
+   ]
+  },
+  {
+   "id": "sustainability-w02-081",
+   "question": "What does the technology factor (I/GDP) represent?",
+   "answer": "The environmental impact per created value.",
+   "distractors": [
+    "The material standard of living",
+    "The size of the population",
+    "The total GDP"
+   ]
+  },
+  {
+   "id": "sustainability-w02-082",
+   "question": "Who introduced the IPAT relationship?",
+   "answer": "Ehrlich and Holdren (1971), with Commoner (1972).",
+   "distractors": [
+    "Brundtland (1987)",
+    "Richardson et al. (2023)",
+    "Hauschild et al. (2018)"
+   ]
+  },
+  {
+   "id": "sustainability-w02-083",
+   "question": "In the IPAT projection, how much will population and affluence each grow in 50 years?",
+   "answer": "Each to about 200% of today's value.",
+   "distractors": [
+    "Each to 150%",
+    "Each to 400%",
+    "Population falls while affluence doubles"
+   ]
+  },
+  {
+   "id": "sustainability-w02-084",
+   "question": "What does the IPAT projection conclude about P·A in 50 years?",
+   "answer": "Total human demand/consumption will grow by at least a factor of 4–5.",
+   "distractors": [
+    "It will remain unchanged",
+    "It will fall by half",
+    "It will grow by 20%"
+   ]
+  },
+  {
+   "id": "sustainability-w02-085",
+   "question": "What happens to total environmental impact in 50 years if the technology factor remains unchanged?",
+   "answer": "It grows accordingly, by the same factor as P·A.",
+   "distractors": [
+    "It stays the same",
+    "It decreases by half",
+    "It decreases due to affluence"
+   ]
+  },
+  {
+   "id": "sustainability-w02-086",
+   "question": "By what factor must the technology factor T be reduced to achieve environmental sustainability?",
+   "answer": "A factor of 4 to 20.",
+   "distractors": [
+    "A factor of 1.5 to 2",
+    "A factor of 100",
+    "It does not need to be reduced"
+   ]
+  },
+  {
+   "id": "sustainability-w02-087",
+   "question": "What are the take-aways of the IPAT video?",
+   "answer": "Global environmental impact is driven by human consumption and demand; technology can reduce impact (4–20 times more efficient), but consumption itself must also be addressed.",
+   "distractors": [
+    "Technology alone will solve the problem; consumption is irrelevant",
+    "Population is the only driver; technology is irrelevant",
+    "Impact is independent of consumption"
+   ]
+  },
+  {
+   "id": "sustainability-w02-088",
+   "question": "What is the rebound effect?",
+   "answer": "Efficiency gains are partly or fully offset by increased consumption, so total demand and impact may not fall.",
+   "distractors": [
+    "Impacts bounce back after a recession",
+    "A product returns to the market after being recalled",
+    "Waste returns to the producer"
+   ]
+  },
+  {
+   "id": "sustainability-w02-089",
+   "question": "Why is the rebound effect relevant to IPAT?",
+   "answer": "Because improved technology (lower T) can raise consumption (higher A), undermining the reduction.",
+   "distractors": [
+    "Because it lowers population",
+    "Because it increases the technology factor",
+    "Because it only affects costs"
+   ]
+  },
+  {
+   "id": "sustainability-w02-090",
+   "question": "What is the difference between addressing the technology factor and addressing consumption?",
+   "answer": "The technology factor reduces impact per unit of value created; addressing consumption reduces the amount of demand itself.",
+   "distractors": [
+    "Technology reduces population; consumption reduces affluence",
+    "Technology addresses costs; consumption addresses emissions",
+    "They are two names for the same measure"
+   ]
+  }
+ ]
+}

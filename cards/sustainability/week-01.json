@@ -1,37 +1,847 @@
 {
-  "module": "sustainability",
-  "week": 1,
-  "title": "Introduction to Sustainability Metrics",
-  "cards": [
-    {
-      "id": "sustainability-w01-001",
-      "question": "What does a Life Cycle Assessment (LCA) measure?",
-      "answer": "The environmental impacts of a product across its entire life cycle, from raw material extraction to disposal.",
-      "distractors": [
-        "Only the carbon emissions during manufacturing.",
-        "The financial cost of producing a product.",
-        "The market demand for a sustainable product."
-      ]
-    },
-    {
-      "id": "sustainability-w01-002",
-      "question": "What is a material flow analysis (MFA)?",
-      "answer": "A method for quantifying the flows and stocks of materials within a defined system boundary.",
-      "distractors": [
-        "A technique for forecasting stock market trends.",
-        "A survey method for measuring consumer sustainability preferences.",
-        "An audit of a company's financial statements."
-      ]
-    },
-    {
-      "id": "sustainability-w01-003",
-      "question": "What does 'planetary boundaries' refer to?",
-      "answer": "A framework defining the safe operating limits for humanity across nine interconnected environmental processes.",
-      "distractors": [
-        "The legal borders between countries with different environmental laws.",
-        "The maximum population a country can sustainably support.",
-        "A set of international trade tariffs on carbon-intensive goods."
-      ]
-    }
-  ]
+ "module": "sustainability",
+ "week": 1,
+ "title": "Problems, relevance and obligations",
+ "cards": [
+  {
+   "id": "sustainability-w01-001",
+   "question": "Which 1987 report, also known as the Brundtland report, defined sustainable development?",
+   "answer": "The World Commission on Environment and Development's report 'Our Common Future'.",
+   "distractors": [
+    "The Stockholm Declaration on the Human Environment",
+    "The Rio Declaration on Environment and Development",
+    "The Universal Declaration of Human Rights"
+   ]
+  },
+  {
+   "id": "sustainability-w01-002",
+   "question": "What is the Brundtland definition of sustainable development?",
+   "answer": "Development that meets the needs of the present without compromising the ability of future generations to meet their own needs.",
+   "distractors": [
+    "Development that maximises economic growth while limiting emissions to a fixed annual cap",
+    "Development that protects every ecosystem from any human influence",
+    "Development that guarantees equal income to all present generations"
+   ]
+  },
+  {
+   "id": "sustainability-w01-003",
+   "question": "Which three dimensions must all be fulfilled to achieve sustainability?",
+   "answer": "Society, environment and economy.",
+   "distractors": [
+    "Energy, materials and waste",
+    "Technology, policy and finance",
+    "Production, consumption and disposal"
+   ]
+  },
+  {
+   "id": "sustainability-w01-004",
+   "question": "In the three-pillar model, what does the overlap of society and economy represent?",
+   "answer": "Equitable.",
+   "distractors": [
+    "Bearable",
+    "Viable",
+    "Sustainable"
+   ]
+  },
+  {
+   "id": "sustainability-w01-005",
+   "question": "In the three-pillar model, what does the overlap of society and environment represent?",
+   "answer": "Bearable.",
+   "distractors": [
+    "Equitable",
+    "Viable",
+    "Sustainable"
+   ]
+  },
+  {
+   "id": "sustainability-w01-006",
+   "question": "In the three-pillar model, what does the overlap of environment and economy represent?",
+   "answer": "Viable.",
+   "distractors": [
+    "Equitable",
+    "Bearable",
+    "Sustainable"
+   ]
+  },
+  {
+   "id": "sustainability-w01-007",
+   "question": "In the three-pillar model, where does 'sustainable' sit?",
+   "answer": "At the centre where society, environment and economy all overlap.",
+   "distractors": [
+    "In the overlap of only society and economy",
+    "In the overlap of only environment and economy",
+    "In the environment circle alone"
+   ]
+  },
+  {
+   "id": "sustainability-w01-008",
+   "question": "Which pillar is described as Earth's life support system, and which as human societies and economies?",
+   "answer": "Environment is Earth's life support system; society and economy are the human systems that depend on it.",
+   "distractors": [
+    "Economy is Earth's life support system; society and environment are human systems",
+    "Society is Earth's life support system; economy and environment are human systems",
+    "All three pillars are described as human systems"
+   ]
+  },
+  {
+   "id": "sustainability-w01-009",
+   "question": "Why must sustainability assessment consider all three dimensions rather than only the environment?",
+   "answer": "Because sustainability is achieved only when the social, economic and environmental dimensions are all fulfilled together.",
+   "distractors": [
+    "Because the environmental dimension is legally irrelevant to engineers",
+    "Because economic and social dimensions can substitute for a poor environmental result",
+    "Because assessing one dimension automatically covers the others"
+   ]
+  },
+  {
+   "id": "sustainability-w01-010",
+   "question": "What is the key message about human activities and the environment in the 'What is sustainability?' introduction?",
+   "answer": "The environment is challenged by human activities, so we need to reduce our environmental impact to stay within the planetary boundaries.",
+   "distractors": [
+    "The environment is unaffected by human activities at current scales",
+    "Environmental impacts are only a local problem with no global consequences",
+    "Economic growth alone will restore planetary boundaries"
+   ]
+  },
+  {
+   "id": "sustainability-w01-011",
+   "question": "What is the Stockholm Declaration of 1972 described as in the origin of today's SDGs?",
+   "answer": "Consensus I: our activities, particularly industrialisation, are impacting the global environment, so we need to assess and manage that impact.",
+   "distractors": [
+    "Consensus II: a reconciliation of environment with economic development and human rights",
+    "A declaration that human beings are born free and equal in dignity and rights",
+    "A report that defined sustainable development for future generations"
+   ]
+  },
+  {
+   "id": "sustainability-w01-012",
+   "question": "What did the 1992 Rio Declaration aim to reconcile?",
+   "answer": "The Stockholm Declaration (environment) with economic development and the Universal Declaration of Human Rights.",
+   "distractors": [
+    "The Brundtland report with the EU Taxonomy",
+    "The Paris Agreement with the Green Deal",
+    "The Stockholm Declaration with the SDG progress reports"
+   ]
+  },
+  {
+   "id": "sustainability-w01-013",
+   "question": "From which two interacting forces did the modern sustainability concept emerge?",
+   "answer": "Economic development and environmentalism.",
+   "distractors": [
+    "Industrial policy and consumer demand",
+    "Human rights and military security only",
+    "Technology and population growth"
+   ]
+  },
+  {
+   "id": "sustainability-w01-014",
+   "question": "According to the Rio Declaration, who is at the centre of concerns for sustainable development?",
+   "answer": "Human beings.",
+   "distractors": [
+    "Ecosystems",
+    "Economies",
+    "Future technologies"
+   ]
+  },
+  {
+   "id": "sustainability-w01-015",
+   "question": "According to the Rio Declaration, what role should environmental protection have in the development process?",
+   "answer": "It shall constitute an integral part of the development process.",
+   "distractors": [
+    "It shall be pursued only after development goals are met",
+    "It shall be a voluntary add-on to development",
+    "It shall replace development in vulnerable regions"
+   ]
+  },
+  {
+   "id": "sustainability-w01-016",
+   "question": "According to the Rio Declaration, whose developmental and environmental needs should be met equitably?",
+   "answer": "Those of present and future generations.",
+   "distractors": [
+    "Those of the present generation only",
+    "Those of developed countries only",
+    "Those of ecosystems only"
+   ]
+  },
+  {
+   "id": "sustainability-w01-017",
+   "question": "What are the two reasons given for why the Rio consensus was needed (beyond reconciling Stockholm with development)?",
+   "answer": "It was needed for global security and to adhere to Universal Human Rights.",
+   "distractors": [
+    "It was needed for trade liberalisation and carbon pricing",
+    "It was needed for biodiversity targets and resource scarcity quotas",
+    "It was needed for corporate reporting and taxation"
+   ]
+  },
+  {
+   "id": "sustainability-w01-018",
+   "question": "In which year was the Universal Declaration of Human Rights adopted, and why does it matter for sustainability obligations?",
+   "answer": "1948; it is one of the foundations that Rio reconciled with environmental protection and development.",
+   "distractors": [
+    "1972; it started the call to assess the impacts of industrialisation",
+    "1987; it defined sustainable development",
+    "1992; it defined the three pillars"
+   ]
+  },
+  {
+   "id": "sustainability-w01-019",
+   "question": "What does Article 1 of the Universal Declaration of Human Rights state?",
+   "answer": "All human beings are born free and equal in dignity and rights.",
+   "distractors": [
+    "Everyone has the right to a standard of living adequate for health and well-being",
+    "Everyone is entitled to all rights and freedoms without distinction of any kind",
+    "Everyone has the right to a clean and healthy environment"
+   ]
+  },
+  {
+   "id": "sustainability-w01-020",
+   "question": "What does Article 2 of the Universal Declaration of Human Rights state?",
+   "answer": "Everyone is entitled to all the rights and freedoms set forth in the Declaration, without distinction of any kind.",
+   "distractors": [
+    "All human beings are born free and equal in dignity and rights",
+    "Everyone has the right to a standard of living adequate for health and well-being",
+    "Everyone has the right to work and to equal pay"
+   ]
+  },
+  {
+   "id": "sustainability-w01-021",
+   "question": "What does Article 25 of the Universal Declaration of Human Rights state?",
+   "answer": "Everyone has the right to a standard of living adequate for the health and well-being of himself and of his family.",
+   "distractors": [
+    "All human beings are born free and equal in dignity and rights",
+    "Everyone is entitled to all rights and freedoms without distinction of any kind",
+    "Everyone has the right to participate in decisions on resource use"
+   ]
+  },
+  {
+   "id": "sustainability-w01-022",
+   "question": "What is the difference between the Stockholm Declaration (1972) and the Rio Declaration (1992) in terms of focus?",
+   "answer": "Stockholm focused on assessing and managing human impact on the global environment; Rio reconciled this with economic development and human rights.",
+   "distractors": [
+    "Stockholm defined the SDGs; Rio defined the planetary boundaries",
+    "Stockholm focused on human rights; Rio focused on the EU Taxonomy",
+    "Stockholm reconciled environment with development; Rio focused on industrial impacts"
+   ]
+  },
+  {
+   "id": "sustainability-w01-023",
+   "question": "What is the central economic claim of the European Green Deal as shown in the lecture?",
+   "answer": "Economic growth is decoupled from greenhouse gas emissions.",
+   "distractors": [
+    "Economic growth must be reduced to cut emissions",
+    "Emissions grow proportionally to economic growth",
+    "Greenhouse gas emissions are offset entirely by taxation"
+   ]
+  },
+  {
+   "id": "sustainability-w01-024",
+   "question": "What is the purpose of the EU Taxonomy?",
+   "answer": "To define environmentally sustainable economic activities.",
+   "distractors": [
+    "To set carbon prices for all EU industries",
+    "To rank countries by SDG progress",
+    "To list banned chemicals in the EU"
+   ]
+  },
+  {
+   "id": "sustainability-w01-025",
+   "question": "What is the EU Taxonomy intended to incentivise?",
+   "answer": "Transitions to 'sustainable' activities and investments.",
+   "distractors": [
+    "Reduction of imports from outside the EU",
+    "Increased consumption of renewable materials only",
+    "Compliance with the Universal Declaration of Human Rights"
+   ]
+  },
+  {
+   "id": "sustainability-w01-026",
+   "question": "In 'From commitments to regulations', what do the overlapping areas of the three-pillar model map to?",
+   "answer": "Permissible activities and value creation.",
+   "distractors": [
+    "Carbon budgets and planetary boundaries",
+    "Equitable and bearable only",
+    "Taxation and subsidies"
+   ]
+  },
+  {
+   "id": "sustainability-w01-027",
+   "question": "How does the lecture connect global commitments to engineering practice?",
+   "answer": "Commitments such as the declarations become regulations (e.g. the EU Taxonomy) that define which activities are permissible and where value is created.",
+   "distractors": [
+    "Commitments are only symbolic and do not affect practice",
+    "Commitments apply to governments only and never to engineering design",
+    "Commitments replace the need for quantitative assessment"
+   ]
+  },
+  {
+   "id": "sustainability-w01-028",
+   "question": "Which organisation's report is cited for progress towards the SDGs in the introductory video?",
+   "answer": "The United Nations (UN SDG Report 2025).",
+   "distractors": [
+    "The International Energy Agency",
+    "The European Commission",
+    "The Stockholm Resilience Centre"
+   ]
+  },
+  {
+   "id": "sustainability-w01-029",
+   "question": "What does the planetary boundaries framework (Richardson et al., 2023) address?",
+   "answer": "Limits for Earth system processes that humanity should stay within to avoid risking the planet.",
+   "distractors": [
+    "National emission targets set by the EU",
+    "A list of SDG indicators for each country",
+    "Economic limits for corporate growth"
+   ]
+  },
+  {
+   "id": "sustainability-w01-030",
+   "question": "Why does the introductory video show PCB concentrations in Arctic animals?",
+   "answer": "To illustrate pollution: persistent chemicals accumulate in top predators to levels at which effects (e.g. reduced reproduction, immune effects) are seen.",
+   "distractors": [
+    "To show that PCBs are no longer present in the Arctic",
+    "To illustrate resource scarcity of arctic fish",
+    "To show greenhouse gas uptake by marine mammals"
+   ]
+  },
+  {
+   "id": "sustainability-w01-031",
+   "question": "What effect threshold is shown for seals in the PCB figure?",
+   "answer": "Reduced reproduction at about 25,000 ng/g fat.",
+   "distractors": [
+    "50% survival of mink at 50 ng/g fat",
+    "Immune effects in rhesus monkeys at 1,000,000 ng/g fat",
+    "Memory effects in man at 500,000 ng/g fat"
+   ]
+  },
+  {
+   "id": "sustainability-w01-032",
+   "question": "In the PCB figure, what do LOAEL and NOAEL stand for?",
+   "answer": "Lowest observed adverse effect level and no observed adverse effect level.",
+   "distractors": [
+    "Lowest observed acceptable emission level and no observed acceptable emission level",
+    "Limit of annual exposure level and norm of annual exposure level",
+    "Local organism adverse exposure limit and national organism adverse exposure limit"
+   ]
+  },
+  {
+   "id": "sustainability-w01-033",
+   "question": "What is the difference between LOAEL and NOAEL?",
+   "answer": "LOAEL is the lowest dose at which an adverse effect is observed; NOAEL is the highest dose at which no adverse effect is observed.",
+   "distractors": [
+    "LOAEL applies to humans and NOAEL to animals",
+    "LOAEL is a legal limit and NOAEL is a measured value",
+    "LOAEL is the highest dose with no effect and NOAEL is the lowest dose with an effect"
+   ]
+  },
+  {
+   "id": "sustainability-w01-034",
+   "question": "What does the biodiversity slide in the introduction warn about?",
+   "answer": "Biodiversity is threatened by human activities.",
+   "distractors": [
+    "Biodiversity is increasing due to protected areas",
+    "Biodiversity is only threatened in the Arctic",
+    "Biodiversity loss is already reversed"
+   ]
+  },
+  {
+   "id": "sustainability-w01-035",
+   "question": "What trend does the IEA (2019) figure show about key materials?",
+   "answer": "Growth in demand for key materials, e.g. for clean energy transitions.",
+   "distractors": [
+    "A decline in demand for materials as clean energy grows",
+    "Constant demand for key materials",
+    "Falling material demand through efficiency alone"
+   ]
+  },
+  {
+   "id": "sustainability-w01-036",
+   "question": "What are the three learning outcomes of the 'What is sustainability?' video?",
+   "answer": "Explain the definition of sustainability, explain the three pillars, and explain that our planet is at risk environmentally and that we need to reduce our impacts.",
+   "distractors": [
+    "Define LCA, compute a carbon footprint and perform a cost analysis",
+    "Explain the SDGs, planetary boundaries and circular economy",
+    "Explain EU law, the Taxonomy and carbon taxes"
+   ]
+  },
+  {
+   "id": "sustainability-w01-037",
+   "question": "What are the three key take-aways of the 'What is sustainability?' video?",
+   "answer": "Assessment should consider social, economic and environmental dimensions; the environment is challenged by human activities; we must reduce impact to stay within the planetary boundaries.",
+   "distractors": [
+    "Only the environment needs quantitative assessment; economy is secondary; SDGs are legally binding",
+    "Growth must stop; technology cannot help; regulation is irrelevant",
+    "Only the economy matters; social aspects are optional; environment is stable"
+   ]
+  },
+  {
+   "id": "sustainability-w01-038",
+   "question": "Why use quantitative methods to assess sustainability?",
+   "answer": "'You cannot manage what you cannot measure.'",
+   "distractors": [
+    "Because qualitative methods are not permitted in sustainability work",
+    "Because quantitative results are always certain",
+    "Because the SDGs require numerical targets for each engineer"
+   ]
+  },
+  {
+   "id": "sustainability-w01-039",
+   "question": "Why does the course target all engineers?",
+   "answer": "Engineers have a special role to play in sustainability practices.",
+   "distractors": [
+    "Only environmental engineers are responsible for sustainability",
+    "Sustainability is mainly an economic matter",
+    "Engineers are exempt from social responsibility"
+   ]
+  },
+  {
+   "id": "sustainability-w01-040",
+   "question": "Why does the course have different teachers for each module?",
+   "answer": "To give insight into different sustainability perspectives and expertise at DTU.",
+   "distractors": [
+    "Because no single teacher is qualified",
+    "To reduce the workload of the main course responsible",
+    "To rotate who grades the exam"
+   ]
+  },
+  {
+   "id": "sustainability-w01-041",
+   "question": "What is the purpose of the course content?",
+   "answer": "To provide a sustainability foundation for all engineers.",
+   "distractors": [
+    "To train specialists in life cycle assessment only",
+    "To teach regulatory law",
+    "To prepare students for the EU Taxonomy only"
+   ]
+  },
+  {
+   "id": "sustainability-w01-042",
+   "question": "Why is the course structured with diverse modules from different departments?",
+   "answer": "Students are exposed to diverse quantitative challenges across disciplines and must create a 'red thread' relevant to them through the case study work.",
+   "distractors": [
+    "Students must use every module for every case study",
+    "Students only need to pick one module",
+    "The modules are independent and unrelated"
+   ]
+  },
+  {
+   "id": "sustainability-w01-043",
+   "question": "Do students need to use all teaching modules for all case studies?",
+   "answer": "No, they should not expect to; they select what is relevant to their case study.",
+   "distractors": [
+    "Yes, all modules must be used in every case study",
+    "Only the first three modules are used",
+    "Only the exam covers all modules"
+   ]
+  },
+  {
+   "id": "sustainability-w01-044",
+   "question": "Who is the main course responsible for Quantitative methods to assess sustainability?",
+   "answer": "David Lusseau, professor at DTU Aqua.",
+   "distractors": [
+    "Stig Irving Olsen, associate professor at DTU Sustain",
+    "Olivier Jolliet, professor at DTU Sustain",
+    "Michael Hauschild, professor at DTU Sustain"
+   ]
+  },
+  {
+   "id": "sustainability-w01-045",
+   "question": "Who teaches the module on assessment framework and functional units?",
+   "answer": "Stig Irving Olsen, associate professor at DTU Sustain.",
+   "distractors": [
+    "Olivier Jolliet",
+    "Michael Hauschild",
+    "Tim McAloone"
+   ]
+  },
+  {
+   "id": "sustainability-w01-046",
+   "question": "Who teaches the modules on carbon footprint and environmental indicators and on health dimensions?",
+   "answer": "Olivier Jolliet, professor at DTU Sustain.",
+   "distractors": [
+    "Michael Hauschild",
+    "Georgios Manthos",
+    "Asger Bech Abrahamsen"
+   ]
+  },
+  {
+   "id": "sustainability-w01-047",
+   "question": "Which module covers planetary boundaries and absolute sustainability, and who teaches it?",
+   "answer": "Planetary boundaries and absolute sustainability, taught by Michael Hauschild.",
+   "distractors": [
+    "Resource management, criticality and scarcity, taught by David Lusseau",
+    "Circular economy, taught by Tim McAloone",
+    "Economic dimension, taught by Georgios Manthos"
+   ]
+  },
+  {
+   "id": "sustainability-w01-048",
+   "question": "Which module covers resource management, criticality and scarcity, and who teaches it?",
+   "answer": "David Lusseau, professor at DTU Aqua.",
+   "distractors": [
+    "Asger Bech Abrahamsen, DTU Wind",
+    "Georgios Manthos, DTU Sustain",
+    "Tim McAloone, DTU Construct"
+   ]
+  },
+  {
+   "id": "sustainability-w01-049",
+   "question": "Which module covers energy systems and transition/decarbonization, and who teaches it?",
+   "answer": "Asger Bech Abrahamsen, senior researcher at DTU Wind.",
+   "distractors": [
+    "Tim McAloone, DTU Construct",
+    "David Lusseau, DTU Aqua",
+    "Olivier Jolliet, DTU Sustain"
+   ]
+  },
+  {
+   "id": "sustainability-w01-050",
+   "question": "Which module covers the economic dimension, and who teaches it?",
+   "answer": "Georgios Manthos, postdoc at DTU Sustain.",
+   "distractors": [
+    "Asger Bech Abrahamsen, senior researcher at DTU Wind",
+    "Elena Corella Puertas, assistant professor",
+    "Niklas Braarud Jordal, coordinator"
+   ]
+  },
+  {
+   "id": "sustainability-w01-051",
+   "question": "Who teaches the circular economy module?",
+   "answer": "Tim McAloone (professor) and Giovana Monteiro Gomas (researcher), both at DTU Construct.",
+   "distractors": [
+    "David Lusseau and Stig Irving Olsen",
+    "Michael Hauschild and Olivier Jolliet",
+    "Asger Bech Abrahamsen and Georgios Manthos"
+   ]
+  },
+  {
+   "id": "sustainability-w01-052",
+   "question": "Who teaches the sustainability transitions module?",
+   "answer": "David Lusseau, professor at DTU Aqua.",
+   "distractors": [
+    "Tim McAloone, DTU Construct",
+    "Stig Irving Olsen, DTU Sustain",
+    "Georgios Manthos, DTU Sustain"
+   ]
+  },
+  {
+   "id": "sustainability-w01-053",
+   "question": "Who is the course coordinator?",
+   "answer": "Niklas Braarud Jordal, academic employee at DTU Sustain.",
+   "distractors": [
+    "Elena Corella Puertas",
+    "Stig Irving Olsen",
+    "Giovana Monteiro Gomas"
+   ]
+  },
+  {
+   "id": "sustainability-w01-054",
+   "question": "Who are the course co-responsibles?",
+   "answer": "Elena Corella Puertas (assistant professor) and Stig Irving Olsen (associate professor), both DTU Sustain.",
+   "distractors": [
+    "Olivier Jolliet and Michael Hauschild",
+    "Tim McAloone and Asger Bech Abrahamsen",
+    "Georgios Manthos and Niklas Braarud Jordal"
+   ]
+  },
+  {
+   "id": "sustainability-w01-055",
+   "question": "What is the role of the teaching assistants?",
+   "answer": "They supervise and guide students through both the general modules and the case study teaching, and are present during the 2-hour teaching sessions.",
+   "distractors": [
+    "They grade the written exam",
+    "They assign the final grade for task 3",
+    "They deliver the video lectures"
+   ]
+  },
+  {
+   "id": "sustainability-w01-056",
+   "question": "How long is a teaching session, and what does it contain?",
+   "answer": "2 hours with teacher and teaching assistants, focused on exercises, follow-up and supervision.",
+   "distractors": [
+    "1 hour of lecture only",
+    "4 hours of lecture with no exercises",
+    "2 hours of group presentations only"
+   ]
+  },
+  {
+   "id": "sustainability-w01-057",
+   "question": "What should students do before a general-module teaching session?",
+   "answer": "Watch the video lectures, read the literature and do the self-assessment (if any).",
+   "distractors": [
+    "Submit the task for peer feedback",
+    "Attend the exam",
+    "Form the case-study group"
+   ]
+  },
+  {
+   "id": "sustainability-w01-058",
+   "question": "What is the difference between a general module teaching session and a case study teaching session?",
+   "answer": "General sessions focus on exercises on a topic with tool explanation; case study sessions are case-study specific.",
+   "distractors": [
+    "General sessions are for peer feedback; case sessions are for the exam",
+    "General sessions are online; case sessions are on campus",
+    "General sessions are optional; case sessions are exams"
+   ]
+  },
+  {
+   "id": "sustainability-w01-059",
+   "question": "How are teaching rooms organised?",
+   "answer": "They are the same for general modules and case study teaching, with one teaching assistant per room.",
+   "distractors": [
+    "Each module has a separate room with no assistant",
+    "Rooms change each week with no assistant",
+    "One teaching assistant covers all rooms"
+   ]
+  },
+  {
+   "id": "sustainability-w01-060",
+   "question": "What is the structure of the W1 teaching session?",
+   "answer": "Introduction (15 min), peer-to-peer discussions (20 min), course formalities (35 min), introduction to group formation (5 min), group formation (25 min).",
+   "distractors": [
+    "Lecture (60 min), exercise (30 min), exam (30 min)",
+    "Introduction (5 min), group formation (60 min), formalities (55 min)",
+    "Peer discussions (60 min), formalities (30 min), exam (30 min)"
+   ]
+  },
+  {
+   "id": "sustainability-w01-061",
+   "question": "What is the first peer-to-peer discussion question in W1?",
+   "answer": "How does the work of engineers influence environmental, social and economic sustainability?",
+   "distractors": [
+    "Why should engineers avoid quantitative methods?",
+    "How do planetary boundaries relate to the EU Taxonomy?",
+    "What is the difference between LOAEL and NOAEL?"
+   ]
+  },
+  {
+   "id": "sustainability-w01-062",
+   "question": "What is the second peer-to-peer discussion question in W1?",
+   "answer": "Why use quantitative methods to assess sustainability as an engineer?",
+   "distractors": [
+    "How does the work of engineers influence sustainability?",
+    "How should group work be divided?",
+    "What are the three pillars of sustainability?"
+   ]
+  },
+  {
+   "id": "sustainability-w01-063",
+   "question": "How is a case-study reflection question handled in the peer-to-peer discussion?",
+   "answer": "The teaching assistant writes the question on the blackboard, presents its relevance to the case study, and students discuss it in groups.",
+   "distractors": [
+    "Students write the question and the assistant answers it",
+    "Students present to the whole class individually",
+    "The question is submitted in FeedbackFruits"
+   ]
+  },
+  {
+   "id": "sustainability-w01-064",
+   "question": "What is the weighting of the case study and the multiple choice exam in the grade?",
+   "answer": "Case study counts 40% and the multiple choice exam counts 60%.",
+   "distractors": [
+    "Case study 60% and exam 40%",
+    "Case study 50% and exam 50%",
+    "Case study 20% and exam 80%"
+   ]
+  },
+  {
+   "id": "sustainability-w01-065",
+   "question": "What does the written exam cover and what is the pass requirement?",
+   "answer": "Focus on general modules, with conceptual and calculation-based multiple choice questions; at least 50% correct to pass.",
+   "distractors": [
+    "Only the case study, with at least 70% to pass",
+    "Only conceptual questions, with at least 40% to pass",
+    "General modules and case study, with at least 60% to pass"
+   ]
+  },
+  {
+   "id": "sustainability-w01-066",
+   "question": "Which case study tasks are assessed as complete/not complete, and which counts in grading?",
+   "answer": "Task 1 and 2 are assessed complete/not complete (exam prerequisites); task 3 counts toward the grade (40%).",
+   "distractors": [
+    "Task 1 counts 40%; task 2 and 3 are complete/not complete",
+    "All three tasks are graded 0–12",
+    "Only task 2 is graded; 1 and 3 are optional"
+   ]
+  },
+  {
+   "id": "sustainability-w01-067",
+   "question": "What are the exam prerequisites?",
+   "answer": "Submit task 1 and 2 and give peer feedback on task 1 and 2.",
+   "distractors": [
+    "Submit task 3 and give peer feedback on it",
+    "Attend all teaching sessions",
+    "Pass the group formation survey"
+   ]
+  },
+  {
+   "id": "sustainability-w01-068",
+   "question": "What is the maximum length of task 1 submission?",
+   "answer": "7200 characters, about three normal pages (excluding bibliography and tables).",
+   "distractors": [
+    "9600 characters, about four pages",
+    "3600 characters, about one and a half pages",
+    "12000 characters, about five pages"
+   ]
+  },
+  {
+   "id": "sustainability-w01-069",
+   "question": "What is the maximum length of the task 2 and task 3 submissions?",
+   "answer": "9600 characters, about four normal pages (excluding bibliography and tables).",
+   "distractors": [
+    "7200 characters, about three pages",
+    "4800 characters, about two pages",
+    "14400 characters, about six pages"
+   ]
+  },
+  {
+   "id": "sustainability-w01-070",
+   "question": "What must every task submission include regarding group contributions?",
+   "answer": "A Table of Contributions agreed upon by all group members before attaching it.",
+   "distractors": [
+    "A signed statement from the teaching assistant",
+    "A list of individual grades",
+    "A peer-feedback summary"
+   ]
+  },
+  {
+   "id": "sustainability-w01-071",
+   "question": "What is the rule on language models in submissions and peer feedback?",
+   "answer": "Use of language models in submissions must be declared; use of AI in peer feedback is not allowed.",
+   "distractors": [
+    "AI is banned in submissions and allowed in peer feedback",
+    "AI use must be declared in peer feedback only",
+    "AI use is unrestricted in both"
+   ]
+  },
+  {
+   "id": "sustainability-w01-072",
+   "question": "How does peer feedback on tasks 1 and 2 work?",
+   "answer": "Each student individually gives feedback on two submissions from other groups in the same case study, addressing all criteria.",
+   "distractors": [
+    "Each group gives one combined feedback to one other group",
+    "The teacher assigns feedback to the whole class",
+    "Each student gives feedback on their own group's submission"
+   ]
+  },
+  {
+   "id": "sustainability-w01-073",
+   "question": "What must the group do with the peer feedback received?",
+   "answer": "Revise the task submission as needed; the final task 1 version is included as an annex in tasks 2 and 3, and task 2 as an annex in task 3.",
+   "distractors": [
+    "Ignore it and resubmit the same version",
+    "Send it to the teacher without changes",
+    "Delete the original submission"
+   ]
+  },
+  {
+   "id": "sustainability-w01-074",
+   "question": "Which annexes are required with the task 2 and task 3 submissions?",
+   "answer": "Task 2 must include task 1 as an annex; task 3 must include tasks 1 and 2 as annexes.",
+   "distractors": [
+    "Task 2 includes tasks 1 and 3; task 3 includes only task 2",
+    "Neither task needs any annex",
+    "Task 3 includes only task 1"
+   ]
+  },
+  {
+   "id": "sustainability-w01-075",
+   "question": "Who submits a task for a group?",
+   "answer": "Only one student from each group.",
+   "distractors": [
+    "Every group member individually",
+    "The teaching assistant",
+    "The case study teacher"
+   ]
+  },
+  {
+   "id": "sustainability-w01-076",
+   "question": "In which tool are tasks 1 and 2 submitted and peer feedback given?",
+   "answer": "FeedbackFruits, under CASE STUDIES.",
+   "distractors": [
+    "DTU Inside",
+    "Vevox",
+    "Digital Exam"
+   ]
+  },
+  {
+   "id": "sustainability-w01-077",
+   "question": "How big should a study group be, and how are groups formed?",
+   "answer": "A group of 5 peers, found by talking to peers in other rooms or using the 'Find a group' forum on DTU Learn.",
+   "distractors": [
+    "A group of 3 assigned by the teacher",
+    "A group of 8 by random allocation",
+    "Pairs chosen by the teaching assistant"
+   ]
+  },
+  {
+   "id": "sustainability-w01-078",
+   "question": "How many case study priorities does a group agree on, and what is the allocation principle?",
+   "answer": "4 priorities; allocation is based on time of submission.",
+   "distractors": [
+    "3 priorities; allocation based on grades",
+    "5 priorities; allocation by lottery",
+    "4 priorities; allocation by group size"
+   ]
+  },
+  {
+   "id": "sustainability-w01-079",
+   "question": "When does the group formation survey open and close?",
+   "answer": "It opens 15 minutes before the W1 session ends and closes 23:59 on the day of the week 2 teaching session.",
+   "distractors": [
+    "It opens at the start of W1 and closes at the end of W1",
+    "It opens in week 2 and closes before week 3",
+    "It opens before the course and closes in W1"
+   ]
+  },
+  {
+   "id": "sustainability-w01-080",
+   "question": "When is the final case and group allocation announced?",
+   "answer": "On DTU Learn before week 3.",
+   "distractors": [
+    "At the end of week 1",
+    "During the week 2 session",
+    "At the exam"
+   ]
+  },
+  {
+   "id": "sustainability-w01-081",
+   "question": "What should students discuss within their group when forming it?",
+   "answer": "Case study priorities, planning of tasks 1–3 and revisions, how to handle the table of contributions, and how to collaborate.",
+   "distractors": [
+    "Only the final exam schedule",
+    "Only the choice of programming tools",
+    "Only grading criteria"
+   ]
+  },
+  {
+   "id": "sustainability-w01-082",
+   "question": "How does room choice work on the first day?",
+   "answer": "Students go to their first-priority case study room; if no seats remain, to their second priority and so forth.",
+   "distractors": [
+    "Students are assigned rooms alphabetically",
+    "Students may sit in any room",
+    "Students go to room 70 regardless"
+   ]
+  },
+  {
+   "id": "sustainability-w01-083",
+   "question": "What is the 7-point grade for ECTS B, and what is the lowest passing grade?",
+   "answer": "B corresponds to 10; the lowest passing grade is 02 (ECTS E).",
+   "distractors": [
+    "B corresponds to 12; the lowest passing grade is 4",
+    "B corresponds to 7; the lowest passing grade is 00",
+    "B corresponds to 10; the lowest passing grade is 7"
+   ]
+  },
+  {
+   "id": "sustainability-w01-084",
+   "question": "What do the grades 00 and -3 and IG represent?",
+   "answer": "00 (Fx) and -3 (F) are failed; IG means exam requirements not fulfilled.",
+   "distractors": [
+    "00 and -3 are passed; IG is excellent",
+    "00 is passed; -3 is failed; IG is pending",
+    "All three mean the exam was cancelled"
+   ]
+  }
+ ]
 }

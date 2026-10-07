@@ -1,0 +1,1067 @@
+{
+ "module": "sustainability",
+ "week": 4,
+ "title": "Environmental indicators and carbon footprint",
+ "cards": [
+  {
+   "id": "sustainability-w04-001",
+   "question": "What are the learning objectives of the environmental indicators video?",
+   "answer": "Apply a causal framework to relate human activity to climate change indicators, calculate a carbon footprint to aggregate substances by impact, and position the carbon footprint versus other indicators.",
+   "distractors": [
+    "Define the functional unit, build a process tree and compute a reference flow",
+    "Explain planetary boundaries, the EU Taxonomy and the SDGs",
+    "Perform LCC, S-LCA and LCSA for a product"
+   ]
+  },
+  {
+   "id": "sustainability-w04-002",
+   "question": "What does the DPSIR model do?",
+   "answer": "It categorises indicators and links them causally, from human activity to impacts and responses.",
+   "distractors": [
+    "It prices environmental impacts in euros",
+    "It ranks countries by their SDG progress",
+    "It defines the functional unit of a product"
+   ]
+  },
+  {
+   "id": "sustainability-w04-003",
+   "question": "What do the letters in DPSIR stand for?",
+   "answer": "Driving forces, Pressures, State, Impacts and Responses.",
+   "distractors": [
+    "Demand, Production, Supply, Inventory and Recycling",
+    "Decisions, Policies, Standards, Indicators and Reports",
+    "Diagnosis, Prediction, Simulation, Interpretation and Review"
+   ]
+  },
+  {
+   "id": "sustainability-w04-004",
+   "question": "In the DPSIR example for transportation, what is the driver?",
+   "answer": "Vehicles driven (km driven per day).",
+   "distractors": [
+    "GHG emissions in kgCO2 per day",
+    "Radiative forcing in W/m2",
+    "Taxes on diesel in $/L"
+   ]
+  },
+  {
+   "id": "sustainability-w04-005",
+   "question": "In the DPSIR example for transportation, what is the pressure?",
+   "answer": "GHG emissions (kgCO2/day).",
+   "distractors": [
+    "Vehicles driven (km/day)",
+    "Temperature increase (°C)",
+    "Disability adjusted life years lost"
+   ]
+  },
+  {
+   "id": "sustainability-w04-006",
+   "question": "In the DPSIR example for transportation, which indicators are state indicators?",
+   "answer": "Change in radiative forcing (W/m2) and temperature increase (°C).",
+   "distractors": [
+    "Vehicle-km driven",
+    "Taxes on diesel",
+    "DALY lost"
+   ]
+  },
+  {
+   "id": "sustainability-w04-007",
+   "question": "In the DPSIR example for transportation, which indicators are impact indicators?",
+   "answer": "Disability adjusted life years lost (DALY) and potentially disappeared fraction of species (PDF).",
+   "distractors": [
+    "Radiative forcing and temperature increase",
+    "GHG emissions and vehicle-km driven",
+    "Taxes on diesel"
+   ]
+  },
+  {
+   "id": "sustainability-w04-008",
+   "question": "In the DPSIR example for transportation, what is the response?",
+   "answer": "Taxes on diesel ($/L).",
+   "distractors": [
+    "Temperature increase",
+    "GHG emissions",
+    "DALY lost"
+   ]
+  },
+  {
+   "id": "sustainability-w04-009",
+   "question": "What is the difference between a pressure and a state indicator in DPSIR?",
+   "answer": "A pressure is what human activity puts on the environment (e.g. emissions); a state indicator describes the resulting condition of the environment (e.g. radiative forcing, temperature).",
+   "distractors": [
+    "A pressure is a legal limit; a state is a tax",
+    "A pressure is an impact on humans; a state is an impact on ecosystems",
+    "A pressure is a response; a state is a driver"
+   ]
+  },
+  {
+   "id": "sustainability-w04-010",
+   "question": "What is the difference between DALY and PDF as impact indicators?",
+   "answer": "DALY measures the human health damage (disability adjusted life years lost); PDF measures damage to ecosystems (potentially disappeared fraction of species).",
+   "distractors": [
+    "DALY measures ecosystem damage; PDF measures human health damage",
+    "DALY measures costs; PDF measures resource use",
+    "Both measure human health damage in different countries"
+   ]
+  },
+  {
+   "id": "sustainability-w04-011",
+   "question": "Which unit is used for the climate change impact on human health?",
+   "answer": "Disability adjusted life years lost (DALY).",
+   "distractors": [
+    "kg CO2 equivalent",
+    "W/m2",
+    "Potentially disappeared fraction (PDF)"
+   ]
+  },
+  {
+   "id": "sustainability-w04-012",
+   "question": "What is a carbon footprint?",
+   "answer": "The weighted sum of greenhouse gas emissions caused by an individual, event, organisation, service or product, expressed as carbon dioxide equivalent.",
+   "distractors": [
+    "The total mass of carbon in a product",
+    "The CO2 emitted only during the use stage",
+    "The count of trees needed to absorb emissions"
+   ]
+  },
+  {
+   "id": "sustainability-w04-013",
+   "question": "How are GHG emissions weighted in a carbon footprint?",
+   "answer": "By their global warming potentials over 100 years (GWP100), as defined by the IPCC (AR6).",
+   "distractors": [
+    "By their price per kilogram",
+    "By their share of the atmosphere",
+    "By their toxicity to humans"
+   ]
+  },
+  {
+   "id": "sustainability-w04-014",
+   "question": "What is the GWP100 of CO2?",
+   "answer": "1 kgCO2e/kgCO2.",
+   "distractors": [
+    "27 kgCO2e/kg",
+    "273 kgCO2e/kg",
+    "29.8 kgCO2e/kg"
+   ]
+  },
+  {
+   "id": "sustainability-w04-015",
+   "question": "What is the GWP100 of biogenic methane (CH4)?",
+   "answer": "27 kgCO2e/kgCH4.",
+   "distractors": [
+    "29.8 kgCO2e/kgCH4",
+    "273 kgCO2e/kgCH4",
+    "1 kgCO2e/kgCH4"
+   ]
+  },
+  {
+   "id": "sustainability-w04-016",
+   "question": "What is the GWP100 of fossil methane (CH4)?",
+   "answer": "29.8 kgCO2e/kgCH4.",
+   "distractors": [
+    "27 kgCO2e/kgCH4",
+    "273 kgCO2e/kgCH4",
+    "24300 kgCO2e/kgCH4"
+   ]
+  },
+  {
+   "id": "sustainability-w04-017",
+   "question": "What is the GWP100 of nitrous oxide (N2O)?",
+   "answer": "273 kgCO2e/kgN2O.",
+   "distractors": [
+    "27 kgCO2e/kgN2O",
+    "29.8 kgCO2e/kgN2O",
+    "771 kgCO2e/kgN2O"
+   ]
+  },
+  {
+   "id": "sustainability-w04-018",
+   "question": "What is the GWP100 of HFC-32?",
+   "answer": "771 kgCO2e/kgHFC.",
+   "distractors": [
+    "273 kgCO2e/kgHFC",
+    "7380 kgCO2e/kgHFC",
+    "24300 kgCO2e/kgHFC"
+   ]
+  },
+  {
+   "id": "sustainability-w04-019",
+   "question": "What is the GWP100 of PFC-14?",
+   "answer": "7380 kgCO2e/kgPFC.",
+   "distractors": [
+    "771 kgCO2e/kgPFC",
+    "24300 kgCO2e/kgPFC",
+    "273 kgCO2e/kgPFC"
+   ]
+  },
+  {
+   "id": "sustainability-w04-020",
+   "question": "What is the GWP100 of SF6, and what does it show?",
+   "answer": "24300 kgCO2e/kgSF6; it is the highest GWP in the table, so a small mass has a large footprint.",
+   "distractors": [
+    "273 kgCO2e/kgSF6; it is equal to N2O",
+    "7380 kgCO2e/kgSF6; it is lower than PFC-14",
+    "1 kgCO2e/kgSF6; it is equal to CO2"
+   ]
+  },
+  {
+   "id": "sustainability-w04-021",
+   "question": "What is the difference between biogenic and fossil methane in the GWP table?",
+   "answer": "Fossil methane has a slightly higher GWP100 (29.8 vs 27 kgCO2e/kg).",
+   "distractors": [
+    "Biogenic methane has the higher GWP",
+    "They have the same GWP",
+    "Fossil methane has a GWP of 1"
+   ]
+  },
+  {
+   "id": "sustainability-w04-022",
+   "question": "Why can different greenhouse gases be added up in a carbon footprint?",
+   "answer": "Because each is converted to CO2 equivalents using its GWP100, giving a common unit.",
+   "distractors": [
+    "Because all greenhouse gases have a GWP of 1",
+    "Because they are summed by mass",
+    "Because they are measured at the same concentration"
+   ]
+  },
+  {
+   "id": "sustainability-w04-023",
+   "question": "In the average Danish carbon footprint, what is the fossil CO2 emission per person per year?",
+   "answer": "8000 kg CO2 (consumption-based).",
+   "distractors": [
+    "10340 kg CO2",
+    "1250 kg CO2",
+    "46.1 kg CO2"
+   ]
+  },
+  {
+   "id": "sustainability-w04-024",
+   "question": "How is the global warming score of biogenic methane computed in the Danish per capita example?",
+   "answer": "46.1 kgCH4 × 27 kgCO2e/kg ≈ 1250 kgCO2e per person per year.",
+   "distractors": [
+    "46.1 × 1 = 46 kgCO2e",
+    "46.1 × 273 ≈ 12600 kgCO2e",
+    "46.1 × 29.8 ≈ 1370 kgCO2e"
+   ]
+  },
+  {
+   "id": "sustainability-w04-025",
+   "question": "How is the global warming score of fossil methane computed in the Danish per capita example?",
+   "answer": "4.7 kgCH4 × 29.8 kgCO2e/kg ≈ 140 kgCO2e per person per year.",
+   "distractors": [
+    "4.7 × 27 ≈ 127 kgCO2e",
+    "4.7 × 273 ≈ 1280 kgCO2e",
+    "4.7 × 1 = 4.7 kgCO2e"
+   ]
+  },
+  {
+   "id": "sustainability-w04-026",
+   "question": "How is the global warming score of nitrous oxide computed in the Danish per capita example?",
+   "answer": "3.2 kgN2O × 273 kgCO2e/kg ≈ 870 kgCO2e per person per year.",
+   "distractors": [
+    "3.2 × 27 ≈ 86 kgCO2e",
+    "3.2 × 29.8 ≈ 95 kgCO2e",
+    "3.2 × 1 = 3.2 kgCO2e"
+   ]
+  },
+  {
+   "id": "sustainability-w04-027",
+   "question": "What is the total average Danish carbon footprint per person per year?",
+   "answer": "About 10,340 kgCO2e.",
+   "distractors": [
+    "About 8,000 kgCO2e",
+    "About 28.3 kgCO2e",
+    "About 1,250 kgCO2e"
+   ]
+  },
+  {
+   "id": "sustainability-w04-028",
+   "question": "What is the average Danish carbon footprint per person per day?",
+   "answer": "About 28.3 kgCO2e.",
+   "distractors": [
+    "About 10.3 kgCO2e",
+    "About 3.5 kgCO2e",
+    "About 283 kgCO2e"
+   ]
+  },
+  {
+   "id": "sustainability-w04-029",
+   "question": "Why is the CO2 figure in the Danish example marked as consumption-based?",
+   "answer": "It includes emissions caused by Danish consumption, including those occurring abroad, not only emissions within Denmark.",
+   "distractors": [
+    "It includes only emissions within Denmark's borders",
+    "It includes only emissions from households",
+    "It includes only emissions from electricity"
+   ]
+  },
+  {
+   "id": "sustainability-w04-030",
+   "question": "At which level of the cause-effect chain is the carbon footprint?",
+   "answer": "It measures a pressure (GHG emissions in kgCO2e), using a state indicator (radiative forcing based GWP) for weighting.",
+   "distractors": [
+    "It measures an impact on human health",
+    "It measures a response, such as taxation",
+    "It measures a driver, such as km driven"
+   ]
+  },
+  {
+   "id": "sustainability-w04-031",
+   "question": "What is GLAM?",
+   "answer": "The UNEP global life cycle impact assessment framework.",
+   "distractors": [
+    "A global labelling scheme for products",
+    "A national carbon tax",
+    "A database of emission factors"
+   ]
+  },
+  {
+   "id": "sustainability-w04-032",
+   "question": "What does climate change inflict on health according to the lecture's disparity slide?",
+   "answer": "Impacts of heat and cold on health that differ between regions: inducing (emitting) versus receiving countries.",
+   "distractors": [
+    "Equal health effects everywhere",
+    "Effects only in countries that emit most",
+    "Effects only on ecosystems"
+   ]
+  },
+  {
+   "id": "sustainability-w04-033",
+   "question": "What are the learning objectives of the carbon footprint process video?",
+   "answer": "Define a process to establish a carbon footprint, introduce the 1210x QMAS tool, compare CO2 for materials and processes, perform the gasoline vs electric car footprint, and interpret results and hot spots.",
+   "distractors": [
+    "Define SDGs, evaluate the EU Taxonomy and compute LCC",
+    "Build an inventory of social indicators",
+    "Define DPSIR and map indicators to planetary boundaries"
+   ]
+  },
+  {
+   "id": "sustainability-w04-034",
+   "question": "What are the five steps of building a carbon footprint?",
+   "answer": "1 Functional unit, 2 collect input data per FU, 3 find GHG emission factors per unit input, 4 multiply to get each input's footprint, 5 sum up and interpret.",
+   "distractors": [
+    "1 Collect emission factors, 2 sum up, 3 define the FU, 4 publish, 5 audit",
+    "1 Define costs, 2 find prices, 3 multiply, 4 sum, 5 report",
+    "1 Interpret, 2 collect inputs, 3 define FU, 4 sum, 5 multiply"
+   ]
+  },
+  {
+   "id": "sustainability-w04-035",
+   "question": "What is the formula for the carbon footprint per functional unit?",
+   "answer": "F = Q × E: amount of inputs per FU times GHG emission factor per unit input.",
+   "distractors": [
+    "F = Q + E",
+    "F = Q / E",
+    "F = E / Q"
+   ]
+  },
+  {
+   "id": "sustainability-w04-036",
+   "question": "What does Q represent in the carbon footprint formula?",
+   "answer": "The amount of each input per functional unit (e.g. kg steel per pers-km).",
+   "distractors": [
+    "The GHG emission factor per unit of input",
+    "The total carbon footprint",
+    "The GWP of the gas"
+   ]
+  },
+  {
+   "id": "sustainability-w04-037",
+   "question": "What does E represent in the carbon footprint formula?",
+   "answer": "The GHG emission factor per unit input (e.g. kgCO2eq per kg steel).",
+   "distractors": [
+    "The amount of each input per FU",
+    "The efficiency of the vehicle",
+    "The energy of the fuel"
+   ]
+  },
+  {
+   "id": "sustainability-w04-038",
+   "question": "What does the user determine in the QMAS tool and what does the tool provide?",
+   "answer": "The user determines the inputs per FU; the database and spreadsheet provide the emission factors and calculations, and the user interprets the results.",
+   "distractors": [
+    "The tool determines the inputs; the user provides emission factors",
+    "The tool interprets the results; the user only enters costs",
+    "The user provides the database; the tool defines the FU"
+   ]
+  },
+  {
+   "id": "sustainability-w04-039",
+   "question": "What is the functional unit used for comparing the vehicles in the case study?",
+   "answer": "Transporting 1 passenger safely in Europe over 1 km commuting (1 pers-km).",
+   "distractors": [
+    "Producing one vehicle",
+    "Driving one vehicle for 150,000 km",
+    "Consuming 1 litre of fuel"
+   ]
+  },
+  {
+   "id": "sustainability-w04-040",
+   "question": "What is the key parameter of the vehicle functional unit?",
+   "answer": "Vehicle occupancy.",
+   "distractors": [
+    "Vehicle weight",
+    "Vehicle price",
+    "Engine size"
+   ]
+  },
+  {
+   "id": "sustainability-w04-041",
+   "question": "What is the average vehicle occupancy for commuting, and overall in Denmark?",
+   "answer": "1.1 passengers for commuting and 1.4 overall in Denmark.",
+   "distractors": [
+    "2.5 for commuting and 3 in Denmark",
+    "1.0 for commuting and 1.0 in Denmark",
+    "1.4 for commuting and 1.1 in Denmark"
+   ]
+  },
+  {
+   "id": "sustainability-w04-042",
+   "question": "What is the default occupancy scenario and the alternative scenario in the car comparison?",
+   "answer": "Default: 1 passenger in all vehicle types; alternative: an electric car with 2 occupants.",
+   "distractors": [
+    "Default: 4 passengers; alternative: 1 passenger",
+    "Default: 2 passengers; alternative: bus with 40",
+    "Default: 1.4 for all; alternative: 1.1 for all"
+   ]
+  },
+  {
+   "id": "sustainability-w04-043",
+   "question": "In the example calculation, how is the steel input per pers-km obtained?",
+   "answer": "1040 kg steel per vehicle × 1/150,000 km lifetime ≈ 0.0069 kg steel per pers-km.",
+   "distractors": [
+    "1040 × 150,000 = 156 million kg",
+    "1040 / 1.1 = 945 kg",
+    "1040 + 150,000 = 151,040"
+   ]
+  },
+  {
+   "id": "sustainability-w04-044",
+   "question": "In the example, what is the footprint contribution of steel per pers-km?",
+   "answer": "0.0069 kg/pers-km × 2.2 kgCO2eq/kg ≈ 0.015 kgCO2eq/FU.",
+   "distractors": [
+    "0.0069 + 2.2 = 2.2069 kgCO2eq/FU",
+    "0.0069 / 2.2 ≈ 0.003 kgCO2eq/FU",
+    "2.2 × 150,000 kgCO2eq/FU"
+   ]
+  },
+  {
+   "id": "sustainability-w04-045",
+   "question": "In the example, how is the gasoline input per pers-km obtained?",
+   "answer": "6.2 kg per 100 vehicle-km → 0.062 kg gasoline per vehicle-km, i.e. 0.062 kg/pers-km for one occupant.",
+   "distractors": [
+    "6.2 kg per km",
+    "62 kg per pers-km",
+    "0.62 kg per pers-km"
+   ]
+  },
+  {
+   "id": "sustainability-w04-046",
+   "question": "In the example, what is the footprint of gasoline use per pers-km?",
+   "answer": "0.062 kg/pers-km × 4.45 kgCO2eq/kg ≈ 0.275 kgCO2eq/FU.",
+   "distractors": [
+    "0.062 × 2.2 ≈ 0.136",
+    "0.062 + 4.45 = 4.51",
+    "0.062 / 4.45 ≈ 0.014"
+   ]
+  },
+  {
+   "id": "sustainability-w04-047",
+   "question": "Why is the occupancy important for the pers-km based footprint?",
+   "answer": "Because the vehicle's impact is divided among its passengers; more occupants mean lower footprint per pers-km.",
+   "distractors": [
+    "Because it increases the vehicle's fuel use",
+    "Because it determines the emission factor",
+    "Because it changes the GWP"
+   ]
+  },
+  {
+   "id": "sustainability-w04-048",
+   "question": "What is ecoinvent?",
+   "answer": "The broadest unit process database worldwide, with about 20,000+ processes (25,000+ in the tool) and about 100 inventory flows.",
+   "distractors": [
+    "A national emission inventory",
+    "A database of consumer prices",
+    "A database of social indicators"
+   ]
+  },
+  {
+   "id": "sustainability-w04-049",
+   "question": "Which sectors are covered by the ecoinvent database?",
+   "answer": "Energy systems, materials and building, chemicals and metals, transports, packaging, waste treatment, agriculture and electronics.",
+   "distractors": [
+    "Only energy",
+    "Only materials and chemicals",
+    "Only agriculture and waste"
+   ]
+  },
+  {
+   "id": "sustainability-w04-050",
+   "question": "What do the region codes RER, UCTE, ROW and GLO denote in ecoinvent?",
+   "answer": "RER/UCTE: Europe; ROW: Rest of the World; GLO: Global.",
+   "distractors": [
+    "RER: Rest of the world; GLO: Europe",
+    "UCTE: USA; ROW: Europe",
+    "GLO: Local; ROW: Global"
+   ]
+  },
+  {
+   "id": "sustainability-w04-051",
+   "question": "Which region codes denote Canada, China, India and USA?",
+   "answer": "CA, CN, IN and US.",
+   "distractors": [
+    "CAN, CHI, IND, USA are not used",
+    "CA: China, CN: Canada, IN: Indonesia, US: Uruguay",
+    "CA, CN, IN, US denote Europe regions"
+   ]
+  },
+  {
+   "id": "sustainability-w04-052",
+   "question": "Which type of process should be used in ecoinvent when available?",
+   "answer": "'Market' processes.",
+   "distractors": [
+    "Cut-off processes",
+    "Unit processes only",
+    "Apos processes only"
+   ]
+  },
+  {
+   "id": "sustainability-w04-053",
+   "question": "What is the carbon footprint of 1 kWh of European electricity?",
+   "answer": "0.39 kgCO2.",
+   "distractors": [
+    "0.98 kgCO2",
+    "0.71 kgCO2",
+    "0.11 kgCO2"
+   ]
+  },
+  {
+   "id": "sustainability-w04-054",
+   "question": "Which has the lowest CO2 per kWh among the listed countries/regions?",
+   "answer": "Switzerland, 0.11 kgCO2/kWh.",
+   "distractors": [
+    "USA, 0.71 kgCO2/kWh",
+    "China, 0.98 kgCO2/kWh",
+    "Japan, 0.53 kgCO2/kWh"
+   ]
+  },
+  {
+   "id": "sustainability-w04-055",
+   "question": "Which has the highest CO2 per kWh among the listed countries/regions?",
+   "answer": "China, 0.98 kgCO2/kWh.",
+   "distractors": [
+    "USA, 0.71 kgCO2/kWh",
+    "Japan, 0.53 kgCO2/kWh",
+    "Europe, 0.39 kgCO2/kWh"
+   ]
+  },
+  {
+   "id": "sustainability-w04-056",
+   "question": "What is the CO2 for 1 kWh of electricity in the USA and in Japan?",
+   "answer": "0.71 kgCO2 in the USA and 0.53 kgCO2 in Japan.",
+   "distractors": [
+    "0.53 in the USA and 0.71 in Japan",
+    "0.39 in both",
+    "0.98 in the USA and 0.11 in Japan"
+   ]
+  },
+  {
+   "id": "sustainability-w04-057",
+   "question": "What is the CO2 for 1 L of gasoline without and with combustion?",
+   "answer": "0.49 kgCO2 without combustion and 2.88 kgCO2 with combustion.",
+   "distractors": [
+    "2.88 without and 0.49 with combustion",
+    "0.49 in both cases",
+    "2.88 in both cases"
+   ]
+  },
+  {
+   "id": "sustainability-w04-058",
+   "question": "What does the difference between gasoline with and without combustion show?",
+   "answer": "Most of the footprint of gasoline arises when it is burned (use stage), not from its production.",
+   "distractors": [
+    "Most of the footprint arises from refining",
+    "Combustion emits no CO2",
+    "Production emits more than combustion"
+   ]
+  },
+  {
+   "id": "sustainability-w04-059",
+   "question": "What is the CO2 of 1 kg of light oil (42.7 MJ final)?",
+   "answer": "3.71 kgCO2.",
+   "distractors": [
+    "1.63 kgCO2",
+    "2.88 kgCO2",
+    "0.49 kgCO2"
+   ]
+  },
+  {
+   "id": "sustainability-w04-060",
+   "question": "What is the CO2 for 1 pers-km by car, by intercity train and by intercontinental plane?",
+   "answer": "Car 0.17, train 0.06 and plane 0.19 kgCO2.",
+   "distractors": [
+    "Car 0.06, train 0.17, plane 0.19",
+    "Car 0.19, train 0.17, plane 0.06",
+    "All 0.17"
+   ]
+  },
+  {
+   "id": "sustainability-w04-061",
+   "question": "What is the CO2 for 1 tonne-km by a 16–32 t lorry?",
+   "answer": "0.19 kgCO2 (per 1,000 kg·km).",
+   "distractors": [
+    "0.06 kgCO2",
+    "0.17 kgCO2",
+    "1.9 kgCO2"
+   ]
+  },
+  {
+   "id": "sustainability-w04-062",
+   "question": "What is the CO2 of 1 kg of primary aluminium compared with recycled aluminium?",
+   "answer": "Primary 7.21 kgCO2 vs recycled 1.32 kgCO2.",
+   "distractors": [
+    "Primary 1.32 vs recycled 7.21",
+    "Both about 1.63",
+    "Primary 70,000 vs recycled 7.21"
+   ]
+  },
+  {
+   "id": "sustainability-w04-063",
+   "question": "Why is recycled aluminium much better than primary aluminium in CO2 terms?",
+   "answer": "Recycling avoids the energy-intensive primary production (7.21 vs 1.32 kgCO2/kg).",
+   "distractors": [
+    "Because it is lighter",
+    "Because it contains less aluminium",
+    "Because it is cheaper"
+   ]
+  },
+  {
+   "id": "sustainability-w04-064",
+   "question": "What is the CO2 of 1 kg of low-alloy steel and copper?",
+   "answer": "Steel 1.63 kgCO2 and copper 1.86 kgCO2.",
+   "distractors": [
+    "Steel 7.21 and copper 1.32",
+    "Steel 1.86 and copper 1.63",
+    "Steel 70,000 and copper 1.06"
+   ]
+  },
+  {
+   "id": "sustainability-w04-065",
+   "question": "What is the CO2 of 1 kg of platinum?",
+   "answer": "70,000 kgCO2.",
+   "distractors": [
+    "7,000 kgCO2",
+    "70 kgCO2",
+    "1.86 kgCO2"
+   ]
+  },
+  {
+   "id": "sustainability-w04-066",
+   "question": "What is the CO2 of 1 m3 of concrete and 1 m3 of water?",
+   "answer": "Concrete 257 kgCO2 and water 0.44 kgCO2.",
+   "distractors": [
+    "Concrete 0.44 and water 257",
+    "Both about 1",
+    "Concrete 1.63 and water 1.06"
+   ]
+  },
+  {
+   "id": "sustainability-w04-067",
+   "question": "What is the CO2 of 1 kg of glass, newsprint paper and HDPE?",
+   "answer": "Glass 1.06, newsprint 1.22 and HDPE 1.56 kgCO2.",
+   "distractors": [
+    "Glass 7.21, paper 1.86, HDPE 1.63",
+    "Glass 1.56, paper 1.06, HDPE 1.22",
+    "All 3.71"
+   ]
+  },
+  {
+   "id": "sustainability-w04-068",
+   "question": "What is the CO2 of plastic film extrusion and injection moulding per kg?",
+   "answer": "Film extrusion 0.50 and injection moulding 1.24 kgCO2.",
+   "distractors": [
+    "Film 1.24 and moulding 0.50",
+    "Both 2.99",
+    "Film 0.006 and moulding 0.02"
+   ]
+  },
+  {
+   "id": "sustainability-w04-069",
+   "question": "What is the CO2 of landfilling 1 kg of steel and aluminium?",
+   "answer": "Steel 0.00657 and aluminium 0.02010 kgCO2.",
+   "distractors": [
+    "Steel 1.63 and aluminium 7.21",
+    "Both 0.50",
+    "Steel 0.02 and aluminium 0.007"
+   ]
+  },
+  {
+   "id": "sustainability-w04-070",
+   "question": "What is the CO2 of incinerating 1 kg of municipal solid waste vs polyethylene?",
+   "answer": "MSW 0.50 and polyethylene 2.99 kgCO2.",
+   "distractors": [
+    "MSW 2.99 and polyethylene 0.50",
+    "Both 0.50",
+    "MSW 0.00657 and polyethylene 0.02"
+   ]
+  },
+  {
+   "id": "sustainability-w04-071",
+   "question": "What are the two key interpretation questions for each scenario?",
+   "answer": "Which are the largest contributions to the impact (by production phase and pollutant), and which life cycle stage has the highest potential to reduce impacts.",
+   "distractors": [
+    "Which scenario is cheapest and which is newest",
+    "Which supplier is largest and which region is poorest",
+    "Which materials are legal and which are banned"
+   ]
+  },
+  {
+   "id": "sustainability-w04-072",
+   "question": "Why should a footprint analyst consider small individual processes together?",
+   "answer": "Large sets of processes that each appear to have small impacts can lead to substantial impacts when summed.",
+   "distractors": [
+    "Because small processes are always negligible",
+    "Because small processes have no data",
+    "Because small processes dominate by definition"
+   ]
+  },
+  {
+   "id": "sustainability-w04-073",
+   "question": "What can limited low-cost interventions or win-win cases achieve?",
+   "answer": "Even limited low-cost intervention can be extremely efficient at reducing impacts; in win-win cases both impacts and costs fall.",
+   "distractors": [
+    "They never reduce impacts",
+    "They always increase costs",
+    "They only work in the use stage"
+   ]
+  },
+  {
+   "id": "sustainability-w04-074",
+   "question": "What should you do if the results are surprising?",
+   "answer": "Understand why (underlying parameters and stages); either you made a mistake or you will learn something.",
+   "distractors": [
+    "Ignore them as outliers",
+    "Delete the process from the model",
+    "Repeat with a different FU only"
+   ]
+  },
+  {
+   "id": "sustainability-w04-075",
+   "question": "Why does grouping of processes matter in interpretation?",
+   "answer": "The grouping can be arbitrary and depends on how the system is modelled.",
+   "distractors": [
+    "It is fixed by ISO",
+    "It never affects the results",
+    "It is determined by the database"
+   ]
+  },
+  {
+   "id": "sustainability-w04-076",
+   "question": "In the sensitivity study, what is shown on the x-axis of the cumulative carbon footprint graph?",
+   "answer": "Distance over the car lifetime.",
+   "distractors": [
+    "Time in years",
+    "Cost in euros",
+    "Number of occupants"
+   ]
+  },
+  {
+   "id": "sustainability-w04-077",
+   "question": "In the cumulative carbon footprint graph, which vehicle scenarios are compared?",
+   "answer": "Gas vehicle and electric vehicles powered by EU mix, wind, photovoltaic and hard coal.",
+   "distractors": [
+    "Only gas and diesel",
+    "Only electric with EU mix",
+    "Bus, train and plane"
+   ]
+  },
+  {
+   "id": "sustainability-w04-078",
+   "question": "What does the cumulative graph illustrate about electric vehicles?",
+   "answer": "Electric vehicles start higher (production) but accumulate slower; the electricity source and lifetime decide the break-even versus gasoline.",
+   "distractors": [
+    "Electric vehicles always start lower",
+    "Electric vehicles accumulate faster than gasoline",
+    "The electricity source has no effect"
+   ]
+  },
+  {
+   "id": "sustainability-w04-079",
+   "question": "What is the effect of electricity source (hard coal vs wind) on the electric vehicle footprint?",
+   "answer": "Hard coal electricity makes the electric vehicle much worse; wind and photovoltaic make it much better.",
+   "distractors": [
+    "Electricity source has no effect",
+    "Wind is worse than coal",
+    "PV is worse than coal"
+   ]
+  },
+  {
+   "id": "sustainability-w04-080",
+   "question": "What does Impact World+ in the lecture provide?",
+   "answer": "Life cycle impact assessment with normalised damage comparisons.",
+   "distractors": [
+    "An emission factor database",
+    "A cost database",
+    "A list of regulations"
+   ]
+  },
+  {
+   "id": "sustainability-w04-081",
+   "question": "Why perform a carbon footprint, according to the lecture?",
+   "answer": "Because climate change has among the highest environmental impact on humans and ecosystems, many impacts correlate with it, it identifies hotspots, there is much data, and it is relatively simple.",
+   "distractors": [
+    "Because it is legally required for all products",
+    "Because it replaces LCA",
+    "Because it measures toxicity directly"
+   ]
+  },
+  {
+   "id": "sustainability-w04-082",
+   "question": "Why are many other environmental impacts correlated with climate change?",
+   "answer": "Reducing GHG emissions often has co-benefits for many other impacts (except water and sometimes land use).",
+   "distractors": [
+    "Because they use the same database",
+    "Because they have the same GWP",
+    "Because they are all legally linked"
+   ]
+  },
+  {
+   "id": "sustainability-w04-083",
+   "question": "Which impacts are exceptions to the co-benefit of reducing carbon footprint?",
+   "answer": "Water and sometimes land use.",
+   "distractors": [
+    "Human toxicity and noise",
+    "Acidification and ozone",
+    "Eutrophication and radiation"
+   ]
+  },
+  {
+   "id": "sustainability-w04-084",
+   "question": "How many processes does the lecture say are available to quantify GHG emissions?",
+   "answer": "More than 20,000 processes.",
+   "distractors": [
+    "About 200",
+    "About 2,000",
+    "About 2 million"
+   ]
+  },
+  {
+   "id": "sustainability-w04-085",
+   "question": "Who can calculate a carbon footprint, according to the lecture?",
+   "answer": "Anyone able to multiply and add, because it is relatively simple.",
+   "distractors": [
+    "Only certified LCA experts",
+    "Only chemical engineers",
+    "Only data scientists"
+   ]
+  },
+  {
+   "id": "sustainability-w04-086",
+   "question": "Where will the carbon footprint approach be applied later in the course?",
+   "answer": "In the case study (Module 8), other modules, and at the exam.",
+   "distractors": [
+    "Only in the exam",
+    "Only in the first module",
+    "Only in the introduction"
+   ]
+  },
+  {
+   "id": "sustainability-w04-087",
+   "question": "What are the three interpretation questions for the car example?",
+   "answer": "What are the three main processes dominating impacts, how to further reduce the impacts of an electric car, and what individuals can do in priority to reduce transportation footprints.",
+   "distractors": [
+    "Which car is cheapest, which is fastest and which is largest",
+    "Which battery is best, which tyre is best and which road is best",
+    "Which government should regulate, which fuel to tax and which city to ban"
+   ]
+  },
+  {
+   "id": "sustainability-w04-088",
+   "question": "Which three vehicle options does the in-person lecture compare?",
+   "answer": "Gasoline car, electric car, and bike or e-bike.",
+   "distractors": [
+    "Bus, tram and train",
+    "Plane, car and ship",
+    "Truck, van and taxi"
+   ]
+  },
+  {
+   "id": "sustainability-w04-089",
+   "question": "What is the format of the in-person teaching session on carbon footprint?",
+   "answer": "Lecture (10'), group interpretation of the car example (10'), coffee input intro (5'), group work on the coffee footprint (40'), overview (15'), case study link (10').",
+   "distractors": [
+    "Exam (60'), feedback (30'), lecture (30')",
+    "Lecture (60'), break (30'), exam (30')",
+    "Group formation (45'), lecture (45'), exam (30')"
+   ]
+  },
+  {
+   "id": "sustainability-w04-090",
+   "question": "Which five questions define the basis of comparison for a functional unit?",
+   "answer": "How much / how many, which function (what), how well, for how long, and where.",
+   "distractors": [
+    "Who, when, why, with what and at what price",
+    "What, who, how, when and why",
+    "Cost, impact, time, quality and risk"
+   ]
+  },
+  {
+   "id": "sustainability-w04-091",
+   "question": "What are the possible processes in a cup of coffee life cycle in the exercise?",
+   "answer": "Coffee bean production, roasting, transport, packaging, brewing, cups, water and electricity for warming water.",
+   "distractors": [
+    "Only bean production and brewing",
+    "Only transport and packaging",
+    "Only cups and water"
+   ]
+  },
+  {
+   "id": "sustainability-w04-092",
+   "question": "What is the functional unit of the morning coffee exercise?",
+   "answer": "One cup of coffee (1 dl = 0.1 L).",
+   "distractors": [
+    "1 kg of roasted coffee",
+    "1 kg of green beans",
+    "1 year of coffee consumption"
+   ]
+  },
+  {
+   "id": "sustainability-w04-093",
+   "question": "How much green coffee beans are needed for a cup of coffee in the exercise?",
+   "answer": "11.5 grams.",
+   "distractors": [
+    "115 grams",
+    "1.15 grams",
+    "0.115 grams"
+   ]
+  },
+  {
+   "id": "sustainability-w04-094",
+   "question": "What are the roasting requirements per kg coffee in the exercise?",
+   "answer": "2.31 MJ of heat from natural gas and 0.11 kWh of Danish electricity.",
+   "distractors": [
+    "0.11 MJ of gas and 2.31 kWh of electricity",
+    "2.31 kWh of gas and 0.11 MJ of electricity",
+    "0.12 kWh of electricity and 0.028 kWh of gas"
+   ]
+  },
+  {
+   "id": "sustainability-w04-095",
+   "question": "How much electricity does roasting require per cup of coffee?",
+   "answer": "0.11 kWh/kg × 0.0115 kg ≈ 0.0013 kWh per cup.",
+   "distractors": [
+    "0.11 kWh per cup",
+    "1.3 kWh per cup",
+    "0.0115 kWh per cup"
+   ]
+  },
+  {
+   "id": "sustainability-w04-096",
+   "question": "What are the hot water heating requirements in the exercise?",
+   "answer": "0.12 kWh per litre of water and 0.028 kWh per cup for coffee machine stand-by.",
+   "distractors": [
+    "0.028 kWh per litre and 0.12 kWh per cup",
+    "1.2 kWh per litre",
+    "0.12 kWh per cup of stand-by"
+   ]
+  },
+  {
+   "id": "sustainability-w04-097",
+   "question": "How much electricity is needed to heat the water for one cup?",
+   "answer": "0.12 kWh/L × 0.1 L = 0.012 kWh per cup (plus 0.028 kWh for stand-by).",
+   "distractors": [
+    "0.12 kWh per cup",
+    "1.2 kWh per cup",
+    "0.012 kWh per litre"
+   ]
+  },
+  {
+   "id": "sustainability-w04-098",
+   "question": "How is coffee transported in the exercise?",
+   "answer": "3500 km by truck and 4500 km by sea freight.",
+   "distractors": [
+    "3500 km by sea and 4500 km by truck",
+    "8000 km by air",
+    "8000 km by train"
+   ]
+  },
+  {
+   "id": "sustainability-w04-099",
+   "question": "What happens at the end of life of the paper packaging and coffee maker in the exercise?",
+   "answer": "They are incinerated with energy recovery.",
+   "distractors": [
+    "They are landfilled",
+    "They are recycled",
+    "They are reused"
+   ]
+  },
+  {
+   "id": "sustainability-w04-100",
+   "question": "Which processes are considered in the coffee exercise worksheet?",
+   "answer": "Container ship and lorry transport, electricity for hot water and stand-by, green bean production (robusta RoW), natural gas for roasting, coffee machine (1 unit of 3 kg), paper cup and aluminium packaging.",
+   "distractors": [
+    "Only bean production and cups",
+    "Only electricity and water",
+    "Only transport and packaging"
+   ]
+  },
+  {
+   "id": "sustainability-w04-101",
+   "question": "Which coffee bean process is used in the coffee exercise?",
+   "answer": "'Coffee green bean production, robusta' produced in the Rest of the World (RoW).",
+   "distractors": [
+    "Arabica produced in Europe",
+    "Robusta produced in Europe",
+    "Arabica produced in Brazil"
+   ]
+  },
+  {
+   "id": "sustainability-w04-102",
+   "question": "In the Excel tool, what do the steps G × I = J represent?",
+   "answer": "Amount of each process per FU (G) times its emission factor (I) gives the carbon footprint per FU (J).",
+   "distractors": [
+    "G is price, I is quantity, J is profit",
+    "G is emission factor, I is amount, J is the GWP",
+    "G is region, I is year, J is the source"
+   ]
+  },
+  {
+   "id": "sustainability-w04-103",
+   "question": "Why must units be checked in the carbon footprint spreadsheet?",
+   "answer": "Because amounts per FU must match the unit of the emission factor (e.g. kg vs g, kWh vs MJ), otherwise results are wrong by orders of magnitude.",
+   "distractors": [
+    "Because units determine the GWP",
+    "Because units define the region",
+    "Because units are irrelevant in the tool"
+   ]
+  },
+  {
+   "id": "sustainability-w04-104",
+   "question": "What should you do after multiplying to get contributions in the coffee exercise?",
+   "answer": "Sum up, rank the processes from highest to lowest, and interpret the dominant ones.",
+   "distractors": [
+    "Delete the smallest processes",
+    "Report only the largest process",
+    "Convert to euros"
+   ]
+  },
+  {
+   "id": "sustainability-w04-105",
+   "question": "What measures could reduce the carbon footprint of a cup of coffee?",
+   "answer": "Examples: lower-carbon electricity, reduced water heating and stand-by, less transport impact, different bean sources, reusable cups.",
+   "distractors": [
+    "Increase roasting temperature",
+    "Use larger batches of aluminium packaging",
+    "Use more stand-by time"
+   ]
+  },
+  {
+   "id": "sustainability-w04-106",
+   "question": "Why does the lecture ask students to compare their first assessment with the footprint results?",
+   "answer": "To learn whether intuition about the dominant processes matched the calculated hot spots.",
+   "distractors": [
+    "To grade their intuition",
+    "To change the functional unit",
+    "To remove processes from the model"
+   ]
+  }
+ ]
+}
