@@ -1,0 +1,767 @@
+{
+  "module": "ml",
+  "week": 6,
+  "title": "Decision trees, overfitting and cross-validation",
+  "cards": [
+    {
+      "id": "ml-w06-001",
+      "question": "How does the game of '20 questions' relate to a decision tree, and what is the learning task?",
+      "answer": "A decision tree asks a series of questions until a conclusion is reached; the learning task is deciding which questions to ask.",
+      "distractors": [
+        "A decision tree asks all questions at once and averages the answers; the learning task is choosing how many questions to ask.",
+        "A decision tree asks no questions and finds the nearest neighbour; the learning task is choosing a distance measure.",
+        "A decision tree asks questions about the class label; the learning task is estimating the class prior."
+      ]
+    },
+    {
+      "id": "ml-w06-002",
+      "question": "How does Hunt's algorithm start building a decision tree?",
+      "answer": "It starts with a tree containing only the root node and assigns all data objects to the root.",
+      "distractors": [
+        "It starts with one leaf for every data object and merges leaves.",
+        "It starts with a random split of the data into training and test sets.",
+        "It starts by computing the nearest neighbours of all data objects."
+      ]
+    },
+    {
+      "id": "ml-w06-003",
+      "question": "What are the main steps of Hunt's algorithm for each node?",
+      "answer": "If the stop criterion is met, make a leaf with the most prevalent class; otherwise try splits, pick the one with the highest purity gain, and recurse on the resulting subsets.",
+      "distractors": [
+        "Always split until every leaf is pure, then prune back to the root.",
+        "Pick the split with the lowest purity gain and recurse on the largest subset only.",
+        "Pick a random attribute, split on its mean, and stop after one level."
+      ]
+    },
+    {
+      "id": "ml-w06-004",
+      "question": "In the mammal example, the root has 5 mammals and 10 non-mammals. After splitting on 'Cold blooded?', the 'yes' branch contains 0 mammals and 8 non-mammals. What happens to that branch?",
+      "answer": "It becomes a leaf node labelled non-mammal, because all of its objects belong to the same class.",
+      "distractors": [
+        "It is split further on 'Lays eggs?', because the branch is not empty.",
+        "It is discarded, because it contains no mammals.",
+        "It becomes a leaf labelled mammal, because mammals are the class of interest."
+      ]
+    },
+    {
+      "id": "ml-w06-005",
+      "question": "In the mammal example, the 'Cold blooded? = no' branch holds 5 mammals and 2 non-mammals. What does splitting it on 'Lays eggs?' produce?",
+      "answer": "A branch with 5 mammals and 0 non-mammals (leaf: mammal) and a branch with 0 mammals and 2 non-mammals (leaf: non-mammal).",
+      "distractors": [
+        "Two impure branches, each with a mix of mammals and non-mammals.",
+        "A branch with 0 mammals and 5 non-mammals, and a branch with 5 mammals and 2 non-mammals.",
+        "A single branch with all 7 objects, which means the split is useless."
+      ]
+    },
+    {
+      "id": "ml-w06-006",
+      "question": "When the stop criterion is met in Hunt's algorithm, what class does the leaf node assign to observations?",
+      "answer": "The most prevalent class among the observations in the dataset associated with that branch.",
+      "distractors": [
+        "The class of the first observation in the branch.",
+        "The class with the fewest observations, to balance the tree.",
+        "The class of the parent node."
+      ]
+    },
+    {
+      "id": "ml-w06-007",
+      "question": "What is the purity gain Δ of a split?",
+      "answer": "The weighted reduction in impurity: Δ = I(r) − Σₖ N(vₖ)/N(r) · I(vₖ), comparing the root r to its branches vₖ.",
+      "distractors": [
+        "The sum of the impurities of the branches, Σₖ I(vₖ).",
+        "The impurity of the root divided by the number of branches, I(r)/K.",
+        "The largest branch impurity minus the smallest, max I(vₖ) − min I(vₖ)."
+      ]
+    },
+    {
+      "id": "ml-w06-008",
+      "question": "Why are the branch impurities weighted by N(vₖ)/N(r) in the purity gain?",
+      "answer": "So that branches containing more of the data points count more toward the average impurity after the split.",
+      "distractors": [
+        "So that the weights make the impurities sum to the root impurity.",
+        "So that small branches are always preferred.",
+        "So that the purity gain is always positive."
+      ]
+    },
+    {
+      "id": "ml-w06-009",
+      "question": "How many partitions are involved when computing the purity gain of a binary split, and for which are impurities computed?",
+      "answer": "Three partitions: the root r and the two branches v₁ and v₂, with impurities I(r), I(v₁) and I(v₂).",
+      "distractors": [
+        "Two partitions, the two branches only.",
+        "Four partitions: the root, the two branches, and the test set.",
+        "One partition, the root only."
+      ]
+    },
+    {
+      "id": "ml-w06-010",
+      "question": "How are p(c|v) and the entropy impurity defined for a branch v?",
+      "answer": "p(c|v) is the number of observations of class c in branch v divided by N(v), and Entropy(v) = −Σ_c p(c|v) log₂ p(c|v).",
+      "distractors": [
+        "p(c|v) is the number of observations of class c divided by the total N(r), and Entropy(v) = Σ_c p(c|v)².",
+        "p(c|v) is the number of classes in v divided by N(v), and Entropy(v) = 1 − max_c p(c|v).",
+        "p(c|v) is the share of branches containing class c, and Entropy(v) = −Σ_c log₂ N(v)."
+      ]
+    },
+    {
+      "id": "ml-w06-011",
+      "question": "How are the Gini index and the classification error impurity defined?",
+      "answer": "Gini(v) = 1 − Σ_c p(c|v)², and ClassError(v) = 1 − max_c p(c|v).",
+      "distractors": [
+        "Gini(v) = −Σ_c p(c|v) log₂ p(c|v), and ClassError(v) = Σ_c p(c|v)².",
+        "Gini(v) = 1 − max_c p(c|v), and ClassError(v) = 1 − Σ_c p(c|v)².",
+        "Gini(v) = Σ_c p(c|v)², and ClassError(v) = max_c p(c|v)."
+      ]
+    },
+    {
+      "id": "ml-w06-012",
+      "question": "The root of the mammal data has 5 mammals and 10 non-mammals. What is its Gini impurity?",
+      "answer": "4/9 ≈ 0.444, since 1 − ((1/3)² + (2/3)²).",
+      "distractors": [
+        "5/9 ≈ 0.556, since (1/3)² + (2/3)².",
+        "1/3 ≈ 0.333, the fraction of mammals.",
+        "0.5, the maximum possible Gini."
+      ]
+    },
+    {
+      "id": "ml-w06-013",
+      "question": "The root has 5 mammals and 10 non-mammals. What is its entropy and its classification error impurity?",
+      "answer": "Entropy ≈ 0.918 and classification error = 1/3.",
+      "distractors": [
+        "Entropy ≈ 0.444 and classification error = 2/3.",
+        "Entropy = 1 and classification error = 0.5.",
+        "Entropy ≈ 0.918 and classification error = 2/3."
+      ]
+    },
+    {
+      "id": "ml-w06-014",
+      "question": "In the 'has legs?' split, the 'no' branch (v₁) has 1 mammal and 4 non-mammals. What are its Gini and classification error?",
+      "answer": "Gini = 0.32 and classification error = 0.2.",
+      "distractors": [
+        "Gini = 0.2 and classification error = 0.32.",
+        "Gini = 0.48 and classification error = 0.4.",
+        "Gini = 0.64 and classification error = 0.8."
+      ]
+    },
+    {
+      "id": "ml-w06-015",
+      "question": "For the 'has legs?' split with root 5:10, v₁ = 1:4 (N = 5) and v₂ = 4:6 (N = 10), what is the purity gain with the Gini index?",
+      "answer": "Δ ≈ 0.0177, since 4/9 − (5/15 · 0.32 + 10/15 · 0.48).",
+      "distractors": [
+        "Δ ≈ 0.104.",
+        "Δ ≈ 0.129.",
+        "Δ ≈ 0.2."
+      ]
+    },
+    {
+      "id": "ml-w06-016",
+      "question": "Why is 'has hair/fur?' (branches 1:10 and 4:0) a much better split than 'has legs?' (branches 1:4 and 4:6) for the mammal data?",
+      "answer": "One branch of 'has fur?' is completely pure (4 mammals only) and the other is nearly pure, so the weighted impurity drops a lot: Δ ≈ 0.32 versus ≈ 0.018.",
+      "distractors": [
+        "'Has fur?' puts the same number of objects in each branch, which maximizes purity gain.",
+        "'Has fur?' has more branches than 'has legs?', and more branches always give a higher purity gain.",
+        "'Has fur?' leaves the root impurity unchanged, which is why its gain is larger."
+      ]
+    },
+    {
+      "id": "ml-w06-017",
+      "question": "What is the Gini purity gain of the 'has fur?' split of the mammal root (5:10) into v₁ = 1:10 and v₂ = 4:0?",
+      "answer": "About 0.32, since v₂ is pure (impurity 0) and v₁ has Gini ≈ 0.165 with weight 11/15.",
+      "distractors": [
+        "About 0.44, the full root impurity.",
+        "About 0.0177, the same as 'has legs?'.",
+        "About 0.165, the impurity of v₁ alone."
+      ]
+    },
+    {
+      "id": "ml-w06-018",
+      "question": "For a two-class problem, where do entropy, Gini and classification error reach their maximum, and what are the maxima?",
+      "answer": "All peak when the classes are 50/50 (p = 0.5): entropy at 1, and Gini and classification error at 0.5.",
+      "distractors": [
+        "All peak when one class has probability 1: entropy at 1, Gini and error at 0.5.",
+        "All peak at p = 0.5 with the same height of 1.",
+        "Entropy peaks at p = 0.5 and the others at p = 0 and p = 1."
+      ]
+    },
+    {
+      "id": "ml-w06-019",
+      "question": "How do the shapes of the three impurity measures differ in a two-class plot?",
+      "answer": "Entropy and Gini are smooth curves (entropy higher), while the classification error is piecewise linear with a sharp peak at p = 0.5; all are 0 for a pure node.",
+      "distractors": [
+        "Classification error is the smooth curve, and entropy and Gini are piecewise linear.",
+        "All three are identical straight lines.",
+        "All three are 1 for a pure node and 0 at p = 0.5."
+      ]
+    },
+    {
+      "id": "ml-w06-020",
+      "question": "What impurity does a pure node (all observations in one class) have under entropy, Gini and classification error?",
+      "answer": "Zero, for all three measures.",
+      "distractors": [
+        "One, for all three measures.",
+        "Zero for entropy, one for Gini and 0.5 for classification error.",
+        "0.5, for all three measures."
+      ]
+    },
+    {
+      "id": "ml-w06-021",
+      "question": "Which types of splits does the lecture consider for decision trees?",
+      "answer": "Binary, nominal, ordinal and continuous attribute splits.",
+      "distractors": [
+        "Only binary splits on continuous attributes.",
+        "Only splits on class labels.",
+        "Linear, quadratic and radial splits."
+      ]
+    },
+    {
+      "id": "ml-w06-022",
+      "question": "For a nominal attribute such as car type (sport, luxury, family), what splits can be used?",
+      "answer": "A multiway split into one branch per value, or a binary split grouping values, e.g. {sport, luxury} versus {family}.",
+      "distractors": [
+        "Only a multiway split, with one branch per value.",
+        "Only a binary split, with each value compared to the mean value.",
+        "A split on the numeric ordering of the car types."
+      ]
+    },
+    {
+      "id": "ml-w06-023",
+      "question": "Which grouping is a sensible split of the ordinal attribute shirt size (XS, S, M, L, XL, XXL)?",
+      "answer": "{XS, S}, {M}, {L, XL, XXL}, because groups preserve the order of the values.",
+      "distractors": [
+        "{XS, L}, {S, XL}, {M, XXL}.",
+        "{XS, M, XXL}, {S, L}, {XL}.",
+        "{XS, XXL}, {S, XL}, {M, L}."
+      ]
+    },
+    {
+      "id": "ml-w06-024",
+      "question": "How is a continuous attribute such as age split in a decision tree?",
+      "answer": "By thresholds, either a binary split such as age < 30 versus > 30, or a multiway split into ranges such as <10, 10–20, 20–35, >35.",
+      "distractors": [
+        "By one branch per distinct age in the data only.",
+        "By one-out-of-K encoding of age into binary attributes.",
+        "By a split on the mean age of each class."
+      ]
+    },
+    {
+      "id": "ml-w06-025",
+      "question": "What do the decision regions of a classification tree on two continuous attributes look like?",
+      "answer": "They are axis-aligned rectangles, because each split thresholds a single attribute.",
+      "distractors": [
+        "Smooth curved regions that follow any boundary exactly.",
+        "Diagonal half-planes, because splits combine both attributes.",
+        "Circles around each training point."
+      ]
+    },
+    {
+      "id": "ml-w06-026",
+      "question": "A classification tree approximates a smooth curved class boundary. How does the approximation change as the tree gets deeper?",
+      "answer": "The step-like boundary follows the true curve more closely, but eventually starts adapting to individual data points.",
+      "distractors": [
+        "The boundary becomes straighter and simpler with more splits.",
+        "The boundary does not change after the first split.",
+        "The boundary always becomes the true curve exactly."
+      ]
+    },
+    {
+      "id": "ml-w06-027",
+      "question": "What are two common stopping criteria for growing a decision tree?",
+      "answer": "All points in the node have the same class label, or the number of points in the node is below a minimum threshold.",
+      "distractors": [
+        "The purity gain exceeds 1, or the tree has more leaves than classes.",
+        "All attributes have been used exactly once, or the test error reaches zero.",
+        "The node is at the root, or the classes are 50/50."
+      ]
+    },
+    {
+      "id": "ml-w06-028",
+      "question": "What does the Iris dataset contain?",
+      "answer": "150 flowers, 50 from each of three classes (Setosa, Versicolour, Virginica), described by sepal length and width and petal length and width in cm.",
+      "distractors": [
+        "150 flowers from five classes, described by petal attributes only.",
+        "50 flowers in total from three classes, described by four attributes.",
+        "150 flowers from three classes, described by colour and height."
+      ]
+    },
+    {
+      "id": "ml-w06-029",
+      "question": "In the Iris decision tree shown, the first split is Petal Length < 2.45. What does it do?",
+      "answer": "It separates Iris-setosa into its own leaf, leaving Versicolour and Virginica to be separated by further splits.",
+      "distractors": [
+        "It separates Iris-virginica into its own leaf.",
+        "It splits all three classes evenly between its two branches.",
+        "It assigns every flower to Iris-versicolor."
+      ]
+    },
+    {
+      "id": "ml-w06-030",
+      "question": "How does a regression tree differ from a classification tree?",
+      "answer": "Leaves predict the mean of the observations in the node instead of the most prevalent class, and the impurity is the sum-of-squares (mean squared error) instead of Gini or entropy.",
+      "distractors": [
+        "Leaves predict the median class and the impurity is the entropy.",
+        "Regression trees use no splits and fit a single line.",
+        "Regression trees use the same impurity as classification trees but with more branches."
+      ]
+    },
+    {
+      "id": "ml-w06-031",
+      "question": "What impurity is used in a regression tree for a node v?",
+      "answer": "I(v) = (1/N(v)) Σ_{i∈v} (yᵢ − ŷ_v)², where ŷ_v is the mean of yᵢ in the node.",
+      "distractors": [
+        "I(v) = 1 − Σ_c p(c|v)².",
+        "I(v) = max_{i∈v} |yᵢ − ŷ_v|, where ŷ_v is the median.",
+        "I(v) = Σ_{i∈v} yᵢ, the sum of outputs in the node."
+      ]
+    },
+    {
+      "id": "ml-w06-032",
+      "question": "What shape does the prediction of a regression tree on one input have?",
+      "answer": "A piecewise constant step function, with each leaf predicting the mean of its observations.",
+      "distractors": [
+        "A smooth curve passing through every training point.",
+        "A single straight line through the data.",
+        "A piecewise linear function with a different slope in each leaf."
+      ]
+    },
+    {
+      "id": "ml-w06-033",
+      "question": "What is overfitting?",
+      "answer": "The training error usually keeps decreasing for overly complex models while the test error increases.",
+      "distractors": [
+        "The training error and test error both increase with model complexity.",
+        "The test error is lower than the training error for complex models.",
+        "The training error increases as the model fits the data better."
+      ]
+    },
+    {
+      "id": "ml-w06-034",
+      "question": "For nine observations from a noisy function, which model overfits: polynomial order 1, 3 or 8?",
+      "answer": "Order 8: it passes through almost all training points but oscillates wildly between them, while order 1 underfits and order 3 follows the trend.",
+      "distractors": [
+        "Order 1: it is the simplest model and therefore always overfits.",
+        "Order 3: it follows the trend too closely.",
+        "None of them, since training error is always a good guide."
+      ]
+    },
+    {
+      "id": "ml-w06-035",
+      "question": "What does the Law of parsimony (Ockham's razor) say about model choice?",
+      "answer": "Given two models with the same predictive performance, the simpler model is preferred over the more complex one.",
+      "distractors": [
+        "Given two models, always prefer the more complex one.",
+        "Given two models, always prefer the one with the lower training error.",
+        "Given two models with different performance, average them."
+      ]
+    },
+    {
+      "id": "ml-w06-036",
+      "question": "How can model complexity be controlled for linear regression on polynomial inputs, f(x) = w₀ + w₁x + ... + w_K x^K?",
+      "answer": "By choosing a suitable polynomial order K, which has to be assessed by evaluating performance correctly.",
+      "distractors": [
+        "By choosing the number of data points N, since fewer points make the model simpler.",
+        "By choosing K as large as possible and trusting the training error.",
+        "By fixing the weights to zero except w₀."
+      ]
+    },
+    {
+      "id": "ml-w06-037",
+      "question": "How is the training error of a model M_k defined for regression?",
+      "answer": "The average squared error on the training set: E_train = (1/N_train) Σ_{i∈D_train} (yᵢ − f_{M_k}(xᵢ, w))².",
+      "distractors": [
+        "The average squared error on new, unseen data.",
+        "The sum of the weights of the trained model.",
+        "The fraction of training points predicted exactly right."
+      ]
+    },
+    {
+      "id": "ml-w06-038",
+      "question": "How is the test error of a trained model obtained?",
+      "answer": "By evaluating the trained model on new data (a test set not used for training): E_test = (1/N_test) Σ_{i∈D_test} (yᵢ − f(xᵢ, w))².",
+      "distractors": [
+        "By evaluating the trained model again on the training data.",
+        "By retraining the model on the test set.",
+        "By averaging the weights over several trainings."
+      ]
+    },
+    {
+      "id": "ml-w06-039",
+      "question": "Three polynomial models of order 1, 2 and 6 are trained on nine observations. How do their training and test errors behave?",
+      "answer": "Training error keeps decreasing with order, but test error is lowest for the order-2 model and rises again for order 6.",
+      "distractors": [
+        "Both training and test error are lowest for order 6.",
+        "Training error is lowest for order 1, and test error is lowest for order 6.",
+        "Both errors are lowest for order 2 and equal."
+      ]
+    },
+    {
+      "id": "ml-w06-040",
+      "question": "Which rule does the lecture state in bold about validating a model?",
+      "answer": "Never, ever validate a model on the same data it was trained upon.",
+      "distractors": [
+        "Always validate a model on the same data it was trained upon, to save data.",
+        "Never use more than one model on the same data.",
+        "Always use leave-one-out cross-validation."
+      ]
+    },
+    {
+      "id": "ml-w06-041",
+      "question": "Why is the test error more representative of the true error than the training error?",
+      "answer": "Because it is measured on data the model has not seen, so it is not optimistically biased by the model having been fit to those points.",
+      "distractors": [
+        "Because the test set is always larger than the training set.",
+        "Because the test error is always larger than the generalization error.",
+        "Because the test error includes the model weights as a penalty."
+      ]
+    },
+    {
+      "id": "ml-w06-042",
+      "question": "What is the generalization error of a model?",
+      "answer": "The test error evaluated over an infinitely large test set, i.e. E_gen = E_(x,y)[L(y, f_M(x))], the true performance of the trained model.",
+      "distractors": [
+        "The training error evaluated over an infinitely large training set.",
+        "The difference between the training error and the test error.",
+        "The error of the best possible model on the training data."
+      ]
+    },
+    {
+      "id": "ml-w06-043",
+      "question": "What is the difference between the test error and the generalization error?",
+      "answer": "The test error is measured on a finite test set and so is only an estimate; the generalization error is the expected error over all possible data.",
+      "distractors": [
+        "They are identical for any test set.",
+        "The test error is measured on the training data, the generalization error on new data.",
+        "The generalization error is always zero for the best model."
+      ]
+    },
+    {
+      "id": "ml-w06-044",
+      "question": "If we had many test sets D₁, ..., D_K, how could the generalization error of a model be approximated?",
+      "answer": "By averaging the test errors over the sets: E_gen ≈ (1/K) Σₖ E_test,k.",
+      "distractors": [
+        "By taking the largest of the test errors.",
+        "By training the model on all the test sets at once.",
+        "By taking the test error of the first set only."
+      ]
+    },
+    {
+      "id": "ml-w06-045",
+      "question": "What is the purpose of basic cross-validation?",
+      "answer": "To estimate the generalization error of a model.",
+      "distractors": [
+        "To select the best of several models while ignoring generalization error.",
+        "To reduce the training error of a model.",
+        "To estimate the parameters w of a model."
+      ]
+    },
+    {
+      "id": "ml-w06-046",
+      "question": "How does the holdout method work?",
+      "answer": "The dataset is partitioned into a training set and a test set (for example 2/3 and 1/3), and E_gen is approximated by the resulting test error.",
+      "distractors": [
+        "The dataset is partitioned into K equal parts and every part is used as test set once.",
+        "Each observation is used as a test set one at a time.",
+        "The model is trained and tested on the full dataset."
+      ]
+    },
+    {
+      "id": "ml-w06-047",
+      "question": "How does K-fold cross-validation estimate the generalization error?",
+      "answer": "The data are split into K parts; each part is the test set once while the other K − 1 parts train the model, and E_gen ≈ (1/K) Σₖ E_test,k.",
+      "distractors": [
+        "The data are split into K parts and the model is trained on only the first part.",
+        "The data are split into K parts and the model is trained on each part separately, using the largest error.",
+        "The data are split once into training and test sets, and the test is repeated K times."
+      ]
+    },
+    {
+      "id": "ml-w06-048",
+      "question": "What is leave-one-out cross-validation?",
+      "answer": "K-fold cross-validation with K = N: each observation is a test set in turn, and the other N − 1 observations are used for training.",
+      "distractors": [
+        "K-fold cross-validation with K = 2.",
+        "A holdout with only one observation in the training set.",
+        "A method that drops one attribute at a time."
+      ]
+    },
+    {
+      "id": "ml-w06-049",
+      "question": "For a dataset of N = 1000 observations, how many observations are in the training set in each fold of 10-fold cross-validation?",
+      "answer": "900.",
+      "distractors": [
+        "100.",
+        "500.",
+        "999."
+      ]
+    },
+    {
+      "id": "ml-w06-050",
+      "question": "What are the trade-offs between holdout, leave-one-out and K-fold cross-validation?",
+      "answer": "Holdout is cheapest but not data efficient; leave-one-out is very computationally intensive with highly correlated estimates; K-fold (K = 5 or 10) is the recommended compromise.",
+      "distractors": [
+        "Holdout is the most data efficient, leave-one-out is the cheapest, and K-fold is never recommended.",
+        "Leave-one-out is cheapest and has uncorrelated estimates; holdout is the most expensive.",
+        "All three have identical cost and identical data efficiency."
+      ]
+    },
+    {
+      "id": "ml-w06-051",
+      "question": "What does the lecture recommend as the default choice of cross-validation method?",
+      "answer": "K-fold with K = 5 or 10, or holdout if the problem is very large.",
+      "distractors": [
+        "Leave-one-out always.",
+        "Holdout always, with a 50/50 split.",
+        "K-fold with K = 2 always."
+      ]
+    },
+    {
+      "id": "ml-w06-052",
+      "question": "Which statement about cross-validation is incorrect? (Spring 2012 exam question)",
+      "answer": "Leave-one-out cross-validation gives a poor estimate of the generalization error since only one observation is part of the test set at a time.",
+      "distractors": [
+        "Hold-out with 50% of the data is more computationally efficient than 5-fold cross-validation.",
+        "The size of the training set in 10-fold cross-validation is larger than in 5-fold cross-validation.",
+        "Not all observations are used for testing in the hold-out method."
+      ]
+    },
+    {
+      "id": "ml-w06-053",
+      "question": "What is the purpose of cross-validation for model selection?",
+      "answer": "To select the best of S models, by estimating each model's generalization error with cross-validation and choosing the one with the lowest estimate.",
+      "distractors": [
+        "To estimate how good the single selected model will be on future data.",
+        "To train every model on all of the data and average their weights.",
+        "To remove irrelevant attributes from the data."
+      ]
+    },
+    {
+      "id": "ml-w06-054",
+      "question": "In K-fold cross-validation for model selection, how is the estimate for model M_s computed and the best model chosen?",
+      "answer": "Ê_s = Σₖ (N_k^test / N) · E_{M_s,k}^test over the folds, and s* = argmin_s Ê_s.",
+      "distractors": [
+        "Ê_s is the training error on the first fold, and s* = argmax_s Ê_s.",
+        "Ê_s = Σₖ E_{M_s,k}^train, and s* = argmin_s Ê_s.",
+        "Ê_s is the largest fold error, and s* = argmax_s Ê_s."
+      ]
+    },
+    {
+      "id": "ml-w06-055",
+      "question": "How does the holdout method select between polynomial models of order 1 to 4?",
+      "answer": "Train each model on the training set, compute each test error on the test set, and choose the model with the lowest test error.",
+      "distractors": [
+        "Choose the model with the lowest training error.",
+        "Choose the highest-order model since it fits best.",
+        "Average the four models' predictions."
+      ]
+    },
+    {
+      "id": "ml-w06-056",
+      "question": "In leave-one-out for model selection with polynomial models, what is done for each candidate model?",
+      "answer": "Each data point is held out as the test set in turn, the model is trained on the rest, and the average test error over all N points is computed.",
+      "distractors": [
+        "Only the first data point is held out and used as the test set.",
+        "All data points are used for training and testing at the same time.",
+        "The model is trained on the single held-out point."
+      ]
+    },
+    {
+      "id": "ml-w06-057",
+      "question": "What is the problem with selecting a model with one-level cross-validation and then reporting its cross-validation error as its generalization error?",
+      "answer": "The selected model's estimate is the minimum of several noisy estimates, so it tends to be optimistic and is not a fair estimate of the generalization error.",
+      "distractors": [
+        "The selected model's estimate is always pessimistic since the training sets are too small.",
+        "The selected model's estimate equals its training error.",
+        "Cross-validation can only be used to estimate errors, never to select models."
+      ]
+    },
+    {
+      "id": "ml-w06-058",
+      "question": "In the repeated experiment with 14 models, the model selected by cross-validation often has an estimated error below the true generalization error curve. What does this show?",
+      "answer": "The estimated error of the selected model is biased downward, because selection favours models whose estimates happen to be low.",
+      "distractors": [
+        "Cross-validation always overestimates the error of the best model.",
+        "The true generalization error is always lower than any estimate.",
+        "The model selected by cross-validation is always the true best model."
+      ]
+    },
+    {
+      "id": "ml-w06-059",
+      "question": "What is the purpose of two-layer cross-validation?",
+      "answer": "To select the optimal model and also estimate the generalization error of that optimal model.",
+      "distractors": [
+        "To estimate the training error of the optimal model.",
+        "To select between exactly two models.",
+        "To train two copies of the same model with different initializations."
+      ]
+    },
+    {
+      "id": "ml-w06-060",
+      "question": "What is the central idea of two-layer cross-validation?",
+      "answer": "Treat 'one-layer cross-validation for model selection' as a single model, and apply basic cross-validation for performance evaluation to estimate its generalization error.",
+      "distractors": [
+        "Apply one-layer cross-validation twice to the same split and take the smaller error.",
+        "Train the model on the test set in the outer layer and on the training set in the inner layer.",
+        "Use leave-one-out in the inner layer and holdout in the outer layer."
+      ]
+    },
+    {
+      "id": "ml-w06-061",
+      "question": "In two-layer cross-validation, what do the outer loop (K₁ folds) and inner loop (K₂ folds) do?",
+      "answer": "The outer loop splits the data into training (par) and test sets for estimating generalization error; the inner loop splits the outer training set into train and validation sets to select the model.",
+      "distractors": [
+        "The outer loop selects the model and the inner loop estimates the error on the outer test set.",
+        "Both loops split the same data into the same folds.",
+        "The outer loop trains the model and the inner loop chooses K₁."
+      ]
+    },
+    {
+      "id": "ml-w06-062",
+      "question": "After the inner loop selects the best model M* for an outer fold i, what is done in the two-layer algorithm?",
+      "answer": "M* is trained on the whole outer training set D_i^par and tested on the outer test set D_i^test, giving E_i^test.",
+      "distractors": [
+        "M* is tested on the inner validation sets only.",
+        "M* is discarded and the algorithm moves to the next fold without testing.",
+        "M* is trained on the outer test set and tested on D_i^par."
+      ]
+    },
+    {
+      "id": "ml-w06-063",
+      "question": "How is the final generalization error estimate computed in two-layer cross-validation?",
+      "answer": "Ê_gen = Σ_{i=1}^{K₁} (|D_i^test| / N) · E_i^test, a weighted average of the outer test errors.",
+      "distractors": [
+        "Ê_gen = the smallest inner validation error.",
+        "Ê_gen = Σ_{j=1}^{K₂} E_j^val, the sum of the inner validation errors.",
+        "Ê_gen = E_1^test, the error of the first outer fold."
+      ]
+    },
+    {
+      "id": "ml-w06-064",
+      "question": "A classification tree with 3 candidate pruning levels (3, 4, 5) is evaluated on N = 1000 observations with two-level CV, K₁ = 10 outer folds and K₂ = 5 inner folds. How many models are trained?",
+      "answer": "160: for each of the 10 outer folds, 5 × 3 = 15 models in the inner loop plus 1 final model on the outer training set.",
+      "distractors": [
+        "150, counting only the inner loop models.",
+        "50, counting 10 + 5 × 8.",
+        "180, since 10 × (5 × 3 + 3)."
+      ]
+    },
+    {
+      "id": "ml-w06-065",
+      "question": "In general, how many models are trained in two-level cross-validation with K₁ outer folds, K₂ inner folds and S candidate models?",
+      "answer": "K₁ · (K₂ · S + 1).",
+      "distractors": [
+        "K₁ + K₂ + S.",
+        "K₁ · K₂ · S, with no final training.",
+        "K₁ · S + K₂."
+      ]
+    },
+    {
+      "id": "ml-w06-066",
+      "question": "What steps does the K-nearest neighbour classifier follow once K and a distance measure are chosen?",
+      "answer": "Compute the distance to all other data objects, find the K nearest, and classify by majority vote among them.",
+      "distractors": [
+        "Fit a linear model on the K nearest points and use its output.",
+        "Compute class means and assign the class whose mean is nearest.",
+        "Find the K farthest objects and classify by minority vote."
+      ]
+    },
+    {
+      "id": "ml-w06-067",
+      "question": "In the height/weight dataset, the new person (171 cm, 82 kg) is classified by KNN. What are the predictions for K = 1 and K = 3?",
+      "answer": "K = 1 gives male (nearest is the male at 170/85), K = 3 gives female (2 of the 3 nearest are female).",
+      "distractors": [
+        "K = 1 gives female, and K = 3 gives male.",
+        "Both give male.",
+        "Both give female."
+      ]
+    },
+    {
+      "id": "ml-w06-068",
+      "question": "In the height/weight KNN decision surfaces, what happens for K = 2?",
+      "answer": "Some regions have a 1/2 vote for each class, so ties arise and a tie-breaking rule is needed.",
+      "distractors": [
+        "The decision surface becomes a single straight line.",
+        "All points are classified as male.",
+        "The classifier becomes identical to K = 1."
+      ]
+    },
+    {
+      "id": "ml-w06-069",
+      "question": "How do KNN decision surfaces change as K increases?",
+      "answer": "They go from jagged, closely following individual points at K = 1, toward smoother regions with fractional votes (such as 2/3 or 4/5) for larger K.",
+      "distractors": [
+        "They get more jagged and follow individual points more closely.",
+        "They do not change with K.",
+        "They always become a single class region."
+      ]
+    },
+    {
+      "id": "ml-w06-070",
+      "question": "How is leave-one-out cross-validation applied to a KNN classifier?",
+      "answer": "For each xᵢ, temporarily remove it, find the K nearest neighbours around it (not xᵢ itself), set cᵢ = 1 if it is classified correctly and 0 otherwise, and compute accuracy as (1/N) Σ cᵢ.",
+      "distractors": [
+        "For each xᵢ, keep it in the data, so it becomes its own nearest neighbour, and count the votes.",
+        "Remove all points of one class and classify the rest.",
+        "Train KNN on xᵢ alone and test on all other points."
+      ]
+    },
+    {
+      "id": "ml-w06-071",
+      "question": "Why must xᵢ be removed before finding its K nearest neighbours in leave-one-out for KNN?",
+      "answer": "Otherwise xᵢ would be its own nearest neighbour and always be classified correctly, giving a meaningless, optimistic estimate.",
+      "distractors": [
+        "Otherwise the distances to the other points would be undefined.",
+        "Otherwise K would have to be even.",
+        "Otherwise the classifier would always be wrong."
+      ]
+    },
+    {
+      "id": "ml-w06-072",
+      "question": "Why is leave-one-out cross-validation described as convenient for KNN?",
+      "answer": "KNN has no training stage beyond storing the data, so holding out a point just means ignoring it when finding neighbours, and no models need retraining.",
+      "distractors": [
+        "KNN has a closed-form solution for the weights, which leave-one-out reuses.",
+        "KNN needs very few data points, so leave-one-out is cheap.",
+        "KNN is a regression method, so leave-one-out gives exact results."
+      ]
+    },
+    {
+      "id": "ml-w06-073",
+      "question": "Using the distance table between four diabetic (D1–D4) and four normal (N1–N4) women, how many observations are misclassified by leave-one-out cross-validation with 3-nearest neighbours?",
+      "answer": "All of the observations: in every case at least two of the three nearest neighbours belong to the opposite class.",
+      "distractors": [
+        "None of the observations.",
+        "2 of the observations.",
+        "6 of the observations."
+      ]
+    },
+    {
+      "id": "ml-w06-074",
+      "question": "What does KNN require you to choose, and how can cross-validation help?",
+      "answer": "The number of neighbours K and a distance measure; cross-validation can estimate the generalization error for each choice so the best can be selected.",
+      "distractors": [
+        "The class prior and the noise variance; cross-validation sets them to zero.",
+        "The tree depth and impurity measure; cross-validation prunes the tree.",
+        "The weights w and the learning rate; cross-validation runs gradient descent."
+      ]
+    },
+    {
+      "id": "ml-w06-075",
+      "question": "When should you use basic cross-validation versus two-layer cross-validation?",
+      "answer": "Basic cross-validation estimates the generalization error of a given model; two-layer cross-validation both selects the best model and gives a fair estimate of its generalization error.",
+      "distractors": [
+        "Basic cross-validation selects the best model and two-layer estimates its training error.",
+        "Basic cross-validation is for classification and two-layer is for regression.",
+        "They are identical except for the number of folds."
+      ]
+    },
+    {
+      "id": "ml-w06-076",
+      "question": "What is the key difference between the training error and the generalization error?",
+      "answer": "The training error measures fit to the data the model was trained on and keeps falling with complexity, while the generalization error measures performance on unseen data and rises again when the model overfits.",
+      "distractors": [
+        "The training error is measured on unseen data and the generalization error on the training data.",
+        "They are always equal when the model is trained correctly.",
+        "The generalization error always decreases as the model gets more complex."
+      ]
+    }
+  ]
+}

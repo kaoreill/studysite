@@ -1,0 +1,727 @@
+{
+  "module": "ml",
+  "week": 2,
+  "title": "Summary statistics, similarity and nearest neighbors",
+  "cards": [
+    {
+      "id": "ml-w02-001",
+      "question": "How is a dataset of N data points with M attributes stored as a matrix X?",
+      "answer": "As an N × M matrix, with one data point per row and one attribute per column.",
+      "distractors": [
+        "As an M × N matrix, with one data point per row.",
+        "As an N × M matrix, with one attribute per row.",
+        "As an N × N matrix of distances between data points."
+      ]
+    },
+    {
+      "id": "ml-w02-002",
+      "question": "If A is L × M and B is M × N, what is the size of the product AB?",
+      "answer": "L × N.",
+      "distractors": [
+        "M × M.",
+        "L × M.",
+        "N × L."
+      ]
+    },
+    {
+      "id": "ml-w02-003",
+      "question": "A is 3 × 4 and B is 4 × 5. How is the entry in row 3, column 4 of C = AB computed?",
+      "answer": "As the sum of the products of row 3 of A with the matching entries of column 4 of B.",
+      "distractors": [
+        "As the product of the entry in row 3, column 4 of A and the entry in row 3, column 4 of B.",
+        "As the sum of the products of column 3 of A with row 4 of B.",
+        "As the sum of all entries in row 3 of A plus all entries in column 4 of B."
+      ]
+    },
+    {
+      "id": "ml-w02-004",
+      "question": "What is the transpose of a product of two matrices, (AB)ᵀ?",
+      "answer": "BᵀAᵀ.",
+      "distractors": [
+        "AᵀBᵀ.",
+        "Aᵀ + Bᵀ.",
+        "BA."
+      ]
+    },
+    {
+      "id": "ml-w02-005",
+      "question": "Which identity follows from the transpose rule for products?",
+      "answer": "(Ax)ᵀy = xᵀAᵀy = xᵀ(Aᵀy).",
+      "distractors": [
+        "(Ax)ᵀy = Axᵀy.",
+        "(Ax)ᵀy = yᵀAx only if A is the identity.",
+        "(Ax)ᵀy = xᵀAy."
+      ]
+    },
+    {
+      "id": "ml-w02-006",
+      "question": "What defines the inverse A⁻¹ of a square matrix A?",
+      "answer": "AA⁻¹ = A⁻¹A = I, where I is the identity matrix.",
+      "distractors": [
+        "A⁻¹ = Aᵀ for every square matrix.",
+        "AA⁻¹ = 0, the zero matrix.",
+        "A⁻¹ has each entry of A replaced by its reciprocal."
+      ]
+    },
+    {
+      "id": "ml-w02-007",
+      "question": "What does multiplying a matrix A by the identity matrix I do?",
+      "answer": "Nothing: IA = A.",
+      "distractors": [
+        "It transposes A.",
+        "It inverts A.",
+        "It sets all off-diagonal entries of A to zero."
+      ]
+    },
+    {
+      "id": "ml-w02-008",
+      "question": "The matrix [[1.5, 0], [0, 0.5]] is applied to points via x' = Sx. What kind of transformation is it?",
+      "answer": "Scaling/stretching: it stretches the x-direction by 1.5 and shrinks the y-direction by 0.5.",
+      "distractors": [
+        "A rotation by an angle θ.",
+        "A shear in the x-direction.",
+        "A translation of every point."
+      ]
+    },
+    {
+      "id": "ml-w02-009",
+      "question": "Which matrix performs a shear in the x-direction?",
+      "answer": "[[1, 0.5], [0, 1]].",
+      "distractors": [
+        "[[1.5, 0], [0, 0.5]].",
+        "[[0.87, −0.5], [0.5, 0.87]].",
+        "[[1, 0], [0, 1]]."
+      ]
+    },
+    {
+      "id": "ml-w02-010",
+      "question": "What is the rotation matrix R(θ)?",
+      "answer": "[[cos θ, −sin θ], [sin θ, cos θ]].",
+      "distractors": [
+        "[[cos θ, 0], [0, sin θ]].",
+        "[[1, θ], [0, 1]].",
+        "[[sin θ, cos θ], [cos θ, −sin θ]]."
+      ]
+    },
+    {
+      "id": "ml-w02-011",
+      "question": "When there are many features, why are summary statistics useful compared with plots?",
+      "answer": "They summarise the data more compactly than graphical methods.",
+      "distractors": [
+        "They show the full distribution of every attribute in more detail.",
+        "They remove the need to handle missing values.",
+        "They always reveal non-linear relationships that plots cannot."
+      ]
+    },
+    {
+      "id": "ml-w02-012",
+      "question": "Why does the empirical variance divide by N − 1 rather than N?",
+      "answer": "The course uses the formula var̂[x] = 1/(N−1) · Σ(xᵢ − μ̂)², which corrects for estimating the mean from the same sample.",
+      "distractors": [
+        "Because one observation is always held out for testing.",
+        "Because the first observation is used as a reference point.",
+        "Because dividing by N − 1 makes the variance equal to the standard deviation."
+      ]
+    },
+    {
+      "id": "ml-w02-013",
+      "question": "How is the empirical standard deviation related to the empirical variance?",
+      "answer": "It is the square root of the empirical variance.",
+      "distractors": [
+        "It is the empirical variance divided by N.",
+        "It is the square of the empirical variance.",
+        "It is the empirical variance divided by the mean."
+      ]
+    },
+    {
+      "id": "ml-w02-014",
+      "question": "What is the empirical covariance between attributes x and y?",
+      "answer": "1/(N−1) · Σᵢ (xᵢ − μ̂ₓ)(yᵢ − μ̂ᵧ).",
+      "distractors": [
+        "1/(N−1) · Σᵢ (xᵢ − μ̂ₓ)².",
+        "cov̂[x, y] divided by σ̂ₓσ̂ᵧ.",
+        "1/N · Σᵢ xᵢyᵢ without subtracting the means."
+      ]
+    },
+    {
+      "id": "ml-w02-015",
+      "question": "What are the diagonal entries of the empirical covariance matrix Σ̂?",
+      "answer": "The empirical variances of each individual attribute.",
+      "distractors": [
+        "The correlations between each pair of attributes.",
+        "The means of each attribute.",
+        "Always equal to 1."
+      ]
+    },
+    {
+      "id": "ml-w02-016",
+      "question": "In the Iris covariance matrix, the covariance between sepal width and petal length is −0.3. What does the negative sign indicate?",
+      "answer": "Sepal width tends to be below its mean when petal length is above its mean, and vice versa.",
+      "distractors": [
+        "The two attributes are completely unrelated.",
+        "One of the attributes has negative values.",
+        "Sepal width has a smaller variance than petal length."
+      ]
+    },
+    {
+      "id": "ml-w02-017",
+      "question": "How is the empirical correlation computed from the covariance?",
+      "answer": "cor̂[x, y] = cov̂[x, y] / (σ̂ₓσ̂ᵧ).",
+      "distractors": [
+        "cor̂[x, y] = cov̂[x, y] · σ̂ₓσ̂ᵧ.",
+        "cor̂[x, y] = cov̂[x, y] / (μ̂ₓμ̂ᵧ).",
+        "cor̂[x, y] = cov̂[x, y] / N."
+      ]
+    },
+    {
+      "id": "ml-w02-018",
+      "question": "What does a correlation of −1 between two attributes mean?",
+      "answer": "There is a perfect (decreasing) linear relationship between them.",
+      "distractors": [
+        "There is no relationship between them at all.",
+        "There is a perfect non-linear relationship between them.",
+        "One attribute is always negative."
+      ]
+    },
+    {
+      "id": "ml-w02-019",
+      "question": "What is the difference between covariance and correlation?",
+      "answer": "Correlation is covariance normalised by both standard deviations, so it lies between −1 and 1 and measures the degree of linear relationship.",
+      "distractors": [
+        "Covariance measures linear relationships, while correlation measures any non-linear relationship.",
+        "Correlation is covariance multiplied by N − 1.",
+        "Covariance is always between −1 and 1, while correlation is unbounded."
+      ]
+    },
+    {
+      "id": "ml-w02-020",
+      "question": "What do the quartiles of an attribute do?",
+      "answer": "The three 4-quantiles divide the distribution into four equally probable intervals.",
+      "distractors": [
+        "The four quartiles divide the distribution into four equally wide intervals.",
+        "The 99 quartiles divide the distribution into 100 intervals.",
+        "The single quartile divides the distribution into two halves."
+      ]
+    },
+    {
+      "id": "ml-w02-021",
+      "question": "Which of these is the same as the median?",
+      "answer": "The 2nd quartile and the 50th percentile.",
+      "distractors": [
+        "The 1st quartile and the 25th percentile.",
+        "The 3rd quartile and the 75th percentile.",
+        "The empirical mean."
+      ]
+    },
+    {
+      "id": "ml-w02-022",
+      "question": "How is the median found when N is even?",
+      "answer": "Sort the observations and take the average of the two middle values, x(N/2) and x(N/2+1).",
+      "distractors": [
+        "Sort the observations and take x((N+1)/2).",
+        "Take the average of all observations.",
+        "Sort the observations and take the smaller of the two middle values."
+      ]
+    },
+    {
+      "id": "ml-w02-023",
+      "question": "What is the median of the observations 7, 1, 4, 9, 3?",
+      "answer": "4.",
+      "distractors": [
+        "3.",
+        "4.8.",
+        "5.5."
+      ]
+    },
+    {
+      "id": "ml-w02-024",
+      "question": "How do similarity and dissimilarity measures differ in interpretation?",
+      "answer": "A similarity is often between 0 and 1, and higher means more similar; a dissimilarity is at least 0, and lower means more similar.",
+      "distractors": [
+        "Both are between 0 and 1, and higher means more similar for both.",
+        "A similarity is at least 0, and lower means more similar; a dissimilarity is between 0 and 1.",
+        "A dissimilarity can be negative, and a similarity is always an integer."
+      ]
+    },
+    {
+      "id": "ml-w02-025",
+      "question": "How can a dissimilarity measure be used for outlier detection?",
+      "answer": "The observation that is most dissimilar to all other observations is considered an outlier.",
+      "distractors": [
+        "The observation most similar to all others is considered an outlier.",
+        "Observations with a dissimilarity of exactly 0 to some other point are outliers.",
+        "The observation with the largest attribute values is always the outlier."
+      ]
+    },
+    {
+      "id": "ml-w02-026",
+      "question": "What does it mean that a vector space is closed under linear combinations?",
+      "answer": "Any combination a₁x₁ + … + aₙxₙ of vectors in the space, with real scalars aₖ, is also in the same space.",
+      "distractors": [
+        "Vectors in the space can only be added if they are orthogonal.",
+        "Multiplying a vector by a scalar always gives a vector of length 1.",
+        "Linear combinations of vectors give a scalar rather than a vector."
+      ]
+    },
+    {
+      "id": "ml-w02-027",
+      "question": "What is the inner product xᵀy of two orthogonal vectors?",
+      "answer": "0.",
+      "distractors": [
+        "1.",
+        "−1.",
+        "The product of their norms."
+      ]
+    },
+    {
+      "id": "ml-w02-028",
+      "question": "How is the Euclidean norm of a vector x computed?",
+      "answer": "‖x‖₂ = √(Σ xₙ²) = √(xᵀx).",
+      "distractors": [
+        "‖x‖₂ = Σ |xₙ|.",
+        "‖x‖₂ = max |xₙ|.",
+        "‖x‖₂ = xxᵀ."
+      ]
+    },
+    {
+      "id": "ml-w02-029",
+      "question": "How is the squared Frobenius norm of a matrix X computed?",
+      "answer": "‖X‖²_F = Σᵢ,ⱼ x²ᵢⱼ = trace(XXᵀ) = trace(XᵀX).",
+      "distractors": [
+        "‖X‖²_F = Σᵢ x²ᵢᵢ, the sum of the squared diagonal entries only.",
+        "‖X‖²_F = trace(X).",
+        "‖X‖²_F = the largest absolute entry of X."
+      ]
+    },
+    {
+      "id": "ml-w02-030",
+      "question": "What does the trace of a square matrix A compute?",
+      "answer": "The sum of its diagonal elements, Σᵢ aᵢᵢ.",
+      "distractors": [
+        "The product of its diagonal elements.",
+        "The sum of all its elements.",
+        "The sum of its squared elements."
+      ]
+    },
+    {
+      "id": "ml-w02-031",
+      "question": "What is the general Minkowski (p-)distance between x and y?",
+      "answer": "dₚ(x, y) = (Σⱼ |xⱼ − yⱼ|ᵖ)^(1/p) = ‖x − y‖ₚ.",
+      "distractors": [
+        "dₚ(x, y) = Σⱼ |xⱼ − yⱼ|ᵖ, without the 1/p power.",
+        "dₚ(x, y) = (Σⱼ |xⱼ|ᵖ)^(1/p) + (Σⱼ |yⱼ|ᵖ)^(1/p).",
+        "dₚ(x, y) = xᵀy / (‖x‖ₚ‖y‖ₚ)."
+      ]
+    },
+    {
+      "id": "ml-w02-032",
+      "question": "What is the max-norm distance d∞(x, y)?",
+      "answer": "The largest absolute difference across attributes, max{|x₁ − y₁|, …, |x_M − y_M|}.",
+      "distractors": [
+        "The sum of the absolute differences across attributes.",
+        "The square root of the sum of squared differences.",
+        "The smallest absolute difference across attributes."
+      ]
+    },
+    {
+      "id": "ml-w02-033",
+      "question": "In 2D, what shape is the set of points within distance 1 of the origin under the 1-norm, 2-norm and ∞-norm respectively?",
+      "answer": "A diamond (rotated square), a circle, and an axis-aligned square.",
+      "distractors": [
+        "A circle, a diamond, and an axis-aligned square.",
+        "An axis-aligned square, a circle, and a diamond.",
+        "A circle in all three cases."
+      ]
+    },
+    {
+      "id": "ml-w02-034",
+      "question": "Which p-distance is most affected by outliers, and which much less so?",
+      "answer": "p = ∞ is very affected by outliers, while p = 1 is much less so.",
+      "distractors": [
+        "p = 1 is very affected by outliers, while p = ∞ is much less so.",
+        "p = 2 is the only one affected by outliers.",
+        "All p-distances are equally affected by outliers."
+      ]
+    },
+    {
+      "id": "ml-w02-035",
+      "question": "For the test point o* = [0, 0] and o₃ = [−0.1, 0], why do d₁, d₂ and d∞ all give the same distance of 0.1?",
+      "answer": "The points differ along only one axis, so every p-distance reduces to the absolute difference along that axis.",
+      "distractors": [
+        "Because all p-distances are equal whenever one point is the origin.",
+        "Because the distance is below 1, where all norms agree.",
+        "Because o₃ is the nearest neighbour of o*."
+      ]
+    },
+    {
+      "id": "ml-w02-036",
+      "question": "What is d∞(o₂, o₅) for o₂ = [−0.2, 0.3] and o₅ = [−0.3, −0.2]?",
+      "answer": "0.5, the larger of the per-attribute differences 0.1 and 0.5.",
+      "distractors": [
+        "0.6, the sum of the per-attribute differences.",
+        "0.1, the smaller of the per-attribute differences.",
+        "1."
+      ]
+    },
+    {
+      "id": "ml-w02-037",
+      "question": "What is the squared Euclidean norm ‖[0, 0] − [−0.2, 0.3]‖²₂?",
+      "answer": "0.13.",
+      "distractors": [
+        "0.36.",
+        "0.5.",
+        "0.3606."
+      ]
+    },
+    {
+      "id": "ml-w02-038",
+      "question": "Why is the statement 'dₚ(o₄, oₖ) > 0.1 for all k ∈ {1, …, 6} and all p ∈ {1, 2, ∞}' false?",
+      "answer": "Because k = 4 is included, and the distance from o₄ to itself is 0 under any norm.",
+      "distractors": [
+        "Because the ∞-norm distance to every point is below 0.1.",
+        "Because the 1-norm and 2-norm always give distances below 0.1 in 2D.",
+        "Because distances are only defined between points of different classes."
+      ]
+    },
+    {
+      "id": "ml-w02-039",
+      "question": "How is the cosine similarity between x and y defined?",
+      "answer": "cos(x, y) = xᵀy / (‖x‖₂‖y‖₂).",
+      "distractors": [
+        "cos(x, y) = xᵀy / (‖x‖² + ‖y‖² − xᵀy).",
+        "cos(x, y) = (f₀₀ + f₁₁) / K.",
+        "cos(x, y) = ‖x − y‖₂ / (‖x‖₂‖y‖₂)."
+      ]
+    },
+    {
+      "id": "ml-w02-040",
+      "question": "For binary vectors, what do K, f₀₀ and f₁₁ denote?",
+      "answer": "K is the total number of attributes, f₀₀ the number where both vectors are 0, and f₁₁ the number where both are 1.",
+      "distractors": [
+        "K is the number of neighbours, f₀₀ the number of mismatches, and f₁₁ the number of matches.",
+        "K is the number of attributes where the vectors differ, and f₀₀ and f₁₁ are their norms.",
+        "K is the number of 1s in x, f₀₀ the number of 0s in y, and f₁₁ the number of 1s in y."
+      ]
+    },
+    {
+      "id": "ml-w02-041",
+      "question": "What is the difference between the Simple Matching Coefficient and the Jaccard coefficient?",
+      "answer": "SMC = (f₀₀ + f₁₁)/K counts shared 0s as matches, while Jaccard = f₁₁/(K − f₀₀) ignores attributes where both vectors are 0.",
+      "distractors": [
+        "SMC ignores shared 0s, while Jaccard counts them as matches.",
+        "SMC is for continuous vectors, while Jaccard is for binary vectors.",
+        "They are always equal for binary vectors."
+      ]
+    },
+    {
+      "id": "ml-w02-042",
+      "question": "Customer 1 bought [Bread, Soda, Milk, Beer, Diaper] = [1, 1, 1, 0, 0] and customer 2 bought [0, 1, 1, 0, 1]. What are SMC, Jaccard and cosine similarity?",
+      "answer": "SMC = 3/5, J = 1/2, cos = 2/3.",
+      "distractors": [
+        "SMC = 3/5, J = 3/4, cos = √(2/3).",
+        "SMC = 2/5, J = 1/3, cos = 2/3.",
+        "SMC = 2/5, J = 1/3, cos = √(2/3)."
+      ]
+    },
+    {
+      "id": "ml-w02-043",
+      "question": "How is the extended Jaccard coefficient defined, and how does it relate to the Jaccard coefficient on binary data?",
+      "answer": "EJ(x, y) = xᵀy / (‖x‖² + ‖y‖² − xᵀy), and it agrees with the Jaccard coefficient when the data is binary.",
+      "distractors": [
+        "EJ(x, y) = xᵀy / (‖x‖₂‖y‖₂), and it equals cosine similarity on binary data.",
+        "EJ(x, y) = (f₀₀ + f₁₁)/K, and it equals SMC on binary data.",
+        "EJ(x, y) = xᵀy / (‖x‖² + ‖y‖²), and it is always half the Jaccard coefficient."
+      ]
+    },
+    {
+      "id": "ml-w02-044",
+      "question": "What does it mean for a dissimilarity d to be scale invariant?",
+      "answer": "d(x, y) = d(αx, y): rescaling one input does not change the measure.",
+      "distractors": [
+        "d(x, y) = d(α + x, y): shifting one input does not change the measure.",
+        "d(x, y) = d(y, x): the order of the inputs does not matter.",
+        "d(x, x) = 0: an object has zero distance to itself."
+      ]
+    },
+    {
+      "id": "ml-w02-045",
+      "question": "What does it mean for a dissimilarity d to be translation invariant?",
+      "answer": "d(x, y) = d(α + x, y): adding a constant offset to one input does not change the measure.",
+      "distractors": [
+        "d(x, y) = d(αx, y): rescaling one input does not change the measure.",
+        "d(x, y) = d(y, x): the order of the inputs does not matter.",
+        "d(x, y) is unchanged when attributes are reordered."
+      ]
+    },
+    {
+      "id": "ml-w02-046",
+      "question": "Persons x, y and z have (children, age, salary) = (0, 44, 45000), (0, 44, 50000) and (2, 44, 50000). Why is d₂(x, y) much larger than d₂(y, z), and what fixes this?",
+      "answer": "Salary has a far larger scale and dominates the Euclidean distance; standardizing each attribute prevents one attribute from dominating.",
+      "distractors": [
+        "Number of children is a ratio attribute and must be removed; one-out-of-K encoding fixes this.",
+        "Age is identical for all three, which inflates the distance; removing age fixes this.",
+        "Euclidean distance is scale invariant, so the result is correct and needs no fix."
+      ]
+    },
+    {
+      "id": "ml-w02-047",
+      "question": "When combining heterogeneous attributes, age similarity is defined as s_Age = a / (a + d₁(x_Age, y_Age)) with a = 1. What is s_Age when two people's ages differ by 1 year?",
+      "answer": "0.5.",
+      "distractors": [
+        "1.",
+        "0.",
+        "2."
+      ]
+    },
+    {
+      "id": "ml-w02-048",
+      "question": "How are a binary education similarity and a continuous age similarity combined into one overall similarity?",
+      "answer": "Compute s_Edu with SMC and s_Age from a transformed distance, then combine them, for example as the average ½(s_Edu + s_Age) or a weighted sum.",
+      "distractors": [
+        "Compute one Euclidean distance over the raw education and age attributes together.",
+        "Use only the attribute with the largest scale.",
+        "Multiply the raw age by the number of education levels."
+      ]
+    },
+    {
+      "id": "ml-w02-049",
+      "question": "What does the weighted similarity s(x, y) = 0.99 s_Edu + 0.01 s_Age express?",
+      "answer": "That education is considered far more important than age when comparing objects.",
+      "distractors": [
+        "That age is considered far more important than education.",
+        "That the two attributes have been standardized to equal importance.",
+        "That 99% of the objects have education data and 1% have age data."
+      ]
+    },
+    {
+      "id": "ml-w02-050",
+      "question": "How does the squared Mahalanobis distance differ from the squared Euclidean distance?",
+      "answer": "It replaces the identity matrix with the inverse covariance matrix: (x − y)ᵀ Σ⁻¹ (x − y).",
+      "distractors": [
+        "It replaces the identity matrix with the covariance matrix itself: (x − y)ᵀ Σ (x − y).",
+        "It takes the maximum absolute difference instead of the sum of squares.",
+        "It divides the Euclidean distance by the number of attributes."
+      ]
+    },
+    {
+      "id": "ml-w02-051",
+      "question": "Under the Mahalanobis distance, what happens to distances along directions where the data has high variance?",
+      "answer": "Moving along high-variance directions counts as a shorter distance.",
+      "distractors": [
+        "Moving along high-variance directions counts as a longer distance.",
+        "High-variance directions are ignored completely.",
+        "Distances are the same in every direction, as with the Euclidean distance."
+      ]
+    },
+    {
+      "id": "ml-w02-052",
+      "question": "In very high dimensions, what happens to the ratio between the smallest and largest Euclidean distances among random points?",
+      "answer": "It approaches 1, so all points become nearly equidistant from each other.",
+      "distractors": [
+        "It approaches 0, so nearest neighbours become extremely close.",
+        "It grows without bound.",
+        "It stays the same as in low dimensions."
+      ]
+    },
+    {
+      "id": "ml-w02-053",
+      "question": "How does the number of points needed to densely cover a unit hypercube grow with the dimension?",
+      "answer": "Exponentially, even though the cube's volume stays 1.",
+      "distractors": [
+        "Linearly, in proportion to the dimension.",
+        "It stays the same, since the volume is always 1.",
+        "It decreases, since the points spread out."
+      ]
+    },
+    {
+      "id": "ml-w02-054",
+      "question": "In a 20-dimensional box filled with random points, what is surprising about a given point's surroundings?",
+      "answer": "In high enough dimension, the boundaries of the box are closer to it than any other point in the box.",
+      "distractors": [
+        "Its nearest neighbour is always at distance 0.",
+        "All other points lie closer to it than the boundaries do.",
+        "It always lies at the exact centre of the box."
+      ]
+    },
+    {
+      "id": "ml-w02-055",
+      "question": "What are the three components of supervised learning?",
+      "answer": "Data (inputs and outputs), a model f(x; w) with parameters w, and a cost function d(y, f(x; w)) measuring the dissimilarity between observation and prediction.",
+      "distractors": [
+        "Data (inputs only), a similarity measure, and a set of clusters.",
+        "A model, a decoder, and a latent representation.",
+        "A confusion matrix, an error rate, and a test point."
+      ]
+    },
+    {
+      "id": "ml-w02-056",
+      "question": "In supervised learning, what role does the cost function play?",
+      "answer": "It measures the dissimilarity between the observed output and the model's prediction, telling us whether the model is good or bad.",
+      "distractors": [
+        "It is the function with parameters w that maps inputs to outputs.",
+        "It lists the inputs and outputs we are given.",
+        "It decides how many neighbours to use."
+      ]
+    },
+    {
+      "id": "ml-w02-057",
+      "question": "What are the steps of the K-nearest neighbour classifier, once K and a distance measure are chosen?",
+      "answer": "Compute the distance to all other data objects, find the K nearest, and classify by majority vote among them.",
+      "distractors": [
+        "Compute the class means, then assign the class whose mean is nearest.",
+        "Find the K nearest objects, then predict the average of their output values.",
+        "Fit a model with parameters w, then classify using its output."
+      ]
+    },
+    {
+      "id": "ml-w02-058",
+      "question": "Training data (height, weight): males (183, 90), (180, 75), (170, 85), (185, 83); females (159, 59), (167, 75), (165, 68), (175, 72). With Euclidean distance and K = 1, how is the new point (171, 82) classified?",
+      "answer": "Male, because its single nearest neighbour is the male at (170, 85).",
+      "distractors": [
+        "Female, because its nearest neighbour is the female at (167, 75).",
+        "Female, because there are more females nearby than males.",
+        "It cannot be classified with K = 1."
+      ]
+    },
+    {
+      "id": "ml-w02-059",
+      "question": "For the same data, with Euclidean distance and K = 3, how is (171, 82) classified?",
+      "answer": "Female, because its three nearest neighbours are the male at (170, 85) and the females at (167, 75) and (175, 72).",
+      "distractors": [
+        "Male, because its nearest neighbour is male.",
+        "Male, because two of its three nearest neighbours are male.",
+        "It is a tie that must be broken randomly."
+      ]
+    },
+    {
+      "id": "ml-w02-060",
+      "question": "Why can K = 2 or K = 4 cause problems in a two-class K-nearest neighbour classifier?",
+      "answer": "An even K can produce a tie (for example 1/2 votes for each class), so a tie-breaking rule is needed.",
+      "distractors": [
+        "An even K always makes the classifier predict the majority class in the whole dataset.",
+        "An even K makes the distance computation undefined.",
+        "An even K is equivalent to K = 1."
+      ]
+    },
+    {
+      "id": "ml-w02-061",
+      "question": "In a KNN decision-boundary quiz, plot C has a boundary passing exactly between every pair of neighbouring points of different classes. Which K does it correspond to?",
+      "answer": "K = 1.",
+      "distractors": [
+        "K = 3.",
+        "K = 4.",
+        "K = 3 with ties broken by the second nearest neighbour."
+      ]
+    },
+    {
+      "id": "ml-w02-062",
+      "question": "For a K = 3 classifier on three classes, what tie-breaking rule did the correct decision boundary in the quiz assume?",
+      "answer": "Assign the point to the class of its nearest neighbour.",
+      "distractors": [
+        "Assign the point to the class of its second nearest neighbour.",
+        "Assign the point to a random class among the tied ones.",
+        "Assign the point to the largest class in the training set."
+      ]
+    },
+    {
+      "id": "ml-w02-063",
+      "question": "A confusion matrix shows 4 mammals predicted as mammals, 2 mammals predicted as non-mammals, 1 non-mammal predicted as mammal, and 8 non-mammals predicted correctly. What are the accuracy and error rate?",
+      "answer": "Accuracy = 12/15 = 0.8, error rate = 3/15 = 0.2.",
+      "distractors": [
+        "Accuracy = 4/6 ≈ 0.67, error rate ≈ 0.33.",
+        "Accuracy = 8/9 ≈ 0.89, error rate ≈ 0.11.",
+        "Accuracy = 0.2, error rate = 0.8."
+      ]
+    },
+    {
+      "id": "ml-w02-064",
+      "question": "How are accuracy and error rate related?",
+      "answer": "They sum to 1: accuracy is the fraction of correct predictions, and error rate is the fraction of incorrect ones.",
+      "distractors": [
+        "The error rate is the square of 1 minus the accuracy.",
+        "Accuracy is the number of correct predictions, and error rate is the number of incorrect predictions in the largest class.",
+        "They are independent and can both be high at the same time."
+      ]
+    },
+    {
+      "id": "ml-w02-065",
+      "question": "What does a confusion matrix show?",
+      "answer": "The counts of actual versus predicted class labels.",
+      "distractors": [
+        "The covariance between each pair of attributes.",
+        "The distances between each pair of data objects.",
+        "The decision boundaries for different values of K."
+      ]
+    },
+    {
+      "id": "ml-w02-066",
+      "question": "How does KNN regression predict the output for a test observation x?",
+      "answer": "It predicts the average y-value of the K nearest training points: ŷ = (1/K) Σ yᵢ over the neighbourhood.",
+      "distractors": [
+        "It predicts the most common y-value among the K nearest training points.",
+        "It predicts the y-value of the farthest training point.",
+        "It fits a straight line through all training points."
+      ]
+    },
+    {
+      "id": "ml-w02-067",
+      "question": "Why is the KNN regression prediction piecewise constant, as seen for K = 1?",
+      "answer": "Over an interval of inputs, the set of nearest neighbours stays the same, so their average prediction does not change.",
+      "distractors": [
+        "Because KNN regression rounds every prediction to the nearest integer.",
+        "Because KNN regression only predicts values seen at the test points.",
+        "Because the distance measure is the max-norm."
+      ]
+    },
+    {
+      "id": "ml-w02-068",
+      "question": "What is the difference between descriptive and predictive regression modelling?",
+      "answer": "Descriptive modelling explains the relation between attributes and a continuous output; predictive modelling predicts the output value of a new data object.",
+      "distractors": [
+        "Descriptive modelling predicts outputs for new objects; predictive modelling explains relationships.",
+        "Descriptive modelling has discrete outputs; predictive modelling has continuous outputs.",
+        "Descriptive modelling uses KNN; predictive modelling uses regression trees."
+      ]
+    },
+    {
+      "id": "ml-w02-069",
+      "question": "How is a regression model evaluated?",
+      "answer": "By the average loss per observation, E = (1/N) Σ L(yᵢ, f(xᵢ)), using L₁ = |y − ŷ| or L₂ = (y − ŷ)².",
+      "distractors": [
+        "By the accuracy, the fraction of exactly correct predictions.",
+        "By the confusion matrix of actual versus predicted values.",
+        "By the correlation between the inputs."
+      ]
+    },
+    {
+      "id": "ml-w02-070",
+      "question": "What does the L₂ loss for regression compute?",
+      "answer": "The squared difference (yᵢ − ŷᵢ)² between the observation and the prediction.",
+      "distractors": [
+        "The absolute difference |yᵢ − ŷᵢ|.",
+        "The maximum difference over all observations.",
+        "1 if the prediction is wrong, 0 if it is right."
+      ]
+    },
+    {
+      "id": "ml-w02-071",
+      "question": "In the teaser for evaluating KNN on unseen data, how is each observation xᵢ evaluated?",
+      "answer": "Remove xᵢ from the data, classify it using its neighbours among the remaining points, record whether it was correct, and repeat for all N points.",
+      "distractors": [
+        "Classify xᵢ using all data including itself, so it is always its own nearest neighbour.",
+        "Classify only the first point and assume the rest behave the same.",
+        "Compute the distance from xᵢ to the class means and repeat once."
+      ]
+    },
+    {
+      "id": "ml-w02-072",
+      "question": "Which questions about KNN methods were left open for later in the course?",
+      "answer": "How to systematically select K and the distance measure, and how to properly evaluate on unseen data.",
+      "distractors": [
+        "How to compute Euclidean distances and majority votes.",
+        "How to compute the median of the training data.",
+        "How to store data points as rows of a matrix."
+      ]
+    }
+  ]
+}

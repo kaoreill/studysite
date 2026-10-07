@@ -6,7 +6,7 @@
       "weeks": [
         {
           "week": 1,
-          "title": "Introduction & Linear Regression",
+          "title": "Introduction, data and visualization",
           "pdfs": [
             {
               "name": "Lecture 1 slides",
@@ -17,33 +17,33 @@
         },
         {
           "week": 2,
-          "title": "",
+          "title": "Summary statistics, similarity and nearest neighbors",
           "pdfs": [],
-          "cards": null
+          "cards": "week-02.json"
         },
         {
           "week": 3,
-          "title": "",
+          "title": "Computational linear algebra and PCA",
           "pdfs": [],
-          "cards": null
+          "cards": "week-03.json"
         },
         {
           "week": 4,
-          "title": "",
+          "title": "Probability theory, Bayes and Naive Bayes",
           "pdfs": [],
-          "cards": null
+          "cards": "week-04.json"
         },
         {
           "week": 5,
-          "title": "",
+          "title": "Bayesian inference and linear models",
           "pdfs": [],
-          "cards": null
+          "cards": "week-05.json"
         },
         {
           "week": 6,
-          "title": "",
+          "title": "Decision trees, overfitting and cross-validation",
           "pdfs": [],
-          "cards": null
+          "cards": "week-06.json"
         },
         {
           "week": 7,

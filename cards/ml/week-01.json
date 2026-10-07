@@ -1,36 +1,726 @@
 {
   "module": "ml",
   "week": 1,
-  "title": "Introduction & Linear Regression",
+  "title": "Introduction, data and visualization",
   "cards": [
     {
       "id": "ml-w01-001",
-      "question": "What is the bias-variance tradeoff?",
-      "answer": "The tradeoff between a model's error from erroneous assumptions (bias) and its error from sensitivity to small fluctuations in the training set (variance).",
+      "question": "How did Arthur Samuel (1959) define machine learning?",
+      "answer": "The field of study that gives computers the ability to learn without being explicitly programmed.",
       "distractors": [
-        "A regularization technique that removes bias from gradient descent.",
-        "The tradeoff between training time and inference time.",
-        "A method for selecting the optimal learning rate."
+        "The study of whether a machine can imitate a human well enough to be mistaken for one.",
+        "The design of search and pathfinding algorithms that rely on explicit knowledge representations.",
+        "The field of storing and querying large collections of data in database systems."
       ]
     },
     {
       "id": "ml-w01-002",
-      "question": "What does overfitting mean?",
-      "answer": "A model learns the training data too closely, including its noise, and performs poorly on new data.",
+      "question": "According to Tom Mitchell's definition of a well-posed learning problem, when is a computer program said to learn?",
+      "answer": "When its performance at a class of tasks T, as measured by a performance measure P, improves with experience E.",
       "distractors": [
-        "A model is too simple to capture the underlying pattern.",
-        "A model trains faster than expected.",
-        "A model's weights converge to zero."
+        "When it can imitate a human so that an observer cannot tell them apart.",
+        "When it has been explicitly programmed with a rule for every task in T.",
+        "When it reaches zero error on the examples it has already seen in E."
       ]
     },
     {
       "id": "ml-w01-003",
-      "question": "What is gradient descent used for?",
-      "answer": "Iteratively adjusting model parameters to minimize a loss function.",
+      "question": "In Mitchell's framework applied to Samuel's checkers program, what plays the role of the performance measure P?",
+      "answer": "Whether the program wins or loses a game.",
       "distractors": [
-        "Splitting data into training and test sets.",
-        "Converting categorical variables into numerical ones.",
-        "Measuring the correlation between two variables."
+        "Playing 10,000 games against itself.",
+        "The task of playing checkers.",
+        "The learned value of each board position."
+      ]
+    },
+    {
+      "id": "ml-w01-004",
+      "question": "In Mitchell's framework applied to Samuel's checkers program, what is the experience E?",
+      "answer": "Playing 10,000 games against itself.",
+      "distractors": [
+        "Winning or losing a game.",
+        "The class of tasks of playing checkers.",
+        "Being explicitly programmed with expert checkers rules."
+      ]
+    },
+    {
+      "id": "ml-w01-005",
+      "question": "Why did Alan Turing propose replacing the question 'Can a machine think?' with the imitation game?",
+      "answer": "Because the terms 'machine' and 'think' are undefined, so he instead asked whether a machine can imitate a human.",
+      "distractors": [
+        "Because universal computing had already proven that machines cannot think.",
+        "Because thinking can only be defined through a performance measure P on tasks T.",
+        "Because a checkers program had already shown that machines learn like children."
+      ]
+    },
+    {
+      "id": "ml-w01-006",
+      "question": "What characterises machine learning as a field distinct from other areas of AI?",
+      "answer": "It focuses on general learning algorithms that improve gradually with training time and data, and de-emphasises explicit knowledge representations.",
+      "distractors": [
+        "It focuses on search and pathfinding algorithms rather than learning.",
+        "It relies on explicit, hand-crafted knowledge representations for each problem.",
+        "It develops a specialised algorithm for each individual task instead of general ones."
+      ]
+    },
+    {
+      "id": "ml-w01-007",
+      "question": "Of the reasons given for why machine learning has advanced so much recently, which is the technological reason?",
+      "answer": "Faster computers, especially graphics processing units (GPUs).",
+      "distractors": [
+        "Increased availability of large, good datasets.",
+        "Libraries that automate routine tasks and increased sharing of code.",
+        "Greatly increased resource allocation."
+      ]
+    },
+    {
+      "id": "ml-w01-008",
+      "question": "In the plot of error against training set size, how does a very flexible model compare with a not-so-flexible model?",
+      "answer": "The very flexible model has higher error on small training sets but reaches much lower error as the training set grows.",
+      "distractors": [
+        "The very flexible model has lower error at every training set size.",
+        "The very flexible model is better on small training sets but levels off at a higher error on large ones.",
+        "Both models converge to the same error once the training set is large enough."
+      ]
+    },
+    {
+      "id": "ml-w01-009",
+      "question": "On the model-complexity spectrum, in which direction do regularization and bagging/boosting move a model?",
+      "answer": "Regularization moves a model toward less complexity, while bagging/boosting moves it toward more complexity.",
+      "distractors": [
+        "Regularization increases complexity, while bagging/boosting reduces it.",
+        "Both regularization and bagging/boosting increase model complexity.",
+        "Both regularization and bagging/boosting reduce model complexity."
+      ]
+    },
+    {
+      "id": "ml-w01-010",
+      "question": "Which of these models lies at the least complex end of the model-complexity spectrum?",
+      "answer": "Linear/logistic regression.",
+      "distractors": [
+        "Decision tree.",
+        "Random forest.",
+        "Small neural network."
+      ]
+    },
+    {
+      "id": "ml-w01-011",
+      "question": "In the data-modelling pipeline, which stage includes feature extraction, similarity measures, summary statistics and data visualization?",
+      "answer": "Data preparation.",
+      "distractors": [
+        "Data modelling.",
+        "Evaluation.",
+        "Result dissemination."
+      ]
+    },
+    {
+      "id": "ml-w01-012",
+      "question": "What is the difference between supervised and unsupervised learning tasks?",
+      "answer": "Supervised tasks are predictive and use some variables to predict another variable; unsupervised tasks are descriptive and find human-interpretable patterns in the data.",
+      "distractors": [
+        "Supervised tasks are descriptive and find patterns; unsupervised tasks are predictive.",
+        "Supervised tasks always produce continuous outputs; unsupervised tasks always produce discrete outputs.",
+        "Supervised tasks need a similarity measure between objects; unsupervised tasks need class labels."
+      ]
+    },
+    {
+      "id": "ml-w01-013",
+      "question": "What is the key difference between classification and regression?",
+      "answer": "Classification predicts a discrete output (a class label); regression predicts a continuous output value.",
+      "distractors": [
+        "Classification predicts a continuous value; regression predicts a class label.",
+        "Classification is unsupervised; regression is supervised.",
+        "Classification groups objects by similarity without labels; regression detects abnormal objects."
+      ]
+    },
+    {
+      "id": "ml-w01-014",
+      "question": "Predicting wind velocity as a function of temperature, humidity and air pressure is an example of which task?",
+      "answer": "Regression, because the output is a continuous value.",
+      "distractors": [
+        "Classification, because the inputs are measured attributes.",
+        "Clustering, because the weather variables form natural groups.",
+        "Representation learning, because wind velocity is a latent factor."
+      ]
+    },
+    {
+      "id": "ml-w01-015",
+      "question": "Recognising dubious credit card transactions based on the card holder's transaction history is an example of which task?",
+      "answer": "Anomaly detection.",
+      "distractors": [
+        "Clustering.",
+        "Regression.",
+        "Representation learning."
+      ]
+    },
+    {
+      "id": "ml-w01-016",
+      "question": "Grouping documents by their word frequencies so that a search can return related documents that lack the exact keywords is which task?",
+      "answer": "Clustering.",
+      "distractors": [
+        "Regression.",
+        "Anomaly detection.",
+        "Classification."
+      ]
+    },
+    {
+      "id": "ml-w01-017",
+      "question": "Besides the features of each object, what must be defined before clustering can be performed?",
+      "answer": "A measure of similarity between objects.",
+      "distractors": [
+        "A class label for each object.",
+        "A continuous target variable for each object.",
+        "A performance measure P based on wins and losses."
+      ]
+    },
+    {
+      "id": "ml-w01-018",
+      "question": "In representation learning, what does the encoder Enc: R^D → R^d do?",
+      "answer": "It maps each data point to a d-dimensional latent representation that captures the latent factors describing the data.",
+      "distractors": [
+        "It maps latent representations back into reconstructions in the original D-dimensional space.",
+        "It assigns each data point a discrete class label.",
+        "It removes outliers from the data before modelling."
+      ]
+    },
+    {
+      "id": "ml-w01-019",
+      "question": "Which machine learning task is described as the foundation of generative AI such as image/video generation and LLMs?",
+      "answer": "Representation learning.",
+      "distractors": [
+        "Clustering.",
+        "Anomaly detection.",
+        "Regression."
+      ]
+    },
+    {
+      "id": "ml-w01-020",
+      "question": "What is the generalization error of a learned prediction rule f?",
+      "answer": "How often f makes a mistake on future, previously unseen data.",
+      "distractors": [
+        "How often f makes a mistake on the training data it was learned from.",
+        "The difference between the number of training and test objects.",
+        "The error introduced by noise in the training set measurements."
+      ]
+    },
+    {
+      "id": "ml-w01-021",
+      "question": "Points with −1 ≤ x ≤ 1 and y ≤ 1 are blue, all others red. With z1 = max{0, x−1} + max{0, −1−x} and z2 = max{0, −1+y}, which decision rule solves the problem?",
+      "answer": "Classify as blue if z1 = z2 = 0, otherwise red.",
+      "distractors": [
+        "Classify as blue if z1 = z2 = 1, otherwise red.",
+        "Classify as blue if z1 = 1 and z2 = 0, otherwise red.",
+        "Classify as blue if z1 = 0 and z2 = 1, otherwise red."
+      ]
+    },
+    {
+      "id": "ml-w01-022",
+      "question": "A decision rule built from terms like max{0, x−1} and max{0, −1+y} is a slightly obscured example of which model?",
+      "answer": "A neural network with ReLU units.",
+      "distractors": [
+        "A decision tree.",
+        "A K-nearest neighbour classifier.",
+        "A linear regression model."
+      ]
+    },
+    {
+      "id": "ml-w01-023",
+      "question": "Relative CO2 concentration oscillates with a period of one year while trending upward over time. Which function is a good candidate model y = f(x), with x in years?",
+      "answer": "y = 0.5x + sin(2πx).",
+      "distractors": [
+        "y = 0.5x + cos(x).",
+        "y = −0.5x + sin(2πx).",
+        "y = −0.5x + cos(x)."
+      ]
+    },
+    {
+      "id": "ml-w01-024",
+      "question": "Extending f(x; w) = w0 + w1x1 + w2x2 with the terms w3x1² + w4x2² is an example of what?",
+      "answer": "A polynomial feature transformation, also called basis expansion.",
+      "distractors": [
+        "Standardization of the input attributes.",
+        "One-out-of-K encoding of the inputs.",
+        "Dimensionality reduction of the inputs."
+      ]
+    },
+    {
+      "id": "ml-w01-025",
+      "question": "In a data table, a collection of attributes describing a single object (a row) is also known as what?",
+      "answer": "A record, point, case, sample, entity or instance.",
+      "distractors": [
+        "A variable, feature or characteristic.",
+        "A class label.",
+        "A latent factor."
+      ]
+    },
+    {
+      "id": "ml-w01-026",
+      "question": "Which of these attributes is discrete rather than continuous?",
+      "answer": "Zip codes.",
+      "distractors": [
+        "Temperature.",
+        "Height.",
+        "Weight."
+      ]
+    },
+    {
+      "id": "ml-w01-027",
+      "question": "Which operations are meaningful for a nominal attribute such as eye colour?",
+      "answer": "Only equal / not equal.",
+      "distractors": [
+        "Greater than / less than.",
+        "Addition / subtraction.",
+        "Multiplication / division."
+      ]
+    },
+    {
+      "id": "ml-w01-028",
+      "question": "What distinguishes a ratio attribute from an interval attribute?",
+      "answer": "For a ratio attribute, zero means absence of what is measured, so multiplication and division are meaningful.",
+      "distractors": [
+        "A ratio attribute can be ranked, whereas an interval attribute cannot.",
+        "An interval attribute is always continuous, while a ratio attribute is always discrete.",
+        "An interval attribute supports multiplication and division, while a ratio attribute only supports addition and subtraction."
+      ]
+    },
+    {
+      "id": "ml-w01-029",
+      "question": "How is temperature classified in Celsius versus in Kelvin?",
+      "answer": "Interval in Celsius, ratio in Kelvin.",
+      "distractors": [
+        "Ratio in both Celsius and Kelvin.",
+        "Ratio in Celsius, interval in Kelvin.",
+        "Ordinal in Celsius, ratio in Kelvin."
+      ]
+    },
+    {
+      "id": "ml-w01-030",
+      "question": "How should military rank be classified?",
+      "answer": "Discrete and ordinal.",
+      "distractors": [
+        "Discrete and nominal.",
+        "Continuous and interval.",
+        "Discrete and ratio."
+      ]
+    },
+    {
+      "id": "ml-w01-031",
+      "question": "Why is a person's year of birth classified as interval while their age in years is ratio?",
+      "answer": "For age, zero means absence of what is measured, so ratios are meaningful; year zero does not mean absence of anything, so only differences between years are meaningful.",
+      "distractors": [
+        "Year of birth is continuous while age in years is discrete.",
+        "Age can be ranked but year of birth cannot.",
+        "Year of birth is only a category label, so it supports equality comparisons alone."
+      ]
+    },
+    {
+      "id": "ml-w01-032",
+      "question": "From your own perspective as a customer, how is a coat check number classified?",
+      "answer": "Discrete and nominal.",
+      "distractors": [
+        "Discrete and ordinal.",
+        "Discrete and ratio.",
+        "Continuous and interval."
+      ]
+    },
+    {
+      "id": "ml-w01-033",
+      "question": "In a cereal dataset, TYPE (0 = served cold, 1 = served hot) and VIT (0%, 25% or 100% of recommendations) are both discrete. How do they differ?",
+      "answer": "TYPE is nominal because hot is not greater than cold, while VIT is ordinal because 0% < 25% < 100%.",
+      "distractors": [
+        "Both are ordinal, because both are coded with numbers.",
+        "TYPE is ordinal and VIT is nominal.",
+        "TYPE is ratio because 0 means absence of heat, while VIT is interval."
+      ]
+    },
+    {
+      "id": "ml-w01-034",
+      "question": "Which operations can be applied to a ratio attribute?",
+      "answer": "All of =, ≠, <, >, +, −, × and /, because a ratio attribute is also interval, ordinal and nominal.",
+      "distractors": [
+        "Only × and /.",
+        "Only =, ≠, < and >.",
+        "Only +, −, × and /, but not equality comparisons."
+      ]
+    },
+    {
+      "id": "ml-w01-035",
+      "question": "A dataset recording which people know each other is best described as which data set type and representation?",
+      "answer": "Relational data, represented as a graph (or an adjacency matrix).",
+      "distractors": [
+        "Record/tabular data, represented as a transaction table.",
+        "Ordered data, represented as a sequence.",
+        "Sequential data, represented as a time series."
+      ]
+    },
+    {
+      "id": "ml-w01-036",
+      "question": "How is market basket transaction data turned into a matrix?",
+      "answer": "One row per transaction and one binary column per item, with a 1 if the item was bought in that transaction.",
+      "distractors": [
+        "One row and one column per item, with a 1 if two items were ever bought together.",
+        "One row per time step and one column holding the number of items bought.",
+        "One column per transaction, holding the list of item names."
+      ]
+    },
+    {
+      "id": "ml-w01-037",
+      "question": "When is data considered to be of high quality?",
+      "answer": "When it is fit for its intended purpose and correctly represents the phenomena it corresponds to.",
+      "distractors": [
+        "When it contains no missing values, regardless of its purpose.",
+        "When all its attributes have been standardized.",
+        "When it contains as many attributes as possible."
+      ]
+    },
+    {
+      "id": "ml-w01-038",
+      "question": "What is the difference between noise and outliers?",
+      "answer": "Noise is an unwanted perturbation to a signal, while an outlier is a data object significantly different from most others, which can even be a natural property of the data.",
+      "distractors": [
+        "Noise is a data object significantly different from the others, while an outlier is a perturbation to a signal.",
+        "Both are always caused by measurement error and must always be removed.",
+        "Outliers are missing values encoded with a special placeholder value."
+      ]
+    },
+    {
+      "id": "ml-w01-039",
+      "question": "Which of these is a cause of noise in data?",
+      "answer": "Interference from other signals or limits in measurement accuracy.",
+      "distractors": [
+        "An attribute that is not applicable to the object.",
+        "People declining to give information.",
+        "A data object being a natural extreme of the population."
+      ]
+    },
+    {
+      "id": "ml-w01-040",
+      "question": "Annual income being recorded as missing for a child is an example of which cause of missing values?",
+      "answer": "The attribute is not applicable to that object.",
+      "distractors": [
+        "The information was not collected because the person declined to give it.",
+        "Noise from limits in measurement accuracy.",
+        "An outlier caused by a measurement error."
+      ]
+    },
+    {
+      "id": "ml-w01-041",
+      "question": "Replacing a missing age with the average age of the other data objects is which strategy for handling missing values?",
+      "answer": "Estimating the missing values.",
+      "distractors": [
+        "Removing data objects.",
+        "Eliminating attributes.",
+        "Ignoring the missing value in the analysis."
+      ]
+    },
+    {
+      "id": "ml-w01-042",
+      "question": "What is the difference between feature subset selection and feature extraction?",
+      "answer": "Feature subset selection keeps a subset of the existing attributes, while feature extraction creates new features from existing ones.",
+      "distractors": [
+        "Feature subset selection creates new features, while feature extraction keeps a subset of existing ones.",
+        "Feature subset selection picks a representative subset of data objects, while feature extraction picks attributes.",
+        "Both project the data onto a low-dimensional subspace."
+      ]
+    },
+    {
+      "id": "ml-w01-043",
+      "question": "Which dataset manipulation projects the data onto a low-dimensional subspace?",
+      "answer": "Dimensionality reduction.",
+      "distractors": [
+        "Sampling.",
+        "Discretization and binarization.",
+        "Aggregation of several attributes into one."
+      ]
+    },
+    {
+      "id": "ml-w01-044",
+      "question": "When is de-trending an appropriate feature processing step?",
+      "answer": "When the data is not stationary, such as a signal with an underlying trend.",
+      "distractors": [
+        "When text documents contain many common stop words.",
+        "When categorical attributes need to become binary columns.",
+        "When images need to be centered, rotated and scaled."
+      ]
+    },
+    {
+      "id": "ml-w01-045",
+      "question": "How is an attribute standardized?",
+      "answer": "Subtract the attribute's estimated mean and divide by its estimated standard deviation.",
+      "distractors": [
+        "Set each value to 1 if it is at least a threshold θ, otherwise 0.",
+        "Divide each value by the attribute's maximum value.",
+        "Replace each value with a binary indicator vector over its categories."
+      ]
+    },
+    {
+      "id": "ml-w01-046",
+      "question": "What does binarizing an attribute with threshold θ produce?",
+      "answer": "A value of 1 if x ≥ θ and 0 otherwise.",
+      "distractors": [
+        "A value of (x − mean) / standard deviation.",
+        "One binary column per category of the attribute.",
+        "A value of 1 if x is missing and 0 otherwise."
+      ]
+    },
+    {
+      "id": "ml-w01-047",
+      "question": "A Nationality attribute takes the values Denmark, Norway and Sweden. What does one-out-of-K encoding do with it?",
+      "answer": "It replaces it with three binary columns, one per country, where exactly one column is 1 for each object.",
+      "distractors": [
+        "It replaces each country with a single integer code 1, 2 or 3.",
+        "It standardizes the column to zero mean and unit variance.",
+        "It removes the attribute because it is not numeric."
+      ]
+    },
+    {
+      "id": "ml-w01-048",
+      "question": "What information does a bag-of-words representation of a text discard?",
+      "answer": "Grammar and word order, since the text is treated as an unordered collection of words.",
+      "distractors": [
+        "Which words occur in the text.",
+        "How many times each word occurs.",
+        "Which document each word belongs to."
+      ]
+    },
+    {
+      "id": "ml-w01-049",
+      "question": "Removing words such as 'the', 'is' and 'of' before building a bag-of-words matrix is called what?",
+      "answer": "Elimination of stop words.",
+      "distractors": [
+        "Stemming.",
+        "De-trending.",
+        "One-out-of-K encoding."
+      ]
+    },
+    {
+      "id": "ml-w01-050",
+      "question": "In a bag-of-words matrix, 'words' and 'word' are merged into a single entry with count 2. Which processing step caused this?",
+      "answer": "Stemming, which reduces word variants to a common stem.",
+      "distractors": [
+        "Stop word elimination.",
+        "Binarization of word counts.",
+        "Sampling of sentences."
+      ]
+    },
+    {
+      "id": "ml-w01-051",
+      "question": "A dataset of N handwritten digit images, each 28 × 28 pixels, is vectorized into a data matrix X. What is the shape of X?",
+      "answer": "N × 784.",
+      "distractors": [
+        "N × 28.",
+        "N × 56.",
+        "784 × 28."
+      ]
+    },
+    {
+      "id": "ml-w01-052",
+      "question": "What are the two main purposes of visualizing data?",
+      "answer": "Exploratory data analysis to detect new patterns, and disseminating results in written work.",
+      "distractors": [
+        "Removing noise and filling in missing values.",
+        "Training models and computing their generalization error.",
+        "Encoding categorical attributes and reducing dimensionality."
+      ]
+    },
+    {
+      "id": "ml-w01-053",
+      "question": "Why is a bar chart usually better than a pie chart for comparing three similar proportions?",
+      "answer": "Differences in bar height are easier to judge than differences in area.",
+      "distractors": [
+        "Pie charts cannot show more than two categories.",
+        "Bar charts automatically standardize the data.",
+        "Area is easier to compare than height, so the pie hides the categories."
+      ]
+    },
+    {
+      "id": "ml-w01-054",
+      "question": "Choosing the viewpoint, transparency, separation and grouping of visual elements belongs to which visualization decision?",
+      "answer": "Arrangement.",
+      "distractors": [
+        "Representation.",
+        "Selection.",
+        "Necessity."
+      ]
+    },
+    {
+      "id": "ml-w01-055",
+      "question": "A plot cannot clearly show every data object in a huge dataset. Which is a selection technique for reducing the number of objects shown?",
+      "answer": "Random sampling, displaying a region of interest, or using density estimation.",
+      "distractors": [
+        "Plotting pairs of attributes.",
+        "Switching to a 3D scatter plot.",
+        "Applying one-out-of-K encoding."
+      ]
+    },
+    {
+      "id": "ml-w01-056",
+      "question": "What determines the shape of a histogram?",
+      "answer": "The distribution of the data and the number of bins (bin width).",
+      "distractors": [
+        "Only the distribution of the data.",
+        "The ordering of the attributes.",
+        "The mean and standard deviation alone."
+      ]
+    },
+    {
+      "id": "ml-w01-057",
+      "question": "In a box plot, what do the edges of the box and the line inside it represent?",
+      "answer": "The box spans the 25th to 75th percentiles, and the line marks the median.",
+      "distractors": [
+        "The box spans the mean ± one standard deviation, and the line marks the mean.",
+        "The box spans the minimum to maximum, and the line marks the mean.",
+        "The box spans the 25th to 75th percentiles, and the line marks the mean."
+      ]
+    },
+    {
+      "id": "ml-w01-058",
+      "question": "Where does the upper whisker of a box plot end?",
+      "answer": "At min(max(data), q75 + 1.5(q75 − q25)), the most extreme value that is not an outlier.",
+      "distractors": [
+        "Always at q75 + 1.5(q75 − q25), even beyond the data.",
+        "Always at the maximum of the data.",
+        "At q75 + 1.5 × q50."
+      ]
+    },
+    {
+      "id": "ml-w01-059",
+      "question": "Two standardized attributes have box plots with very similar shapes. Can you conclude that they are correlated?",
+      "answer": "No. Correlation depends on whether they take high or low values together, which a box plot cannot show.",
+      "distractors": [
+        "Yes, similar distributions imply strong positive correlation.",
+        "Yes, as long as both attributes have outliers on the same side.",
+        "No, because standardized attributes can never be correlated."
+      ]
+    },
+    {
+      "id": "ml-w01-060",
+      "question": "A standardized attribute shows a squashed box near zero and many extreme values far above it. Is it likely to be normally distributed?",
+      "answer": "No. It is highly right-skewed rather than symmetric.",
+      "distractors": [
+        "Yes, because standardization makes any attribute normal.",
+        "Yes, because the median is close to zero.",
+        "No, because it must be a discrete nominal attribute."
+      ]
+    },
+    {
+      "id": "ml-w01-061",
+      "question": "A binary gender attribute (0 = female, 1 = male) shows a single extreme value marker below a collapsed box. How should this be interpreted?",
+      "answer": "It is not a real outlier. The marker corresponds to the females, and it shows that more than 75% of observations are male.",
+      "distractors": [
+        "It is a clear outlier that should be removed.",
+        "It shows a recording error in the gender attribute.",
+        "It shows that more than 75% of observations are female."
+      ]
+    },
+    {
+      "id": "ml-w01-062",
+      "question": "What are scatter plots mainly used for?",
+      "answer": "Showing relations between attributes, assessing their dependence, and, with classes, assessing separability.",
+      "distractors": [
+        "Showing the distribution of a single attribute using bins.",
+        "Showing each object as a line across parallel axes.",
+        "Showing percentiles and extreme values of one attribute."
+      ]
+    },
+    {
+      "id": "ml-w01-063",
+      "question": "What is the recommended stance on 3D scatter plots?",
+      "answer": "They are often confusing and should be avoided if possible.",
+      "distractors": [
+        "They should always be preferred because they show more attributes.",
+        "They are required whenever the data has more than two classes.",
+        "They are the best way to show the distribution of a single attribute."
+      ]
+    },
+    {
+      "id": "ml-w01-064",
+      "question": "What does a scatter plot matrix display?",
+      "answer": "Scatter plots of all pairs of attributes.",
+      "distractors": [
+        "The similarity between every pair of objects.",
+        "Each object as a line connecting its values on parallel axes.",
+        "The raw normalized data matrix as a grey-scale image."
+      ]
+    },
+    {
+      "id": "ml-w01-065",
+      "question": "In a parallel coordinates plot, how is each data object represented, and why does attribute order matter?",
+      "answer": "Each object is a line connecting its values on parallel axes, and the attribute order affects whether groups of similar lines become visible.",
+      "distractors": [
+        "Each object is a point on perpendicular axes, and order only affects the axis labels.",
+        "Each attribute is a line, and order determines the class labels.",
+        "Each object is a bar, and order determines the bin width."
+      ]
+    },
+    {
+      "id": "ml-w01-066",
+      "question": "When is a plot of the raw data matrix most useful?",
+      "answer": "When the objects are sorted by class, typically with normalized attributes.",
+      "distractors": [
+        "When the objects are in random order and the attributes are unnormalized.",
+        "When there is only one attribute to show.",
+        "When the goal is to show the relation between a pair of objects only."
+      ]
+    },
+    {
+      "id": "ml-w01-067",
+      "question": "Which ACCENT principle asks whether the most important elements of a graph are also the most visually prominent?",
+      "answer": "Clarity.",
+      "distractors": [
+        "Apprehension.",
+        "Efficiency.",
+        "Necessity."
+      ]
+    },
+    {
+      "id": "ml-w01-068",
+      "question": "Which ACCENT principle asks whether you have used the same colours, shapes, etc. as in your other graphs?",
+      "answer": "Consistency.",
+      "distractors": [
+        "Clarity.",
+        "Truthfulness.",
+        "Apprehension."
+      ]
+    },
+    {
+      "id": "ml-w01-069",
+      "question": "What does Tufte's data-ink ratio measure, and what should you do with it?",
+      "answer": "It is the data-ink divided by the total ink used, and it should be maximized.",
+      "distractors": [
+        "It is the total ink divided by the data-ink, and it should be maximized.",
+        "It is the number of data points divided by the plot area, and it should be minimized.",
+        "It is the data-ink divided by the total ink used, and it should be minimized."
+      ]
+    },
+    {
+      "id": "ml-w01-070",
+      "question": "When treating a figure like technical writing, how many questions or points should a single figure address, and what makes it stand-alone?",
+      "answer": "A single question or point per figure, made stand-alone through labels, titles and captions.",
+      "distractors": [
+        "As many points as possible per figure, to save space in the text.",
+        "A single point per figure, explained only in the main text with no labels.",
+        "Several related points per figure, distinguished only by colour."
+      ]
+    },
+    {
+      "id": "ml-w01-071",
+      "question": "What does the Iris dataset contain?",
+      "answer": "150 flowers, 50 from each of three Iris classes, described by sepal length, sepal width, petal length and petal width.",
+      "distractors": [
+        "150 flowers from five classes, described by petal attributes only.",
+        "50 flowers in total from three classes, described by four attributes.",
+        "150 flowers from three classes, described by colour and height."
+      ]
+    },
+    {
+      "id": "ml-w01-072",
+      "question": "In 02452, how many of the 12 assignments must be approved to be able to pass the course?",
+      "answer": "8 out of 12.",
+      "distractors": [
+        "6 out of 12.",
+        "10 out of 12.",
+        "All 12."
       ]
     }
   ]

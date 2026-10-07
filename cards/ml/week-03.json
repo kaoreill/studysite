@@ -1,0 +1,737 @@
+{
+  "module": "ml",
+  "week": 3,
+  "title": "Computational linear algebra and PCA",
+  "cards": [
+    {
+      "id": "ml-w03-001",
+      "question": "Why does machine learning rely so heavily on linear algebra for dimensionality reduction techniques such as PCA?",
+      "answer": "PCA uses eigenvectors and eigenvalues to find lower-dimensional representations, or new features, that are combinations of the existing ones.",
+      "distractors": [
+        "PCA uses a nearest-neighbour search to pick the most informative attributes.",
+        "PCA uses a cost function between observations and predictions to remove noisy attributes.",
+        "PCA uses one-out-of-K encoding to merge correlated attributes."
+      ]
+    },
+    {
+      "id": "ml-w03-002",
+      "question": "Which of these is an example of 'model formulation' with vectors and matrices?",
+      "answer": "A linear model written as f(x; w) = wᵀx̃.",
+      "distractors": [
+        "Storing a dataset with one data point per row.",
+        "Rotating a shape by multiplying it with a rotation matrix.",
+        "Computing the mean of every column of the data matrix."
+      ]
+    },
+    {
+      "id": "ml-w03-003",
+      "question": "Why is linear algebra notation useful for the optimization of modern ML models?",
+      "answer": "Modern ML models rely heavily on gradient methods, and gradients are conveniently represented as vectors and matrices, for example a Jacobian or Hessian.",
+      "distractors": [
+        "Optimization only needs the data matrix X and never uses gradients.",
+        "Matrices guarantee that every optimization problem has a single global optimum.",
+        "Gradients are scalars, so linear algebra is needed only for the data."
+      ]
+    },
+    {
+      "id": "ml-w03-004",
+      "question": "What is an M-dimensional vector space, and what closure property does it have?",
+      "answer": "It is Rᴹ, the set of all M-dimensional real vectors, and it is closed under linear combinations.",
+      "distractors": [
+        "It is the set of all N × M matrices, and it is closed under matrix multiplication only.",
+        "It is the set of all unit vectors in Rᴹ, and it is closed under addition.",
+        "It is any set of M data points, and it is closed under taking the mean."
+      ]
+    },
+    {
+      "id": "ml-w03-005",
+      "question": "How can a vector x = [x1, x2, x3]ᵀ in R³ be written using the standard basis vectors e1 = (1,0,0), e2 = (0,1,0) and e3 = (0,0,1)?",
+      "answer": "As the linear combination x = x1·e1 + x2·e2 + x3·e3.",
+      "distractors": [
+        "As the product x = e1·e2·e3 scaled by the norm of x.",
+        "As x = (x1 + x2 + x3)·e1.",
+        "As x = e1 + e2 + e3, independent of x1, x2 and x3."
+      ]
+    },
+    {
+      "id": "ml-w03-006",
+      "question": "What is the span of vectors v1, ..., vn?",
+      "answer": "The set of all linear combinations z = a1v1 + a2v2 + ... + anvn, which is a subspace.",
+      "distractors": [
+        "The set of all vectors orthogonal to v1, ..., vn.",
+        "The set containing only v1, ..., vn themselves.",
+        "The single vector obtained by adding v1, ..., vn."
+      ]
+    },
+    {
+      "id": "ml-w03-007",
+      "question": "What does a subspace generalize?",
+      "answer": "The concept of a line or plane (through the origin) in a higher-dimensional space.",
+      "distractors": [
+        "The concept of a distance measure between two data points.",
+        "The concept of a matrix inverse.",
+        "The concept of a covariance between two attributes."
+      ]
+    },
+    {
+      "id": "ml-w03-008",
+      "question": "When are the vectors v1, ..., vn linearly independent?",
+      "answer": "When 0 = a1v1 + ... + anvn implies that a1 = a2 = ... = an = 0.",
+      "distractors": [
+        "When all the vectors have unit length.",
+        "When vᵢᵀvⱼ = 0 for every pair i ≠ j.",
+        "When each vector can be written as a linear combination of the others."
+      ]
+    },
+    {
+      "id": "ml-w03-009",
+      "question": "What is a basis for a vector space or subspace V?",
+      "answer": "A set of n linearly independent vectors whose span is V.",
+      "distractors": [
+        "Any set of vectors lying in V, even if linearly dependent.",
+        "A set of unit vectors that sum to the zero vector.",
+        "The set of eigenvalues of V."
+      ]
+    },
+    {
+      "id": "ml-w03-010",
+      "question": "When is a basis called orthonormal?",
+      "answer": "When the basis vectors are pairwise orthogonal (vᵢᵀvⱼ = 0 for i ≠ j) and each has unit length (||vᵢ|| = 1).",
+      "distractors": [
+        "When the basis vectors are linearly dependent but of unit length.",
+        "When the basis vectors are orthogonal but may have any length.",
+        "When the basis vectors have unit length but may point in any direction."
+      ]
+    },
+    {
+      "id": "ml-w03-011",
+      "question": "If the basis vectors are collected as the columns of a matrix V and the basis is orthonormal, which equation holds?",
+      "answer": "VᵀV = I.",
+      "distractors": [
+        "VᵀV = 0.",
+        "V + Vᵀ = I.",
+        "VᵀV = the covariance matrix of the data."
+      ]
+    },
+    {
+      "id": "ml-w03-012",
+      "question": "How are the basis vectors arranged in the basis matrix V = span(v1, ..., vn)?",
+      "answer": "As the columns of V.",
+      "distractors": [
+        "As the rows of V.",
+        "As the diagonal of V.",
+        "As the eigenvalues of V."
+      ]
+    },
+    {
+      "id": "ml-w03-013",
+      "question": "The span of two linearly independent vectors in R³ is geometrically what?",
+      "answer": "A plane through the origin.",
+      "distractors": [
+        "A single line through the origin.",
+        "All of R³.",
+        "A single point at the origin."
+      ]
+    },
+    {
+      "id": "ml-w03-014",
+      "question": "What is the cosine of the angle φ between vectors v and x?",
+      "answer": "cos(φ) = vᵀx / (||x||₂ ||v||₂).",
+      "distractors": [
+        "cos(φ) = ||x||₂ ||v||₂ / vᵀx.",
+        "cos(φ) = vᵀx · ||x||₂ ||v||₂.",
+        "cos(φ) = ||x − v||₂ / ||x||₂."
+      ]
+    },
+    {
+      "id": "ml-w03-015",
+      "question": "What is the length of the projection of x onto a direction v?",
+      "answer": "p = ||x||₂ cos(φ) = vᵀx / ||v||₂.",
+      "distractors": [
+        "p = ||x||₂ sin(φ).",
+        "p = vᵀx · ||v||₂.",
+        "p = ||x − v||₂."
+      ]
+    },
+    {
+      "id": "ml-w03-016",
+      "question": "What does the projection length simplify to when v is a unit vector?",
+      "answer": "p = vᵀx.",
+      "distractors": [
+        "p = vᵀx / ||x||₂.",
+        "p = ||x||₂.",
+        "p = vvᵀx."
+      ]
+    },
+    {
+      "id": "ml-w03-017",
+      "question": "What is the length of the projection of x = [3, 4]ᵀ onto the unit vector v = [0.6, 0.8]ᵀ?",
+      "answer": "5.",
+      "distractors": [
+        "1.4.",
+        "7.",
+        "3.5."
+      ]
+    },
+    {
+      "id": "ml-w03-018",
+      "question": "How do you project an M-dimensional point x onto the subspace given by an orthonormal basis matrix V (M × n)?",
+      "answer": "bᵀ = xᵀV, which gives an n-dimensional coordinate vector b.",
+      "distractors": [
+        "b = Vᵀ + x, which gives an M-dimensional vector.",
+        "b = VVᵀ, which does not depend on x.",
+        "bᵀ = xᵀx, which gives a scalar."
+      ]
+    },
+    {
+      "id": "ml-w03-019",
+      "question": "Given the projection coordinates b, how is the 'reconstruction' of x in the original space found?",
+      "answer": "x' = Vb.",
+      "distractors": [
+        "x' = Vᵀb.",
+        "x' = b / V.",
+        "x' = bᵀb."
+      ]
+    },
+    {
+      "id": "ml-w03-020",
+      "question": "V = [[1,0],[0,0],[0,1]] is used to project x = [x1, x2, x3]ᵀ via xᵀV. What is the result?",
+      "answer": "[x1, x3], which keeps x1 and x3 and drops x2.",
+      "distractors": [
+        "[x1, x2], which keeps x1 and x2 and drops x3.",
+        "[x1 + x3], a single scalar.",
+        "[x1, 0, x3], a 3-dimensional vector."
+      ]
+    },
+    {
+      "id": "ml-w03-021",
+      "question": "What does Av = λv say about v, for a square matrix A?",
+      "answer": "v is an eigenvector of A with eigenvalue λ.",
+      "distractors": [
+        "v is a singular vector and λ is its norm.",
+        "v is the inverse of A scaled by λ.",
+        "v is orthogonal to A with angle λ."
+      ]
+    },
+    {
+      "id": "ml-w03-022",
+      "question": "What do we know about the eigenvectors and eigenvalues of a symmetric matrix A = Aᵀ?",
+      "answer": "It has orthogonal eigenvectors and real eigenvalues.",
+      "distractors": [
+        "It has complex eigenvalues and non-orthogonal eigenvectors.",
+        "It has only one eigenvector.",
+        "It has orthogonal eigenvectors, but its eigenvalues can be complex."
+      ]
+    },
+    {
+      "id": "ml-w03-023",
+      "question": "What is the goal of PCA for high-dimensional data?",
+      "answer": "To find a lower-dimensional representation of the high-dimensional data by projecting it onto a subspace.",
+      "distractors": [
+        "To find the class label of each data point using its nearest neighbours.",
+        "To increase the number of attributes to make classes separable.",
+        "To remove outliers from the dataset."
+      ]
+    },
+    {
+      "id": "ml-w03-024",
+      "question": "Which criterion does PCA use to choose a good projection direction?",
+      "answer": "It selects the projection that maximizes the variance of the projected data.",
+      "distractors": [
+        "It selects the projection that minimizes the variance of the projected data.",
+        "It selects the projection that maximizes the number of misclassified points.",
+        "It selects the projection along the attribute with the largest mean."
+      ]
+    },
+    {
+      "id": "ml-w03-025",
+      "question": "In 1D PCA with centre m and unit direction v, how is a point x reconstructed from its projection?",
+      "answer": "x' = v·p + m, where p = vᵀ(x − m).",
+      "distractors": [
+        "x' = v·p − m, where p = vᵀx.",
+        "x' = p / v + m, where p = (x − m)ᵀx.",
+        "x' = p·m, where p = vᵀm."
+      ]
+    },
+    {
+      "id": "ml-w03-026",
+      "question": "In the PCA derivation, how is the variance of the projected data b_i = x_iᵀv written?",
+      "answer": "Var[b] = (1/(N−1)) vᵀX̃ᵀX̃v, where X̃ is the centered data matrix.",
+      "distractors": [
+        "Var[b] = (1/N) vᵀXXᵀv using the uncentered data matrix.",
+        "Var[b] = (1/(N−1)) ||v||² X̃ᵀX̃.",
+        "Var[b] = vᵀv / (N − 1)."
+      ]
+    },
+    {
+      "id": "ml-w03-027",
+      "question": "Why do we constrain ||v||₂ = 1 when maximizing the variance of the projection?",
+      "answer": "Without it, the variance could be increased arbitrarily by scaling v, so we only want to optimize the direction.",
+      "distractors": [
+        "Because eigenvectors only exist for unit vectors.",
+        "Because the data has already been standardized to unit length.",
+        "Because the mean of the projected data must be zero."
+      ]
+    },
+    {
+      "id": "ml-w03-028",
+      "question": "What type of problem do we obtain after solving the constrained maximization of the variance with a Lagrange multiplier?",
+      "answer": "An eigenvalue problem: (1/(N−1)) X̃ᵀX̃ v = λv.",
+      "distractors": [
+        "A linear regression problem: X̃v = y.",
+        "A nearest-neighbour problem: v = argmin ||x − v||.",
+        "A matrix inversion problem: v = (X̃ᵀX̃)⁻¹."
+      ]
+    },
+    {
+      "id": "ml-w03-029",
+      "question": "At the optimum, what is the variance of the data projected onto the eigenvector v?",
+      "answer": "It equals the corresponding eigenvalue λ.",
+      "distractors": [
+        "It equals 1, because v has unit length.",
+        "It equals the square root of the eigenvalue.",
+        "It equals 0, because the data is centered."
+      ]
+    },
+    {
+      "id": "ml-w03-030",
+      "question": "Which eigenvector of (1/(N−1)) X̃ᵀX̃ gives the first principal component?",
+      "answer": "The one with the largest eigenvalue.",
+      "distractors": [
+        "The one with the smallest eigenvalue.",
+        "The one whose entries are all positive.",
+        "The one corresponding to the attribute with the largest mean."
+      ]
+    },
+    {
+      "id": "ml-w03-031",
+      "question": "What matrix is (1/(N−1)) X̃ᵀX̃ for a centered data matrix X̃?",
+      "answer": "The empirical covariance matrix of the data.",
+      "distractors": [
+        "The correlation matrix of the data.",
+        "The matrix of pairwise distances between data points.",
+        "The projection matrix onto the first principal component."
+      ]
+    },
+    {
+      "id": "ml-w03-032",
+      "question": "What is the shape of the covariance matrix computed as (1/(N−1)) X̃ᵀX̃ for an N × M data matrix?",
+      "answer": "M × M.",
+      "distractors": [
+        "N × N.",
+        "N × M.",
+        "1 × M."
+      ]
+    },
+    {
+      "id": "ml-w03-033",
+      "question": "In the SVD X = UΣVᵀ of an N × M matrix X, what are the shapes and properties of U, Σ and V?",
+      "answer": "U is N × N orthonormal, Σ is N × M diagonal, and V is M × M orthonormal.",
+      "distractors": [
+        "U is N × M diagonal, Σ is N × N orthonormal, and V is M × M orthonormal.",
+        "U is N × N diagonal, Σ is N × M orthonormal, and V is M × M diagonal.",
+        "U is N × N orthonormal, Σ is M × M diagonal, and V is N × M orthonormal."
+      ]
+    },
+    {
+      "id": "ml-w03-034",
+      "question": "Which identities hold for the orthonormal matrices in the SVD?",
+      "answer": "UᵀU = I (N × N) and VᵀV = I (M × M).",
+      "distractors": [
+        "UᵀU = Σ and VᵀV = Σ.",
+        "UUᵀ = 0 and VVᵀ = 0.",
+        "U = V and Σ = I."
+      ]
+    },
+    {
+      "id": "ml-w03-035",
+      "question": "How are the columns of V related to the covariance matrix of the centered data X̃?",
+      "answer": "They are its eigenvectors, because (1/(N−1)) X̃ᵀX̃ vᵢ = (1/(N−1)) σᵢ² vᵢ.",
+      "distractors": [
+        "They are the rows of the covariance matrix.",
+        "They are its eigenvalues.",
+        "They are the columns of U scaled by the singular values."
+      ]
+    },
+    {
+      "id": "ml-w03-036",
+      "question": "What is the eigenvalue of (1/(N−1)) X̃ᵀX̃ associated with the right singular vector vᵢ?",
+      "answer": "σᵢ² / (N−1), where σᵢ is the i-th singular value of X̃.",
+      "distractors": [
+        "σᵢ / (N−1).",
+        "σᵢ² · (N−1).",
+        "σᵢ² / N, using the biased estimate."
+      ]
+    },
+    {
+      "id": "ml-w03-037",
+      "question": "In the SVD derivation of PCA, why does X̃ᵀX̃ vᵢ simplify to σᵢ² vᵢ?",
+      "answer": "Because Vᵀvᵢ is the i-th unit vector eᵢ, and ΣᵀΣ is diagonal with entries σⱼ², giving X̃ᵀX̃ vᵢ = V ΣᵀΣ eᵢ = σᵢ² vᵢ.",
+      "distractors": [
+        "Because U is the identity matrix for centered data.",
+        "Because Σ has ones on its diagonal for centered data.",
+        "Because X̃ᵀ = X̃ for centered data."
+      ]
+    },
+    {
+      "id": "ml-w03-038",
+      "question": "What is the first step of PCA?",
+      "answer": "Subtract the column-wise mean m from the data matrix, so that x̃ᵢ = xᵢ − m.",
+      "distractors": [
+        "Apply the SVD to the raw data matrix.",
+        "Select the K first columns of V.",
+        "Project the data onto the first K eigenvectors."
+      ]
+    },
+    {
+      "id": "ml-w03-039",
+      "question": "After centering the data, what are the next steps of PCA?",
+      "answer": "Apply the SVD X̃ = UΣVᵀ and select the first K columns of V as the principal directions.",
+      "distractors": [
+        "Compute the nearest neighbours of every point and average them.",
+        "Sort the data by the first attribute and take the K first rows.",
+        "Invert X̃ and select the K largest entries."
+      ]
+    },
+    {
+      "id": "ml-w03-040",
+      "question": "Why might you also standardize the data before PCA?",
+      "answer": "Standardizing puts attributes on a comparable scale, so that attributes with large scales do not dominate the variance.",
+      "distractors": [
+        "Standardizing guarantees the principal components have unit length.",
+        "Standardizing removes all correlations between attributes.",
+        "Standardizing makes the data orthonormal, so no SVD is needed."
+      ]
+    },
+    {
+      "id": "ml-w03-041",
+      "question": "How should nominal attributes be handled before applying PCA, according to the lecture?",
+      "answer": "They can be represented with one-out-of-K encoding, although this is not ideal.",
+      "distractors": [
+        "They are assigned consecutive integers, which is the ideal representation.",
+        "They must be removed from the data.",
+        "They are replaced by their mean."
+      ]
+    },
+    {
+      "id": "ml-w03-042",
+      "question": "How are the PCA coordinates (projection) B of the data onto the first K components computed?",
+      "answer": "B = X̃ V₍K₎, an N × K matrix.",
+      "distractors": [
+        "B = V₍K₎ X̃, a K × N matrix.",
+        "B = X V₍K₎ᵀ, an N × M matrix.",
+        "B = Σ V₍K₎, a K × K matrix."
+      ]
+    },
+    {
+      "id": "ml-w03-043",
+      "question": "How is a PCA coordinate vector bᵢ reconstructed to the original, non-centered space using K components?",
+      "answer": "x'ᵢ = V₍K₎ bᵢ + m.",
+      "distractors": [
+        "x'ᵢ = V₍K₎ᵀ bᵢ − m.",
+        "x'ᵢ = bᵢ / V₍K₎.",
+        "x'ᵢ = Σ₍K₎ bᵢ."
+      ]
+    },
+    {
+      "id": "ml-w03-044",
+      "question": "How can the i-th principal component of the centered data be written using the SVD?",
+      "answer": "bᵢ = X̃ vᵢ = uᵢ σᵢ.",
+      "distractors": [
+        "bᵢ = X̃ uᵢ = vᵢ σᵢ.",
+        "bᵢ = X̃ᵀ vᵢ = uᵢ / σᵢ.",
+        "bᵢ = vᵢ σᵢ²."
+      ]
+    },
+    {
+      "id": "ml-w03-045",
+      "question": "What is true about the ordering of the singular values in Σ?",
+      "answer": "They are sorted largest first, σ₁ ≥ σ₂ ≥ ... ≥ σ_M ≥ 0.",
+      "distractors": [
+        "They are sorted smallest first, σ₁ ≤ σ₂ ≤ ... ≤ σ_M.",
+        "They are in no particular order.",
+        "They are all equal to 1 for centered data."
+      ]
+    },
+    {
+      "id": "ml-w03-046",
+      "question": "What do the singular values tell us in PCA?",
+      "answer": "How much variability is explained by the corresponding component: the first explains most, the second most of the remainder, and so on.",
+      "distractors": [
+        "The class labels of the corresponding data points.",
+        "The mean of the data along each principal direction.",
+        "The number of data points that project onto each component."
+      ]
+    },
+    {
+      "id": "ml-w03-047",
+      "question": "How much variance is retained by a reconstruction X' using the first K components?",
+      "answer": "||X'||²_F / ||X̃||²_F = (Σ_{i≤K} σᵢ²) / (Σ_{i≤M} σᵢ²).",
+      "distractors": [
+        "(Σ_{i≤K} σᵢ) / (Σ_{i≤M} σᵢ).",
+        "K / M.",
+        "σ_K² / σ₁²."
+      ]
+    },
+    {
+      "id": "ml-w03-048",
+      "question": "What fraction of the variance does the i-th principal component explain?",
+      "answer": "σᵢ² / Σⱼ σⱼ².",
+      "distractors": [
+        "σᵢ / Σⱼ σⱼ.",
+        "σᵢ² / σ₁².",
+        "1 / M."
+      ]
+    },
+    {
+      "id": "ml-w03-049",
+      "question": "Why is the squared Frobenius norm of the centered data matrix equal to the sum of the squared singular values?",
+      "answer": "Because ||X̃||²_F = trace(X̃ᵀX̃) = trace(UΣVᵀVΣᵀUᵀ) = trace(ΣΣᵀ) = Σᵢ σᵢ², using the orthonormality of U and V.",
+      "distractors": [
+        "Because the Frobenius norm is defined as the largest singular value.",
+        "Because ||X̃||²_F is the number of non-zero entries of X̃.",
+        "Because the trace of any matrix equals its largest eigenvalue."
+      ]
+    },
+    {
+      "id": "ml-w03-050",
+      "question": "Which identity about the trace is used in the derivation of the explained variance?",
+      "answer": "trace(AB) = trace(BA).",
+      "distractors": [
+        "trace(AB) = trace(A) · trace(B).",
+        "trace(A) = trace(A⁻¹).",
+        "trace(AB) = trace(A) + trace(B)."
+      ]
+    },
+    {
+      "id": "ml-w03-051",
+      "question": "The squared Frobenius norm of a standardized data matrix is 5780.0 and the first singular value is 40.1. What fraction of the variation does the first principal component explain?",
+      "answer": "Approximately 27.8%, since 40.1² / 5780.0 ≈ 0.278.",
+      "distractors": [
+        "Approximately 0.7%, since 40.1 / 5780.0 ≈ 0.007.",
+        "Approximately 55.6%, since 2 · 40.1² / 5780.0 ≈ 0.556.",
+        "Approximately 100%, since the first component explains everything."
+      ]
+    },
+    {
+      "id": "ml-w03-052",
+      "question": "With ||X||²_F = 5780.0 and singular values 40.1, 34.2, 28.1 and 24.8, what fraction of the variation do the first three components account for?",
+      "answer": "About 61.7%, which is less than 70%.",
+      "distractors": [
+        "About 76.8%, which is more than 70%.",
+        "About 27.8%, which is the contribution of the first component alone.",
+        "About 10.6%, which is the contribution of the fourth component."
+      ]
+    },
+    {
+      "id": "ml-w03-053",
+      "question": "With ||X||²_F = 5780.0, how much variation does the fourth principal component with σ₄ = 24.8 explain?",
+      "answer": "About 10.6%, since 24.8² / 5780.0 ≈ 0.106.",
+      "distractors": [
+        "About 8.4%, since 24.8² / 7300 ≈ 0.084.",
+        "About 0.4%, since 24.8 / 5780.0 ≈ 0.004.",
+        "About 24.8%, since the singular value is a percentage."
+      ]
+    },
+    {
+      "id": "ml-w03-054",
+      "question": "With ||X||²_F = 5780.0 and σ₂ = 34.2, what fraction does the second component explain?",
+      "answer": "About 20.2%.",
+      "distractors": [
+        "About 30.0%.",
+        "About 34.2%.",
+        "About 5.9%."
+      ]
+    },
+    {
+      "id": "ml-w03-055",
+      "question": "A centered data matrix has exactly four non-zero singular values: 4, 3, 2 and 1. What fraction of the variance is retained by the first two components?",
+      "answer": "25/30, about 83%.",
+      "distractors": [
+        "7/10 = 70%.",
+        "7/16, about 44%.",
+        "12/30 = 40%."
+      ]
+    },
+    {
+      "id": "ml-w03-056",
+      "question": "In the Iris PCA example using sepal length, sepal width and petal length, which original attribute dominates the first principal direction v₁ = [−0.39, 0.09, −0.92]?",
+      "answer": "Petal length, which has the largest absolute coefficient (−0.92).",
+      "distractors": [
+        "Sepal width, which has the only positive coefficient.",
+        "Sepal length, which comes first in the vector.",
+        "All three attributes contribute equally."
+      ]
+    },
+    {
+      "id": "ml-w03-057",
+      "question": "In the Iris example, the PCA projection onto the first components was compared with a scatter plot of two original attributes. What was the conclusion?",
+      "answer": "The PCA projection captures the structure of the data better than a projection onto two of the original attributes.",
+      "distractors": [
+        "The two original attributes separate the classes better than PCA.",
+        "Both projections look identical.",
+        "PCA fails because it ignores the class labels completely."
+      ]
+    },
+    {
+      "id": "ml-w03-058",
+      "question": "In the Iris example with mean μ = [5.8, 3.1, 3.8]ᵀ, what does the mean represent in the PCA picture?",
+      "answer": "The centre of the data, through which the principal directions pass.",
+      "distractors": [
+        "The first principal direction v₁.",
+        "The eigenvalue of the first principal component.",
+        "The point in the data with the smallest variance."
+      ]
+    },
+    {
+      "id": "ml-w03-059",
+      "question": "In the liver-disease PCA, AGE, GDR, TB, DB, AP, AlA and AsA have negative coefficients in PC1 while TP, AB and A/G have positive ones. What projection onto PC1 results from high AGE, GDR, TB, DB, AP, AlA, AsA and low TP, AB, A/G?",
+      "answer": "A negative projection onto PC1.",
+      "distractors": [
+        "A positive projection onto PC1.",
+        "A projection of exactly zero.",
+        "It cannot be determined from the signs of the coefficients."
+      ]
+    },
+    {
+      "id": "ml-w03-060",
+      "question": "In the liver-disease PCA, AGE has a negative coefficient in PC2 while most other attributes have positive coefficients (GDR and AP are near zero). What does PC2 mainly discriminate?",
+      "answer": "Old subjects with low values of the other attributes versus young subjects with high values of those attributes.",
+      "distractors": [
+        "Male subjects versus female subjects.",
+        "Subjects with liver disease versus subjects without it.",
+        "Subjects with high AGE and high TB versus subjects with low AGE and low TB."
+      ]
+    },
+    {
+      "id": "ml-w03-061",
+      "question": "Are the principal component directions guaranteed to be orthogonal if the data has been standardized?",
+      "answer": "Yes, they are always orthogonal, irrespective of preprocessing, since they are the orthonormal columns of V.",
+      "distractors": [
+        "No, standardization makes them non-orthogonal.",
+        "Only when the data has not been standardized.",
+        "Only the first two are orthogonal."
+      ]
+    },
+    {
+      "id": "ml-w03-062",
+      "question": "In the liver data plotted on PCA1 and PCA2, observations with low PCA1 and high PCA2 were mostly of which kind?",
+      "answer": "Subjects with liver disease.",
+      "distractors": [
+        "Subjects without liver disease.",
+        "Subjects who are all male.",
+        "Subjects whose attributes are all missing."
+      ]
+    },
+    {
+      "id": "ml-w03-063",
+      "question": "If each handwritten digit image is 28 × 28 pixels and there are N images, what is the shape of the data matrix X?",
+      "answer": "N × 784.",
+      "distractors": [
+        "N × 56.",
+        "28 × 28.",
+        "784 × 784."
+      ]
+    },
+    {
+      "id": "ml-w03-064",
+      "question": "For a digit PCA with 2 components, a point is reconstructed as x' = V₍K₎ b + m. What are the shapes of V₍K₎, b and m?",
+      "answer": "V₍K₎ is 784 × 2, b is 2 × 1, and m is 784 × 1.",
+      "distractors": [
+        "V₍K₎ is 2 × 784, b is 784 × 1, and m is 2 × 1.",
+        "V₍K₎ is 784 × 784, b is 784 × 1, and m is 1 × 1.",
+        "V₍K₎ is 2 × 2, b is 2 × 1, and m is 2 × 1."
+      ]
+    },
+    {
+      "id": "ml-w03-065",
+      "question": "When you choose a 2D 'code' b in the PCA plot of digits and reconstruct an image, why might the result look blurry or lack some detail?",
+      "answer": "Because projecting onto a low-dimensional subspace discards information, so the reconstruction may miss some of the original information.",
+      "distractors": [
+        "Because the reconstruction uses the median instead of the mean.",
+        "Because PCA reconstructs only the pixels with the largest values.",
+        "Because the mean m is added twice."
+      ]
+    },
+    {
+      "id": "ml-w03-066",
+      "question": "Each face image in the 'Faces in the wild' example is 86 × 86 pixels with 3 RGB intensities. What is the dimension of one image as a vector?",
+      "answer": "22,188.",
+      "distractors": [
+        "7,396.",
+        "86.",
+        "172."
+      ]
+    },
+    {
+      "id": "ml-w03-067",
+      "question": "After stacking 1000 of these face images as vectors, what is the shape of the data matrix?",
+      "answer": "1000 × 22,188.",
+      "distractors": [
+        "22,188 × 22,188.",
+        "1000 × 1000.",
+        "86 × 86."
+      ]
+    },
+    {
+      "id": "ml-w03-068",
+      "question": "How does reconstruction quality of digits change when we use K = 2, 5, 20, 50 and 100 principal components?",
+      "answer": "The reconstruction gets better and closer to the original as more components are used.",
+      "distractors": [
+        "The reconstruction gets worse as more components are used.",
+        "The reconstruction is perfect for every K.",
+        "The reconstruction quality does not depend on K."
+      ]
+    },
+    {
+      "id": "ml-w03-069",
+      "question": "How does PCA differ from the Fourier transform as a feature extraction method?",
+      "answer": "PCA is data driven, with features defined from the data to preserve variance, while the Fourier transform is domain driven, with fixed frequency components suited to, for example, sound analysis.",
+      "distractors": [
+        "PCA is domain driven and the Fourier transform is data driven.",
+        "Both are data driven, but the Fourier transform preserves variance.",
+        "Both are domain driven, but PCA uses frequencies."
+      ]
+    },
+    {
+      "id": "ml-w03-070",
+      "question": "In the Fourier transform matrix V⁽ᶠᶠᵀ⁾, what do the components represent, and what does projecting data onto them give?",
+      "answer": "The components are specific frequencies, and the projection shows to what extent each frequency is present in the data.",
+      "distractors": [
+        "The components are the directions of maximum variance, and the projection gives the explained variance.",
+        "The components are one-out-of-K indicators, and the projection gives class labels.",
+        "The components are the data points, and the projection gives distances to neighbours."
+      ]
+    },
+    {
+      "id": "ml-w03-071",
+      "question": "Which matrix rotates a 2D point by an angle θ?",
+      "answer": "R(θ) = [[cos θ, −sin θ], [sin θ, cos θ]].",
+      "distractors": [
+        "S = [[cos θ, 0], [0, sin θ]].",
+        "D = [[1, θ], [0, 1]].",
+        "R(θ) = [[sin θ, cos θ], [cos θ, −sin θ]]."
+      ]
+    },
+    {
+      "id": "ml-w03-072",
+      "question": "Which of the following correctly describes the Frobenius norm of a matrix?",
+      "answer": "||X||²_F = Σᵢⱼ xᵢⱼ² = trace(XXᵀ) = trace(XᵀX).",
+      "distractors": [
+        "||X||_F = max over all entries |xᵢⱼ|.",
+        "||X||²_F = trace(X)².",
+        "||X||_F = Σᵢ xᵢᵢ, the sum of the diagonal."
+      ]
+    },
+    {
+      "id": "ml-w03-073",
+      "question": "In week 3, what was the main recap from week 2 that PCA builds on?",
+      "answer": "Summary statistics, vector spaces and distances, and k-nearest neighbours.",
+      "distractors": [
+        "Decision trees and cross-validation.",
+        "Bayesian inference and linear models.",
+        "Neural networks and optimization."
+      ]
+    }
+  ]
+}

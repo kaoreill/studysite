@@ -1,0 +1,827 @@
+{
+  "module": "ml",
+  "week": 4,
+  "title": "Probability theory, Bayes and Naive Bayes",
+  "cards": [
+    {
+      "id": "ml-w04-001",
+      "question": "Why do ML algorithms often work with the probability that an image belongs to a category, rather than only the discrete event that it does?",
+      "answer": "The probability is a continuous quantity, and continuous quantities are easier to optimize than discrete events.",
+      "distractors": [
+        "Probabilities are always exactly 0 or 1, which makes every decision unambiguous.",
+        "Probabilities remove all uncertainty from the data.",
+        "Probabilities make the model independent of the training data."
+      ]
+    },
+    {
+      "id": "ml-w04-002",
+      "question": "Pragmatically, what role does probability theory play in AI and machine learning?",
+      "answer": "It is the formal framework for dealing with uncertainty and incomplete information.",
+      "distractors": [
+        "It is a method for reducing the dimension of high-dimensional data.",
+        "It is a distance measure used to compare data objects.",
+        "It guarantees that a model never makes mistakes on unseen data."
+      ]
+    },
+    {
+      "id": "ml-w04-003",
+      "question": "What does P(A|B) = x express?",
+      "answer": "The degree of belief that A is true, given that B is accepted as true, is at level x, a number between 0 and 1.",
+      "distractors": [
+        "The fraction of all experiments in which A and B occur together, regardless of what is known.",
+        "The probability that B is true given that A is accepted as true.",
+        "The correlation between A and B, a number between -1 and 1."
+      ]
+    },
+    {
+      "id": "ml-w04-004",
+      "question": "In the course's framework, what kind of statements are A and B in P(A|B), and what do probabilities represent?",
+      "answer": "A and B are always binary (true/false) propositions, and the probability represents a state of knowledge.",
+      "distractors": [
+        "A and B are real-valued variables, and the probability represents a physical property of the world.",
+        "A and B are always continuous quantities, and the probability represents a measured frequency.",
+        "A and B are class labels, and the probability represents a distance between them."
+      ]
+    },
+    {
+      "id": "ml-w04-005",
+      "question": "In the trial example, G = 'the accused is guilty' and E = E1 and E2 and E3 collects three pieces of evidence. What does P(G|E) > P(G|E2) illustrate?",
+      "answer": "Probabilities express states of knowledge: conditioning on more evidence changes the plausibility of G.",
+      "distractors": [
+        "Probabilities are fixed properties of the accused and cannot change with evidence.",
+        "Evidence E2 on its own is always stronger than all the evidence combined.",
+        "Conditional probabilities must always be smaller than unconditional ones."
+      ]
+    },
+    {
+      "id": "ml-w04-006",
+      "question": "In propositional notation, what does the product AB mean?",
+      "answer": "The proposition that is true when A and B are both true.",
+      "distractors": [
+        "The proposition that is true when either A or B is true.",
+        "The proposition that is true when A is false.",
+        "The proposition that is true when exactly one of A and B is true."
+      ]
+    },
+    {
+      "id": "ml-w04-007",
+      "question": "In propositional notation, what does A + B mean, and what does the bar in A-bar mean?",
+      "answer": "A + B is true if either A or B is true, and A-bar is true if A is false.",
+      "distractors": [
+        "A + B is true only if both are true, and A-bar is true if A is true.",
+        "A + B is true if exactly one of them is true, and A-bar is the probability of A.",
+        "A + B is the probability of A plus the probability of B, and A-bar is the conditional probability of A."
+      ]
+    },
+    {
+      "id": "ml-w04-008",
+      "question": "What are the special propositions '1' and '0', and what does the shorthand P(A|1) = P(A) say?",
+      "answer": "1 is a proposition that is always true and 0 one that is always false; conditioning on 1 means conditioning on no extra knowledge, which gives the plain probability P(A).",
+      "distractors": [
+        "1 and 0 are the probabilities of A and A-bar; P(A|1) = P(A) says the two sum to 1.",
+        "1 is the event that A happens once and 0 that it never happens; P(A|1) = P(A) holds only for binary A.",
+        "1 and 0 are the values a Bernoulli variable can take; P(A|1) = P(A) says the variable equals 1."
+      ]
+    },
+    {
+      "id": "ml-w04-009",
+      "question": "What is the sum rule of probability?",
+      "answer": "P(A|C) + P(A-bar|C) = 1.",
+      "distractors": [
+        "P(A|C) + P(C|A) = 1.",
+        "P(A|C) + P(A|C-bar) = 1.",
+        "P(A|C) * P(A-bar|C) = 1."
+      ]
+    },
+    {
+      "id": "ml-w04-010",
+      "question": "What is the product rule of probability?",
+      "answer": "P(AB|C) = P(B|AC) P(A|C) = P(A|BC) P(B|C).",
+      "distractors": [
+        "P(AB|C) = P(A|C) + P(B|C).",
+        "P(AB|C) = P(A|BC) P(A|C).",
+        "P(AB|C) = P(B|AC) / P(A|C)."
+      ]
+    },
+    {
+      "id": "ml-w04-011",
+      "question": "What is the interpretation of P(A|B) = 0 and of P(A|B) = 1?",
+      "answer": "P(A|B) = 0 means that given B is true, A is certainly false; P(A|B) = 1 means that given B is true, A is certainly true.",
+      "distractors": [
+        "P(A|B) = 0 means A is impossible in general; P(A|B) = 1 means B is certainly true.",
+        "P(A|B) = 0 means A and B are independent; P(A|B) = 1 means A and B are identical events.",
+        "P(A|B) = 0 means B is certainly false; P(A|B) = 1 means B is certainly true."
+      ]
+    },
+    {
+      "id": "ml-w04-012",
+      "question": "How does Bayes' theorem follow from the product rule?",
+      "answer": "Since P(AB) = P(A|B)P(B) = P(B|A)P(A), we get P(A|B) = P(B|A)P(A) / P(B).",
+      "distractors": [
+        "Since P(AB) = P(A) + P(B), we get P(A|B) = P(B|A) + P(A) - P(B).",
+        "Since P(A|B) + P(A-bar|B) = 1, we get P(A|B) = 1 - P(B|A).",
+        "Since P(AB) = P(A)P(B), we get P(A|B) = P(B|A)."
+      ]
+    },
+    {
+      "id": "ml-w04-013",
+      "question": "How can P(B|C) be written by marginalizing over A, using the sum and product rules?",
+      "answer": "P(B|C) = P(B|AC) P(A|C) + P(B|A-bar C) P(A-bar|C).",
+      "distractors": [
+        "P(B|C) = P(B|AC) P(A|C) - P(B|A-bar C) P(A-bar|C).",
+        "P(B|C) = P(B|AC) + P(B|A-bar C).",
+        "P(B|C) = P(A|BC) P(B|C) + P(A-bar|BC) P(B|C)."
+      ]
+    },
+    {
+      "id": "ml-w04-014",
+      "question": "What is the expanded form of Bayes' theorem for P(A|BC) that includes the marginalization in the denominator?",
+      "answer": "P(A|BC) = P(B|AC)P(A|C) / [P(B|AC)P(A|C) + P(B|A-bar C)P(A-bar|C)].",
+      "distractors": [
+        "P(A|BC) = P(B|AC)P(A|C) / [P(B|AC) + P(B|A-bar C)].",
+        "P(A|BC) = P(B|AC)P(A|C) / [P(A|BC)P(B|C) + P(A-bar|BC)P(B|C)].",
+        "P(A|BC) = [P(B|AC) + P(A|C)] / P(B|C)."
+      ]
+    },
+    {
+      "id": "ml-w04-015",
+      "question": "When are events A1, ..., An mutually exclusive, and what is P(A1 + ... + An) in that case?",
+      "answer": "When no two can be true at the same time (AiAj = 0 for i != j); then P(A1 + ... + An) = the sum of the P(Ai).",
+      "distractors": [
+        "When at least one of them must be true; then the sum of the P(Ai) equals 1.",
+        "When they are independent; then P(A1 + ... + An) = the product of the P(Ai).",
+        "When they cover all outcomes; then P(A1 + ... + An) = 0."
+      ]
+    },
+    {
+      "id": "ml-w04-016",
+      "question": "For two events that are not necessarily mutually exclusive, what is P(A + B)?",
+      "answer": "P(A) + P(B) - P(AB).",
+      "distractors": [
+        "P(A) + P(B).",
+        "P(A) P(B).",
+        "P(A) + P(B) + P(AB)."
+      ]
+    },
+    {
+      "id": "ml-w04-017",
+      "question": "A die gives events A1, ..., A6, where Ai means 'side i is face up'. What is the relation between these events?",
+      "answer": "They are mutually exclusive and exhaustive, so their probabilities sum to 1.",
+      "distractors": [
+        "They are independent and exhaustive, so their probabilities multiply to 1.",
+        "They are mutually exclusive but not exhaustive, since a die could land on an edge.",
+        "They are exhaustive but not mutually exclusive, since several sides can face up together."
+      ]
+    },
+    {
+      "id": "ml-w04-018",
+      "question": "R1, R2, R3 mean 'handed in report 1, 2, 3' and F means 'failed 02450'. How do you express 'if a student hands in reports 1, 2 and 3, the chance of passing is greater than 90%'?",
+      "answer": "P(not F | R1 R2 R3) > 0.9, since passing is not failing and the reports are the evidence being conditioned on.",
+      "distractors": [
+        "P(R1 R2 R3 | F) > 0.9, which asks how likely a failing student handed in everything.",
+        "P(F | R1 R2 R3) > 0.9, which says the student is likely to fail.",
+        "P(not F | R1 + R2 + R3) > 0.9, which only requires at least one report."
+      ]
+    },
+    {
+      "id": "ml-w04-019",
+      "question": "Why are stochastic (random) variables useful compared with reasoning directly with events?",
+      "answer": "Complicated questions would require logic and counting over events; random variables let us manipulate the quantities with algebra and general formulas.",
+      "distractors": [
+        "They guarantee that every probability becomes exactly 0 or 1.",
+        "They remove the need for the sum rule and the product rule.",
+        "They allow us to avoid ever specifying a distribution."
+      ]
+    },
+    {
+      "id": "ml-w04-020",
+      "question": "What is the event X_x and what does the random variable notation P(X = x) = p(x) express?",
+      "answer": "X_x is the binary event that X equals the number x; P(X = x) = p(x) is its probability written in random variable notation.",
+      "distractors": [
+        "X_x is the event that X is at least x; p(x) is the cumulative probability up to x.",
+        "X_x is the average of X over x observations; p(x) is its variance.",
+        "X_x is the proposition that X is true; p(x) is a density that can exceed 1."
+      ]
+    },
+    {
+      "id": "ml-w04-021",
+      "question": "How do the sum and product rules look for discrete random variables?",
+      "answer": "Sum rule: sum over i of p(x_i|z_k) = 1; product rule: p(x_i, y_j|z_k) = p(x_i|y_j, z_k) p(y_j|z_k).",
+      "distractors": [
+        "Sum rule: p(x_i|z_k) + p(y_j|z_k) = 1; product rule: p(x_i, y_j|z_k) = p(x_i|z_k) + p(y_j|z_k).",
+        "Sum rule: sum over i of p(x_i|z_k) = 0; product rule: p(x_i, y_j|z_k) = p(x_i|y_j, z_k) / p(y_j|z_k).",
+        "Sum rule: sum over k of p(x_i|z_k) = 1; product rule: p(x_i, y_j|z_k) = p(x_i|z_k) p(y_j|x_i)."
+      ]
+    },
+    {
+      "id": "ml-w04-022",
+      "question": "Roll a die N times. How do you model the number of sixes using random variables?",
+      "answer": "Let X_i be a Bernoulli(1/6) variable that is 1 if roll i is a six; the number of sixes X = X_1 + ... + X_N is Binomial(N, 1/6).",
+      "distractors": [
+        "Let X_i be Bernoulli(1/6) and take X = X_1 * X_2 * ... * X_N, which is Binomial(N, 1/6).",
+        "Let X_i be Bernoulli(5/6) and take X to be the largest X_i.",
+        "Count the 6^N outcomes and enumerate those with K sixes directly; this is the only option."
+      ]
+    },
+    {
+      "id": "ml-w04-023",
+      "question": "What is the Bernoulli distribution for a binary variable b with parameter theta?",
+      "answer": "p(b|theta) = theta^b (1 - theta)^(1-b), so p(b=1|theta) = theta and p(b=0|theta) = 1 - theta.",
+      "distractors": [
+        "p(b|theta) = theta^(1-b) (1 - theta)^b, so p(b=1|theta) = 1 - theta.",
+        "p(b|theta) = theta * b, so p(b=1|theta) = theta and p(b=0|theta) = 0.",
+        "p(b|theta) = (1 - theta)^b, so p(b=0|theta) = theta."
+      ]
+    },
+    {
+      "id": "ml-w04-024",
+      "question": "In the Bernoulli distribution, what role does the parameter theta play?",
+      "answer": "It determines the probability that the random variable takes the value 1, and lies in the interval [0, 1].",
+      "distractors": [
+        "It is the expected number of trials before the first success.",
+        "It is the variance of the binary variable and can be any positive number.",
+        "It is the number of times the binary event is repeated."
+      ]
+    },
+    {
+      "id": "ml-w04-025",
+      "question": "What is the distribution of the sum of N independent Bernoulli(theta) variables, and what is P(X = k)?",
+      "answer": "Binomial(N, theta), with P(X = k) = C(N, k) theta^k (1 - theta)^(N - k).",
+      "distractors": [
+        "Gaussian(N theta, N), with P(X = k) given by a density.",
+        "Bernoulli(N theta), with P(X = k) = theta^k (1 - theta)^(1-k).",
+        "Binomial(N, theta), with P(X = k) = theta^k (1 - theta)^k."
+      ]
+    },
+    {
+      "id": "ml-w04-026",
+      "question": "A fair die is rolled 3 times. What is the probability of exactly two sixes?",
+      "answer": "5/72, from C(3,2) (1/6)^2 (5/6).",
+      "distractors": [
+        "5/216, which counts only one arrangement of the two sixes.",
+        "1/36, which ignores the third roll.",
+        "25/72, which is the probability of exactly one six."
+      ]
+    },
+    {
+      "id": "ml-w04-027",
+      "question": "The red bowl holds 5 oranges and 2 apples, and the blue bowl holds 1 orange and 4 apples. What is the probability of an orange if the bowl is red?",
+      "answer": "5/7.",
+      "distractors": [
+        "5/12.",
+        "5/6.",
+        "1/5."
+      ]
+    },
+    {
+      "id": "ml-w04-028",
+      "question": "In the same bowls (red: 5 oranges, 2 apples; blue: 1 orange, 4 apples), what is the probability of the red bowl if the fruit is an orange?",
+      "answer": "5/6.",
+      "distractors": [
+        "5/7.",
+        "5/12.",
+        "1/6."
+      ]
+    },
+    {
+      "id": "ml-w04-029",
+      "question": "Why do p(orange | red bowl) = 5/7 and p(red bowl | orange) = 5/6 differ, and how are they linked?",
+      "answer": "They condition on different things (the bowl versus the fruit); Bayes' theorem links them: p(r|o) = p(o|r)p(r)/p(o).",
+      "distractors": [
+        "They differ because of a counting mistake; both must equal the joint probability 5/12.",
+        "They differ only because the bowls have different sizes, and Bayes' theorem does not link them.",
+        "They are linked by p(r|o) = p(o|r) + p(r) - p(o)."
+      ]
+    },
+    {
+      "id": "ml-w04-030",
+      "question": "With 12 pieces of fruit (5 oranges and 2 apples in the red bowl), how is p(r) = 7/12 obtained from the joint probabilities?",
+      "answer": "By marginalization: p(r) = p(r, o=0) + p(r, o=1) = 2/12 + 5/12.",
+      "distractors": [
+        "By the product rule: p(r) = p(r|o) p(o) = 5/6 * 6/12.",
+        "By Bayes' theorem: p(r) = p(o|r) p(o) / p(r).",
+        "By adding the conditionals: p(r) = 5/7 + 2/7."
+      ]
+    },
+    {
+      "id": "ml-w04-031",
+      "question": "A test detects a disease 99% of the time, gives a false positive 2% of the time, and 1% of the population has the disease. You test positive. What is the probability you have the disease?",
+      "answer": "1/3.",
+      "distractors": [
+        "99/100.",
+        "1/100.",
+        "2/3."
+      ]
+    },
+    {
+      "id": "ml-w04-032",
+      "question": "In the disease-test example, what is the overall probability of a positive test, p(Positive)?",
+      "answer": "0.0297, from 0.99*0.01 + 0.02*0.99.",
+      "distractors": [
+        "0.0099, which counts only the true positives.",
+        "0.0198, which counts only the false positives.",
+        "0.99, which is the sensitivity of the test."
+      ]
+    },
+    {
+      "id": "ml-w04-033",
+      "question": "Why is the posterior probability of disease only 1/3 after a positive test with 99% sensitivity?",
+      "answer": "The disease is rare (1% prior), so false positives from the large healthy group (about 1.98% of people) outnumber true positives (about 0.99%).",
+      "distractors": [
+        "The test is only 33% accurate on diseased people.",
+        "The probability of a false positive is higher than the probability of a true positive.",
+        "Bayes' theorem always divides a probability by three when there are two hypotheses."
+      ]
+    },
+    {
+      "id": "ml-w04-034",
+      "question": "In the disease-test example, which quantity is the likelihood and which is the prior in p(Disease|Positive) = p(Positive|Disease) p(Disease) / p(Positive)?",
+      "answer": "p(Positive|Disease) = 0.99 is the likelihood of the test result, and p(Disease) = 0.01 is the prior.",
+      "distractors": [
+        "p(Disease) = 0.01 is the likelihood, and p(Positive|Disease) = 0.99 is the prior.",
+        "p(Positive) is the likelihood, and p(Disease|Positive) is the prior.",
+        "p(Positive|NoDisease) = 0.02 is the prior, and p(NoDisease) is the likelihood."
+      ]
+    },
+    {
+      "id": "ml-w04-035",
+      "question": "17.5% of customers are from Lisbon, 10.7% from Oporto, 71.8% from Other. The shares spending above the median on delicatessen are 44.1%, 48.9% and 51.6%. What is P(Lisbon | DELI above median)?",
+      "answer": "About 15.4%.",
+      "distractors": [
+        "About 7.7%, the joint probability P(DELI above median and Lisbon).",
+        "44.1%, the probability P(DELI above median | Lisbon).",
+        "50.0%, the overall probability of spending above the median."
+      ]
+    },
+    {
+      "id": "ml-w04-036",
+      "question": "In the delicatessen quiz, how is the denominator P(DELI above median) obtained?",
+      "answer": "By marginalizing over the cities: sum over cities of P(DELI above median | city) P(city), which is 0.5.",
+      "distractors": [
+        "By taking the largest of the three conditional probabilities, 0.516.",
+        "By averaging the three conditional probabilities without weighting by city size.",
+        "By multiplying the three conditional probabilities."
+      ]
+    },
+    {
+      "id": "ml-w04-037",
+      "question": "When are two random variables X and Y independent?",
+      "answer": "When p(x_i, y_j) = p(x_i) p(y_j) for all values.",
+      "distractors": [
+        "When p(x_i, y_j) = p(x_i) + p(y_j).",
+        "When p(x_i | y_j) = p(y_j | x_i).",
+        "When p(x_i, y_j) = 0 for all i != j."
+      ]
+    },
+    {
+      "id": "ml-w04-038",
+      "question": "What does it mean that X and Y are conditionally independent given Z?",
+      "answer": "p(x_i, y_j | z_k) = p(x_i | z_k) p(y_j | z_k): once z_k is known, the joint probability factorizes.",
+      "distractors": [
+        "p(x_i, y_j) = p(x_i) p(y_j) holds unconditionally, so Z is irrelevant.",
+        "p(x_i | y_j, z_k) = p(y_j | x_i, z_k).",
+        "p(x_i, y_j | z_k) = p(x_i, y_j) p(z_k)."
+      ]
+    },
+    {
+      "id": "ml-w04-039",
+      "question": "How is the expectation of a function f of a discrete random variable defined?",
+      "answer": "E[f] = sum over i of f(x_i) p(x_i).",
+      "distractors": [
+        "E[f] = sum over i of f(x_i) / p(x_i).",
+        "E[f] = max over i of f(x_i) p(x_i).",
+        "E[f] = f(sum over i of x_i p(x_i)) for every f."
+      ]
+    },
+    {
+      "id": "ml-w04-040",
+      "question": "How are the mean and the variance of a discrete random variable defined?",
+      "answer": "Mean: E[x] = sum of x_i p(x_i); variance: Var[x] = sum of (x_i - E[x])^2 p(x_i).",
+      "distractors": [
+        "Mean: sum of p(x_i); variance: sum of x_i^2.",
+        "Mean: E[x] = sum of x_i / p(x_i); variance: sum of (x_i - E[x]) p(x_i).",
+        "Mean: the value with the highest p(x_i); variance: the largest (x_i - E[x])."
+      ]
+    },
+    {
+      "id": "ml-w04-041",
+      "question": "If all N values are equally likely, p(x_i) = 1/N, what do the expectation formulas reduce to?",
+      "answer": "E[x] is the ordinary average (sum of x_i)/N, and Var[x] = (1/N) sum of (x_i - E[x])^2.",
+      "distractors": [
+        "E[x] = 1/N, and Var[x] = 1/N^2.",
+        "E[x] = sum of x_i, and Var[x] = sum of (x_i - E[x])^2.",
+        "E[x] = the median, and Var[x] = (1/(N-1)) sum of x_i^2."
+      ]
+    },
+    {
+      "id": "ml-w04-042",
+      "question": "How is the expectation of g(x) defined for a continuous random variable with density p(x)?",
+      "answer": "E[g] = the integral of g(x) p(x) dx.",
+      "distractors": [
+        "E[g] = the sum of g(x) p(x) over all real x.",
+        "E[g] = the integral of g(x) dx.",
+        "E[g] = g evaluated at the point where p(x) = 1."
+      ]
+    },
+    {
+      "id": "ml-w04-043",
+      "question": "How are the covariance and the standard deviation defined with expectations?",
+      "answer": "cov(x, y) = E[(x - E[x])(y - E[y])], and std(x) = sqrt(var(x)), where var(x) = cov(x, x).",
+      "distractors": [
+        "cov(x, y) = E[xy] + E[x]E[y], and std(x) = var(x)^2.",
+        "cov(x, y) = E[x - y], and std(x) = E[(x - E[x])].",
+        "cov(x, y) = E[(x - E[x])^2], and std(x) = E[x]."
+      ]
+    },
+    {
+      "id": "ml-w04-044",
+      "question": "Why can we not talk about the probability that the rainfall is exactly 2.3 mm?",
+      "answer": "Rainfall is continuous, so any single exact value has probability zero; only intervals such as 1 to 2 mm have meaningful probabilities.",
+      "distractors": [
+        "Because rainfall values above 2 mm are forbidden by the density.",
+        "Because the density at 2.3 mm is always negative.",
+        "Because rainfall is discrete and 2.3 is not one of the possible values."
+      ]
+    },
+    {
+      "id": "ml-w04-045",
+      "question": "For a continuous variable with density p(x), how is the probability of the event 'x lies between a and b' computed?",
+      "answer": "As the integral of p(x) dx from a to b: the events are intervals, the probability is the integral, and the curve is the density.",
+      "distractors": [
+        "As p(b) - p(a), the difference of the density values at the end points.",
+        "As the average of p(a) and p(b).",
+        "As the height of the density curve at the midpoint of the interval."
+      ]
+    },
+    {
+      "id": "ml-w04-046",
+      "question": "The rainfall density is about 0.3 at x = 1 mm. What is the approximate probability of rainfall between 1 and 1.1 mm?",
+      "answer": "About 0.03, since P(A[x, x+dx]) is approximately p(x) dx = 0.3 * 0.1.",
+      "distractors": [
+        "About 0.3, the value of the density.",
+        "About 0.003, since dx should be 0.01.",
+        "About 0.1, the width of the interval."
+      ]
+    },
+    {
+      "id": "ml-w04-047",
+      "question": "How is the probability that a pair of continuous variables (x, y) lies in a region D defined?",
+      "answer": "As the double integral of the joint density p(x, y) dx dy over the region D.",
+      "distractors": [
+        "As p(x) times p(y), evaluated at the center of D.",
+        "As the maximum of p(x, y) over D.",
+        "As the single integral of p(x) dx over D."
+      ]
+    },
+    {
+      "id": "ml-w04-048",
+      "question": "For densities, what are the sum rule and the product rule?",
+      "answer": "Sum rule: the integral of p(x|z) dx = 1; product rule: p(x, y|z) = p(y|x, z) p(x|z).",
+      "distractors": [
+        "Sum rule: p(x|z) + p(x-bar|z) = 1 as a sum of two densities; product rule: p(x, y|z) = p(x|z) + p(y|z).",
+        "Sum rule: p(x|z) integrates to z; product rule: p(x, y|z) = p(y|x, z) / p(x|z).",
+        "Sum rule: the sum over x of p(x|z) = 1 and cannot involve integrals; product rule: p(x, y|z) = p(y|z)."
+      ]
+    },
+    {
+      "id": "ml-w04-049",
+      "question": "How does Bayes' theorem look for continuous x?",
+      "answer": "p(x|y, z) = p(y|x, z) p(x|z) / the integral of p(y|x', z) p(x'|z) dx'.",
+      "distractors": [
+        "p(x|y, z) = p(y|x, z) p(x|z) / the sum over x' of p(y|x', z) without any integral.",
+        "p(x|y, z) = p(y|x, z) + p(x|z) minus the integral of p(y|x', z) dx'.",
+        "p(x|y, z) = p(x|z) / the integral of p(y|x', z) dx'."
+      ]
+    },
+    {
+      "id": "ml-w04-050",
+      "question": "How does marginalization differ between discrete and continuous variables?",
+      "answer": "Discrete: sum over c of p(x = c, y|z) = p(y|z); continuous: the integral of p(x, y|z) dx = p(y|z).",
+      "distractors": [
+        "Discrete: product over c of p(x = c, y|z); continuous: the derivative of p(x, y|z).",
+        "Discrete: integral over c; continuous: sum over x.",
+        "Both use a sum, since integrals are not allowed for probability densities."
+      ]
+    },
+    {
+      "id": "ml-w04-051",
+      "question": "What is the density of the multivariate normal distribution N(x | mu, Sigma) for M-dimensional x?",
+      "answer": "1 / ((2 pi)^(M/2) |Sigma|^(1/2)) * exp(-1/2 (x - mu)^T Sigma^(-1) (x - mu)).",
+      "distractors": [
+        "1 / ((2 pi)^(M/2) |Sigma|^(1/2)) * exp(+1/2 (x - mu)^T Sigma (x - mu)).",
+        "1 / (2 pi)^M * exp(-(x - mu)^T (x - mu)), without the covariance matrix.",
+        "exp(-1/2 (x - mu)^T Sigma^(-1) (x - mu)), without any normalization constant."
+      ]
+    },
+    {
+      "id": "ml-w04-052",
+      "question": "What does the multivariate normal density reduce to for M = 1?",
+      "answer": "1 / sqrt(2 pi sigma^2) * exp(-(x - mu)^2 / (2 sigma^2)).",
+      "distractors": [
+        "1 / (2 pi sigma^2) * exp(-(x - mu) / sigma).",
+        "sigma / sqrt(2 pi) * exp(-(x - mu)^2 / 2).",
+        "1 / sqrt(2 pi) * exp(-(x - mu)^2 * sigma^2 / 2)."
+      ]
+    },
+    {
+      "id": "ml-w04-053",
+      "question": "What do the parameters mu and Sigma of the multivariate normal represent?",
+      "answer": "mu = E[x] is the mean vector, and Sigma is the covariance matrix with Sigma_ij = cov[x_i, x_j].",
+      "distractors": [
+        "mu is the standard deviation vector, and Sigma is the correlation matrix with ones on the diagonal.",
+        "mu is the mode of the first attribute only, and Sigma is the identity matrix scaled by the mean.",
+        "mu is the covariance matrix, and Sigma is the mean vector."
+      ]
+    },
+    {
+      "id": "ml-w04-054",
+      "question": "What properties does a covariance matrix of a normal distribution have?",
+      "answer": "It is symmetric, has positive values on the diagonal (the variances), and is positive definite (eigenvalues greater than 0).",
+      "distractors": [
+        "It is antisymmetric, with zeros on the diagonal, and has negative eigenvalues.",
+        "It is diagonal, with identical values on the diagonal, and has eigenvalues equal to 1.",
+        "It is symmetric, with ones on the diagonal, and has eigenvalues that may be negative."
+      ]
+    },
+    {
+      "id": "ml-w04-055",
+      "question": "For a 2D normal distribution, what do the entries of Sigma contain?",
+      "answer": "The diagonal holds var(x1) and var(x2), and both off-diagonal entries hold cov[x1, x2].",
+      "distractors": [
+        "The diagonal holds cov[x1, x2] and the off-diagonal entries hold the variances.",
+        "The diagonal holds the means of x1 and x2, and the off-diagonal entries hold their correlation.",
+        "The first row holds var(x1) and var(x2), and the second row holds the means."
+      ]
+    },
+    {
+      "id": "ml-w04-056",
+      "question": "What do the contour lines of a 2D normal with Sigma = [[1, 0], [0, 1]] look like?",
+      "answer": "Circles centered at the mean, because the variances are equal and the covariance is zero.",
+      "distractors": [
+        "Ellipses elongated along the diagonal x1 = x2.",
+        "Ellipses elongated along the x1 axis only.",
+        "Straight lines through the mean."
+      ]
+    },
+    {
+      "id": "ml-w04-057",
+      "question": "A 2D normal has Sigma = [[1, 0.9], [0.9, 1]]. What do its contours look like?",
+      "answer": "Narrow ellipses elongated along the diagonal x1 = x2, because the attributes are strongly positively correlated.",
+      "distractors": [
+        "Circles, because both variances are 1.",
+        "Narrow ellipses elongated along the anti-diagonal, because the covariance is large.",
+        "Axis-aligned ellipses, because the variances are equal."
+      ]
+    },
+    {
+      "id": "ml-w04-058",
+      "question": "Three contour plots show a circle (A), a moderately tilted ellipse (B) and a very narrow tilted ellipse (C). All variances are 1 and x1, x2 are positively correlated. Which covariance matrices match A and C?",
+      "answer": "Sigma_A = [[1, 0], [0, 1]] and Sigma_C = [[1, 0.9], [0.9, 1]].",
+      "distractors": [
+        "Sigma_A = [[1, 1], [1, 1]] and Sigma_C = [[1, 0], [0, 1]].",
+        "Sigma_A = [[10, 4.5], [4.5, 10]] and Sigma_C = [[10, 9], [9, 10]].",
+        "Sigma_A = [[1, -0.45], [0.45, 1]] and Sigma_C = [[1, 0.9], [0.9, 1]]."
+      ]
+    },
+    {
+      "id": "ml-w04-059",
+      "question": "Why is [[1, -0.45], [0.45, 1]] not a valid covariance matrix for the contour plots in the quiz?",
+      "answer": "A covariance matrix must be symmetric, and this matrix is not; it also has the wrong sign for the positively correlated plot.",
+      "distractors": [
+        "Its diagonal entries must be 0.",
+        "Its determinant must be exactly 1.",
+        "A covariance matrix must have all off-diagonal entries equal to 0."
+      ]
+    },
+    {
+      "id": "ml-w04-060",
+      "question": "What is the Bayes classifier's expression for the class posterior p(y|x1, x2) in a two-class problem?",
+      "answer": "p(y|x1, x2) = p(x1, x2|y) p(y) / sum over k of p(x1, x2|y = k) p(y = k).",
+      "distractors": [
+        "p(y|x1, x2) = p(y|x1) p(y|x2) / p(y).",
+        "p(y|x1, x2) = p(x1, x2) p(y) / p(x1, x2|y).",
+        "p(y|x1, x2) = p(x1, x2|y) + p(y)."
+      ]
+    },
+    {
+      "id": "ml-w04-061",
+      "question": "In the Bayes classifier, which quantities are the class posterior, the class prior, and the class-conditional distribution?",
+      "answer": "p(y|x) is the posterior, p(y) is the prior, and p(x|y) is the class-conditional distribution of the attributes.",
+      "distractors": [
+        "p(x|y) is the posterior, p(y) is the prior, and p(y|x) is the class-conditional distribution.",
+        "p(y) is the posterior, p(x) is the prior, and p(x|y) is the evidence.",
+        "p(x) is the posterior, p(y|x) is the prior, and p(y) is the class-conditional distribution."
+      ]
+    },
+    {
+      "id": "ml-w04-062",
+      "question": "Training data (gender y: 0 male, 1 female; tall x1, heavy x2): males (1,1), (1,1), (1,1), (0,1); females (1,1), (0,1), (0,0), (0,0). What is P(y=0 | x1=0, x2=1) for a short, heavy person with the full Bayes classifier?",
+      "answer": "1/2, since p(0,1|male) = 1/4, p(0,1|female) = 1/4 and the priors are both 4/8.",
+      "distractors": [
+        "1/4, the class-conditional probability p(0,1|male).",
+        "3/4, the fraction of males that are tall.",
+        "1/8, the joint probability of male and (0,1)."
+      ]
+    },
+    {
+      "id": "ml-w04-063",
+      "question": "What is the practical problem with estimating p(x1, ..., xM | y = k) by counting in the Bayes classifier?",
+      "answer": "It requires, for each class, enough observations matching each exact combination of attribute values; the number of combinations grows quickly with M, so most combinations are never observed.",
+      "distractors": [
+        "The counts always sum to more than 1, so the probabilities cannot be normalized.",
+        "The class prior p(y) cannot be estimated from data.",
+        "The counting only works for continuous attributes."
+      ]
+    },
+    {
+      "id": "ml-w04-064",
+      "question": "What is the Naive Bayes assumption?",
+      "answer": "The attributes are conditionally independent given the class: p(x1, ..., xM | y) = p(x1|y) p(x2|y) ... p(xM|y).",
+      "distractors": [
+        "The attributes are independent of each other and of the class: p(x1, ..., xM) = p(x1) ... p(xM).",
+        "The class is independent of the attributes: p(y|x1, ..., xM) = p(y).",
+        "The attributes are identical given the class: x1 = x2 = ... = xM."
+      ]
+    },
+    {
+      "id": "ml-w04-065",
+      "question": "What is the Naive Bayes classifier for the class posterior?",
+      "answer": "p(y|x1, ..., xM) = p(x1|y) ... p(xM|y) p(y) / sum over k of p(x1|y=k) ... p(xM|y=k) p(y=k).",
+      "distractors": [
+        "p(y|x1, ..., xM) = p(x1|y) + ... + p(xM|y) + p(y).",
+        "p(y|x1, ..., xM) = p(y|x1) p(y|x2) ... p(y|xM).",
+        "p(y|x1, ..., xM) = p(x1, ..., xM|y) p(y) / p(y)."
+      ]
+    },
+    {
+      "id": "ml-w04-066",
+      "question": "Using the same data, what does Naive Bayes give for P(y=1 | x1=1, x2=1), the probability that a tall, heavy person is female?",
+      "answer": "1/7, from (1/4 * 2/4 * 1/2) / (1/4 * 2/4 * 1/2 + 3/4 * 4/4 * 1/2).",
+      "distractors": [
+        "1/4, the posterior from the full joint distribution.",
+        "1/2, the prior of the class female.",
+        "2/3, the fraction of tall people that are female."
+      ]
+    },
+    {
+      "id": "ml-w04-067",
+      "question": "For the tall, heavy person, the full Bayes classifier gives P(female) = 1/4 while Naive Bayes gives 1/7. What does the difference show?",
+      "answer": "Naive Bayes can give different results from the full Bayes classifier when the attributes are not truly conditionally independent given the class.",
+      "distractors": [
+        "One of the two calculations must contain an arithmetic error, since both use the same data.",
+        "Naive Bayes always gives a smaller posterior than the full Bayes classifier.",
+        "The full Bayes classifier ignores the prior, which causes the difference."
+      ]
+    },
+    {
+      "id": "ml-w04-068",
+      "question": "In Naive Bayes, what does the product of the factors p(x_j|y) have to be divided by to obtain a proper posterior?",
+      "answer": "The sum over all classes k of the same product with the prior, so that the posteriors sum to 1.",
+      "distractors": [
+        "The number of attributes M.",
+        "The prior p(y) of the predicted class only.",
+        "The largest single factor p(x_j|y)."
+      ]
+    },
+    {
+      "id": "ml-w04-069",
+      "question": "For binary attributes, how does the robust (smoothed) Naive Bayes estimate p(x_j = 1 | y = c)?",
+      "answer": "(n + alpha) / (N_c + 2 alpha), where n is the count of x_j = 1 within class c and N_c the number of class-c observations.",
+      "distractors": [
+        "n / (N_c + alpha), which only adjusts the denominator.",
+        "(n + alpha) / (N_c + alpha), which adds alpha once in the denominator.",
+        "(n + alpha) / (N + 2 alpha), where N is the total dataset size."
+      ]
+    },
+    {
+      "id": "ml-w04-070",
+      "question": "For a categorical attribute with K categories, how is p(x_j = k | y = c) estimated robustly?",
+      "answer": "(n + alpha) / (N_c + K alpha), where n is the number of class-c observations with x_j = k.",
+      "distractors": [
+        "(n + alpha) / (N_c + 2 alpha), as for a binary attribute.",
+        "(n + K alpha) / (N_c + alpha).",
+        "n / (N_c + K alpha)."
+      ]
+    },
+    {
+      "id": "ml-w04-071",
+      "question": "For a continuous attribute, how does Naive Bayes model p(x_j = x | y = c) with the robust estimate?",
+      "answer": "A normal density N(x | mu_{j|c}, sigma^2 = (sigma_{j|c} + alpha)^2), using the class mean and standard deviation of that attribute.",
+      "distractors": [
+        "A Bernoulli distribution with parameter equal to the class mean.",
+        "A normal density with the covariance matrix of all attributes together.",
+        "A uniform density over the range of the attribute in class c."
+      ]
+    },
+    {
+      "id": "ml-w04-072",
+      "question": "Why do we add a small number alpha to the counts in Naive Bayes?",
+      "answer": "To avoid zero estimated probabilities when a value never occurs in a class, since one zero factor would force the whole product to zero.",
+      "distractors": [
+        "To make the class priors sum to more than 1.",
+        "To convert continuous attributes into binary ones.",
+        "To ensure the attributes become independent."
+      ]
+    },
+    {
+      "id": "ml-w04-073",
+      "question": "How should the smoothing parameter alpha be selected?",
+      "answer": "Using cross-validation.",
+      "distractors": [
+        "Always set it to the number of attributes M.",
+        "Set it to the training-set accuracy.",
+        "Set it to the class prior of the majority class."
+      ]
+    },
+    {
+      "id": "ml-w04-074",
+      "question": "In a binary attribute within a class of N_c = 10 observations, the value 1 never occurs. With alpha = 1, what is the smoothed estimate of p(x_j = 1 | y = c)?",
+      "answer": "1/12.",
+      "distractors": [
+        "0.",
+        "1/10.",
+        "1/11."
+      ]
+    },
+    {
+      "id": "ml-w04-075",
+      "question": "A categorical attribute with K = 3 categories takes category k in 2 of the N_c = 8 observations of class c. With alpha = 1, what is the smoothed estimate?",
+      "answer": "3/11.",
+      "distractors": [
+        "3/9.",
+        "2/8.",
+        "2/11."
+      ]
+    },
+    {
+      "id": "ml-w04-076",
+      "question": "How does Bayesian classification with the multivariate normal distribution work?",
+      "answer": "Fit a normal distribution to each class by computing the class mean and covariance, then classify using P(y=c|x) = P(x|y=c)P(y=c) / sum over c' of P(x|y=c')P(y=c').",
+      "distractors": [
+        "Fit one normal distribution to all the data, and classify by the nearest class mean.",
+        "Fit a normal distribution only to the largest class, and classify others as outliers.",
+        "Compute the class mean only, assuming the covariance matrix is zero."
+      ]
+    },
+    {
+      "id": "ml-w04-077",
+      "question": "For male and female height/weight data, a Gaussian is fit to each class. What differs between the two fitted densities?",
+      "answer": "Each class has its own mean vector and covariance matrix (its own location, spread and orientation).",
+      "distractors": [
+        "Only the mean differs; the covariance matrix is shared and fixed to the identity.",
+        "Only the prior differs; the densities are identical.",
+        "They have the same mean but different class labels."
+      ]
+    },
+    {
+      "id": "ml-w04-078",
+      "question": "What does the Naive Bayes independence assumption correspond to in the parameters of a multivariate normal class model?",
+      "answer": "The covariances between different attributes are zero, so the covariance matrix is diagonal and p(x1, x2) factorizes into p(x1) p(x2).",
+      "distractors": [
+        "The mean vector is zero for every class.",
+        "The covariance matrix is the identity matrix for all classes.",
+        "The covariance matrix is not symmetric."
+      ]
+    },
+    {
+      "id": "ml-w04-079",
+      "question": "How is precision defined for a classifier?",
+      "answer": "The number of true positives divided by the number of observations predicted positive.",
+      "distractors": [
+        "The number of true positives divided by the number of actual positives.",
+        "The number of correct predictions divided by the total number of observations.",
+        "The number of false positives divided by the number of actual negatives."
+      ]
+    },
+    {
+      "id": "ml-w04-080",
+      "question": "How is recall defined for a classifier?",
+      "answer": "The number of true positives divided by the number of actual positives.",
+      "distractors": [
+        "The number of true positives divided by the number predicted positive.",
+        "The number of true negatives divided by the number of actual negatives.",
+        "The number of false negatives divided by the number of actual positives."
+      ]
+    },
+    {
+      "id": "ml-w04-081",
+      "question": "A test set has 20 positives. Classifier 1 predicts 54 positives, 18 correct. Classifier 2 predicts 16 positives, 14 correct. What are the precision and recall of each?",
+      "answer": "Classifier 1: precision 1/3, recall 9/10. Classifier 2: precision 7/8, recall 7/10.",
+      "distractors": [
+        "Classifier 1: precision 2/3, recall 7/10. Classifier 2: precision 1/3, recall 1/3.",
+        "Classifier 1: precision 1/3, recall 9/10. Classifier 2: precision 2/3, recall 9/10.",
+        "Classifier 1: precision 9/10, recall 1/3. Classifier 2: precision 7/10, recall 7/8."
+      ]
+    },
+    {
+      "id": "ml-w04-082",
+      "question": "If the objective is to detect credit-card fraud (positive = fraud) and you want to miss few fraudulent transactions, which classifier from the previous example is preferable and why?",
+      "answer": "Classifier 1, because it has the higher recall (9/10 versus 7/10), meaning fewer missed frauds (fewer false negatives).",
+      "distractors": [
+        "Classifier 2, because its precision of 7/8 means it misses fewer frauds.",
+        "Classifier 2, because it makes fewer positive predictions overall.",
+        "Neither, because precision and recall cannot be compared between classifiers."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,807 @@
+{
+  "module": "ml",
+  "week": 5,
+  "title": "Bayesian inference and linear models",
+  "cards": [
+    {
+      "id": "ml-w05-001",
+      "question": "What is the difference between maximum likelihood estimation (MLE) and maximum a posteriori (MAP) estimation of a parameter θ?",
+      "answer": "MLE picks the θ that maximizes the likelihood p(data|θ), while MAP picks the θ that maximizes the posterior p(θ|data), which also includes the prior p(θ).",
+      "distractors": [
+        "MLE maximizes the posterior p(θ|data), while MAP maximizes only the prior p(θ).",
+        "MLE keeps the full distribution over θ, while MAP returns a single point estimate of the data.",
+        "MLE needs a Beta prior on θ, while MAP needs no prior at all."
+      ]
+    },
+    {
+      "id": "ml-w05-002",
+      "question": "In the Bernoulli distribution p(b|θ) = θ^b (1−θ)^(1−b), what does the parameter θ represent?",
+      "answer": "The probability that the binary event takes the value b = 1; it lies in the unit interval [0, 1].",
+      "distractors": [
+        "The expected number of trials before the first b = 1.",
+        "The probability that b = 0, so θ = 1 corresponds to b = 0 for certain.",
+        "The number of times the binary event is repeated."
+      ]
+    },
+    {
+      "id": "ml-w05-003",
+      "question": "What are p(b=1|θ) and p(b=0|θ) for a Bernoulli variable?",
+      "answer": "p(b=1|θ) = θ and p(b=0|θ) = 1 − θ.",
+      "distractors": [
+        "p(b=1|θ) = 1 − θ and p(b=0|θ) = θ.",
+        "p(b=1|θ) = θ and p(b=0|θ) = θ.",
+        "p(b=1|θ) = θ² and p(b=0|θ) = (1 − θ)²."
+      ]
+    },
+    {
+      "id": "ml-w05-004",
+      "question": "When we observe a sequence b_1, ..., b_N of Bernoulli events and write p(b_1, ..., b_N | θ) = ∏ p(b_i|θ), what assumption are we making?",
+      "answer": "That the events are conditionally independent given θ (the chance of a person being ill or well is known).",
+      "distractors": [
+        "That the events are marginally independent without knowing θ.",
+        "That all events b_i must take the same value.",
+        "That θ itself is different for each event b_i."
+      ]
+    },
+    {
+      "id": "ml-w05-005",
+      "question": "Using the independence assumption, how is the likelihood of a Bernoulli sequence written, with m = b_1 + ... + b_N?",
+      "answer": "p(b_1, ..., b_N | θ) = θ^m (1 − θ)^(N − m).",
+      "distractors": [
+        "p(b_1, ..., b_N | θ) = θ^N (1 − θ)^m.",
+        "p(b_1, ..., b_N | θ) = m θ + (N − m)(1 − θ).",
+        "p(b_1, ..., b_N | θ) = θ^m + (1 − θ)^(N − m)."
+      ]
+    },
+    {
+      "id": "ml-w05-006",
+      "question": "The likelihood p(b_1, ..., b_N | θ) is described as the joint probability of the observations to be true under parameter θ. What do we do with it in MLE?",
+      "answer": "We find the θ that makes the observed data most plausible: θ* = argmax_θ p(b_1, ..., b_N | θ).",
+      "distractors": [
+        "We find the θ that makes the observed data least plausible, θ* = argmin_θ p(b_1, ..., b_N | θ).",
+        "We average the likelihood over all θ to get the final parameter.",
+        "We pick the θ equal to the first observation b_1."
+      ]
+    },
+    {
+      "id": "ml-w05-007",
+      "question": "For N = 4 flips with m = 3, the likelihood is θ^3 (1 − θ). Where is its maximum?",
+      "answer": "At θ = 0.75 (that is, m/N).",
+      "distractors": [
+        "At θ = 0.5.",
+        "At θ = 0.25.",
+        "At θ = 1."
+      ]
+    },
+    {
+      "id": "ml-w05-008",
+      "question": "In the likelihood plots for (N = 2, m = 1), (N = 4, m = 3) and (N = 100, m = 51), what changes as N grows?",
+      "answer": "The likelihood becomes more sharply peaked around the best θ, so the data pins down θ much more precisely.",
+      "distractors": [
+        "The likelihood becomes flatter, since more data means more uncertainty about θ.",
+        "The peak moves to θ = 1 since more flips always favour heads.",
+        "The likelihood becomes a straight line."
+      ]
+    },
+    {
+      "id": "ml-w05-009",
+      "question": "In the Bayesian inference cycle, what does Bayes' theorem p(θ|X) = p(X|θ)p(θ) / p(X) combine?",
+      "answer": "A prior p(θ) and a likelihood p(X|θ), normalized by p(X), to give the posterior p(θ|X).",
+      "distractors": [
+        "A posterior and a likelihood, normalized by the prior, to give the evidence p(X).",
+        "Two priors, p(θ) and p(X), to give the likelihood.",
+        "A likelihood and a cost function, to give a point estimate θ*."
+      ]
+    },
+    {
+      "id": "ml-w05-010",
+      "question": "How does MAP estimation relate to full Bayesian inference?",
+      "answer": "MAP keeps the prior but only a point estimate of the posterior, the θ with the highest posterior value, instead of the whole posterior distribution.",
+      "distractors": [
+        "MAP drops the prior but keeps the whole posterior distribution.",
+        "MAP keeps the whole posterior but discards the likelihood.",
+        "MAP replaces the posterior with the evidence p(X)."
+      ]
+    },
+    {
+      "id": "ml-w05-011",
+      "question": "How do you get from MAP estimation to maximum likelihood?",
+      "answer": "Drop the prior (equivalently, assume a constant, flat prior), so only the likelihood p(X|θ) is maximized.",
+      "distractors": [
+        "Drop the likelihood and keep only the prior p(θ).",
+        "Replace the point estimate with the full posterior.",
+        "Divide the posterior by the likelihood."
+      ]
+    },
+    {
+      "id": "ml-w05-012",
+      "question": "A friend's new dog was in the doghouse the first four times you visited, and a friend's new coin came up tails the first four times you flipped it. Why do our intuitions about the next observation differ even though the data look the same?",
+      "answer": "Because we have different prior beliefs: we expect a dog to have habits (extreme probabilities), but a coin to be roughly fair.",
+      "distractors": [
+        "Because the likelihood θ^4 differs between dogs and coins.",
+        "Because the dog and the coin have different numbers of observations N.",
+        "Because Bayes' theorem cannot be applied to dogs."
+      ]
+    },
+    {
+      "id": "ml-w05-013",
+      "question": "What is the support and density of the Beta distribution?",
+      "answer": "It is defined for θ in [0, 1] with p(θ|α, β) = Γ(α+β) / (Γ(α)Γ(β)) · θ^(α−1) (1−θ)^(β−1) and α, β > 0.",
+      "distractors": [
+        "It is defined for θ on the whole real line with a bell-shaped density.",
+        "It is defined for θ in [0, 1] with p(θ|α, β) = θ^α (1−θ)^β, with no normalizing constant.",
+        "It is defined for integers 0, ..., N with p(θ|α, β) = C(N, θ) α^θ β^(N−θ)."
+      ]
+    },
+    {
+      "id": "ml-w05-014",
+      "question": "What is the mean of a Beta(α, β) distribution?",
+      "answer": "α / (α + β).",
+      "distractors": [
+        "αβ / (α + β).",
+        "(α + β) / α.",
+        "α / (α + β + 1)."
+      ]
+    },
+    {
+      "id": "ml-w05-015",
+      "question": "What is the variance of a Beta(α, β) distribution?",
+      "answer": "αβ / ((α + β)² (α + β + 1)).",
+      "distractors": [
+        "αβ / (α + β)².",
+        "α / (α + β)².",
+        "αβ / ((α + β)(α + β + 1)²)."
+      ]
+    },
+    {
+      "id": "ml-w05-016",
+      "question": "What are the mean and variance of a Beta(5, 1) distribution?",
+      "answer": "Mean 5/6 and variance 5/252.",
+      "distractors": [
+        "Mean 1/6 and variance 5/252.",
+        "Mean 5/6 and variance 5/36.",
+        "Mean 1/2 and variance 1/12."
+      ]
+    },
+    {
+      "id": "ml-w05-017",
+      "question": "What does the Beta density look like for α = β = 1?",
+      "answer": "It is flat (uniform) on [0, 1], so it can be used as an uninformative prior over θ.",
+      "distractors": [
+        "It is U-shaped, with large density near 0 and 1.",
+        "It is a bell shape centered at 0.5.",
+        "It is a straight line increasing from 0 to 1."
+      ]
+    },
+    {
+      "id": "ml-w05-018",
+      "question": "What does the Beta density look like for α = β = 0.5?",
+      "answer": "U-shaped, putting most density near θ = 0 and θ = 1.",
+      "distractors": [
+        "Flat, putting equal density on all values of θ.",
+        "Bell-shaped with its peak at θ = 0.5.",
+        "Increasing, with its peak at θ = 1 only."
+      ]
+    },
+    {
+      "id": "ml-w05-019",
+      "question": "Which Beta(α, β) is skewed toward small θ, with a peak near 0.2, and which one is skewed toward large θ?",
+      "answer": "Beta(2, 5) peaks at low θ, and Beta(5, 1) increases toward high θ.",
+      "distractors": [
+        "Beta(5, 1) peaks at low θ, and Beta(2, 5) increases toward high θ.",
+        "Beta(2, 2) peaks at low θ, and Beta(0.5, 0.5) increases toward high θ.",
+        "Both are symmetric around 0.5 and differ only in height."
+      ]
+    },
+    {
+      "id": "ml-w05-020",
+      "question": "Why is the Beta distribution a natural prior for the parameter θ of a Bernoulli distribution?",
+      "answer": "Because θ must lie in the unit interval [0, 1], and the Beta density is defined exactly on [0, 1].",
+      "distractors": [
+        "Because the Beta density is always bell-shaped like the Gaussian.",
+        "Because the Beta density is discrete, like the Bernoulli distribution.",
+        "Because the Beta distribution has no parameters that need tuning."
+      ]
+    },
+    {
+      "id": "ml-w05-021",
+      "question": "For N coin flips with m heads and a Beta(α, β) prior on θ, what is the posterior p(θ|b, α, β)?",
+      "answer": "A Beta(α + m, β + N − m) density: Γ(α+β+N) / (Γ(α+m)Γ(β+N−m)) · θ^(α+m−1) (1−θ)^(β+N−m−1).",
+      "distractors": [
+        "A Beta(α + N, β + m) density.",
+        "A Beta(α m, β (N − m)) density.",
+        "A Beta(α, β) density, unchanged, because flipping a coin does not provide information about θ."
+      ]
+    },
+    {
+      "id": "ml-w05-022",
+      "question": "In the posterior p(θ|b) = p(b|θ)p(θ) / p(b), how is the denominator p(b) computed?",
+      "answer": "By integrating over θ: p(b) = ∫₀¹ p(b|θ')p(θ')dθ', which normalizes the posterior.",
+      "distractors": [
+        "By summing p(b|θ) over the observations b.",
+        "As p(b) = p(θ) · p(b|θ), with no integral.",
+        "As p(b) = 1 − p(θ)."
+      ]
+    },
+    {
+      "id": "ml-w05-023",
+      "question": "With a flat Beta(1, 1) prior and N = 4 flips of which m = 4 are heads, what is the posterior?",
+      "answer": "Beta(5, 1), with mean 5/6.",
+      "distractors": [
+        "Beta(4, 1), with mean 4/5.",
+        "Beta(1, 5), with mean 1/6.",
+        "Beta(5, 5), with mean 1/2."
+      ]
+    },
+    {
+      "id": "ml-w05-024",
+      "question": "With a flat prior α = β = 1, how does the posterior p(θ|b) relate to the likelihood θ^m (1 − θ)^(N − m)?",
+      "answer": "The posterior has the same shape as the likelihood, (N+1)! / (m!(N−m)!) θ^m (1−θ)^(N−m); the constant only normalizes it.",
+      "distractors": [
+        "The posterior is the likelihood flipped around θ = 0.5.",
+        "The posterior is flat regardless of the data.",
+        "The posterior is the likelihood multiplied by a Beta(10, 10) prior."
+      ]
+    },
+    {
+      "id": "ml-w05-025",
+      "question": "In the dog example the prior is Beta(1/2, 1/2) and the data are N = 4, m = 4. What is the posterior and what does it say?",
+      "answer": "Beta(4.5, 0.5): a density concentrated close to θ = 1, so the dog is very likely to be in the doghouse tomorrow too.",
+      "distractors": [
+        "Beta(4, 0): a density concentrated exactly at θ = 0.",
+        "Beta(4.5, 4.5): a density centered at θ = 0.5.",
+        "Beta(0.5, 4.5): a density concentrated close to θ = 0."
+      ]
+    },
+    {
+      "id": "ml-w05-026",
+      "question": "In the coin example the prior is Beta(10, 10) and the data are N = 4, m = 4. What is the posterior and what does it say?",
+      "answer": "Beta(14, 10), with mean 14/24 ≈ 0.58: the strong prior of fairness means four identical flips only shift the belief slightly.",
+      "distractors": [
+        "Beta(4, 0), with mean 1: the coin is certainly biased.",
+        "Beta(14, 14), with mean 0.5: the data changed nothing.",
+        "Beta(10, 14), with mean ≈ 0.42: the belief shifts strongly away from the observed outcome."
+      ]
+    },
+    {
+      "id": "ml-w05-027",
+      "question": "How is the MAP estimate θ* defined for the coin model?",
+      "answer": "θ* = argmax_θ p(θ|m, N) = argmax_θ p(m, N|θ) p(θ|α, β) / p(m, N), the θ that is most probable after seeing the data.",
+      "distractors": [
+        "θ* = argmax_θ p(θ|α, β), the most probable θ under the prior.",
+        "θ* = argmax_θ p(m, N), the most probable data.",
+        "θ* = argmin_θ p(θ|m, N), the least probable θ."
+      ]
+    },
+    {
+      "id": "ml-w05-028",
+      "question": "Why do we replace argmax f(x) with argmin −log f(x) when deriving the MAP cost function?",
+      "answer": "Because log is monotonic and f(x) > 0, so maximizing f is equivalent to minimizing −log f, which turns products into sums and gives a cost to minimize.",
+      "distractors": [
+        "Because −log f(x) is always zero at the optimum.",
+        "Because the posterior can be negative, which the logarithm fixes.",
+        "Because −log changes the location of the optimum to make it easier to find."
+      ]
+    },
+    {
+      "id": "ml-w05-029",
+      "question": "In the MAP derivation, why can the term log p(m, N) be dropped?",
+      "answer": "Because it does not depend on θ, so it does not change which θ minimizes the cost.",
+      "distractors": [
+        "Because p(m, N) is always equal to 1.",
+        "Because it is always smaller than the likelihood term.",
+        "Because it is replaced by the prior."
+      ]
+    },
+    {
+      "id": "ml-w05-030",
+      "question": "What is the MAP cost function E(θ) for the coin model?",
+      "answer": "E(θ) = −log p(m, N|θ) − log p(θ|α, β), the negative log likelihood plus the negative log prior.",
+      "distractors": [
+        "E(θ) = −log p(m, N|θ) + log p(θ|α, β).",
+        "E(θ) = −log p(θ|α, β) only, because the data does not matter for θ*.",
+        "E(θ) = p(m, N|θ) p(θ|α, β), to be minimized."
+      ]
+    },
+    {
+      "id": "ml-w05-031",
+      "question": "In the general Bayesian formulation for data X = x_1, ..., x_N and y = y_1, ..., y_N with parameters w, which two assumptions are made?",
+      "answer": "p(y|X, w) = ∏ p(y_i|x_i, w) (the outputs are conditionally independent given the inputs and w), and p(w|X) = p(w) (the prior does not depend on the inputs).",
+      "distractors": [
+        "p(y|X, w) = Σ p(y_i|x_i, w), and p(w|X) = p(y).",
+        "p(y|X, w) = p(w), and p(w|X) = ∏ p(w_i).",
+        "All the inputs x_i must be identical, and w must be a scalar."
+      ]
+    },
+    {
+      "id": "ml-w05-032",
+      "question": "What cost function E(w) is minimized in the general Bayesian (MAP) formulation?",
+      "answer": "E(w) = (1/N) [ Σᵢ −log p(y_i|x_i, w) − log p(w) ].",
+      "distractors": [
+        "E(w) = (1/N) [ Σᵢ log p(y_i|x_i, w) + log p(w) ].",
+        "E(w) = (1/N) Σᵢ p(y_i|x_i, w) p(w).",
+        "E(w) = −log p(y) only."
+      ]
+    },
+    {
+      "id": "ml-w05-033",
+      "question": "How does the general cost function change if we use a constant (flat) prior p(w)?",
+      "answer": "The −log p(w) term is constant and can be ignored, which gives maximum likelihood: E(w) = (1/N) Σᵢ −log p(y_i|x_i, w).",
+      "distractors": [
+        "The likelihood term disappears and only the prior remains.",
+        "The cost function becomes zero for all w.",
+        "The cost function must then be maximized instead of minimized."
+      ]
+    },
+    {
+      "id": "ml-w05-034",
+      "question": "What does the MAP/MLE approach need, and what are its pro and con?",
+      "answer": "It needs a likelihood (pretty simple) and optionally a prior; it is conceptually simple and efficient, but can sometimes give spurious results (overfit).",
+      "distractors": [
+        "It needs a full posterior and the evidence p(X); it never overfits but is very expensive.",
+        "It needs a prior (mandatory) and a loss that is hard to define; it is guaranteed to find the global optimum.",
+        "It needs no model at all; it is simple but can only be used with discrete data."
+      ]
+    },
+    {
+      "id": "ml-w05-035",
+      "question": "What are the three components of supervised learning in this course?",
+      "answer": "Data {x_i, y_i}, a model f(x; w) with parameters w, and a cost function d(y, f(x; w)) measuring dissimilarity between observation and prediction.",
+      "distractors": [
+        "Inputs only, a similarity measure and a set of clusters.",
+        "A prior, a posterior and an evidence term.",
+        "A latent code, an encoder and a decoder."
+      ]
+    },
+    {
+      "id": "ml-w05-036",
+      "question": "What is the difference between supervised and unsupervised learning?",
+      "answer": "Supervised learning uses input data x_n and output y_n to generalize from known examples; unsupervised learning uses input data x_n alone for exploratory analysis.",
+      "distractors": [
+        "Supervised learning uses x_n alone for exploration; unsupervised learning uses both x_n and y_n.",
+        "Supervised learning has continuous outputs only; unsupervised learning has discrete outputs only.",
+        "Supervised learning has no model; unsupervised learning needs a cost function."
+      ]
+    },
+    {
+      "id": "ml-w05-037",
+      "question": "What is the difference between regression and classification?",
+      "answer": "Regression learns a function to a continuous-valued output y; classification learns a function to a discrete class y.",
+      "distractors": [
+        "Regression has a discrete output and classification a continuous output.",
+        "Regression is unsupervised and classification is supervised.",
+        "Regression uses a cost function and classification does not."
+      ]
+    },
+    {
+      "id": "ml-w05-038",
+      "question": "What is the difference between descriptive and predictive modeling in regression?",
+      "answer": "Descriptive modeling explains the relation between attributes and a continuous output; predictive modeling predicts the output value of a new data object.",
+      "distractors": [
+        "Descriptive modeling predicts new outputs; predictive modeling explains relations.",
+        "Descriptive modeling needs a discrete output; predictive modeling needs a continuous one.",
+        "Descriptive modeling groups similar objects; predictive modeling removes outliers."
+      ]
+    },
+    {
+      "id": "ml-w05-039",
+      "question": "Which methods are listed for regression, besides linear regression?",
+      "answer": "Regression trees and kNN regression (with regularized/ridge regression, neural networks and ensembles to come later).",
+      "distractors": [
+        "Naive Bayes and logistic regression.",
+        "K-means and hierarchical clustering.",
+        "PCA and the Fourier transform."
+      ]
+    },
+    {
+      "id": "ml-w05-040",
+      "question": "What is the linear regression model for M-dimensional inputs?",
+      "answer": "f(x) = w_0 + w_1 x_1 + w_2 x_2 + ... + w_M x_M.",
+      "distractors": [
+        "f(x) = w_0 · w_1 x_1 · w_2 x_2 · ... · w_M x_M.",
+        "f(x) = w_1 x_1 + w_2 x_2² + ... + w_M x_M^M.",
+        "f(x) = σ(w_0 + w_1 x_1 + ... + w_M x_M)."
+      ]
+    },
+    {
+      "id": "ml-w05-041",
+      "question": "In what sense is f(x) = w_0 + w_1 sin(x) + w_2 cos(x) a linear model?",
+      "answer": "It is linear in the weights w, even though it is non-linear in the input x.",
+      "distractors": [
+        "It is not a linear model, because it contains sin and cos.",
+        "It is linear in x, but not in the weights.",
+        "It is linear only if w_1 = w_2."
+      ]
+    },
+    {
+      "id": "ml-w05-042",
+      "question": "Why do we write the linear model as f(x; w) = x̃ᵀw with x̃ = [x_0, x_1, ..., x_M]ᵀ and x_0 = 1?",
+      "answer": "The constant first entry 1 lets the offset w_0 be absorbed into the dot product, giving a compact vector notation.",
+      "distractors": [
+        "It standardizes each input to have mean 1.",
+        "It makes the weights orthogonal to each other.",
+        "It forces the model to pass through the origin."
+      ]
+    },
+    {
+      "id": "ml-w05-043",
+      "question": "For x = [4, 5]ᵀ, so x̃ = [1, 4, 5]ᵀ, and w = [10, 3, 6]ᵀ, what is f(x; w) = wᵀx̃?",
+      "answer": "52, since 10 + 3·4 + 6·5 = 52.",
+      "distractors": [
+        "42, since 3·4 + 6·5 = 42 without the offset.",
+        "56, since 10 + 3 + 6 + 4 + 5 + 28 = 56.",
+        "20, since 4 + 5 + 3 + 6 + 2 = 20."
+      ]
+    },
+    {
+      "id": "ml-w05-044",
+      "question": "The model f(x) = w_0 + w_1 x_1 + w_2 x_2 + w_3 x_1² + w_4 x_2² + w_5 x_1x_2 + w_6 x_1³ + w_7 x_1²x_2 + w_8 x_1x_2² + w_9 x_2³ is fit to 2D inputs. How many weights does it have, and is it still a linear model?",
+      "answer": "Ten weights (w_0 to w_9), and it is still linear in the weights.",
+      "distractors": [
+        "Nine weights, and it is not a linear model because of the cubic terms.",
+        "Two weights, one for each input.",
+        "Ten weights, but it is no longer a linear model because it has interaction terms."
+      ]
+    },
+    {
+      "id": "ml-w05-045",
+      "question": "How is a regression model evaluated?",
+      "answer": "By the average loss per observation, E(w) = (1/N) Σ L(y_i, f(x_i; w)), using L1 = |y − ŷ| or L2 = (y − ŷ)².",
+      "distractors": [
+        "By the fraction of exactly correct predictions, since y is discrete.",
+        "By the confusion matrix of predicted versus actual values.",
+        "By the likelihood of the inputs x_i alone."
+      ]
+    },
+    {
+      "id": "ml-w05-046",
+      "question": "How do the L1 and L2 losses compare in how they penalize an error y − ŷ?",
+      "answer": "L1 penalizes the absolute error |y − ŷ|, while L2 penalizes the squared error (y − ŷ)², so large errors are penalized much more heavily.",
+      "distractors": [
+        "L1 penalizes the squared error and L2 the absolute error.",
+        "Both penalize errors identically, since they are both p-norms.",
+        "L1 only counts whether a prediction was wrong, while L2 uses the size of the error."
+      ]
+    },
+    {
+      "id": "ml-w05-047",
+      "question": "What is the squared-loss objective in the classic least squares solution?",
+      "answer": "E(w) = (1/N) Σᵢ (y_i − f(x_i; w))² = (1/N) ‖y − X̃w‖², also known as the residual sum of squares (RSS) up to the 1/N factor.",
+      "distractors": [
+        "E(w) = (1/N) Σᵢ |y_i − f(x_i; w)|, known as the RSS.",
+        "E(w) = Σᵢ y_i f(x_i; w), known as the likelihood.",
+        "E(w) = (1/N) ‖X̃w‖², known as the explained variance."
+      ]
+    },
+    {
+      "id": "ml-w05-048",
+      "question": "What is the closed-form least squares solution for w?",
+      "answer": "w* = (X̃ᵀX̃)⁻¹ X̃ᵀ y.",
+      "distractors": [
+        "w* = (X̃ X̃ᵀ)⁻¹ y.",
+        "w* = X̃ᵀ y (X̃ᵀ X̃).",
+        "w* = X̃⁻¹ yᵀ."
+      ]
+    },
+    {
+      "id": "ml-w05-049",
+      "question": "How is the least squares solution derived from E(w)?",
+      "answer": "By setting the derivative ∂E/∂w, proportional to X̃ᵀ(y − X̃w), to zero and solving for w.",
+      "distractors": [
+        "By taking the second derivative and setting it to 1.",
+        "By iterating w ← w − ηX̃ᵀ(σ(X̃w) − y) until convergence.",
+        "By setting w equal to the mean of the outputs y."
+      ]
+    },
+    {
+      "id": "ml-w05-050",
+      "question": "For the model with M inputs and N observations, what are the shapes of X̃ and w?",
+      "answer": "X̃ is N × (M + 1), with a leading column of ones, and w has M + 1 entries.",
+      "distractors": [
+        "X̃ is N × M, and w has M entries.",
+        "X̃ is (M + 1) × N, and w has N entries.",
+        "X̃ is N × N, and w has N entries."
+      ]
+    },
+    {
+      "id": "ml-w05-051",
+      "question": "For the constant model f(x; w) = w_0, where X̃ is a column of ones, what does the least squares solution give for w_0?",
+      "answer": "The mean of the outputs y, since the error curve is a parabola in w_0 with its minimum there.",
+      "distractors": [
+        "The median of the outputs y.",
+        "The largest output y_i.",
+        "Zero, since there are no inputs."
+      ]
+    },
+    {
+      "id": "ml-w05-052",
+      "question": "For the points (x, y) = (1, 2), (3, 5), (4, 6) we fit y = ax + b. What does least squares give for w = [b, a]ᵀ?",
+      "answer": "w ≈ [0.7143, 1.3571]ᵀ.",
+      "distractors": [
+        "w ≈ [1.3571, 0.7143]ᵀ.",
+        "w ≈ [2, 1]ᵀ.",
+        "w ≈ [0, 1.5]ᵀ."
+      ]
+    },
+    {
+      "id": "ml-w05-053",
+      "question": "Using w ≈ [0.7143, 1.3571]ᵀ (offset first) from the three-point fit, what is the model prediction at x = 5?",
+      "answer": "7.5, since 0.7143 + 1.3571 · 5 ≈ 7.5.",
+      "distractors": [
+        "6.5.",
+        "7.0.",
+        "8.0."
+      ]
+    },
+    {
+      "id": "ml-w05-054",
+      "question": "In the quiz on three points, what must be remembered when building X for the standard formula?",
+      "answer": "A column of ones must be added to X to account for the offset.",
+      "distractors": [
+        "The columns of X must be standardized to unit norm.",
+        "The outputs y must be appended as a last column.",
+        "X must be transposed so each point is a column."
+      ]
+    },
+    {
+      "id": "ml-w05-055",
+      "question": "Nine noisy points are generated from a sine function. What happens as the polynomial order of the fitted linear model goes from 1 to 3 to 8?",
+      "answer": "Order 1 is too simple and misses the shape, order 3 follows the trend well, and order 8 passes through all points with zero residuals but wiggles wildly (overfits).",
+      "distractors": [
+        "Order 1 overfits, order 3 is too simple, and order 8 fits the underlying function best.",
+        "All three orders give identical predictions.",
+        "Order 8 has the largest residuals because it has the most weights."
+      ]
+    },
+    {
+      "id": "ml-w05-056",
+      "question": "Why is a pattern in the residuals of the order-1 model a sign that the model is poor, while residuals without any pattern are consistent with normally distributed noise?",
+      "answer": "Systematic structure in the residuals means the model missed part of the true function; residuals without a pattern look like random, normally distributed noise ε_i, which motivates the noise model.",
+      "distractors": [
+        "Residuals with a pattern mean the data has no noise at all.",
+        "Patterned residuals show that the weights w have been standardized.",
+        "Patternless residuals show that the model is overfitting."
+      ]
+    },
+    {
+      "id": "ml-w05-057",
+      "question": "In the probabilistic view of linear regression, what is assumed about each observation y_i?",
+      "answer": "y_i = f(x_i; w) + ε_i, where ε_i is a normally distributed noise term N(ε_i | 0, σ²) (a modelling choice).",
+      "distractors": [
+        "y_i = f(x_i; w) · ε_i, where ε_i is uniform on [0, 1].",
+        "y_i = f(x_i; w), exactly, with no noise.",
+        "y_i = ε_i, where f(x_i; w) is the variance of the noise."
+      ]
+    },
+    {
+      "id": "ml-w05-058",
+      "question": "Given y_i = f(x_i; w) + ε_i with ε_i ~ N(0, σ²), what is the likelihood p(y_i | x_i, w)?",
+      "answer": "A Gaussian centered on the model output: N(y_i | f(x_i, w), σ²).",
+      "distractors": [
+        "A Bernoulli with parameter f(x_i, w).",
+        "A Gaussian centered at zero: N(y_i | 0, σ²).",
+        "A Beta density with α = f(x_i, w)."
+      ]
+    },
+    {
+      "id": "ml-w05-059",
+      "question": "Why does the negative log likelihood of the Gaussian noise model lead to a squared-error cost?",
+      "answer": "Because −log of the Gaussian density is (y_i − x̃ᵢᵀw)² / (2σ²) plus a constant, so summing over i gives a sum of squared residuals.",
+      "distractors": [
+        "Because the logarithm of a Gaussian is the absolute value |y_i − x̃ᵢᵀw|.",
+        "Because the prior p(w) is always quadratic.",
+        "Because the sigmoid squares its input."
+      ]
+    },
+    {
+      "id": "ml-w05-060",
+      "question": "How does MAP with a constant prior p(w) relate to classic least squares for the linear model with Gaussian noise?",
+      "answer": "They give the same solution: with a flat prior, MAP reduces to MLE, E(w) ∝ ‖y − X̃w‖², and w* = (X̃ᵀX̃)⁻¹X̃ᵀy.",
+      "distractors": [
+        "They give different solutions, because MAP always yields smaller weights than least squares.",
+        "Least squares is a Bayesian method, while MAP with a flat prior is not.",
+        "They coincide only when σ² = 1."
+      ]
+    },
+    {
+      "id": "ml-w05-061",
+      "question": "What is the cost function of the linear model under Gaussian noise with a flat prior?",
+      "answer": "E(w) = (1/N) Σ (y_i − x̃ᵢᵀw)² / (2σ²) = (1/(2σ²N)) ‖y − X̃w‖², proportional to the squared loss.",
+      "distractors": [
+        "E(w) = (1/N) Σ |y_i − x̃ᵢᵀw| / σ.",
+        "E(w) = (1/N) Σ [−y_i log θ_i − (1 − y_i) log(1 − θ_i)].",
+        "E(w) = σ² ‖w‖²."
+      ]
+    },
+    {
+      "id": "ml-w05-062",
+      "question": "Why does the noise variance σ² not affect the optimal w* for the linear model?",
+      "answer": "σ² only scales the cost function by a constant factor 1/(2σ²), which does not change the location of the minimum.",
+      "distractors": [
+        "Because σ² is always estimated to be zero.",
+        "Because the prior cancels σ² out.",
+        "Because σ² is already contained in X̃."
+      ]
+    },
+    {
+      "id": "ml-w05-063",
+      "question": "What is the definition of classification, and why do we classify?",
+      "answer": "Learning a function that maps a data object to a discrete class, either to explain the relation between attributes and class (descriptive) or to predict the class of a new object (predictive).",
+      "distractors": [
+        "Learning a function that maps a data object to a continuous value, to remove outliers.",
+        "Grouping unlabeled objects by similarity, to find clusters.",
+        "Mapping a data object to a probability density, to generate new data."
+      ]
+    },
+    {
+      "id": "ml-w05-064",
+      "question": "Logistic regression uses a Bernoulli likelihood for binary y_i. What is the problem with setting θ_i = x̃ᵢᵀw directly?",
+      "answer": "θ_i must lie in [0, 1], but x̃ᵢᵀw can be any real number.",
+      "distractors": [
+        "θ_i must be an integer, but x̃ᵢᵀw is continuous.",
+        "θ_i must be negative, but x̃ᵢᵀw is positive.",
+        "θ_i must be independent of x_i, but x̃ᵢᵀw depends on x_i."
+      ]
+    },
+    {
+      "id": "ml-w05-065",
+      "question": "What is the logistic sigmoid and what does it do in logistic regression?",
+      "answer": "σ(z) = 1 / (1 + e^(−z)); it maps the real-valued output f(x; w) into (0, 1), so θ_i = σ(f(x_i; w)) is a valid Bernoulli parameter.",
+      "distractors": [
+        "σ(z) = 1 + e^(−z); it maps f(x; w) to values above 1.",
+        "σ(z) = z / (1 + z); it maps f(x; w) to the class label.",
+        "σ(z) = e^z; it maps f(x; w) to a positive density."
+      ]
+    },
+    {
+      "id": "ml-w05-066",
+      "question": "What is σ(0), and what happens to σ(z) as z becomes very large and positive?",
+      "answer": "σ(0) = 0.5, and σ(z) approaches 1 as z → +∞.",
+      "distractors": [
+        "σ(0) = 0, and σ(z) approaches ∞ as z → +∞.",
+        "σ(0) = 1, and σ(z) approaches 0 as z → +∞.",
+        "σ(0) = 0.5, and σ(z) approaches 0.5 as z → +∞."
+      ]
+    },
+    {
+      "id": "ml-w05-067",
+      "question": "What is the per-observation loss −log p(y_i|x_i, w) in logistic regression?",
+      "answer": "−y_i log(θ_i) − (1 − y_i) log(1 − θ_i), with θ_i = σ(x̃ᵢᵀw).",
+      "distractors": [
+        "(y_i − θ_i)², with θ_i = σ(x̃ᵢᵀw).",
+        "−y_i log(1 − θ_i) − (1 − y_i) log(θ_i).",
+        "|y_i − x̃ᵢᵀw|."
+      ]
+    },
+    {
+      "id": "ml-w05-068",
+      "question": "In the logistic regression loss, what is the loss for an observation with y_i = 1 and with y_i = 0, and when is it minimized?",
+      "answer": "−log θ_i for y_i = 1 and −log(1 − θ_i) for y_i = 0; the loss is minimized when θ_i is as close as possible to y_i.",
+      "distractors": [
+        "−log(1 − θ_i) for y_i = 1 and −log θ_i for y_i = 0; it is minimized when θ_i = 0.5.",
+        "−log θ_i for both classes; it is minimized when θ_i = 1.",
+        "0 for y_i = 1 and 1 for y_i = 0, whatever θ_i is."
+      ]
+    },
+    {
+      "id": "ml-w05-069",
+      "question": "A logistic regression with weights w = [−0.93, 1.72]ᵀ (offset first) gets x_8 = 1, so x̃ = [1, 1]ᵀ. What is p(y = 1 | x_8)?",
+      "answer": "About 0.69, since σ(−0.93 + 1.72) = σ(0.79) ≈ 0.69.",
+      "distractors": [
+        "About 0.85, since σ(1.76) ≈ 0.85.",
+        "About 0.34, since σ(−0.65) ≈ 0.34.",
+        "About 0.06, since σ(−2.82) ≈ 0.06."
+      ]
+    },
+    {
+      "id": "ml-w05-070",
+      "question": "For x̃ = [1, 1]ᵀ, which weight vector gives the largest predicted p(y = 1 | x_8): [−0.93, 1.72], [−2.82, 0.0], [1.36, 0.4] or [−0.65, 0.0]?",
+      "answer": "[1.36, 0.4], since σ(1.76) ≈ 0.85 is the largest.",
+      "distractors": [
+        "[−0.93, 1.72], since σ(0.79) ≈ 0.69 is the largest.",
+        "[−0.65, 0.0], since σ(−0.65) ≈ 0.34 is the largest.",
+        "[−2.82, 0.0], since σ(−2.82) ≈ 0.06 is the largest."
+      ]
+    },
+    {
+      "id": "ml-w05-071",
+      "question": "Why do we need an iterative optimization method for logistic regression, whereas linear regression has a closed-form solution?",
+      "answer": "Setting the gradient of the logistic loss to zero does not give a closed-form expression for w, because θ_i = σ(x̃ᵢᵀw) is non-linear in w.",
+      "distractors": [
+        "Because logistic regression has no cost function to differentiate.",
+        "Because logistic regression has no weights to learn.",
+        "Because the logistic loss is minimized only at w = 0."
+      ]
+    },
+    {
+      "id": "ml-w05-072",
+      "question": "What is the gradient of the logistic regression cost E(w)?",
+      "answer": "∂E/∂w = (1/N) X̃ᵀ(θ − y) = (1/N) X̃ᵀ(σ(X̃w) − y).",
+      "distractors": [
+        "∂E/∂w = (1/N) X̃ᵀ(y − X̃w).",
+        "∂E/∂w = (1/N) (θ − y)ᵀ(θ − y).",
+        "∂E/∂w = (1/N) σ(X̃ᵀ y)."
+      ]
+    },
+    {
+      "id": "ml-w05-073",
+      "question": "What is the gradient descent update for w, and why is the gradient subtracted?",
+      "answer": "w(t+1) = w(t) − η ∇E(w(t)); we step against the gradient, because it points toward increasing cost and we want to decrease it.",
+      "distractors": [
+        "w(t+1) = w(t) + η ∇E(w(t)); we step along the gradient to climb toward the minimum.",
+        "w(t+1) = η ∇E(w(t)); the previous weights are discarded.",
+        "w(t+1) = w(t) − ∇E(w(0)); the gradient is always taken at the initial guess."
+      ]
+    },
+    {
+      "id": "ml-w05-074",
+      "question": "At a point w'' where dE/dw > 0, in which direction does gradient descent move w?",
+      "answer": "To smaller values of w (to the left), since the cost decreases in that direction.",
+      "distractors": [
+        "To larger values of w (to the right), since the cost decreases there.",
+        "It does not move, because the gradient is non-zero.",
+        "It jumps directly to the global minimum."
+      ]
+    },
+    {
+      "id": "ml-w05-075",
+      "question": "What role does the learning rate η > 0 play in gradient descent?",
+      "answer": "It is the step size controlling how far we move against the gradient at each iteration.",
+      "distractors": [
+        "It is the number of iterations before stopping.",
+        "It is the initial guess w(0) for the weights.",
+        "It is the threshold on the gradient norm for stopping."
+      ]
+    },
+    {
+      "id": "ml-w05-076",
+      "question": "What are the steps of the simple gradient descent algorithm?",
+      "answer": "Initialize w(0), choose a learning rate η, then repeat: compute ∇E(w(t)) and update w(t+1) = w(t) − η∇E(w(t)), until a stopping criterion is met.",
+      "distractors": [
+        "Compute (X̃ᵀX̃)⁻¹X̃ᵀy once and stop.",
+        "Initialize w(0), compute the posterior over w, and sample from it.",
+        "Sort the weights, remove the smallest one, and repeat."
+      ]
+    },
+    {
+      "id": "ml-w05-077",
+      "question": "What are typical stopping criteria for gradient descent?",
+      "answer": "A small gradient norm ‖∇E(w(t))‖ < ε, a tiny improvement in loss |E(w(t+1)) − E(w(t))| < ε, or a maximum number of iterations.",
+      "distractors": [
+        "The loss reaches exactly zero.",
+        "The weights become orthogonal to the gradient of the prior.",
+        "The learning rate η reaches 1."
+      ]
+    },
+    {
+      "id": "ml-w05-078",
+      "question": "In the generalized linear model E(w) = (1/N) Σ d(y_i, g(x̃ᵢᵀw)), what are d and g called?",
+      "answer": "d is the cost function and g is the link function.",
+      "distractors": [
+        "d is the link function and g is the cost function.",
+        "d is the prior and g is the likelihood.",
+        "d is the learning rate and g is the gradient."
+      ]
+    },
+    {
+      "id": "ml-w05-079",
+      "question": "How do linear and logistic regression fit into the generalized linear model?",
+      "answer": "Linear regression: d(y, z) = ‖y − z‖² with g(x̃ᵀw) = x̃ᵀw; logistic regression: d(y, z) = −y log z − (1 − y) log(1 − z) with g(x̃ᵀw) = σ(x̃ᵀw).",
+      "distractors": [
+        "Linear regression: d is the cross-entropy with g = σ; logistic regression: d is the squared loss with g = identity.",
+        "Both use the squared loss and differ only in the learning rate.",
+        "Both use the sigmoid link and differ only in the prior."
+      ]
+    },
+    {
+      "id": "ml-w05-080",
+      "question": "In the summary, what role do likelihoods p(y|x) play, and how do linear models enter?",
+      "answer": "Likelihoods are at the core and give principled loss functions; linear models parametrise the likelihood, for example its mean (linear regression) or class probability via the sigmoid (logistic regression).",
+      "distractors": [
+        "Likelihoods are only used for unsupervised learning; linear models replace the likelihood.",
+        "Likelihoods define the optimizer; linear models define the prior.",
+        "Likelihoods are optional for loss functions; linear models parametrise the prior."
+      ]
+    }
+  ]
+}
