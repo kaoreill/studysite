@@ -184,7 +184,7 @@
       "weeks": [
         {
           "week": 1,
-          "title": "Introduction to Process Mining",
+          "title": "Introduction, behavioral formalisms and Petri nets",
           "pdfs": [
             {
               "name": "Lecture 1 slides",
@@ -195,33 +195,33 @@
         },
         {
           "week": 2,
-          "title": "",
+          "title": "Event logs and the Alpha algorithm",
           "pdfs": [],
-          "cards": null
+          "cards": "week-02.json"
         },
         {
           "week": 3,
-          "title": "",
+          "title": "Heuristics, Fuzzy and Inductive Miners",
           "pdfs": [],
-          "cards": null
+          "cards": "week-03.json"
         },
         {
           "week": 4,
-          "title": "",
+          "title": "Celonis case study: object-centric process mining",
           "pdfs": [],
-          "cards": null
+          "cards": "week-04.json"
         },
         {
           "week": 5,
-          "title": "",
+          "title": "Process mining in practice: Disco and Apromore case studies",
           "pdfs": [],
-          "cards": null
+          "cards": "week-05.json"
         },
         {
           "week": 6,
-          "title": "",
+          "title": "Conformance checking with alignments",
           "pdfs": [],
-          "cards": null
+          "cards": "week-06.json"
         },
         {
           "week": 7,
@@ -273,7 +273,7 @@
       "weeks": [
         {
           "week": 1,
-          "title": "Introduction to Cybersecurity Fundamentals",
+          "title": "Introduction to cybersecurity and the Diffie-Hellman key exchange",
           "pdfs": [
             {
               "name": "Lecture 1 slides",
@@ -284,33 +284,33 @@
         },
         {
           "week": 2,
-          "title": "",
+          "title": "Cryptography I",
           "pdfs": [],
-          "cards": null
+          "cards": "week-02.json"
         },
         {
           "week": 3,
-          "title": "",
+          "title": "Cryptography II: protocols, key management and PKI",
           "pdfs": [],
-          "cards": null
+          "cards": "week-03.json"
         },
         {
           "week": 4,
-          "title": "",
+          "title": "Authentication and identity management",
           "pdfs": [],
-          "cards": null
+          "cards": "week-04.json"
         },
         {
           "week": 5,
-          "title": "",
+          "title": "Protection mechanisms and access control",
           "pdfs": [],
-          "cards": null
+          "cards": "week-05.json"
         },
         {
           "week": 6,
-          "title": "",
+          "title": "Security in networks",
           "pdfs": [],
-          "cards": null
+          "cards": "week-06.json"
         },
         {
           "week": 7,
